@@ -1,7 +1,7 @@
 =======
-# Julien Lalloyer
-# Matheo Sinquin
-# Christopher Pottier
+# Julien Lalloyer (J)
+# Matheo Sinquin (M)
+# Christopher Pottier (C)
 
 # Livrable 1
 
@@ -25,6 +25,18 @@
 - [ ] Respect du format de rendu (cf Moodle)
 
 ## Distribution du travail (qui a fait quoi)
+
+### J
+
+- [ ]
+
+### M
+
+- [ ] Fait le fxml
+
+### C
+ 
+- [ ]
 
 
 ## Difficultés rencontrées
