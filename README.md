@@ -1,4 +1,4 @@
-# Membres de l'équipe
+# Christopher Pottier
 
 # Livrable 1
 
