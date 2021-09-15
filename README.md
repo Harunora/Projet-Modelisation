@@ -1,4 +1,4 @@
-# Membres de l'équipe
+# Julien Lalloyer
 
 # Livrable 1
 
