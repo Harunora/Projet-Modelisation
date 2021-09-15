@@ -1,6 +1,7 @@
 =======
 # Julien Lalloyer
 # Matheo Sinquin
+# Christopher Pottier
 
 # Livrable 1
 
