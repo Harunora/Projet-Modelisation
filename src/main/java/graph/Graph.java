@@ -7,10 +7,16 @@ public class Graph {
 	int nbFaces;
 	List<Face> faces;
 	
-	public Graph(int nbFace) {
+	public Graph(int nbFace, List<Face> faces) {
 		this.nbFaces = nbFace;
-		faces = new ArrayList<Face>();
+		this.faces = faces;
 	}
+	
+	public Graph(int nbFace) {
+		this(nbFace, new ArrayList<Face>());
+	}
+	
+	
 	
 	public void addFace(Face f) {
 		this.faces.add(f);
