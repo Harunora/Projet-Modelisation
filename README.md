@@ -7,7 +7,7 @@
 
 ## Fonctionnalités implémentées
 
-- [ ] Afficher la liste détaillée des modèles
+- [.] Afficher la liste détaillée des modèles
 - [ ] Il est possible de choisir le modèle à visualiser dans la liste
 - [ ] Le modèle est chargé et visualisé
 - [ ] Message d'erreur en cas d'erreur de format dans le fichier
@@ -28,15 +28,17 @@
 
 ### J
 
-- [ ]
+- [.]FXML
+- [.]File Explorer
+- [ ]Translation
 
 ### M
 
-- [ ] Fait le fxml
+- [ ] Lecteur de Fichier .ply
 
 ### C
  
-- [ ]
+- [ ]Dessiner sur le Canvas
 
 
 ## Difficultés rencontrées
