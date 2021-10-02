@@ -35,14 +35,12 @@ public class Face {
 		return sommets;
 	}
 
+	@Override
 	public String toString() {
-		String res =  "Face [nbSommet=" + nbSommet + ", sommets= ";
-		for (int i = 0; i<this.nbSommet-1; i++) {
-			res+= this.sommets.get(i)+" , ";
-		}
-		res+= this.sommets.get(nbSommet-1) + " ]";
-		return res;
+		return "Face [color=" + color + ", nbSommet=" + nbSommet + ", sommets=" + sommets + "]";
 	}
+
+	
 	
 	
 	

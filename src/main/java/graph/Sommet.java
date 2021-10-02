@@ -1,24 +1,24 @@
 package graph;
 
 public class Sommet {
-	private float x,y,z;
+	private double x,y,z;
 	
 	//Un Sommet est un points avec 3 coordonnée x, y et z 
-	public Sommet(float x, float y, float z) {
+	public Sommet(double x, double y, double z) {
 		this.x = x;
 		this.y = y;
 		this.z = z;
 	}
 
-	public float getX() {
+	public double getX() {
 		return x;
 	}
 
-	public float getY() {
+	public double getY() {
 		return y;
 	}
 
-	public float getZ() {
+	public double getZ() {
 		return z;
 	}
 	
