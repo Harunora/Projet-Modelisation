@@ -7,12 +7,15 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.TableView;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
 
 public class ExplorerFile {
 	
-	private static TreeView<String> tree = new TreeView();
+	private static TreeView<String> tree;
+	private File current = null;
+	private String currentPath ="";
 
 	public static boolean existFile(File[] f, File f1) {
 		for (int i = 0; i < f.length; i++) {
@@ -34,26 +37,8 @@ public class ExplorerFile {
 		ExplorerFile.tree= tree;
 	}
 
-
-
-	public static TreeView<String> FolderSearcher(Stage primaryStage) {
-		DirectoryChooser dc = new DirectoryChooser();
-		dc.setInitialDirectory(new File(System.getProperty("user.home")));
-		File choice = dc.showDialog(primaryStage);
-		if (choice == null || !choice.isDirectory()) {
-			Alert alert = new Alert(AlertType.ERROR);
-			alert.setHeaderText("Could not open directory");
-			alert.setContentText("The file is invalid.");
-
-			alert.showAndWait();
-		} else {
-			tree.setRoot(getNodesForDirectory(choice));
-		}
-		return tree;
-	}
-
-	public static TreeItem<String> getNodesForDirectory(File directory) { 
-
+	public  TreeItem<String> getNodesForDirectory(File directory) { 
+		this.currentPath ="";
 		TreeItem<String> root = new TreeItem<String>(directory.getName());
 		System.out.println(directory.getAbsolutePath());
 
@@ -61,9 +46,9 @@ public class ExplorerFile {
 			if (f.isDirectory()) {
 				root.getChildren().add(getNodesForDirectory(f));
 				System.out.println(getNodesForDirectory(f));
-			} else {
-
+			} else {			
 				String rep = directory.getAbsolutePath();
+				this.currentPath = rep;
 				File repFile = new File(rep);
 
 				File[] fichiersPly = repFile.listFiles(new FileFilter() {
@@ -74,8 +59,10 @@ public class ExplorerFile {
 
 						return fileName.endsWith(".ply");
 					}
+					
 
 				});
+				
 
 				for (File fichierPly : fichiersPly) {
 					System.out.println(fichierPly.getName());
@@ -92,5 +79,29 @@ public class ExplorerFile {
 
 		return root;
 	}
+	
+	public File getFile(TreeView<String> tV) {
+		
+		
+		tV.getSelectionModel().selectedItemProperty().addListener((v, oldValue, newValue) ->{
+			if (newValue != null) {
+				String s = ((TreeItem<String>) newValue).getValue();
+				File fi = new File(currentPath+""+File.separatorChar+""+s);
+				//si newValue c'est un file
+				if(fi.isFile()) {
+					System.out.println(((TreeItem<String>) newValue).getValue());
+					current = fi;
+					System.out.println(current.getAbsolutePath());
+				}
+				
+				}
+				
+		});
+		
+		return this.current;
+		
+	}
+	
+	
 	
 }

@@ -26,11 +26,11 @@ public class MainControler implements Initializable {
     @FXML
     Canvas canvas;
 
-    
+    public File current = null;
     public Stage stage = new Stage();
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-    	
+    	ExplorerFile ef = new ExplorerFile();
         loadfolder.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent e) {
@@ -41,15 +41,18 @@ public class MainControler implements Initializable {
 					Alert alert = new Alert(AlertType.ERROR);
 					alert.setHeaderText("Could not open directory");
 					alert.setContentText("The file is invalid.");
-
-					alert.showAndWait();
+					alert.showAndWait();				
 				} else {
-					TV.setRoot(ExplorerFile.getNodesForDirectory(choice));
+					TV.setRoot(ef.getNodesForDirectory(choice));
 				}
+				current = ef.getFile(TV);
+				
 			}
+			
 		});
         
     }
     
+ 
 
 }
