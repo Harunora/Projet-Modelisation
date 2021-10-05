@@ -10,6 +10,12 @@ public class Sommet {
 		this.z = z;
 	}
 
+	public Sommet(double[] tabXyz) {
+		x = tabXyz[0];
+		y = tabXyz[1];
+		z = tabXyz[2];
+	}
+
 	public double getX() {
 		return x;
 	}

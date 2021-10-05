@@ -3,6 +3,8 @@ package demo;
 import java.io.File;
 import java.io.FileFilter;
 
+import graph.FileReader;
+import graph.Graph;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
@@ -16,6 +18,7 @@ public class ExplorerFile {
 	private static TreeView<String> tree;
 	private File current = null;
 	private String currentPath ="";
+    FileReader r = new FileReader();
 
 	public static boolean existFile(File[] f, File f1) {
 		for (int i = 0; i < f.length; i++) {
@@ -80,7 +83,7 @@ public class ExplorerFile {
 		return root;
 	}
 	
-	public File getFile(TreeView<String> tV) {
+	public void getFile(TreeView<String> tV) {
 		
 		
 		tV.getSelectionModel().selectedItemProperty().addListener((v, oldValue, newValue) ->{
@@ -95,13 +98,36 @@ public class ExplorerFile {
 				}
 				
 				}
+			Graph graph = r.read(current);
+			System.out.println(graph.getNbFaces());
+			System.out.println("test");
 				
 		});
 		
-		return this.current;
-		
+	}
+
+
+	public File getCurrent(TreeView<String> tv) {
+		getFile(tv);
+		return current;
+	}
+
+
+	public void setCurrent(File current) {
+		this.current = current;
+	}
+
+
+	public String getCurrentPath(TreeView<String> tv) {
+		getFile(tree);
+		return currentPath;
+	}
+
+
+	public void setCurrentPath(String currentPath) {
+		this.currentPath = currentPath;
 	}
 	
-	
+	 
 	
 }

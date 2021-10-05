@@ -16,7 +16,9 @@ public class Graph {
 		this(nbFace, new ArrayList<Face>());
 	}
 	
-	
+	public int getNbSommet() {
+		return this.faces.get(0).getNbSommet();
+	}
 	
 	public void addFace(Face f) {
 		this.faces.add(f);

@@ -4,6 +4,8 @@ import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import graph.FileReader;
+import graph.Graph;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -28,6 +30,7 @@ public class MainControler implements Initializable {
 
     public File current = null;
     public Stage stage = new Stage();
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
     	ExplorerFile ef = new ExplorerFile();
@@ -45,7 +48,7 @@ public class MainControler implements Initializable {
 				} else {
 					TV.setRoot(ef.getNodesForDirectory(choice));
 				}
-				current = ef.getFile(TV);
+				current = ef.getCurrent(TV);
 				
 			}
 			
