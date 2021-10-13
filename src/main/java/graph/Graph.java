@@ -6,6 +6,7 @@ import java.util.List;
 public class Graph {
 	int nbFaces;
 	List<Face> faces;
+	Matrice matrice = new Matrice(faces);
 	
 	public Graph(int nbFace, List<Face> faces) {
 		this.nbFaces = nbFace;
