@@ -4,8 +4,8 @@ import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import graph.CanvasWriter;
 import graph.FileReader;
-import graph.Graph;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -54,6 +54,10 @@ public class MainControler implements Initializable {
 			
 		});
         
+        File test= new File("data/test.ply");
+        FileReader fr=new FileReader();
+		CanvasWriter cw = new CanvasWriter(canvas.getGraphicsContext2D(),fr.read(test));
+
     }
     
  
