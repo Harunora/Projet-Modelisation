@@ -12,18 +12,19 @@ public class Face {
 	public Face(int n, List<Sommet> sommets, Color color) {
 		this.color = color;
 		nbSommet = n;
-		this.sommets = new ArrayList<Sommet>();
+		this.sommets = sommets;
 	}
 	
 	public Face(int n , List<Sommet> sommets) {
 		this(n, sommets, new Color(0, 0, 0));
+		System.out.println("init face"+sommets);
 	}
 	
 	public Face(int n ) {
 		this(n, new ArrayList<Sommet>(), new Color(0, 0, 0));
 	}
 	
-	public void addSommet(Sommet sommet) {
+	public void addSommet(Sommet sommet, Matrice matrice) {
 		this.sommets.add(sommet);
 	}
 
@@ -37,7 +38,7 @@ public class Face {
 
 	@Override
 	public String toString() {
-		return "Face [color=" + color + ", nbSommet=" + nbSommet + ", sommets=" + sommets + "]";
+		return "Face [color=" + color + ", nbSommet=" + nbSommet + ", sommets=" + sommets.toString()+ "]";
 	}
 
 	

@@ -13,6 +13,7 @@ public class FileReader {
 	private int nbFaces = 0,nbSommets = 0;
 	private List<Sommet> sommets = new ArrayList<Sommet>();
 	private List<Face>faces = new ArrayList<Face>();
+	private Matrice matrice = new Matrice();
 
 
 
@@ -75,11 +76,13 @@ public class FileReader {
 			int nb = Integer.parseInt(lineToken.nextToken());
 			for(int j = 0; j<nb; j++) {
 				listIdxSommet.add(Integer.parseInt(lineToken.nextToken()));
+				System.out.println(listIdxSommet);
 			}
 			for(int j = 0; j< nb; j++) {
 				listSommetTmp.add(sommets.get(listIdxSommet.get(j)));
 			}
 			faceAdd(faces, listSommetTmp, lineToken, nb);
+			
 		}
 	}
 
@@ -89,10 +92,13 @@ public class FileReader {
 			Color colorTmp = new Color(rgbTab);
 			Face faceTmp = new Face(nb,listSommetTmp ,colorTmp);
 			faces.add(faceTmp);
+			matrice.add(faceTmp);
 		}else {
 			Face faceTmp = new Face(nb,listSommetTmp);
 			faces.add(faceTmp);
+			matrice.add(faceTmp);
 		}
+		
 	}
 
 	private int[] addRgb(StringTokenizer actuel) {
@@ -103,15 +109,14 @@ public class FileReader {
 		for(int i = 0; i<nbSommets; i++) {
 			actual = actualNext(scanner);
 			String[] s1 = actual.split(" ");
-			String[] s2 = actual.split(" ");
-			double[] tabXyz = addXyz(s1, s2);
+			double[] tabXyz = addXyz(s1);
 			Sommet tmp = new Sommet(tabXyz);
 			sommets.add(tmp);
 		}
 	}
 
-	private double[] addXyz(String[] s1, String[] s2) {
-		return new double[] {Double.parseDouble(s1[0]),Double.parseDouble(s2[0]),Double.parseDouble(s2[1])};
+	private double[] addXyz(String[] s1) {
+		return new double[] {Double.parseDouble(s1[0]),Double.parseDouble(s1[1]),Double.parseDouble(s1[2])};
 	}
 
 }
