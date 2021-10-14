@@ -13,6 +13,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.Slider;
 import javafx.scene.control.TreeView;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.DirectoryChooser;
@@ -20,7 +21,13 @@ import javafx.stage.Stage;
 
 public class MainControler implements Initializable {
     @FXML
-    Button loadfolder, bVue1, bVue2, bVue3, bVue4;
+    Button loadfolder, btreebase , baide, btop, bright, bleft, bbot;
+    
+    @FXML
+    Slider senslider;
+    
+    @FXML
+    TextField tfvalue;
     
     @FXML
     TreeView<String> TV;
@@ -34,6 +41,23 @@ public class MainControler implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
     	ExplorerFile ef = new ExplorerFile();
+    	btreebase.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent e) {
+				String pwd = System.getProperty("user.dir");
+				System.out.println(pwd+"/data");
+				File directory = new File(pwd+"/data");
+				if (directory == null || !directory.isDirectory()) {
+					Alert alert = new Alert(AlertType.ERROR);
+					alert.setHeaderText("Could not open directory");
+					alert.setContentText("The file is invalid.");
+					alert.showAndWait();				
+				} else {
+					TV.setRoot(ef.getNodesForDirectory(directory));
+				}
+				
+			}
+    	});
         loadfolder.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent e) {
@@ -56,7 +80,7 @@ public class MainControler implements Initializable {
         
         File test= new File("data/test.ply");
         FileReader fr=new FileReader();
-		CanvasWriter cw = new CanvasWriter(canvas.getGraphicsContext2D(),fr.read(test));
+		//CanvasWriter cw = new CanvasWriter(canvas.getGraphicsContext2D(),fr.read(test));
 
     }
     
