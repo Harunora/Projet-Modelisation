@@ -17,14 +17,13 @@ public class Face {
 	
 	public Face(int n , List<Sommet> sommets) {
 		this(n, sommets, new Color(0, 0, 0));
-		System.out.println("init face"+sommets);
 	}
 	
 	public Face(int n ) {
 		this(n, new ArrayList<Sommet>(), new Color(0, 0, 0));
 	}
 	
-	public void addSommet(Sommet sommet, Matrice matrice) {
+	public void addSommet(Sommet sommet) {
 		this.sommets.add(sommet);
 	}
 

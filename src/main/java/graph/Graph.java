@@ -6,17 +6,18 @@ import java.util.List;
 public class Graph {
 	int nbFaces;
 	List<Face> faces;
-	Matrice matrice = new Matrice();
+	Matrice matrice;
 	
-	public Graph(int nbFace, List<Face> faces) {
+	public Graph(int nbFace, List<Face> faces, Matrice matrice) {
+		this.matrice = matrice;
 		this.nbFaces = nbFace;
 		this.faces = faces;
 	}
-	
+	/*
 	public Graph(int nbFace) {
 		this(nbFace, new ArrayList<Face>());
 	}
-	
+	*/
 	public int getNbSommet() {
 		return this.faces.get(0).getNbSommet();
 	}
