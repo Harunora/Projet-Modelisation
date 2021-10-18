@@ -14,6 +14,7 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Slider;
+import javafx.scene.control.TextField;
 import javafx.scene.control.TreeView;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.DirectoryChooser;
@@ -33,7 +34,6 @@ public class MainControler implements Initializable {
     TreeView<String> TV;
     
     @FXML
-    Canvas canvas;
 
     public File current = null;
     public Stage stage = new Stage();

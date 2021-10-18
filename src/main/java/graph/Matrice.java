@@ -2,12 +2,12 @@ package graph;
 
 
 public class Matrice {
-	int idx = 0;
-	int taille;
-	double[] x ;
-	double[] y ;
-	double[] z ;
-	double[] v;
+	protected int idx = 0;
+	protected int taille;
+	protected double[] x ;
+	protected double[] y ;
+	protected double[] z ;
+	protected double[] v;
 
 
 	public Matrice(int nbSommets, int nbFaces) {
@@ -18,14 +18,28 @@ public class Matrice {
 		this.v =new double[taille];
 	}
 	
-	
+	public void add(double x, double y, double z, double v) {
+		this.x[idx] = x;
+		this.y[idx] = y;
+		this.z[idx] = z;
+		this.v[idx] = v;
+		idx ++;
+	}
 	public void add(Sommet f) {
-				System.out.println();
-				x[idx] = f.getX();
-				y[idx] = f.getY();
-				z[idx] = f.getZ();
-				v[idx] = 1;
-			idx ++;
+		this.add(f.getX(),f.getY(),f.getZ(), 1);
+	}
+	
+	public double getX(int idplace) {
+		return x[idplace];
+	}
+	public double getY(int idplace) {
+		return y[idplace];
+	}
+	public double getZ(int idplace) {
+		return z[idplace];
+	}
+	public double getV(int idplace) {
+		return v[idplace];
 	}
 	
 	public String toString() {
@@ -34,5 +48,9 @@ public class Matrice {
 			res += "x : "+ x[i] + ", y : " + y[i] + ", z : " + z[i]+ ", v : "+ v[i]+ "\n"; 
 		}
 		return res;
+	}
+	
+	public int getTaille() {
+		return taille;
 	}
 }
