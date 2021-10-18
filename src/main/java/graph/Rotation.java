@@ -6,7 +6,7 @@ public abstract class Rotation {
 		matrice = m;
 	}
 	
-	public abstract Matrice rotate();
+	public abstract Matrice rotate(double sensibility);
 	protected  Matrice multipliMatrice(Matrice mcourante , Matrice mconverter) {
 		Matrice mConverted = new Matrice(mcourante.getTaille(), mcourante.getTaille());
 		double dx = 0.0;
@@ -51,68 +51,4 @@ public abstract class Rotation {
 		}
 		return mConverted;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	// a regarder
-	public Matrice rotateUp(double sensibility) {
-		Matrice newMatrice = new Matrice(4, 4);
-		newMatrice.add(1.0 , 0.0 , 0.0, 0.0 );
-		newMatrice.add(0.0, Math.cos(sensibility), Math.sin(sensibility), 0);
-		newMatrice.add(0.0, (-1.0)*Math.sin(sensibility), Math.cos(sensibility), 0);
-		newMatrice.add(0.0 , 0.0 , 0.0, 1.0 );
-		this.matrice = multipliMatrice(matrice, newMatrice);
-		
-		
-		return matrice ;
-	}
-	//bon
-	public Matrice rotateDown(double sensibility) {
-		Matrice newMatrice = new Matrice(4, 4);
-		newMatrice.add(1.0 , 0.0 , 0.0, 0.0 );
-		newMatrice.add(0.0, Math.cos(sensibility), Math.sin(sensibility), 0);
-		newMatrice.add(0.0, (-1.0)*Math.sin(sensibility), Math.cos(sensibility), 0);
-		newMatrice.add(0.0 , 0.0 , 0.0, 1.0 );
-		this.matrice = multipliMatrice(matrice, newMatrice);
-		
-		return matrice ;
-	}
-	//bon
-	public Matrice rotateLeft(double sensibility) {
-		Matrice newMatrice = new Matrice(4, 4);
-		newMatrice.add(Math.cos(sensibility) , 0.0 ,(-1.0)*Math.sin(sensibility), 0.0 );
-		newMatrice.add(0.0,1.0, 0.0, 0.0);
-		newMatrice.add(Math.sin(sensibility), 0.0, Math.cos(sensibility), 0.0);
-		newMatrice.add(0.0 , 0.0 , 0.0, 1.0 );
-		this.matrice = multipliMatrice(matrice, newMatrice);
-	
-		return matrice ;
-	}
-	//a regarder
-	public Matrice rotateRight(double sensibility) {
-		Matrice newMatrice = new Matrice(4, 4);
-		newMatrice.add(1.0 , 0.0 , 0.0, 0.0 );
-		newMatrice.add(0.0, Math.cos(sensibility), Math.sin(sensibility), 0);
-		newMatrice.add(0.0, (-1.0)*Math.sin(sensibility), Math.cos(sensibility), 0);
-		newMatrice.add(0.0 , 0.0 , 0.0, 1.0 );
-		this.matrice = multipliMatrice(matrice, newMatrice);
-	
-		return this.matrice ;
-	}
-	
-	
 }
