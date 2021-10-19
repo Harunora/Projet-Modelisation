@@ -1,13 +1,13 @@
 package graph;
 
 public abstract class Rotation {
-	protected Matrice matrice;
+	protected Matrice mcourante;
 	public Rotation(Matrice m) {
-		matrice = m;
+		mcourante = m;
 	}
 	
 	public abstract Matrice rotate(double sensibility);
-	protected  Matrice multipliMatrice(Matrice mcourante , Matrice mconverter) {
+	public  Matrice multipliMatrice(Matrice mconverter) {
 		Matrice mConverted = new Matrice(mcourante.getTaille(), mcourante.getTaille());
 		double dx = 0.0;
 		double dy = 0.0;
@@ -36,10 +36,10 @@ public abstract class Rotation {
 						dv += mconverter.getV(j) * mcourante.getZ(i);
 						break;
 					case 3:
-						dx += mconverter.getX(j) * mcourante.getZ(i);
-						dy += mconverter.getY(j) * mcourante.getZ(i);
-						dz += mconverter.getZ(j) * mcourante.getZ(i);
-						dv += mconverter.getV(j) * mcourante.getZ(i);
+						dx += mconverter.getX(j) * mcourante.getV(i);
+						dy += mconverter.getY(j) * mcourante.getV(i);
+						dz += mconverter.getZ(j) * mcourante.getV(i);
+						dv += mconverter.getV(j) * mcourante.getV(i);
 						break;
 				}
 			}
