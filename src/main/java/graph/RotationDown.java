@@ -15,9 +15,9 @@ public class RotationDown extends Rotation {
 		newMatrice.add(0.0, Math.cos(sensibility), Math.sin(sensibility), 0);
 		newMatrice.add(0.0, (-1.0) * Math.sin(sensibility), Math.cos(sensibility), 0);
 		newMatrice.add(0.0, 0.0, 0.0, 1.0);
-		this.matrice = multipliMatrice(matrice, newMatrice);
+		this.mcourante = multipliMatrice(newMatrice);
 
-		return matrice;
+		return mcourante;
 
 	}
 
