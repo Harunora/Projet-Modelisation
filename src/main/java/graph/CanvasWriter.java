@@ -33,8 +33,9 @@ public class CanvasWriter {
 			double[] i2=this.y.get(i);
 			
 			graphicContext.strokePolygon(i1, i2, i1.length);
-			graphicContext.setFill(null);
-			graphicContext.fillPolygon(i1, i2,i1.length);
+			
+			//graphicContext.setFill(null);
+			//graphicContext.fillPolygon(i1, i2,i1.length);
 		}
 	}
 	

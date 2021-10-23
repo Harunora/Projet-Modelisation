@@ -34,6 +34,9 @@ public class MainControler implements Initializable {
     TreeView<String> TV;
     
     @FXML
+    Canvas canvas;
+    
+    @FXML
 
     public File current = null;
     public Stage stage = new Stage();
@@ -78,9 +81,10 @@ public class MainControler implements Initializable {
 			
 		});
         
-        File test= new File("data/test.ply");
+        File test= new File("data/cow.ply");
+        
         FileReader fr=new FileReader();
-		//CanvasWriter cw = new CanvasWriter(canvas.getGraphicsContext2D(),fr.read(test));
+		CanvasWriter cw = new CanvasWriter(canvas,fr.read(test));
 
     }
     
