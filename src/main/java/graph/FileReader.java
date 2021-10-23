@@ -13,7 +13,7 @@ public class FileReader {
 	private int nbFaces = 0,nbSommets = 0;
 	private List<Sommet> sommets = new ArrayList<Sommet>();
 	private List<Face>faces = new ArrayList<Face>();
-	private Matrice matrice = new Matrice();
+	Matrice matrice;
 
 
 
@@ -26,6 +26,7 @@ public class FileReader {
 			{
 				actual = actualNext(scanner);
 				startFile(scanner);
+				matrice = new Matrice(nbSommets, nbFaces);
 				readSommet(nbSommets, sommets, scanner);
 				readFace(nbFaces, sommets, faces, scanner);	
 			}
@@ -33,8 +34,7 @@ public class FileReader {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
-		System.out.println(nbFaces);
-		return  new Graph(nbFaces, faces);
+		return  new Graph(nbFaces, faces, matrice);
 	}
 
 
@@ -76,13 +76,11 @@ public class FileReader {
 			int nb = Integer.parseInt(lineToken.nextToken());
 			for(int j = 0; j<nb; j++) {
 				listIdxSommet.add(Integer.parseInt(lineToken.nextToken()));
-				System.out.println(listIdxSommet);
 			}
 			for(int j = 0; j< nb; j++) {
 				listSommetTmp.add(sommets.get(listIdxSommet.get(j)));
 			}
 			faceAdd(faces, listSommetTmp, lineToken, nb);
-			
 		}
 	}
 
@@ -92,12 +90,11 @@ public class FileReader {
 			Color colorTmp = new Color(rgbTab);
 			Face faceTmp = new Face(nb,listSommetTmp ,colorTmp);
 			faces.add(faceTmp);
-			matrice.add(faceTmp);
 		}else {
 			Face faceTmp = new Face(nb,listSommetTmp);
 			faces.add(faceTmp);
-			matrice.add(faceTmp);
 		}
+		
 		
 	}
 
@@ -112,6 +109,7 @@ public class FileReader {
 			double[] tabXyz = addXyz(s1);
 			Sommet tmp = new Sommet(tabXyz);
 			sommets.add(tmp);
+			matrice.add(tmp);
 		}
 	}
 

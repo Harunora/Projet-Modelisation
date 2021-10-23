@@ -15,6 +15,7 @@ class FileReaderTest {
 	
 	Graph implementation() {
 		List<Face> f = new ArrayList<Face>();
+		Matrice matrice;
 		Sommet s0 = new Sommet(0,0,0);
 		Sommet s1 = new Sommet(0,0,1);
 		Sommet s2 = new Sommet(0,1,1);
@@ -59,7 +60,8 @@ class FileReaderTest {
 		f.add(new Face(4,listSommet4));
 		f.add(new Face(4,listSommet5));
 		f.add(new Face(4,listSommet6));
-		return new Graph(6,f);
+		matrice = new Matrice(7, 6);
+		return new Graph(6,f, matrice);
 	}
 	
 	@Test

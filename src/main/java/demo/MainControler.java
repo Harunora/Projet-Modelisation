@@ -34,7 +34,6 @@ public class MainControler implements Initializable {
     TreeView<String> TV;
     
     @FXML
-    Canvas canvas;
 
     public File current = null;
     public Stage stage = new Stage();
