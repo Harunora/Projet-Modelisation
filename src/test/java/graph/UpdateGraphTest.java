@@ -8,7 +8,7 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
-class FileReaderTest {
+class UpdateGraphTest {
 	String myPath = System.getProperty("user.dir")+File.separator+"data"+File.separator;
 	File file = new File(myPath+"test.ply");
 	File file2 = new File(myPath+"apple.ply");
@@ -61,88 +61,31 @@ class FileReaderTest {
 		f.add(new Face(4,listSommet5));
 		f.add(new Face(4,listSommet6));
 		matrice = new Matrice(7, 6);
-		return new Graph(6,f, matrice, null);
+		List<String> string = new ArrayList<String>();
+		string.add("4 0 1 2 3\n");
+		string.add("4 7 6 5 4\n");
+		string.add("4 0 4 5 1\n");
+		string.add("4 1 5 6 2\n");
+		string.add("4 2 6 7 3\n");
+		string.add("4 3 7 4 0\n");
+		return new Graph(6,f, matrice, string);
 	}
-	
 	@Test
-	void testNbFaces() {
-		//int nbFaces = 6;
+	void testString() {
 		FileReader r = new FileReader();
 		Graph attendu = implementation();
 		Graph obtenu = r.read(file);
-		assertEquals(attendu.getNbFaces(), obtenu.getNbFaces());
+		assertEquals(attendu.getSommetsDeFaces(), obtenu.getSommetsDeFaces());
 	}
+	
 	@Test
-	void testNbSommets() {
+	void testUpdate1() {
 		FileReader r = new FileReader();
+		UpdateGraph u = new UpdateGraph(); 
 		Graph attendu = implementation();
-		Graph obtenu = r.read(file);
-		assertEquals(attendu.getFaces().get(0).getNbSommet(), obtenu.getFaces().get(0).getNbSommet());
-	}
-	@Test
-	void testFace1() {
-		FileReader r = new FileReader();
-		Graph attendu = implementation();
-		Graph obtenu = r.read(file);
-		assertEquals(attendu.getFaces().get(0).toString(), obtenu.getFaces().get(0).toString());
-	}
-	
-	@Test
-	void testFace2() {
-		FileReader r = new FileReader();
-		Graph attendu = implementation();
-		Graph obtenu = r.read(file);
-		assertEquals(attendu.getFaces().get(1).toString(), obtenu.getFaces().get(1).toString());
-	}
-	
-	@Test
-	void testSommet1() {
-		FileReader r = new FileReader();
-		Graph attendu = implementation();
-		Graph obtenu = r.read(file);
-		assertEquals(attendu.getFaces().get(1).getSommets().toString(), obtenu.getFaces().get(1).getSommets().toString());
-	}
-	
-	@Test
-	void testSommet2() {
-		FileReader r = new FileReader();
-		Graph attendu = implementation();
-		Graph obtenu = r.read(file);
-		assertEquals(attendu.getFaces().get(3).getSommets().toString(), obtenu.getFaces().get(3).getSommets().toString());
-	}
-	
-	@Test
-	void testGraph() {
-		FileReader r = new FileReader();
-		Graph attendu = implementation();
-		Graph obtenu = r.read(file);
-		assertEquals(attendu.toString(), obtenu.toString());
-	}
-	
-	@Test
-	void testNbFacesEF() {
-		FileReader r = new FileReader();
-		Graph obtenu = r.read(file2);
-		int attendu = 1704;
-		assertEquals(attendu, obtenu.getNbFaces());
-		
-	}
-	
-	@Test
-	void testNbSommetsFileReader() {
-		FileReader r = new FileReader();
-		Graph obtenu = r.read(file2);
-		int attendu = 3;
-		assertEquals(attendu, obtenu.getNbSommet());
-	}
-	
-	
-	@Test
-	void testSizeSommets() {
-		FileReader r = new FileReader();
-		Graph obtenu = r.read(file);
-		int attendu = 6;
-		assertEquals(attendu, obtenu.getFaces().size());
+		Graph old = r.read(file);
+		Graph obtenu = u.Update(old);
+		assertEquals(attendu.getSommetsDeFaces(), obtenu.getSommetsDeFaces());
 	}
 
 }
