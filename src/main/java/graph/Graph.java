@@ -18,6 +18,10 @@ public class Graph {
 		this(nbFace, new ArrayList<Face>());
 	}
 	*/
+	public Face getFace(int i) {
+		return this.faces.get(i);
+	}
+	
 	public int getNbSommet() {
 		return this.faces.get(0).getNbSommet();
 	}
