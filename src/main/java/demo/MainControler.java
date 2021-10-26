@@ -16,19 +16,20 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TreeView;
+import javafx.scene.layout.HBox;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
 
 public class MainControler implements Initializable {
     @FXML
-    Button loadfolder, btreebase , baide, btop, bright, bleft, bbot,brechargeCanvas;
+    Button loadfolder, btreebase , baide, btop, bright, bleft, bbot, bturnaroundleft, bturnaroundright, btop1, bright1, bleft1, bbot1, bturnaroundleft1, bturnaroundright1, brechargeCanvas;
     
     @FXML
-    Slider senslider;
+    Slider sensliderRot, sensliderTrans;
     
     @FXML
-    TextField tfvalue;
+    TextField tfvalueRot, tfvalueTrans, tfvalueHomo;
     
     @FXML
     TreeView<String> TV;
@@ -37,6 +38,7 @@ public class MainControler implements Initializable {
     Canvas canvas;
     
     @FXML
+    HBox hcontainerCanvas;
     
     public File current = null;
     public Stage stage = new Stage();

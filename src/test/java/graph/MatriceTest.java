@@ -101,7 +101,7 @@ class MatriceTest {
 		assertEquals(attendu.getFaces().get(3).getSommets().toString(), obtenu.getFaces().get(3).getSommets().toString());
 		System.out.println("attendu :" +attendu.getFaces().get(3).getSommets().toString());
 		System.out.println("obtenu  :" +obtenu.getFaces().get(3).getSommets().toString());
-		System.out.println("obtenu matrice :" +obtenu.matrice);
+		System.out.println("obtenu matrice :" +obtenu.getMatrice());
 	}
 
 
