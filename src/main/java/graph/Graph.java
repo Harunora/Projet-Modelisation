@@ -7,11 +7,13 @@ public class Graph {
 	private int nbFaces;
 	private List<Face> faces;
 	private Matrice matrice;
+	private List<String> sommetsDeFaces;
 	
-	public Graph(int nbFace, List<Face> faces, Matrice matrice) {
+	public Graph(int nbFace, List<Face> faces, Matrice matrice, List<String> sommetDeFaces) {
 		this.matrice = matrice;
 		this.nbFaces = nbFace;
 		this.faces = faces;
+		this.sommetsDeFaces = sommetDeFaces;
 	}
 	/*
 	public Graph(int nbFace) {
@@ -61,5 +63,12 @@ public class Graph {
 	
 	public double getFaceZ(int i , int j) {
 		return this.faces.get(i).getSommets().get(j).getZ();
+	}
+	public String getSommetsDeFaces(int i) {
+		return sommetsDeFaces.get(i);
+	}
+	
+	public List<String> getSommetsDeFaces() {
+		return sommetsDeFaces;
 	}
 }

@@ -13,6 +13,7 @@ public class FileReader {
 	private int nbFaces = 0,nbSommets = 0;
 	private List<Sommet> sommets = new ArrayList<Sommet>();
 	private List<Face>faces = new ArrayList<Face>();
+	private List<String> sommetsDeFaces = new ArrayList<String>();
 	Matrice matrice;
 
 
@@ -28,13 +29,13 @@ public class FileReader {
 				startFile(scanner);
 				matrice = new Matrice(nbSommets, nbFaces);
 				readSommet(nbSommets, sommets, scanner);
-				readFace(nbFaces, sommets, faces, scanner);	
+				readFace(nbFaces, sommets, faces, sommetsDeFaces, scanner);	
 			}
 			scanner.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
-		return  new Graph(nbFaces, faces, matrice);
+		return  new Graph(nbFaces, faces, matrice, sommetsDeFaces);
 	}
 
 
@@ -67,9 +68,10 @@ public class FileReader {
 		return actual;
 	}
 
-	private void readFace(int nbFaces, List<Sommet> sommets, List<Face> faces, Scanner scanner) {
+	private void readFace(int nbFaces, List<Sommet> sommets, List<Face> faces,List<String> stringFace, Scanner scanner) {
 		for(int i = 0; i<nbFaces; i++) {
 			actual = actualNext(scanner);
+			stringFace.add(actual);
 			List<Sommet> listSommetTmp = new ArrayList<Sommet>();
 			List<Integer> listIdxSommet = new ArrayList<Integer>();
 			StringTokenizer lineToken = new StringTokenizer(actual);
