@@ -42,8 +42,8 @@ public class CanvasWriter {
 	public void writeOnCanvas() {
 		for(int i=0;i<x.size();i++) {
 			graphicContext.strokePolygon(this.x.get(i),this.y.get(i), this.y.get(i).length);
-			//graphicContext.setFill(null);
-			//graphicContext.fillPolygon(i1, i2,i1.length);
+			graphicContext.setFill(javafx.scene.paint.Color.RED);
+			graphicContext.fillPolygon(this.x.get(i),this.y.get(i), this.y.get(i).length);
 		}
 	}
 	

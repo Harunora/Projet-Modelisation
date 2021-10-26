@@ -80,11 +80,11 @@ public class MainControler implements Initializable {
 			}
 			
 		});
-
-        FileReader fr=new FileReader();
+        
         File test= new File("data/apple.ply");
+        FileReader fr=new FileReader();
 		CanvasWriter cw = new CanvasWriter(canvas,fr.read(test));
-		cw.changeHomothesie(1000);
+		cw.changeHomothesie(2000);
 
         
         brechargeCanvas.setOnAction(new EventHandler<ActionEvent>() {
