@@ -17,6 +17,9 @@ public class CanvasWriter {
 	List<double[]> x;
 	List<double[]> y;
 	
+	double height;
+	double width;
+	
 	int homothesie=100;
 	
 	
@@ -25,7 +28,8 @@ public class CanvasWriter {
 		y=new ArrayList<double[]>();
 		canvas=c;
 		graphicContext=c.getGraphicsContext2D();
-		
+		width=c.getWidth()/2;
+		height=c.getHeight()/2;
 		listface=lf;
 		useGraph();
 	}
@@ -48,8 +52,8 @@ public class CanvasWriter {
 			double[] i1=new double[this.listface.getFace(i).nbSommet];
 			double[] i2=new double[this.listface.getFace(i).nbSommet];
 			for(int j=0;j<this.listface.getFace(i).nbSommet;j++) {
-				i1[j]=this.listface.getFace(i).sommets.get(j).getX()*homothesie+canvas.getHeight()/2;
-				i2[j]=this.listface.getFace(i).sommets.get(j).getY()*homothesie+canvas.getWidth()/2; 
+				i1[j]=this.listface.getFace(i).sommets.get(j).getX()*homothesie+height;
+				i2[j]=this.listface.getFace(i).sommets.get(j).getY()*homothesie+width; 
 			}
 			
 			this.x.add(i1);
