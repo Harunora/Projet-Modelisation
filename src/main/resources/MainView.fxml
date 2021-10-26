@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.canvas.Canvas?>
 <?import javafx.scene.control.Button?>
@@ -11,32 +16,99 @@
 <?import javafx.scene.control.TreeView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="demo.MainControler">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="500.0" minWidth="648.0" prefHeight="500.0" prefWidth="648.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="demo.MainControler">
    <children>
       <SplitPane cacheShape="false" centerShape="false" dividerPositions="0.2508361204013378" focusTraversable="false" prefHeight="500.0" prefWidth="600.0" scaleShape="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+          <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="200.0" minHeight="160.0" minWidth="100.0" prefHeight="160.0" prefWidth="100.0">
                <children>
                   <Button fx:id="loadfolder" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="40.0" prefWidth="63.0" text="Load Folder" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="56.0" AnchorPane.topAnchor="0.0" />
-                  <TreeView fx:id="TV" layoutY="54.0" prefHeight="459.0" prefWidth="121.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0" />
+                  <TreeView fx:id="TV" layoutY="54.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="459.0" prefWidth="121.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0" />
                   <Button fx:id="btreebase" layoutX="63.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="63.0" text="Base" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="-Infinity" minWidth="-Infinity">
                <children>
-                  <ToolBar prefHeight="40.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                    <items>
-                        <Label prefHeight="15.0" prefWidth="80.0" text="Sensibilité" textAlignment="CENTER" />
-                        <Slider fx:id="senslider" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="117.0" />
-                        <TextField fx:id="tfvalue" prefHeight="25.0" prefWidth="56.0" text="Valeur" />
-                        <Button fx:id="bleft" mnemonicParsing="false" text="←" />
-                        <Button fx:id="btop" mnemonicParsing="false" text="↑" />
-                        <Button fx:id="bright" mnemonicParsing="false" text="→" />
-                        <Button fx:id="bbot" mnemonicParsing="false" text="↓" />
-                        <Button fx:id="baide" mnemonicParsing="false" text="?" textAlignment="CENTER" />
-                    </items>
-                  </ToolBar>
-                  <Canvas fx:id="canvas" height="459.0" layoutX="171.0" layoutY="198.0" width="471.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="39.0" />
+                  <TabPane prefHeight="75.0" prefWidth="471.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <tabs>
+                        <Tab closable="false" text="Rotation">
+                           <content>
+                              <AnchorPane>
+                                 <children>
+                                    <ToolBar prefHeight="40.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <items>
+                                          <Label prefHeight="15.0" prefWidth="80.0" text="Sensibilité" textAlignment="CENTER" />
+                                          <Slider fx:id="sensliderRot" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="117.0" />
+                                          <TextField fx:id="tfvalueRot" prefHeight="25.0" prefWidth="56.0" text="Valeur" />
+                                          <Button fx:id="bleft" mnemonicParsing="false" text="←" />
+                                          <Button fx:id="btop" mnemonicParsing="false" text="↑" />
+                                          <Button fx:id="bright" mnemonicParsing="false" text="→" />
+                                          <Button fx:id="bbot" mnemonicParsing="false" text="↓" />
+                                          <Button fx:id="bturnaroundleft" mnemonicParsing="false" text="↰" textAlignment="CENTER" />
+                                          <Button fx:id="bturnaroundright" layoutX="407.0" layoutY="13.0" mnemonicParsing="false" text="↱" textAlignment="CENTER" />
+                                      </items>
+                                    </ToolBar>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab closable="false" text="Translation">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <ToolBar prefHeight="42.0" prefWidth="480.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <items>
+                                          <Label prefHeight="15.0" prefWidth="80.0" text="Sensibilité" textAlignment="CENTER" />
+                                          <Slider fx:id="sensliderTrans" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="117.0" />
+                                          <TextField fx:id="tfvalueTrans" prefHeight="25.0" prefWidth="56.0" text="Valeur" />
+                                          <Button fx:id="bleft1" mnemonicParsing="false" text="←" />
+                                          <Button fx:id="btop2" mnemonicParsing="false" text="↑" />
+                                          <Button fx:id="bright2" mnemonicParsing="false" text="→" />
+                                          <Button fx:id="bbot2" mnemonicParsing="false" text="↓" />
+                                          <Button fx:id="bturnaroundleft1" mnemonicParsing="false" text="↰" textAlignment="CENTER" />
+                                          <Button fx:id="bturnaroundright1" layoutX="407.0" layoutY="13.0" mnemonicParsing="false" text="↱" textAlignment="CENTER" />
+                                       </items>
+                                    </ToolBar>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                        <Tab closable="false" text="Homothétie">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <ToolBar prefHeight="42.0" prefWidth="480.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <items>
+                                          <Label prefHeight="15.0" prefWidth="80.0" text="Sensibilité" textAlignment="CENTER" />
+                                          <Slider fx:id="sensliderHomo" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="117.0" />
+                                          <TextField fx:id="tfvalueHomo" prefHeight="25.0" prefWidth="97.0" text="Valeur" />
+                                       </items>
+                                    </ToolBar>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                        <Tab closable="false" text="Aide &amp; recharger">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <ToolBar layoutY="1.0" prefHeight="40.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <items>
+                                        <Button fx:id="baide" mnemonicParsing="false" text="Afficher la fenetre d'aide" />
+                                          <Button fx:id="brechargeCanvas" mnemonicParsing="false" text="Recharger après la redimention" />
+                                      </items>
+                                    </ToolBar>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                     </tabs>
+                  </TabPane>
+                  <HBox layoutY="74.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <children>
+                        <Canvas fx:id="canvas" height="424.0" layoutX="171.0" layoutY="74.0" width="471.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="74.0" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
                </children>
             </AnchorPane>
         </items>
