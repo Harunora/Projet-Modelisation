@@ -81,10 +81,11 @@ public class MainControler implements Initializable {
 			
 		});
         
-        File test= new File("data/cow.ply");
+        File test= new File("data/apple.ply");
         
         FileReader fr=new FileReader();
 		CanvasWriter cw = new CanvasWriter(canvas,fr.read(test));
+		cw.changeHomothesie(2000);
 
     }
     
