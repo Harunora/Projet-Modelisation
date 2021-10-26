@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Graph {
-	int nbFaces;
-	List<Face> faces;
-	Matrice matrice;
+	private int nbFaces;
+	private List<Face> faces;
+	private Matrice matrice;
 	
 	public Graph(int nbFace, List<Face> faces, Matrice matrice) {
 		this.matrice = matrice;
@@ -41,5 +41,21 @@ public class Graph {
 		}
 		res+= this.faces.get(this.nbFaces-1) + " ]";
 		return res;
+	}
+	
+	public Matrice getMatrice() {
+		return this.matrice;
+	}
+	
+	public double getFaceX(int i , int j) {
+		return this.faces.get(i).getSommets().get(j).getX();
+	}
+	
+	public double getFaceY(int i , int j) {
+		return this.faces.get(i).getSommets().get(j).getY();
+	}
+	
+	public double getFaceZ(int i , int j) {
+		return this.faces.get(i).getSommets().get(j).getZ();
 	}
 }
