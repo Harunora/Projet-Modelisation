@@ -22,7 +22,7 @@ import javafx.stage.Stage;
 
 public class MainControler implements Initializable {
     @FXML
-    Button loadfolder, btreebase , baide, btop, bright, bleft, bbot;
+    Button loadfolder, btreebase , baide, btop, bright, bleft, bbot,brechargeCanvas;
     
     @FXML
     Slider senslider;
@@ -37,7 +37,7 @@ public class MainControler implements Initializable {
     Canvas canvas;
     
     @FXML
-
+    
     public File current = null;
     public Stage stage = new Stage();
 
@@ -80,13 +80,23 @@ public class MainControler implements Initializable {
 			}
 			
 		});
-        
-        File test= new File("data/apple.ply");
-        
-        FileReader fr=new FileReader();
-		CanvasWriter cw = new CanvasWriter(canvas,fr.read(test));
-		cw.changeHomothesie(2000);
 
+        FileReader fr=new FileReader();
+        File test= new File("data/apple.ply");
+		CanvasWriter cw = new CanvasWriter(canvas,fr.read(test));
+		cw.changeHomothesie(1000);
+
+        
+        brechargeCanvas.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent e) {
+				
+			}
+			
+		});
+        
+        
+        
     }
     
  

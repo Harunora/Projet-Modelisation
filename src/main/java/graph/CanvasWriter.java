@@ -20,7 +20,7 @@ public class CanvasWriter {
 	double height;
 	double width;
 	
-	int homothesie=100;
+	public int homothesie=100;
 	
 	
 	public CanvasWriter(Canvas c, Graph lf) {
