@@ -104,7 +104,7 @@
                         </Tab>
                      </tabs>
                   </TabPane>
-                  <HBox layoutY="74.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                  <HBox fx:id="hcontainerCanvas" layoutY="74.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                      <children>
                         <Canvas fx:id="canvas" height="424.0" layoutX="171.0" layoutY="74.0" width="471.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="74.0" HBox.hgrow="ALWAYS" />
                      </children>
