@@ -31,7 +31,7 @@ class MatriceMultiplicationTest {
 		res.add(3.0, 6.0, 6.0, 3.0);
 		res.add(4.0, 8.0, 8.0, 4.0);
 		
-		Rotation r1 = new RotationUp(m1);
+		Rotation r1 = new RotationUp(m1 , null);
 		Matrice sol = r1.multipliMatrice(m2);
 		assertEquals(sol.toString() , res.toString());	
 	}
@@ -61,7 +61,7 @@ class MatriceMultiplicationTest {
 		res.add(5.0, 10.0, 10.0, 5.0);
 		res.add(6.0, 12.0, 12.0, 6.0);
 		
-		Rotation r1 = new RotationUp(m1);
+		Rotation r1 = new RotationUp(m1, null);
 		Matrice sol = r1.multipliMatrice(m2);
 		
 		assertEquals(sol.toString() , res.toString());	
@@ -94,7 +94,7 @@ class MatriceMultiplicationTest {
 		res.add(7.0, 5.0, 5.0, 1.0);
 		res.add(2.0, 4.5, 10.5, 1.0);
 		
-		Rotation r1 = new RotationUp(m1);
+		Rotation r1 = new RotationUp(m1, null);
 		Matrice sol = r1.multipliMatrice(m2);
 		assertEquals(sol.toString() , res.toString());	
 	}
