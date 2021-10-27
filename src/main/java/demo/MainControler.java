@@ -16,6 +16,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TreeView;
+import javafx.scene.input.DragEvent;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.DirectoryChooser;
@@ -26,7 +29,7 @@ public class MainControler implements Initializable {
     Button loadfolder, btreebase , baide, btop, bright, bleft, bbot, bturnaroundleft, bturnaroundright, btop1, bright1, bleft1, bbot1, bturnaroundleft1, bturnaroundright1, brechargeCanvas;
     
     @FXML
-    Slider sensliderRot, sensliderTrans;
+    Slider sensliderRot, sensliderTrans,sensliderHomo;
     
     @FXML
     TextField tfvalueRot, tfvalueTrans, tfvalueHomo;
@@ -86,9 +89,32 @@ public class MainControler implements Initializable {
         File test= new File("data/apple.ply");
         FileReader fr=new FileReader();
 		CanvasWriter cw = new CanvasWriter(canvas,fr.read(test));
-		cw.changeHomothesie(2000);
 
-        
+
+		btop.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent e) {
+				if(cw.homothesie<0) {
+					cw.changeHomothesie(cw.homothesie-50);
+				}
+				
+			}
+		});
+		
+		bbot.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent e) {
+				if(cw.homothesie<0) {
+					cw.changeHomothesie(cw.homothesie+50);
+					}
+				else {
+					System.out.println("stop");
+				}
+			}
+			
+		});
+		
+		
         brechargeCanvas.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent e) {
