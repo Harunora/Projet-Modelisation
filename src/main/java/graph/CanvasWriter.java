@@ -57,7 +57,8 @@ public class CanvasWriter {
 	}
 
 	public void useGraph() {
-		
+		this.x.clear();
+		this.y.clear();
 		for(int i=0;i<listface.getNbFaces();i++) {
 			double[] i1=new double[this.listface.getFace(i).nbSommet];
 			double[] i2=new double[this.listface.getFace(i).nbSommet];
