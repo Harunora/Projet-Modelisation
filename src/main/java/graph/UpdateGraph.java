@@ -15,8 +15,8 @@ public class UpdateGraph {
 
 
 
-	public Graph Update(Graph graph) {
-		matrice = graph.getMatrice();
+	public Graph Update(Graph graph, Matrice ma) {
+		matrice = ma;
 		nbFaces = graph.getNbFaces();
 		sommetsDeFaces = graph.getSommetsDeFaces();
 		for(int i = 0; i<matrice.taille; i++) {
