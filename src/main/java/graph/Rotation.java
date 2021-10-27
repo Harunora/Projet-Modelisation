@@ -2,8 +2,10 @@ package graph;
 
 public abstract class Rotation {
 	protected Matrice mcourante;
-	public Rotation(Matrice m) {
+	protected Rotation r;
+	public Rotation(Matrice m, Rotation r) {
 		mcourante = m;
+		this.r = r;
 	}
 	
 	public abstract Matrice rotate(double sensibility);

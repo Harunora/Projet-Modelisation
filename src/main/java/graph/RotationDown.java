@@ -2,8 +2,8 @@ package graph;
 
 public class RotationDown extends Rotation {
 
-	public RotationDown(Matrice m) {
-		super(m);
+	public RotationDown(Matrice m, Rotation r) {
+		super(m, r);
 		// TODO Auto-generated constructor stub
 	}
 

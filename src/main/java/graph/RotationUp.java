@@ -2,8 +2,8 @@ package graph;
 
 public class RotationUp extends Rotation {
 
-	public RotationUp(Matrice m) {
-		super(m);
+	public RotationUp(Matrice m, Rotation r) {
+		super(m, r);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -12,8 +12,8 @@ public class RotationUp extends Rotation {
 		// a regarder
 		Matrice newMatrice = new Matrice(4, 4);
 		newMatrice.add(1.0, 0.0, 0.0, 0.0);
-		newMatrice.add(0.0, Math.cos(sensibility), Math.sin(sensibility), 0);
-		newMatrice.add(0.0, (-1.0) * Math.sin(sensibility), Math.cos(sensibility), 0);
+	    newMatrice.add(0.0, Math.cos(sensibility),(-1.0)*Math.sin(sensibility), 0);
+		newMatrice.add(0.0, Math.sin(sensibility), Math.cos(sensibility), 0);
 		newMatrice.add(0.0, 0.0, 0.0, 1.0);
 		this.mcourante = multipliMatrice( newMatrice);
 
