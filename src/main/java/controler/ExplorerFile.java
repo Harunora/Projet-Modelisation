@@ -1,17 +1,12 @@
-package demo;
+package controler;
 
 import java.io.File;
 import java.io.FileFilter;
 
 import graph.FileReader;
 import graph.Graph;
-import javafx.scene.control.Alert;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
-import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.TableView;
-import javafx.stage.DirectoryChooser;
-import javafx.stage.Stage;
 
 public class ExplorerFile {
 	private TreeView<String> tree;
@@ -65,7 +60,7 @@ public class ExplorerFile {
 		}
 		return root;
 	}
-	public void getFile(TreeView<String> tV) {
+	public File getFile(TreeView<String> tV) {
 		tV.getSelectionModel().selectedItemProperty().addListener((v, oldValue, newValue) -> {
 			if (newValue != null) {
 				String s = ((TreeItem<String>) newValue).getValue();
@@ -80,12 +75,9 @@ public class ExplorerFile {
 			System.out.println(graph.getNbFaces());
 			System.out.println("test");
 		});
-	}
-
-	public File getCurrent(TreeView<String> tv) {
-		getFile(tv);
 		return current;
 	}
+	
 	public void setCurrent(File current) {
 		this.current = current;
 	}

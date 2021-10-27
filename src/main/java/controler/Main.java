@@ -1,4 +1,4 @@
-package demo;
+package controler;
 
 import java.io.IOException;
 
@@ -17,7 +17,8 @@ public class Main extends Application {
             Parent root = loader.load();
             Scene scene = new Scene(root);
             stage.setScene(scene);
-            stage.setTitle("FXML demo");
+            stage.setResizable(false);
+            stage.setTitle("Modélisateur 3D");
             stage.show();
             
             
