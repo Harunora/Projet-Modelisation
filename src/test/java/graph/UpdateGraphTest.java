@@ -87,5 +87,14 @@ class UpdateGraphTest {
 		Graph obtenu = u.Update(old);
 		assertEquals(attendu.getSommetsDeFaces(), obtenu.getSommetsDeFaces());
 	}
+	
+	@Test
+	void testUpdate2() {
+		FileReader r = new FileReader();
+		UpdateGraph u = new UpdateGraph(); 
+		Graph old = r.read(file2);
+		Graph obtenu = u.Update(old);
+		assertEquals(old.getSommetsDeFaces(), obtenu.getSommetsDeFaces());
+	}
 
 }

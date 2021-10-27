@@ -11,7 +11,7 @@ public class UpdateGraph {
 	private List<Face>faces = new ArrayList<Face>();
 	private List<String> sommetsDeFaces;
 	Matrice matrice;
-
+	int nb,a,b,c,d,r,g,bl;
 
 
 
@@ -31,36 +31,49 @@ public class UpdateGraph {
 
 	private void readFace() {
 		for(int i = 0; i<nbFaces; i++) {
-			StringTokenizer lineToken = new StringTokenizer(sommetsDeFaces.get(i));
-			int nb = Integer.parseInt(lineToken.nextToken());
-			int a = Integer.parseInt(lineToken.nextToken());
-			int b = Integer.parseInt(lineToken.nextToken());
-			int c = Integer.parseInt(lineToken.nextToken());
-			int d = Integer.parseInt(lineToken.nextToken());
-			if(lineToken.hasMoreElements()) {
-				int r = Integer.parseInt(lineToken.nextToken());
-				int g = Integer.parseInt(lineToken.nextToken());
-				int bl = Integer.parseInt(lineToken.nextToken());
-				for(int j = 0; j<nb; j++) {
-					List<Sommet> tmp = new ArrayList<Sommet>();
-					tmp.add(sommets.get(a));
-					tmp.add(sommets.get(b));
-					tmp.add(sommets.get(c));
-					tmp.add(sommets.get(d));
-					Face faceTmp = new Face(nb, tmp,new Color(r,g,bl));
-					faces.add(faceTmp);
-				}
-			}else {
-				for(int j = 0; j<nb; j++) {
-					List<Sommet> tmp = new ArrayList<Sommet>();
-					tmp.add(sommets.get(a));
-					tmp.add(sommets.get(b));
-					tmp.add(sommets.get(c));
-					tmp.add(sommets.get(d));
-					Face faceTmp = new Face(nb, tmp);
-					faces.add(faceTmp);
-				}
+			readNbFace(i);
+		}
+	}
+
+	private void readNbFace(int i) {
+		StringTokenizer lineToken = new StringTokenizer(sommetsDeFaces.get(i));
+		nb = Integer.parseInt(lineToken.nextToken());
+		a = Integer.parseInt(lineToken.nextToken());
+		b = Integer.parseInt(lineToken.nextToken());
+		c = Integer.parseInt(lineToken.nextToken());
+		if(nb==4) {
+			d = Integer.parseInt(lineToken.nextToken());			
+		}
+		if(lineToken.hasMoreElements()) {
+			r = Integer.parseInt(lineToken.nextToken());
+			g = Integer.parseInt(lineToken.nextToken());
+			bl = Integer.parseInt(lineToken.nextToken());
+			for(int j = 0; j<nb; j++) {
+				addFaceColor();
 			}
+		}else {
+			for(int j = 0; j<nb; j++) {
+				List<Sommet> tmp = new ArrayList<Sommet>();
+				addListSommet(tmp);
+				Face faceTmp = new Face(nb, tmp);
+				faces.add(faceTmp);
+			}
+		}
+	}
+
+	private void addFaceColor() {
+		List<Sommet> tmp = new ArrayList<Sommet>();
+		addListSommet(tmp);
+		Face faceTmp = new Face(nb, tmp,new Color(r,g,bl));
+		faces.add(faceTmp);
+	}
+
+	private void addListSommet(List<Sommet> tmp) {
+		tmp.add(sommets.get(a));
+		tmp.add(sommets.get(b));
+		tmp.add(sommets.get(c));
+		if(nb == 4) {
+			tmp.add(sommets.get(d));			
 		}
 	}
 }
