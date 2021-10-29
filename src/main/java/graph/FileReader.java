@@ -19,7 +19,7 @@ public class FileReader {
 
 
 
-	public Graph read(File fileTest) {
+	public UpdateGraph read(File fileTest) {
 		try {
 			FileInputStream file = new FileInputStream(fileTest);
 			Scanner scanner = new Scanner(file);
@@ -35,7 +35,7 @@ public class FileReader {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
-		return  new Graph(nbFaces, faces, matrice, sommetsDeFaces);
+		return  new UpdateGraph(nbFaces, faces, matrice, sommetsDeFaces);
 	}
 
 

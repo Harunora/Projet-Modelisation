@@ -54,4 +54,14 @@ public abstract class Rotation {
 		this.mcourante = mConverted;
 		return mConverted;
 	}
+
+	public Matrice getMcourante() {
+		return mcourante;
+	}
+
+	public void setMcourante(Matrice mcourante) {
+		this.mcourante = mcourante;
+	}
+	
+	
 }

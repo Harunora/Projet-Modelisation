@@ -4,6 +4,7 @@ import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+
 import graph.CanvasWriter;
 import graph.FileReader;
 import graph.Graph;
@@ -20,6 +21,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -51,17 +53,23 @@ public class MainControler implements Initializable {
     @FXML
     HBox hcontainerCanvas;
     
-    public File current = new File("data/test.ply");
+    protected Scene scene;
+    
+    public File current = new File("data/cow.ply");
     FileReader fr=new FileReader();
     CanvasWriter cw = null;
     public Stage stage = new Stage();
-    Graph graphe = fr.read(current);
+    UpdateGraph graphe = fr.read(current);
     UpdateGraph u = new UpdateGraph(graphe.getNbFaces(),graphe.getFaces(), graphe.getMatrice(),graphe.getSommetsDeFaces());
-
-    @Override
+    Matrice tmp = null;
+    Rotation r = null;
+    
+    @SuppressWarnings("incomplete-switch")
+	@Override
     public void initialize(URL location, ResourceBundle resources) {
     	ExplorerFile ef = new ExplorerFile();
     	stage.setResizable(true);
+    	Scene scene  = Main.getScene();
     	
         loadfolder.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
@@ -105,30 +113,33 @@ public class MainControler implements Initializable {
 		
 		cw.changeHomothesie(2000);
 		
+		
+		
+		
 		bright.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
-				System.out.println("avant : "+graphe.getFaceX(0, 2));
-				Rotation r = new RotationRight(u.getMatrice(),null); 
-				Matrice tmp = r.rotate(12);
-				u.update(tmp);
-				System.out.println("pendant : "+graphe.getFaceX(0, 2));
+				r = new RotationRight(graphe.getMatrice(),null); 
+			    r.rotate(Math.PI/100);
+				graphe = fr.read(current);
+				graphe.update(r.getMcourante());
 				cw = new CanvasWriter(canvas, graphe);
-				System.out.println("apres : "+graphe.getFaceX(0, 2));
 			}
 		});
 		bleft.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
 				Rotation r = new RotationLeft(graphe.getMatrice(),null); 
-				Matrice tmp = r.rotate(Math.PI/2.0);
-				u.update(tmp);
+				r.rotate(Math.PI/100);
+				graphe = fr.read(current);
+				graphe.update(r.getMcourante());
 				cw = new CanvasWriter(canvas, graphe);
 			}
 		});
 		bturnaroundleft.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
 				Rotation r = new RotationAroundLeft(graphe.getMatrice(),null); 
-				Matrice tmp = r.rotate(Math.PI/2.0);
-				u.update(tmp);
+				r.rotate(Math.PI/100);
+				graphe = fr.read(current);
+				graphe.update(r.getMcourante());
 				cw = new CanvasWriter(canvas, graphe);
 			}
 		});
@@ -136,24 +147,27 @@ public class MainControler implements Initializable {
 		bturnaroundright.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
 				Rotation r = new RotationAroundRight(graphe.getMatrice(),null); 
-				Matrice tmp = r.rotate(Math.PI/2.0);
-				u.update(tmp);
+				r.rotate(Math.PI/100);
+				graphe = fr.read(current);
+				graphe.update(r.getMcourante());
 				cw = new CanvasWriter(canvas, graphe);
 			}
 		});
 		btop.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
-				Rotation r = new RotationUp(graphe.getMatrice(),null); 
-				Matrice tmp = r.rotate(Math.PI/2.0);
-				u.update(tmp);
+				r = new RotationUp(graphe.getMatrice(),null); 
+				r.rotate(Math.PI/100);
+				graphe = fr.read(current);
+				graphe.update(r.getMcourante());
 				cw = new CanvasWriter(canvas, graphe);
 			}
 		});
 		bbot.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
-				Rotation r = new RotationDown(graphe.getMatrice(),null); 
-				Matrice tmp = r.rotate(Math.PI/2.0);
-				u.update(tmp);
+				r = new RotationDown(graphe.getMatrice(),null); 
+				r.rotate(Math.PI/100);
+				graphe = fr.read(current);
+				graphe.update(r.getMcourante());
 				cw = new CanvasWriter(canvas, graphe);
 			}
 		});
@@ -201,6 +215,57 @@ public class MainControler implements Initializable {
         
     }
     
+    
+    @SuppressWarnings("incomplete-switch")
+	public void setScene (Scene s) {
+    	s.setOnKeyPressed(e->{
+			switch(e.getCode()){
+			case D:
+				r = new RotationRight(graphe.getMatrice(),null); 
+			    r.rotate(Math.PI/100);
+				graphe = fr.read(current);
+				graphe.update(r.getMcourante());
+				cw = new CanvasWriter(canvas, graphe);
+			break;
+			case Q:
+				r = new RotationLeft(graphe.getMatrice(),null); 
+			    r.rotate(Math.PI/100);
+				graphe = fr.read(current);
+				graphe.update(r.getMcourante());
+				cw = new CanvasWriter(canvas, graphe);
+				break;
+			case Z:
+				r = new RotationUp(graphe.getMatrice(),null); 
+			    r.rotate(Math.PI/100);
+				graphe = fr.read(current);
+				graphe.update(r.getMcourante());
+				cw = new CanvasWriter(canvas, graphe);
+				break;
+			case S:
+				r = new RotationDown(graphe.getMatrice(),null); 
+			    r.rotate(Math.PI/100);
+				graphe = fr.read(current);
+				graphe.update(r.getMcourante());
+				cw = new CanvasWriter(canvas, graphe);
+				break;
+			case E:
+				r = new RotationAroundRight(graphe.getMatrice(),null); 
+			    r.rotate(Math.PI/100);
+				graphe = fr.read(current);
+				graphe.update(r.getMcourante());
+				cw = new CanvasWriter(canvas, graphe);
+				break;
+			case A:
+				r = new RotationAroundLeft(graphe.getMatrice(),null); 
+			    r.rotate(Math.PI/100);
+				graphe = fr.read(current);
+				graphe.update(r.getMcourante());
+				cw = new CanvasWriter(canvas, graphe);
+				break;
+			}
+			
+		});
+    }
  
 
 }

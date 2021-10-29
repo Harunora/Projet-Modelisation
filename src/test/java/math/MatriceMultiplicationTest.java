@@ -142,5 +142,25 @@ class MatriceMultiplicationTest {
 		
 	}
 	
+	@Test
+	void testrotate() {
+		Matrice m1 = new Matrice(4,4);
+		m1.add(1.0, 1.0, 1.0, 1.0);
+		m1.add(2.0, 2.0, 2.0, 2.0);
+		m1.add(3.0, 3.0, 3.0, 3.0);
+		m1.add(4.0, 4.0, 4.0, 4.0);
+		
+		System.out.println("avant");
+		System.out.println(m1.toString());
+		Rotation r1 = new RotationUp(m1 , null);
+		Matrice sol = r1.rotate(18);
+		System.out.println("Premiere rotation");
+		System.out.println(sol);
+		System.out.println("Deuxieme r");
+		Rotation r2 = new RotationUp(sol, null);
+		sol = r2.rotate(18);
+		System.out.println(sol);
+	}
+	
 
 }
