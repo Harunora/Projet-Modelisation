@@ -62,8 +62,6 @@
                                           <Button fx:id="btop2" mnemonicParsing="false" text="↑" />
                                           <Button fx:id="bright2" mnemonicParsing="false" text="→" />
                                           <Button fx:id="bbot2" mnemonicParsing="false" text="↓" />
-                                          <Button fx:id="bturnaroundleft1" mnemonicParsing="false" text="↰" textAlignment="CENTER" />
-                                          <Button fx:id="bturnaroundright1" layoutX="407.0" layoutY="13.0" mnemonicParsing="false" text="↱" textAlignment="CENTER" />
                                        </items>
                                     </ToolBar>
                                  </children>

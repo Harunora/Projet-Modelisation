@@ -51,6 +51,7 @@ public abstract class Rotation {
 			dz = 0.0;
 			dv = 0.0;
 		}
+		this.mcourante = mConverted;
 		return mConverted;
 	}
 }

@@ -99,5 +99,48 @@ class MatriceMultiplicationTest {
 		assertEquals(sol.toString() , res.toString());	
 	}
 	
+	@Test
+	void TwoMulitplytest() {
+		Matrice m1 = new Matrice(4,4);
+		Matrice m2 = new Matrice(4,4);
+		Matrice res = new Matrice(4,4);
+		
+		m1.add(1.0, 1.0, 1.0, 1.0);
+		m1.add(2.0, 2.0, 2.0, 2.0);
+		m1.add(3.0, 3.0, 3.0, 3.0);
+		m1.add(4.0, 4.0, 4.0, 4.0);
+		
+		m2.add(1.0, 0.0, 1.0, 0.0);
+		m2.add(0.0, 1.0, 0.0, 0.0);
+		m2.add(0.0, 0.0, 1.0, 0.0);
+		m2.add(0.0, 1.0, 0.0, 1.0);
+		
+		res.add(1.0, 2.0, 2.0, 1.0);
+		res.add(2.0, 4.0, 4.0, 2.0);
+		res.add(3.0, 6.0, 6.0, 3.0);
+		res.add(4.0, 8.0, 8.0, 4.0);
+		
+		Rotation r1 = new RotationUp(m1 , null);
+		Matrice sol = r1.multipliMatrice(m2);
+		assertEquals(sol.toString() , res.toString());	
+		
+		Matrice res2 = new Matrice(4,4);
+		Matrice m3 = new Matrice(4,4);
+		
+		m3.add(1.0, 0.0, 0.0, 1.0);
+		m3.add(0.0, 1.0, 1.0, 0.0);
+		m3.add(0.0, 1.0, 1.0, 0.0);
+		m3.add(1.0, 0.0, 0.0, 1.0);
+		
+		res2.add(2.0, 4.0, 4.0, 2.0);
+		res2.add(4.0, 8.0, 8.0, 4.0);
+		res2.add(6.0, 12.0, 12.0, 6.0);
+		res2.add(8.0, 16.0, 16.0, 8.0);
+	
+		sol = r1.multipliMatrice(m3);
+		assertEquals(sol.toString() , res2.toString());	
+		
+	}
+	
 
 }
