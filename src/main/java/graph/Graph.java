@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Graph {
-	private int nbFaces;
-	private List<Face> faces;
-	private Matrice matrice;
-	private List<String> sommetsDeFaces;
+	protected int nbFaces;
+	protected List<Face> faces;
+	protected Matrice matrice;
+	protected List<String> sommetsDeFaces;
 	
 	public Graph(int nbFace, List<Face> faces, Matrice matrice, List<String> sommetDeFaces) {
 		this.matrice = matrice;

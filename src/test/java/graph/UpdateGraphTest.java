@@ -81,20 +81,33 @@ class UpdateGraphTest {
 	@Test
 	void testUpdate1() {
 		FileReader r = new FileReader();
-		UpdateGraph u = new UpdateGraph(); 
 		Graph attendu = implementation();
 		Graph old = r.read(file);
-		Graph obtenu = u.Update(old);
-		assertEquals(attendu.getSommetsDeFaces(), obtenu.getSommetsDeFaces());
+		UpdateGraph u = new UpdateGraph(old.nbFaces, old.faces, old.matrice, old.sommetsDeFaces); 
+		u.update(old.matrice);
+		assertEquals(attendu.getSommetsDeFaces(), u.getSommetsDeFaces());
 	}
 	
 	@Test
 	void testUpdate2() {
 		FileReader r = new FileReader();
-		UpdateGraph u = new UpdateGraph(); 
-		Graph old = r.read(file2);
-		Graph obtenu = u.Update(old);
-		assertEquals(old.getSommetsDeFaces(), obtenu.getSommetsDeFaces());
+		Graph old = r.read(file);
+		Graph attendu = implementation();
+		UpdateGraph u = new UpdateGraph(old.nbFaces, old.faces, old.matrice, old.sommetsDeFaces); 
+		u.update(old.matrice);
+		assertEquals(attendu.getFace(0).getSommets().get(0).getX(), u.getFace(0).getSommets().get(0).getX());
 	}
+	
+	@Test
+	void testUpdate3() {
+		FileReader r = new FileReader();
+		Graph old = r.read(file);
+		Graph attendu = implementation();
+		UpdateGraph u = new UpdateGraph(old.nbFaces, old.faces, old.matrice, old.sommetsDeFaces); 
+		u.matrice.x[0] = 2;
+		u.update(old.matrice);
+		assertNotEquals(attendu.getFace(0).getSommets().get(0).getX(), u.getFace(0).getSommets().get(0).getX());
+	}
+	
 
 }

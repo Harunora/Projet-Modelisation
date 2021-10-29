@@ -5,28 +5,29 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 
-public class UpdateGraph {
+public class UpdateGraph extends Graph{
+	public UpdateGraph(int nbFace, List<Face> faces, Matrice matrice, List<String> sommetDeFaces) {
+		super(nbFace, faces, matrice, sommetDeFaces);
+
+	}
+	/*
 	private int nbFaces = 0;
-	private List<Sommet> sommets = new ArrayList<Sommet>();
 	private List<Face>faces = new ArrayList<Face>();
 	private List<String> sommetsDeFaces;
 	Matrice matrice;
+	 */
+	private List<Sommet> sommets = new ArrayList<Sommet>();
 	int nb,a,b,c,d,r,g,bl;
 
 
-
-	public Graph Update(Graph graph, Matrice ma) {
+	public void update(Matrice ma) {
 		matrice = ma;
-		nbFaces = graph.getNbFaces();
-		sommetsDeFaces = graph.getSommetsDeFaces();
+		faces.clear();
 		for(int i = 0; i<matrice.taille; i++) {
-			sommets.add(new Sommet(matrice.x[i],matrice.y[i],matrice.z[i]));
+			sommets.add(new Sommet(matrice.getX(i),matrice.getY(i),matrice.getZ(i)));
 		}
 		readFace();	
 
-
-
-		return  new Graph(nbFaces, faces, matrice, sommetsDeFaces);
 	}
 
 	private void readFace() {
@@ -48,16 +49,13 @@ public class UpdateGraph {
 			r = Integer.parseInt(lineToken.nextToken());
 			g = Integer.parseInt(lineToken.nextToken());
 			bl = Integer.parseInt(lineToken.nextToken());
-			for(int j = 0; j<nb; j++) {
-				addFaceColor();
-			}
+			addFaceColor();
+
 		}else {
-			for(int j = 0; j<nb; j++) {
-				List<Sommet> tmp = new ArrayList<Sommet>();
-				addListSommet(tmp);
-				Face faceTmp = new Face(nb, tmp);
-				faces.add(faceTmp);
-			}
+			List<Sommet> tmp = new ArrayList<Sommet>();
+			addListSommet(tmp);
+			Face faceTmp = new Face(nb, tmp);
+			faces.add(faceTmp);
 		}
 	}
 
@@ -66,6 +64,7 @@ public class UpdateGraph {
 		addListSommet(tmp);
 		Face faceTmp = new Face(nb, tmp,new Color(r,g,bl));
 		faces.add(faceTmp);
+		
 	}
 
 	private void addListSommet(List<Sommet> tmp) {

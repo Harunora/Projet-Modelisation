@@ -51,12 +51,12 @@ public class MainControler implements Initializable {
     @FXML
     HBox hcontainerCanvas;
     
-    public File current = new File("data/cow.ply");
+    public File current = new File("data/test.ply");
     FileReader fr=new FileReader();
     CanvasWriter cw = null;
     public Stage stage = new Stage();
-    UpdateGraph u = new UpdateGraph();
     Graph graphe = fr.read(current);
+    UpdateGraph u = new UpdateGraph(graphe.getNbFaces(),graphe.getFaces(), graphe.getMatrice(),graphe.getSommetsDeFaces());
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -78,7 +78,6 @@ public class MainControler implements Initializable {
 					TV.setRoot(ef.getNodesForDirectory(choice));
 				}
 				current = ef.getFile(TV);
-				
 			}
 			
 		});
@@ -100,25 +99,28 @@ public class MainControler implements Initializable {
 			}
     	});
         
-        fr=new FileReader();
-        graphe = fr.read(current);
-        cw = new CanvasWriter(canvas,graphe);
+       // fr=new FileReader();
+       // graphe = fr.read(current);
+        cw = new CanvasWriter(canvas,u);
 		
 		cw.changeHomothesie(2000);
 		
 		bright.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
-				Rotation r = new RotationRight(graphe.getMatrice(),null); 
-				Matrice tmp = r.rotate(18);
-				graphe = u.Update(graphe,tmp);
+				System.out.println("avant : "+graphe.getFaceX(0, 2));
+				Rotation r = new RotationRight(u.getMatrice(),null); 
+				Matrice tmp = r.rotate(12);
+				u.update(tmp);
+				System.out.println("pendant : "+graphe.getFaceX(0, 2));
 				cw = new CanvasWriter(canvas, graphe);
+				System.out.println("apres : "+graphe.getFaceX(0, 2));
 			}
 		});
 		bleft.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
 				Rotation r = new RotationLeft(graphe.getMatrice(),null); 
 				Matrice tmp = r.rotate(Math.PI/2.0);
-				graphe = u.Update(graphe,tmp);
+				u.update(tmp);
 				cw = new CanvasWriter(canvas, graphe);
 			}
 		});
@@ -126,7 +128,7 @@ public class MainControler implements Initializable {
 			public void handle(ActionEvent e) {
 				Rotation r = new RotationAroundLeft(graphe.getMatrice(),null); 
 				Matrice tmp = r.rotate(Math.PI/2.0);
-				graphe = u.Update(graphe,tmp);
+				u.update(tmp);
 				cw = new CanvasWriter(canvas, graphe);
 			}
 		});
@@ -135,7 +137,7 @@ public class MainControler implements Initializable {
 			public void handle(ActionEvent e) {
 				Rotation r = new RotationAroundRight(graphe.getMatrice(),null); 
 				Matrice tmp = r.rotate(Math.PI/2.0);
-				graphe = u.Update(graphe,tmp);
+				u.update(tmp);
 				cw = new CanvasWriter(canvas, graphe);
 			}
 		});
@@ -143,7 +145,7 @@ public class MainControler implements Initializable {
 			public void handle(ActionEvent e) {
 				Rotation r = new RotationUp(graphe.getMatrice(),null); 
 				Matrice tmp = r.rotate(Math.PI/2.0);
-				graphe = u.Update(graphe,tmp);
+				u.update(tmp);
 				cw = new CanvasWriter(canvas, graphe);
 			}
 		});
@@ -151,7 +153,7 @@ public class MainControler implements Initializable {
 			public void handle(ActionEvent e) {
 				Rotation r = new RotationDown(graphe.getMatrice(),null); 
 				Matrice tmp = r.rotate(Math.PI/2.0);
-				graphe = u.Update(graphe,tmp);
+				u.update(tmp);
 				cw = new CanvasWriter(canvas, graphe);
 			}
 		});
@@ -187,8 +189,9 @@ public class MainControler implements Initializable {
 			public void handle(ActionEvent e) {
 				cw = null;
 				current = ef.getFile(TV);
-				cw = new CanvasWriter(canvas,graphe);
+				cw = new CanvasWriter(canvas,u);
 				cw.changeHomothesie(200);
+				System.out.println("refresh");
 				
 			}
 			
