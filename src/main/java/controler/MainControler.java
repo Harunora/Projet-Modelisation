@@ -81,7 +81,7 @@ public class MainControler implements Initializable {
 					Alert alert = new Alert(AlertType.ERROR);
 					alert.setHeaderText("Could not open directory");
 					alert.setContentText("The file is invalid.");
-					alert.showAndWait();				
+					alert.showAndWait();
 				} else {
 					TV.setRoot(ef.getNodesForDirectory(choice));
 				}
@@ -99,7 +99,7 @@ public class MainControler implements Initializable {
 					Alert alert = new Alert(AlertType.ERROR);
 					alert.setHeaderText("Could not open directory");
 					alert.setContentText("The file is invalid.");
-					alert.showAndWait();				
+					alert.showAndWait();
 				} else {
 					TV.setRoot(ef.getNodesForDirectory(directory));
 				}
@@ -122,7 +122,7 @@ public class MainControler implements Initializable {
 			    r.rotate(Math.PI/100);
 				graphe = fr.read(current);
 				graphe.update(r.getMcourante());
-				cw = new CanvasWriter(canvas, graphe);
+				cw.updateCanvasWriter(graphe);
 			}
 		});
 		bleft.setOnAction(new EventHandler<ActionEvent>() {
@@ -131,7 +131,7 @@ public class MainControler implements Initializable {
 				r.rotate(Math.PI/100);
 				graphe = fr.read(current);
 				graphe.update(r.getMcourante());
-				cw = new CanvasWriter(canvas, graphe);
+				cw.updateCanvasWriter(graphe);
 			}
 		});
 		bturnaroundleft.setOnAction(new EventHandler<ActionEvent>() {
@@ -140,7 +140,7 @@ public class MainControler implements Initializable {
 				r.rotate(Math.PI/100);
 				graphe = fr.read(current);
 				graphe.update(r.getMcourante());
-				cw = new CanvasWriter(canvas, graphe);
+				cw.updateCanvasWriter(graphe);
 			}
 		});
 		
@@ -150,7 +150,7 @@ public class MainControler implements Initializable {
 				r.rotate(Math.PI/100);
 				graphe = fr.read(current);
 				graphe.update(r.getMcourante());
-				cw = new CanvasWriter(canvas, graphe);
+				cw.updateCanvasWriter(graphe);
 			}
 		});
 		btop.setOnAction(new EventHandler<ActionEvent>() {
@@ -159,7 +159,7 @@ public class MainControler implements Initializable {
 				r.rotate(Math.PI/100);
 				graphe = fr.read(current);
 				graphe.update(r.getMcourante());
-				cw = new CanvasWriter(canvas, graphe);
+				cw.updateCanvasWriter(graphe);
 			}
 		});
 		bbot.setOnAction(new EventHandler<ActionEvent>() {
@@ -168,7 +168,7 @@ public class MainControler implements Initializable {
 				r.rotate(Math.PI/100);
 				graphe = fr.read(current);
 				graphe.update(r.getMcourante());
-				cw = new CanvasWriter(canvas, graphe);
+				cw.updateCanvasWriter(graphe);
 			}
 		});
 
@@ -225,42 +225,42 @@ public class MainControler implements Initializable {
 			    r.rotate(Math.PI/100);
 				graphe = fr.read(current);
 				graphe.update(r.getMcourante());
-				cw = new CanvasWriter(canvas, graphe);
+				cw.updateCanvasWriter(graphe);
 			break;
 			case Q:
 				r = new RotationLeft(graphe.getMatrice(),null); 
 			    r.rotate(Math.PI/100);
 				graphe = fr.read(current);
 				graphe.update(r.getMcourante());
-				cw = new CanvasWriter(canvas, graphe);
+				cw.updateCanvasWriter(graphe);
 				break;
 			case Z:
 				r = new RotationUp(graphe.getMatrice(),null); 
 			    r.rotate(Math.PI/100);
 				graphe = fr.read(current);
 				graphe.update(r.getMcourante());
-				cw = new CanvasWriter(canvas, graphe);
+				cw.updateCanvasWriter(graphe);
 				break;
 			case S:
 				r = new RotationDown(graphe.getMatrice(),null); 
 			    r.rotate(Math.PI/100);
 				graphe = fr.read(current);
 				graphe.update(r.getMcourante());
-				cw = new CanvasWriter(canvas, graphe);
+				cw.updateCanvasWriter(graphe);
 				break;
 			case E:
 				r = new RotationAroundRight(graphe.getMatrice(),null); 
 			    r.rotate(Math.PI/100);
 				graphe = fr.read(current);
 				graphe.update(r.getMcourante());
-				cw = new CanvasWriter(canvas, graphe);
+				cw.updateCanvasWriter(graphe);
 				break;
 			case A:
 				r = new RotationAroundLeft(graphe.getMatrice(),null); 
 			    r.rotate(Math.PI/100);
 				graphe = fr.read(current);
 				graphe.update(r.getMcourante());
-				cw = new CanvasWriter(canvas, graphe);
+				cw.updateCanvasWriter(graphe);
 				break;
 			}
 			

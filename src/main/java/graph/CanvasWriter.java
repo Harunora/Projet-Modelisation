@@ -8,7 +8,7 @@ import javafx.scene.canvas.GraphicsContext;
 
 public class CanvasWriter {
 
-	Graph listface;
+	public Graph listface;
 	public Canvas canvas;
 	
 	public GraphicsContext graphicContext;
@@ -33,7 +33,11 @@ public class CanvasWriter {
 		useGraph();
 	}
 
-	
+	public void updateCanvasWriter(Graph newGraph){
+		this.listface=newGraph;
+		useGraph();
+	}
+
 	public void changeHomothesie(int i) {
 		homothesie=i;
 		useGraph();
