@@ -107,8 +107,8 @@ public class MainControler implements Initializable {
 			}
     	});
         
-       // fr=new FileReader();
-       // graphe = fr.read(current);
+       fr=new FileReader();
+       graphe = fr.read(current);
         cw = new CanvasWriter(canvas,u);
 		
 		cw.changeHomothesie(2000);
@@ -261,6 +261,7 @@ public class MainControler implements Initializable {
 				graphe = fr.read(current);
 				graphe.update(r.getMcourante());
 				cw.updateCanvasWriter(graphe);
+				
 				break;
 			}
 			
