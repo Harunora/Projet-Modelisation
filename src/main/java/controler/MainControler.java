@@ -261,7 +261,9 @@ public class MainControler implements Initializable {
 				graphe = fr.read(current);
 				graphe.update(r.getMcourante());
 				cw.updateCanvasWriter(graphe);
-				
+				break;
+			case L:
+				cw= new CanvasWriter(canvas, graphe);
 				break;
 			}
 			
