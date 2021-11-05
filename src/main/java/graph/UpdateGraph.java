@@ -10,12 +10,7 @@ public class UpdateGraph extends Graph{
 		super(nbFace, faces, matrice, sommetDeFaces);
 
 	}
-	/*
-	private int nbFaces = 0;
-	private List<Face>faces = new ArrayList<Face>();
-	private List<String> sommetsDeFaces;
-	Matrice matrice;
-	 */
+	
 	private List<Sommet> sommets = new ArrayList<Sommet>();
 	int nb,a,b,c,d,r,g,bl;
 
