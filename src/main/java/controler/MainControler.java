@@ -54,8 +54,9 @@ public class MainControler implements Initializable {
     HBox hcontainerCanvas;
     
     protected Scene scene;
-    
+   
     public File current = new File("data/cow.ply");
+    ExplorerFile ef = new ExplorerFile();
     FileReader fr=new FileReader();
     CanvasWriter cw = null;
     public Stage stage = new Stage();
@@ -63,11 +64,12 @@ public class MainControler implements Initializable {
     UpdateGraph u = new UpdateGraph(graphe.getNbFaces(),graphe.getFaces(), graphe.getMatrice(),graphe.getSommetsDeFaces());
     Matrice tmp = null;
     Rotation r = null;
+
     
     @SuppressWarnings("incomplete-switch")
 	@Override
     public void initialize(URL location, ResourceBundle resources) {
-    	ExplorerFile ef = new ExplorerFile();
+        ef = new ExplorerFile();
     	stage.setResizable(true);
     	Scene scene  = Main.getScene();
     	
@@ -109,7 +111,7 @@ public class MainControler implements Initializable {
         
        fr=new FileReader();
        graphe = fr.read(current);
-        cw = new CanvasWriter(canvas,u);
+        cw = new CanvasWriter(canvas,graphe);
 		
 		cw.changeHomothesie(2000);
 		
@@ -202,8 +204,11 @@ public class MainControler implements Initializable {
 			
 			public void handle(ActionEvent e) {
 				cw = null;
+				System.out.println("File lu:"+ef.getFile(TV));
 				current = ef.getFile(TV);
-				cw = new CanvasWriter(canvas,u);
+				System.out.println("File lu pdv:"+current );
+				graphe = fr.read(current);
+				cw = new CanvasWriter(canvas,fr.read(current));
 				cw.changeHomothesie(200);
 				System.out.println("refresh");
 				
@@ -263,12 +268,12 @@ public class MainControler implements Initializable {
 				cw.updateCanvasWriter(graphe);
 				break;
 			case L:
-				cw= new CanvasWriter(canvas, graphe);
+				cw = new CanvasWriter(canvas,fr.read(current));
 				break;
 			}
 			
 		});
     }
- 
+    
 
 }
