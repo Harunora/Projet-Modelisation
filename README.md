@@ -38,8 +38,8 @@
 - [X] Matrice
 ### C
  
-- [X]Dessiner sur le Canvas
-- [ ]Translation
+- [X] Dessiner sur le Canvas
+- [ ] Translation
 
 ## Difficultés rencontrées
 
