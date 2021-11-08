@@ -7,19 +7,19 @@
 
 ## Fonctionnalités implémentées
 
-- [.] Afficher la liste détaillée des modèles
-- [.] Il est possible de choisir le modèle à visualiser dans la liste
-- [.] Le modèle est chargé et visualisé
-- [.] Message d'erreur en cas d'erreur de format dans le fichier
-- [.] La visualisation est correcte
-- [X] On visualise simultanément trois vues du modèle (de face, de haut, de côté)
-- [.] Rotation
-- [X] Translation ( déplacement dans l'espace )
-- [.] Homotétie ( Agrandire reduire )
+- [X] Afficher la liste détaillée des modèles
+- [X] Il est possible de choisir le modèle à visualiser dans la liste
+- [X] Le modèle est chargé et visualisé
+- [X] Message d'erreur en cas d'erreur de format dans le fichier
+- [X] La visualisation est correcte
+- [ ] On visualise simultanément trois vues du modèle (de face, de haut, de côté)
+- [X] Rotation
+- [ ] Translation ( déplacement dans l'espace )
+- [X] Homotétie ( Agrandire reduire )
 
 ## Autres éléments demandés
 
-- [.] Tests pour les classes de calcul mathématique
+- [X] Tests pour les classes de calcul mathématique
 - [ ] Captures d'écran pour le rendu
 - [ ] Vidéo de présentation du rendu
 - [ ] Respect du format de rendu (cf Moodle)
@@ -28,18 +28,18 @@
 
 ### J
 
-- [.]FXML
-- [.]File Explorer
-- [.]Rotation
+- [X]FXML
+- [X]File Explorer
+- [X]Rotation
 
 ### M
 
-- [.] Lecteur de Fichier .ply
-- [.] Matrice
+- [X] Lecteur de Fichier .ply
+- [X] Matrice
 ### C
  
-- [.]Dessiner sur le Canvas
-- [.]Translation
+- [X]Dessiner sur le Canvas
+- [ ]Translation
 
 ## Difficultés rencontrées
 
