@@ -26,12 +26,16 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBase;
+import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TreeView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.DirectoryChooser;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class MainControler implements Initializable {
@@ -108,6 +112,33 @@ public class MainControler implements Initializable {
 				
 			}
     	});
+        
+        baide.addEventHandler(MouseEvent.MOUSE_CLICKED, e->{
+
+
+			Label secondLabel = new Label("===========================================================================\n"
+					+ "Appuiyer sur la touche L pour lancer en cas de bug \n\n"
+					+ "Si le modèle ne s'affiche pas correctement allez dans source folder -> git -> exemple puis selectionnez le model a afficher\n\n"
+					+ "Le bouton réinitialiser remet le modèle à son état de base\n\n"
+					+ "\n\n\n"
+					+ "");
+
+			StackPane secondaryLayout = new StackPane();
+			secondaryLayout.getChildren().add(secondLabel);
+
+			Scene secondScene = new Scene(secondaryLayout, 630, 200);
+
+			// New window (Stage)
+			Stage newWindow = new Stage();
+			newWindow.setTitle("Aide");
+			newWindow.setScene(secondScene);
+
+			// Specifies the modality for new window.
+			newWindow.initModality(Modality.WINDOW_MODAL);
+
+			newWindow.show();
+
+		});
         
        fr=new FileReader();
        graphe = fr.read(current);
