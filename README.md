@@ -28,9 +28,9 @@
 
 ### J
 
-- [X]FXML
-- [X]File Explorer
-- [X]Rotation
+- [X] FXML
+- [X] File Explorer
+- [X] Rotation
 
 ### M
 
