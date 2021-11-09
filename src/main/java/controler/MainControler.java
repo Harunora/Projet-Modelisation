@@ -211,7 +211,7 @@ public class MainControler implements Initializable {
 			@Override
 			public void handle(ActionEvent e) {
 				if(cw.homothesie<0) {
-					cw.changeHomothesie(cw.homothesie-50);
+					cw.changeHomothesie(cw.homothesie-20);
 				}
 				
 			}
@@ -220,8 +220,8 @@ public class MainControler implements Initializable {
 		bHomomoin.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent e) {
-				if(cw.homothesie<0) {
-					cw.changeHomothesie(cw.homothesie+50);
+				if(cw.homothesie<-21) {
+					cw.changeHomothesie(cw.homothesie+20);
 					}
 				else {
 					System.out.println("stop");
@@ -307,6 +307,18 @@ public class MainControler implements Initializable {
 				current=ef.getFile(TV);
 				graphe = fr.read(current);
 				cw.updateCanvasWriter(graphe);
+				break;
+			
+			case B:
+				if(cw.homothesie<0) {
+					cw.changeHomothesie(cw.homothesie-20);
+				}
+				break;
+				
+			case N:
+				if(cw.homothesie<-21) {
+					cw.changeHomothesie(cw.homothesie+20);
+				}
 				break;
 			}
 			
