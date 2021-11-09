@@ -7,9 +7,11 @@ public class Graph {
 	protected int nbFaces;
 	protected List<Face> faces;
 	protected Matrice matrice;
+	protected Matrice matriceOriginal;
 	protected List<String> sommetsDeFaces;
 	
 	public Graph(int nbFace, List<Face> faces, Matrice matrice, List<String> sommetDeFaces) {
+		this.matriceOriginal = matrice;
 		this.matrice = matrice;
 		this.nbFaces = nbFace;
 		this.faces = faces;
@@ -51,6 +53,10 @@ public class Graph {
 	
 	public Matrice getMatrice() {
 		return this.matrice;
+	}
+	
+	public Matrice getMatriceOriginal() {
+		return this.matriceOriginal;
 	}
 	
 	public double getFaceX(int i , int j) {

@@ -17,6 +17,7 @@ import graph.RotationDown;
 import graph.RotationLeft;
 import graph.RotationRight;
 import graph.RotationUp;
+import graph.Translation;
 import graph.UpdateGraph;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -62,8 +63,8 @@ public class MainControler implements Initializable {
     UpdateGraph graphe = fr.read(current);
     CanvasWriter cw = null;
     UpdateGraph u = new UpdateGraph(graphe.getNbFaces(),graphe.getFaces(), graphe.getMatrice(),graphe.getSommetsDeFaces());
-    Matrice tmp = null;
     Rotation r = null;
+    Translation t = null;
 
     
     @SuppressWarnings("incomplete-switch")
@@ -230,6 +231,44 @@ public class MainControler implements Initializable {
 			
 		});
 		
+		bright1.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent e) {
+				t = new Translation(graphe.getMatrice(), -1, 0);
+				t.translate();
+				graphe = fr.read(current);
+				graphe.update(t.getMcourante());
+				cw.updateCanvasWriter(graphe);
+			}
+		});
+		bleft1.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent e) {
+				t = new Translation(graphe.getMatrice(), 1, 0);
+				t.translate();
+				graphe = fr.read(current);
+				graphe.update(t.getMcourante());
+				cw.updateCanvasWriter(graphe);
+			}
+		});
+		
+		btop1.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent e) {
+				t = new Translation(graphe.getMatrice(), 0, 1);
+				t.translate();
+				graphe = fr.read(current);
+				graphe.update(t.getMcourante());
+				cw.updateCanvasWriter(graphe);
+			}
+		});
+		
+		bbot1.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent e) {
+				t = new Translation(graphe.getMatrice(), 0, -1);
+				t.translate();
+				graphe = fr.read(current);
+				graphe.update(t.getMcourante());
+				cw.updateCanvasWriter(graphe);
+			}
+		});
 
         
         brechargeCanvas.setOnAction(new EventHandler<ActionEvent>() {
@@ -297,9 +336,9 @@ public class MainControler implements Initializable {
 				graphe.update(r.getMcourante());
 				cw.updateCanvasWriter(graphe);
 				break;
-			case L:
-				cw = new CanvasWriter(canvas,fr.read(current));
-				break;
+			//case L:
+			//	cw = new CanvasWriter(canvas,fr.read(current));
+			//	break;
 			
 			case P:
 				cw.clear(javafx.scene.paint.Color.WHITE);
@@ -319,6 +358,39 @@ public class MainControler implements Initializable {
 				if(cw.homothesie<-21) {
 					cw.changeHomothesie(cw.homothesie+20);
 				}
+				break;
+			case T:
+				t = new Translation(graphe.getMatrice(), 0, 1);
+				t.translate();
+				graphe = fr.read(current);
+				graphe.update(t.getMcourante());
+				cw.updateCanvasWriter(graphe);
+				break;
+			case F:
+				t = new Translation(graphe.getMatrice(), 1, 0);
+				t.translate();
+				graphe = fr.read(current);
+				graphe.update(t.getMcourante());
+				cw.updateCanvasWriter(graphe);
+				break;
+			case G:
+				t = new Translation(graphe.getMatrice(), 0, -1);
+				t.translate();
+				graphe = fr.read(current);
+				graphe.update(t.getMcourante());
+				cw.updateCanvasWriter(graphe);
+				break;
+			case H:
+				t = new Translation(graphe.getMatrice(), -1, 0);
+				t.translate();
+				graphe = fr.read(current);
+				graphe.update(t.getMcourante());
+				cw.updateCanvasWriter(graphe);
+				break;
+			case W:
+				graphe = fr.read(current);
+				graphe.update(graphe.getMatriceOriginal());
+				cw.updateCanvasWriter(graphe);
 				break;
 			}
 			
