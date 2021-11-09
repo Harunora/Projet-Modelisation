@@ -59,9 +59,9 @@
                                           <Slider fx:id="sensliderTrans" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="117.0" />
                                           <TextField fx:id="tfvalueTrans" prefHeight="25.0" prefWidth="56.0" text="Valeur" />
                                           <Button fx:id="bleft1" mnemonicParsing="false" text="←" />
-                                          <Button fx:id="btop2" mnemonicParsing="false" text="↑" />
-                                          <Button fx:id="bright2" mnemonicParsing="false" text="→" />
-                                          <Button fx:id="bbot2" mnemonicParsing="false" text="↓" />
+                                          <Button fx:id="btop1" mnemonicParsing="false" text="↑" />
+                                          <Button fx:id="bright1" mnemonicParsing="false" text="→" />
+                                          <Button fx:id="bbot1" mnemonicParsing="false" text="↓" />
                                        </items>
                                     </ToolBar>
                                  </children>

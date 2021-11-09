@@ -171,7 +171,7 @@ public class MainControler implements Initializable {
 				cw.updateCanvasWriter(graphe);
 			}
 		});
-
+		
 		bHomoplus.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent e) {
@@ -264,6 +264,15 @@ public class MainControler implements Initializable {
 				break;
 			case L:
 				cw= new CanvasWriter(canvas, graphe);
+				break;
+			
+			case P:
+				cw.clear(javafx.scene.paint.Color.WHITE);
+				
+				current=new File("data/apple.ply");
+				graphe = fr.read(current);
+				cw=new CanvasWriter(canvas,graphe);
+				
 				break;
 			}
 			

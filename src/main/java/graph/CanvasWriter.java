@@ -67,8 +67,8 @@ public class CanvasWriter {
 			double[] i1=new double[this.listface.getFace(i).nbSommet];
 			double[] i2=new double[this.listface.getFace(i).nbSommet];
 			for(int j=0;j<this.listface.getFace(i).nbSommet;j++) {
-				i1[j]=this.listface.getFace(i).sommets.get(j).getX()*homothesie+height;
-				i2[j]=this.listface.getFace(i).sommets.get(j).getY()*homothesie+width; 
+				i1[j]=this.listface.getFaceX(i, j)*homothesie+height;
+				i2[j]=this.listface.getFaceY(i, j)*homothesie+width; 
 			}
 			
 			this.x.add(i1);
