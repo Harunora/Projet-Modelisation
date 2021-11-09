@@ -26,12 +26,16 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBase;
+import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TreeView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.DirectoryChooser;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class MainControler implements Initializable {
@@ -54,8 +58,9 @@ public class MainControler implements Initializable {
     HBox hcontainerCanvas;
     
     protected Scene scene;
-    
+   
     public File current = new File("data/cow.ply");
+    ExplorerFile ef = new ExplorerFile();
     FileReader fr=new FileReader();
     CanvasWriter cw = null;
     public Stage stage = new Stage();
@@ -63,11 +68,12 @@ public class MainControler implements Initializable {
     UpdateGraph u = new UpdateGraph(graphe.getNbFaces(),graphe.getFaces(), graphe.getMatrice(),graphe.getSommetsDeFaces());
     Matrice tmp = null;
     Rotation r = null;
+
     
     @SuppressWarnings("incomplete-switch")
 	@Override
     public void initialize(URL location, ResourceBundle resources) {
-    	ExplorerFile ef = new ExplorerFile();
+        ef = new ExplorerFile();
     	stage.setResizable(true);
     	Scene scene  = Main.getScene();
     	
@@ -107,9 +113,36 @@ public class MainControler implements Initializable {
 			}
     	});
         
+        baide.addEventHandler(MouseEvent.MOUSE_CLICKED, e->{
+
+
+			Label secondLabel = new Label("===========================================================================\n"
+					+ "Appuiyer sur la touche L pour lancer en cas de bug \n\n"
+					+ "Si le modèle ne s'affiche pas correctement allez dans source folder -> git -> exemple puis selectionnez le model a afficher\n\n"
+					+ "Le bouton réinitialiser remet le modèle à son état de base\n\n"
+					+ "\n\n\n"
+					+ "");
+
+			StackPane secondaryLayout = new StackPane();
+			secondaryLayout.getChildren().add(secondLabel);
+
+			Scene secondScene = new Scene(secondaryLayout, 630, 200);
+
+			// New window (Stage)
+			Stage newWindow = new Stage();
+			newWindow.setTitle("Aide");
+			newWindow.setScene(secondScene);
+
+			// Specifies the modality for new window.
+			newWindow.initModality(Modality.WINDOW_MODAL);
+
+			newWindow.show();
+
+		});
+        
        fr=new FileReader();
        graphe = fr.read(current);
-        cw = new CanvasWriter(canvas,u);
+        cw = new CanvasWriter(canvas,graphe);
 		
 		cw.changeHomothesie(2000);
 		
@@ -202,8 +235,11 @@ public class MainControler implements Initializable {
 			
 			public void handle(ActionEvent e) {
 				cw = null;
+				System.out.println("File lu:"+ef.getFile(TV));
 				current = ef.getFile(TV);
-				cw = new CanvasWriter(canvas,u);
+				System.out.println("File lu pdv:"+current );
+				graphe = fr.read(current);
+				cw = new CanvasWriter(canvas,fr.read(current));
 				cw.changeHomothesie(200);
 				System.out.println("refresh");
 				
@@ -263,7 +299,7 @@ public class MainControler implements Initializable {
 				cw.updateCanvasWriter(graphe);
 				break;
 			case L:
-				cw= new CanvasWriter(canvas, graphe);
+				cw = new CanvasWriter(canvas,fr.read(current));
 				break;
 			
 			case P:
@@ -278,6 +314,6 @@ public class MainControler implements Initializable {
 			
 		});
     }
- 
+    
 
 }

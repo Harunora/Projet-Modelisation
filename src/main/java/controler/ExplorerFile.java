@@ -12,6 +12,7 @@ public class ExplorerFile {
 	private TreeView<String> tree;
 	private File current = null;
 	private String currentPath = "";
+	private Graph graph;
 	FileReader r = new FileReader();
 	public static boolean existFile(File[] f, File f1) {
 		for (int i = 0; i < f.length; i++) {
@@ -71,10 +72,11 @@ public class ExplorerFile {
 					System.out.println(current.getAbsolutePath());
 				}
 			}
-			Graph graph = r.read(current);
-			System.out.println(graph.getNbFaces());
-			System.out.println("test");
+			if(current != null) {
+				graph = r.read(current);
+			}
 		});
+		System.out.println(current);
 		return current;
 	}
 	
