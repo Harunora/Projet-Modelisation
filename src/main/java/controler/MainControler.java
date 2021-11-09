@@ -234,14 +234,9 @@ public class MainControler implements Initializable {
 			@Override
 			
 			public void handle(ActionEvent e) {
-				cw = null;
-				System.out.println("File lu:"+ef.getFile(TV));
-				current = ef.getFile(TV);
-				System.out.println("File lu pdv:"+current );
 				graphe = fr.read(current);
-				cw = new CanvasWriter(canvas,fr.read(current));
-				cw.changeHomothesie(200);
-				System.out.println("refresh");
+				cw.updateCanvasWriter(graphe);
+				
 				
 			}
 			
