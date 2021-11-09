@@ -53,7 +53,7 @@ public class MainControler implements Initializable {
     
     protected Scene scene;
    
-    public File current = new File("data/cow.ply");
+    public File current = new File("data/test.ply");
     ExplorerFile ef = new ExplorerFile();
     FileReader fr=new FileReader();
     CanvasWriter cw = null;
@@ -86,6 +86,9 @@ public class MainControler implements Initializable {
 					TV.setRoot(ef.getNodesForDirectory(choice));
 				}
 				current = ef.getFile(TV);
+				fr=new FileReader();
+				graphe = fr.read(current);
+				cw= new CanvasWriter(canvas,graphe);
 			}
 			
 		});
@@ -133,14 +136,6 @@ public class MainControler implements Initializable {
 			newWindow.show();
 
 		});
-        
-       fr=new FileReader();
-       graphe = fr.read(current);
-        cw = new CanvasWriter(canvas,graphe);
-		
-		cw.changeHomothesie(2000);
-		
-		
 		
 		
 		bright.setOnAction(new EventHandler<ActionEvent>() {

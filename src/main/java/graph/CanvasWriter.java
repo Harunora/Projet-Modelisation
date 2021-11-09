@@ -48,14 +48,13 @@ public class CanvasWriter {
 		clear(javafx.scene.paint.Color.WHITE);
 		for(int i=0;i<x.size();i++) {
 			graphicContext.strokePolygon(this.x.get(i),this.y.get(i), this.y.get(i).length);
-			graphicContext.setFill(javafx.scene.paint.Color.RED);
-			graphicContext.fillPolygon(this.x.get(i),this.y.get(i), this.y.get(i).length);
+			//graphicContext.setFill(javafx.scene.paint.Color.RED);
+			//graphicContext.fillPolygon(this.x.get(i),this.y.get(i), this.y.get(i).length);
 		}
 	}
 	
 	public void clear(Paint c) {
 		graphicContext.setFill(c);
-		System.out.println(canvas.getWidth()+"!"+ canvas.getHeight());
 		graphicContext.fillRect(0, 0, canvas.getWidth(), canvas.getHeight());
 		
 	}
