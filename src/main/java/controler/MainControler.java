@@ -1,6 +1,7 @@
 package controler;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -43,7 +44,7 @@ public class MainControler implements Initializable {
     Button loadfolder, btreebase , baide, btop, bright, bleft, bbot, bturnaroundleft, bturnaroundright, btop1, bright1, bleft1, bbot1, bturnaroundleft1, bturnaroundright1, brechargeCanvas, bHomomoin, bHomoplus;
     
     @FXML
-    TreeView<String> TV;
+    TreeView<File> TV;
     
     @FXML
     Canvas canvas;
@@ -56,9 +57,10 @@ public class MainControler implements Initializable {
     public File current = new File("data/test.ply");
     ExplorerFile ef = new ExplorerFile();
     FileReader fr=new FileReader();
-    CanvasWriter cw = null;
+    
     public Stage stage = new Stage();
     UpdateGraph graphe = fr.read(current);
+    CanvasWriter cw = null;
     UpdateGraph u = new UpdateGraph(graphe.getNbFaces(),graphe.getFaces(), graphe.getMatrice(),graphe.getSommetsDeFaces());
     Matrice tmp = null;
     Rotation r = null;
@@ -83,12 +85,14 @@ public class MainControler implements Initializable {
 					alert.setContentText("The file is invalid.");
 					alert.showAndWait();
 				} else {
-					TV.setRoot(ef.getNodesForDirectory(choice));
+					try {
+						TV.setRoot(ef.getNodesForDirectory(choice));
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
 				}
-				current = ef.getFile(TV);
-				fr=new FileReader();
-				graphe = fr.read(current);
-				cw= new CanvasWriter(canvas,graphe);
+				
 			}
 			
 		});
@@ -104,11 +108,20 @@ public class MainControler implements Initializable {
 					alert.setContentText("The file is invalid.");
 					alert.showAndWait();
 				} else {
-					TV.setRoot(ef.getNodesForDirectory(directory));
+					try {
+						TV.setRoot(ef.getNodesForDirectory(directory));
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
 				}
 				
 			}
     	});
+        
+		fr=new FileReader();
+		graphe = fr.read(current);
+		cw= new CanvasWriter(canvas,graphe);
         
         baide.addEventHandler(MouseEvent.MOUSE_CLICKED, e->{
 
@@ -223,9 +236,11 @@ public class MainControler implements Initializable {
 			@Override
 			
 			public void handle(ActionEvent e) {
+				cw.clear(javafx.scene.paint.Color.WHITE);
+				fr = new FileReader();
+				current=ef.getFile(TV);
 				graphe = fr.read(current);
 				cw.updateCanvasWriter(graphe);
-				
 				
 			}
 			
@@ -289,7 +304,7 @@ public class MainControler implements Initializable {
 			case P:
 				cw.clear(javafx.scene.paint.Color.WHITE);
 				fr = new FileReader();
-				current=new File("data/apple.ply");
+				current=ef.getFile(TV);
 				graphe = fr.read(current);
 				cw.updateCanvasWriter(graphe);
 				break;

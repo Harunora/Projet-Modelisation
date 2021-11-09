@@ -2,6 +2,7 @@ package controler;
 
 import java.io.File;
 import java.io.FileFilter;
+import java.io.IOException;
 
 import graph.FileReader;
 import graph.Graph;
@@ -9,7 +10,7 @@ import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 
 public class ExplorerFile {
-	private TreeView<String> tree;
+	private TreeView<File> tree;
 	private File current = null;
 	private String currentPath = "";
 	private Graph graph;
@@ -22,17 +23,17 @@ public class ExplorerFile {
 		}
 		return false;
 	}
-	public TreeView<String> getTree() {
+	public TreeView<File> getTree() {
 		return tree;
 	}
 
-	public void setTree(TreeView<String> tree) {
+	public void setTree(TreeView<File> tree) {
 		this.tree = tree;
 	}
 
-	public TreeItem<String> getNodesForDirectory(File directory) {
+	public TreeItem<File> getNodesForDirectory(File directory) throws IOException {
 		this.currentPath = "";
-		TreeItem<String> root = new TreeItem<String>(directory.getName());
+		TreeItem<File> root = new TreeItem<File>(directory.getAbsoluteFile());
 		System.out.println(directory.getAbsolutePath());
 
 		for (File f : directory.listFiles()) {
@@ -55,36 +56,25 @@ public class ExplorerFile {
 				}
 				if (existFile(fichiersPly, f)) {
 					System.out.println("Loading " + f.getName());
-					root.getChildren().add(new TreeItem<String>(f.getName()));
+					root.getChildren().add(new TreeItem<File>(f.getCanonicalFile()));
 				}
 			}
 		}
 		return root;
 	}
-	public File getFile(TreeView<String> tV) {
-		tV.getSelectionModel().selectedItemProperty().addListener((v, oldValue, newValue) -> {
+	public File getFile(TreeView<File> tv) {
+		tv.getSelectionModel().selectedItemProperty().addListener((v, oldValue, newValue) -> {
 			if (newValue != null) {
-				String s = ((TreeItem<String>) newValue).getValue();
-				File fi = new File(currentPath + "" + File.separatorChar + "" + s);
-				if (fi.isFile()) {
-					System.out.println(((TreeItem<String>) newValue).getValue());
-					current = fi;
-					System.out.println(current.getAbsolutePath());
-				}
+				current = ((TreeItem<File>) newValue).getValue();
+				System.out.println(current.getName());
 			}
-			if(current != null) {
-				graph = r.read(current);
-			}
-		});
-		System.out.println(current);
+		});	
 		return current;
 	}
-	
 	public void setCurrent(File current) {
 		this.current = current;
 	}
 	public String getCurrentPath(TreeView<String> tv) {
-		getFile(tree);
 		return currentPath;
 	}
 	public void setCurrentPath(String currentPath) {
