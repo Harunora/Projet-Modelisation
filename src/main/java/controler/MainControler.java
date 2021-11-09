@@ -302,8 +302,7 @@ public class MainControler implements Initializable {
 				fr = new FileReader();
 				current=new File("data/apple.ply");
 				graphe = fr.read(current);
-				cw=new CanvasWriter(canvas,graphe);
-				
+				cw.updateCanvasWriter(graphe);
 				break;
 			}
 			
