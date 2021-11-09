@@ -299,7 +299,7 @@ public class MainControler implements Initializable {
 			
 			case P:
 				cw.clear(javafx.scene.paint.Color.WHITE);
-				
+				fr = new FileReader();
 				current=new File("data/apple.ply");
 				graphe = fr.read(current);
 				cw=new CanvasWriter(canvas,graphe);
