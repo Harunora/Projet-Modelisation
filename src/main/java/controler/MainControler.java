@@ -43,12 +43,6 @@ public class MainControler implements Initializable {
     Button loadfolder, btreebase , baide, btop, bright, bleft, bbot, bturnaroundleft, bturnaroundright, btop1, bright1, bleft1, bbot1, bturnaroundleft1, bturnaroundright1, brechargeCanvas, bHomomoin, bHomoplus;
     
     @FXML
-    Slider sensliderRot, sensliderTrans, sensliderHomo;
-    
-    @FXML
-    TextField tfvalueRot, tfvalueTrans, tfvalueHomo;
-    
-    @FXML
     TreeView<String> TV;
     
     @FXML
