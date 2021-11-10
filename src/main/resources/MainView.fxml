@@ -17,7 +17,7 @@
           <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="200.0" minHeight="160.0" minWidth="100.0" prefHeight="160.0" prefWidth="100.0">
                <children>
                   <Button fx:id="buttonLoadFolder" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="40.0" prefWidth="63.0" text="Load Folder" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="56.0" AnchorPane.topAnchor="0.0" />
-                  <TreeView fx:id="TV" layoutY="54.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="459.0" prefWidth="121.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0" />
+                  <TreeView fx:id="treeView" layoutY="54.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="459.0" prefWidth="121.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0" />
                   <Button fx:id="btreebase" layoutX="63.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="63.0" text="Base" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children>
             </AnchorPane>
@@ -65,8 +65,8 @@
                                  <children>
                                     <ToolBar prefHeight="42.0" prefWidth="480.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <items>
-                                          <Button fx:id="buttonHomothétieUp" mnemonicParsing="false" text="+" />
-                                          <Button fx:id="buttonHomothétieDown" mnemonicParsing="false" text="-" />
+                                          <Button fx:id="buttonHomothetieUp" mnemonicParsing="false" text="+" />
+                                          <Button fx:id="buttonHomothetieDown" mnemonicParsing="false" text="-" />
                                        </items>
                                     </ToolBar>
                                  </children>

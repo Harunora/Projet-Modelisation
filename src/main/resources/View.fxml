@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.stage.Stage?>
 
-<Stage xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controler.MainControler">
+<Stage fx:id="stageView" title="View" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controler.CanvasViewer">
     <scene>
         <Scene>
             <AnchorPane prefHeight="200" prefWidth="200">

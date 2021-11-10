@@ -37,7 +37,7 @@ import javafx.stage.Stage;
 
 public class MainControler implements Initializable {
     @FXML
-    Button buttonLoadFolder, btreebase , buttonHelp, buttonRotateUp, buttonRotateRight, buttonRotateLeft, buttonRotateDown, buttonRotateAroundRight, buttonRotateAroundLeft, buttonTranslateUp, buttonTranslateRight, buttonTranslateLeft, buttonTranslateDown, buttonReloadCanvas, buttonHomothétieUp, buttonHomothétieDown, buttonModelData, Fview, Aview ,Sview;
+    Button buttonLoadFolder, btreebase , buttonHelp, buttonRotateUp, buttonRotateRight, buttonRotateLeft, buttonRotateDown, buttonRotateAroundRight, buttonRotateAroundLeft, buttonTranslateUp, buttonTranslateRight, buttonTranslateLeft, buttonTranslateDown, buttonReloadCanvas, buttonHomothetieUp, buttonHomothetieDown, buttonModelData, Fview, Aview ,Sview;
     
     @FXML
     TreeView<File> treeView;
@@ -67,7 +67,7 @@ public class MainControler implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         explorerFile = new ExplorerFile();
     	stage.setResizable(true);
-    	//Scene scene  = Main.getScene();
+    	Scene scene  = Main.getScene();
     	
         buttonLoadFolder.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
@@ -98,19 +98,12 @@ public class MainControler implements Initializable {
 				String pwd = System.getProperty("user.dir");
 				System.out.println(pwd+"/exemples");
 				File directory = new File(pwd+"/exemples");
-				if (directory == null || !directory.isDirectory()) {
-					Alert alert = new Alert(AlertType.ERROR);
-					alert.setHeaderText("Could not open directory");
-					alert.setContentText("The file is invalid.");
-					alert.showAndWait();
-				} else {
 					try {
 						treeView.setRoot(explorerFile.getNodesForDirectory(directory));
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
-				}
 				
 			}
     	});
@@ -205,7 +198,7 @@ public class MainControler implements Initializable {
 			}
 		});
 		
-		buttonHomothétieDown.setOnAction(new EventHandler<ActionEvent>() {
+		buttonHomothetieDown.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent e) {
 				if(canvasWriter.homothesie<0) {
@@ -215,7 +208,7 @@ public class MainControler implements Initializable {
 			}
 		});
 		
-		buttonHomothétieUp.setOnAction(new EventHandler<ActionEvent>() {
+		buttonHomothetieUp.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent e) {
 				if(canvasWriter.homothesie<-21) {
@@ -279,24 +272,27 @@ public class MainControler implements Initializable {
 				canvasWriter.updateCanvasWriter(graphe);
 			}
 		});   
-        /*
+        
         Fview.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			
 			public void handle(ActionEvent e) {
-				r = new RotationLeft(graphe.getMatrice(),null); 
-				r.rotate(Math.PI/2);
-				CanvasWriter ocw= cw;
-				CanvasViewer cv = new CanvasViewer();
+				Rotation rotationView = new RotationLeft(graphe.getMatrice(),null); 
+				rotationView.rotate(Math.PI/2);
+				CanvasWriter ocw= canvasWriter;
+				StackPane sp = new StackPane();
+				UpdateGraph updategraph = graphe;
 				try {
-					cv.start(new Stage());
+					CanvasViewer cv = new CanvasViewer(ocw, rotationView, 0, updategraph);
+					cv.canvasShow(sp);
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
+				
 			}
 		});
-		*/
+		
     }
     
     	
