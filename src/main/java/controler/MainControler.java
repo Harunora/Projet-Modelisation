@@ -42,7 +42,7 @@ import javafx.stage.Stage;
 
 public class MainControler implements Initializable {
     @FXML
-    Button loadfolder, btreebase , baide, btop, bright, bleft, bbot, bturnaroundleft, bturnaroundright, btop1, bright1, bleft1, bbot1, bturnaroundleft1, bturnaroundright1, brechargeCanvas, bHomomoin, bHomoplus;
+    Button loadfolder, btreebase , baide, btop, bright, bleft, bbot, bturnaroundleft, bturnaroundright, btop1, bright1, bleft1, bbot1, bturnaroundleft1, bturnaroundright1, brechargeCanvas, bHomomoin, bHomoplus, binfoaffi, Fview, Aview ,Sview;
     
     @FXML
     TreeView<File> TV;
@@ -130,7 +130,7 @@ public class MainControler implements Initializable {
 			Label secondLabel = new Label("===========================================================================\n"
 					+ "Appuiyer sur la touche P pour lancer en cas de bug \n\n"
 					+ "Si le modele ne s'affiche pas correctement allez dans source folder -> git -> exemples puis selectionnez le model a afficher\n\n"
-					+ "Le bouton reinitialiser (ou w) remet le modele a son etat de base\n\n"
+					+ "Le bouton reinitialiser (ou w) remet le modele aï¿½son etat de base\n\n"
 					+ "La rotation s'effectue aussi avec les touches z q s d\n"
 					+ "La translation s'effectue aussi avec les touches t f g h\n"
 					+ "\n\n\n"
@@ -282,14 +282,30 @@ public class MainControler implements Initializable {
 				current=ef.getFile(TV);
 				graphe = fr.read(current);
 				cw.updateCanvasWriter(graphe);
-				
 			}
+		});   
+        
+        Fview.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
 			
+			public void handle(ActionEvent e) {
+				Rotation tmp = r;
+				r = new RotationUp(graphe.getMatrice(),null); 
+				r.rotate(Math.PI/100);
+				CanvasWriter ocw= cw;
+				try {
+					ocw.updateCanvasWriter(graphe);
+					CanvasViewer cv = new CanvasViewer(ocw, r, 0);
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				r = tmp;
+			}
 		});
-        
-        
-        
     }
+    
+    	
     
     
     @SuppressWarnings("incomplete-switch")

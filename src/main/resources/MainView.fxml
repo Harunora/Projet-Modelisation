@@ -73,6 +73,21 @@
                               </AnchorPane>
                           </content>
                         </Tab>
+                        <Tab closable="false" text="More View ">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <ToolBar layoutX="1.0" layoutY="3.0" prefHeight="40.0" prefWidth="374.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <items>
+                                        <Button fx:id="Fview" mnemonicParsing="false" text="Front view " />
+                                          <Button fx:id="Aview" mnemonicParsing="false" text="Above view" />
+                                          <Button fx:id="Sview" mnemonicParsing="false" text="Side view " />
+                                      </items>
+                                    </ToolBar>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
                         <Tab closable="false" text="Aide &amp; recharger">
                           <content>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
@@ -81,6 +96,7 @@
                                       <items>
                                         <Button fx:id="baide" mnemonicParsing="false" text="Afficher la fenetre d'aide" />
                                           <Button fx:id="brechargeCanvas" mnemonicParsing="false" text="Recharger après la redimention" />
+                                          <Button fx:id="binfoaffi" mnemonicParsing="false" text="Information sur le model" />
                                       </items>
                                     </ToolBar>
                                  </children>
@@ -89,7 +105,7 @@
                         </Tab>
                      </tabs>
                   </TabPane>
-                  <Canvas fx:id="canvas" height="680.0" layoutY="68.0" width="1000.0" AnchorPane.bottomAnchor="-6.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="68.0" />
+                  <Canvas fx:id="canvas" height="680.0" layoutX="-13.0" layoutY="87.0" width="1000.0" AnchorPane.bottomAnchor="-18.0" AnchorPane.leftAnchor="-13.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="87.0" />
                </children>
             </AnchorPane>
         </items>
