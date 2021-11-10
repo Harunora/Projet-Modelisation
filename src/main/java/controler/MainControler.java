@@ -55,16 +55,16 @@ public class MainControler implements Initializable {
     
     protected Scene scene;
    
-    public File current = new File("data/test.ply");
+    public File current = new File("exemples/test.ply");
     ExplorerFile ef = new ExplorerFile();
     FileReader fr=new FileReader();
     
     public Stage stage = new Stage();
     UpdateGraph graphe = fr.read(current);
-    CanvasWriter cw = null;
     UpdateGraph u = new UpdateGraph(graphe.getNbFaces(),graphe.getFaces(), graphe.getMatrice(),graphe.getSommetsDeFaces());
-    Rotation r = null;
-    Translation t = null;
+    CanvasWriter cw;
+    Rotation r;
+    Translation t;
 
     
     @SuppressWarnings("incomplete-switch")
@@ -101,8 +101,8 @@ public class MainControler implements Initializable {
 			@Override
 			public void handle(ActionEvent e) {
 				String pwd = System.getProperty("user.dir");
-				System.out.println(pwd+"/data");
-				File directory = new File(pwd+"/data");
+				System.out.println(pwd+"/exemples");
+				File directory = new File(pwd+"/exemples");
 				if (directory == null || !directory.isDirectory()) {
 					Alert alert = new Alert(AlertType.ERROR);
 					alert.setHeaderText("Could not open directory");
@@ -128,9 +128,11 @@ public class MainControler implements Initializable {
 
 
 			Label secondLabel = new Label("===========================================================================\n"
-					+ "Appuiyer sur la touche L pour lancer en cas de bug \n\n"
-					+ "Si le modèle ne s'affiche pas correctement allez dans source folder -> git -> exemple puis selectionnez le model a afficher\n\n"
-					+ "Le bouton réinitialiser remet le modèle à son état de base\n\n"
+					+ "Appuiyer sur la touche P pour lancer en cas de bug \n\n"
+					+ "Si le modele ne s'affiche pas correctement allez dans source folder -> git -> exemples puis selectionnez le model a afficher\n\n"
+					+ "Le bouton reinitialiser (ou w) remet le modele a�son etat de base\n\n"
+					+ "La rotation s'effectue aussi avec les touches z q s d\n"
+					+ "La translation s'effectue aussi avec les touches t f g h\n"
 					+ "\n\n\n"
 					+ "");
 

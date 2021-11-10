@@ -9,7 +9,7 @@ import java.util.Scanner;
 import java.util.StringTokenizer;
 
 public class FileReader {
-	private String actual = "";
+	private String actual = "",auteur="";
 	private int nbFaces = 0,nbSommets = 0;
 	private List<Sommet> sommets = new ArrayList<Sommet>();
 	private List<Face>faces = new ArrayList<Face>();
@@ -51,7 +51,9 @@ public class FileReader {
 				nbSommets = Integer.parseInt(actual.substring(15,actual.length()-1)); 
 			}
 
-			
+			if(actual.startsWith("comment made by")) {
+				auteur = actual.substring(15);
+			}
 
 			if(actual.startsWith("element face")) {
 				nbFaces = Integer.parseInt(actual.substring(13,actual.length()-1));
@@ -117,6 +119,11 @@ public class FileReader {
 
 	private double[] addXyz(String[] s1) {
 		return new double[] {Double.parseDouble(s1[0]),Double.parseDouble(s1[1]),Double.parseDouble(s1[2])};
+	}
+
+
+	public String getAuteur() {
+		return auteur;
 	}
 
 }
