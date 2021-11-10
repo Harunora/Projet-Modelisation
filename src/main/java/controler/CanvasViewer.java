@@ -23,7 +23,7 @@ public class CanvasViewer implements Initializable {
 	protected CanvasWriter cw;
 	
 	
-	/*public CanvasViewer(CanvasWriter cw , Rotation r, int homothetie, UpdateGraph graphe) throws IOException {		 
+	public CanvasViewer(CanvasWriter cw , Rotation r, int homothetie, UpdateGraph graphe) throws IOException {		 
 		this.cw = cw;
         this.cw.canvas = CanvasView;
         graphe.update(r.getMcourante());
@@ -55,5 +55,5 @@ public class CanvasViewer implements Initializable {
 			e.printStackTrace();
 		}
 		
-	}*/
+	}
 }

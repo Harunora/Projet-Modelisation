@@ -8,8 +8,6 @@ import java.util.ResourceBundle;
 
 import graph.CanvasWriter;
 import graph.FileReader;
-import graph.Graph;
-import graph.Matrice;
 import graph.Rotation;
 import graph.RotationAroundLeft;
 import graph.RotationAroundRight;
@@ -22,17 +20,12 @@ import graph.UpdateGraph;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.ButtonBase;
 import javafx.scene.control.Label;
-import javafx.scene.control.Slider;
-import javafx.scene.control.TextField;
 import javafx.scene.control.TreeView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
@@ -44,10 +37,10 @@ import javafx.stage.Stage;
 
 public class MainControler implements Initializable {
     @FXML
-    Button loadfolder, btreebase , baide, btop, bright, bleft, bbot, bturnaroundleft, bturnaroundright, btop1, bright1, bleft1, bbot1, bturnaroundleft1, bturnaroundright1, brechargeCanvas, bHomomoin, bHomoplus, binfoaffi, Fview, Aview ,Sview;
+    Button buttonLoadFolder, btreebase , buttonHelp, buttonRotateUp, buttonRotateRight, buttonRotateLeft, buttonRotateDown, buttonRotateAroundRight, buttonRotateAroundLeft, buttonTranslateUp, buttonTranslateRight, buttonTranslateLeft, buttonTranslateDown, buttonReloadCanvas, buttonHomothétieUp, buttonHomothétieDown, buttonModelData, Fview, Aview ,Sview;
     
     @FXML
-    TreeView<File> TV;
+    TreeView<File> treeView;
     
     @FXML
     Canvas canvas;
@@ -57,26 +50,26 @@ public class MainControler implements Initializable {
     
     protected Scene scene;
    
-    public File current = new File("exemples/test.ply");
-    ExplorerFile ef = new ExplorerFile();
-    FileReader fr=new FileReader();
+    public File currentFile = new File("exemples/test.ply");
+    ExplorerFile explorerFile = new ExplorerFile();
+    FileReader fileReader=new FileReader();
     
     public Stage stage = new Stage();
-    UpdateGraph graphe = fr.read(current);
-    UpdateGraph u = new UpdateGraph(graphe.getNbFaces(),graphe.getFaces(), graphe.getMatrice(),graphe.getSommetsDeFaces());
-    CanvasWriter cw;
-    Rotation r;
-    Translation t;
+    UpdateGraph graphe = fileReader.read(currentFile);
+    UpdateGraph updateGraphe = new UpdateGraph(graphe.getNbFaces(),graphe.getFaces(), graphe.getMatrice(),graphe.getSommetsDeFaces());
+    CanvasWriter canvasWriter;
+    Rotation rotation;
+    Translation translation;
 
     
     @SuppressWarnings("incomplete-switch")
 	@Override
     public void initialize(URL location, ResourceBundle resources) {
-        ef = new ExplorerFile();
+        explorerFile = new ExplorerFile();
     	stage.setResizable(true);
-    	Scene scene  = Main.getScene();
+    	//Scene scene  = Main.getScene();
     	
-        loadfolder.setOnAction(new EventHandler<ActionEvent>() {
+        buttonLoadFolder.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent e) {
 				DirectoryChooser dc = new DirectoryChooser();
@@ -89,7 +82,7 @@ public class MainControler implements Initializable {
 					alert.showAndWait();
 				} else {
 					try {
-						TV.setRoot(ef.getNodesForDirectory(choice));
+						treeView.setRoot(explorerFile.getNodesForDirectory(choice));
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
@@ -112,7 +105,7 @@ public class MainControler implements Initializable {
 					alert.showAndWait();
 				} else {
 					try {
-						TV.setRoot(ef.getNodesForDirectory(directory));
+						treeView.setRoot(explorerFile.getNodesForDirectory(directory));
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
@@ -122,11 +115,11 @@ public class MainControler implements Initializable {
 			}
     	});
         
-		fr=new FileReader();
-		graphe = fr.read(current);
-		cw= new CanvasWriter(canvas,graphe);
+		fileReader=new FileReader();
+		graphe = fileReader.read(currentFile);
+		canvasWriter= new CanvasWriter(canvas,graphe);
         
-        baide.addEventHandler(MouseEvent.MOUSE_CLICKED, e->{
+        buttonHelp.addEventHandler(MouseEvent.MOUSE_CLICKED, e->{
 
 
 			Label secondLabel = new Label("===========================================================================\n"
@@ -156,77 +149,77 @@ public class MainControler implements Initializable {
 		});
 		
 		
-		bright.setOnAction(new EventHandler<ActionEvent>() {
+		buttonRotateRight.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
-				r = new RotationRight(graphe.getMatrice(),null); 
-			    r.rotate(Math.PI/100);
-				graphe = fr.read(current);
-				graphe.update(r.getMcourante());
-				cw.updateCanvasWriter(graphe);
+				rotation = new RotationRight(graphe.getMatrice(),null); 
+			    rotation.rotate(Math.PI/100);
+				graphe = fileReader.read(currentFile);
+				graphe.update(rotation.getMcourante());
+				canvasWriter.updateCanvasWriter(graphe);
 			}
 		});
-		bleft.setOnAction(new EventHandler<ActionEvent>() {
+		buttonRotateLeft.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
 				Rotation r = new RotationLeft(graphe.getMatrice(),null); 
 				r.rotate(Math.PI/100);
-				graphe = fr.read(current);
+				graphe = fileReader.read(currentFile);
 				graphe.update(r.getMcourante());
-				cw.updateCanvasWriter(graphe);
+				canvasWriter.updateCanvasWriter(graphe);
 			}
 		});
-		bturnaroundleft.setOnAction(new EventHandler<ActionEvent>() {
+		buttonRotateAroundRight.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
 				Rotation r = new RotationAroundLeft(graphe.getMatrice(),null); 
 				r.rotate(Math.PI/100);
-				graphe = fr.read(current);
+				graphe = fileReader.read(currentFile);
 				graphe.update(r.getMcourante());
-				cw.updateCanvasWriter(graphe);
+				canvasWriter.updateCanvasWriter(graphe);
 			}
 		});
 		
-		bturnaroundright.setOnAction(new EventHandler<ActionEvent>() {
+		buttonRotateAroundLeft.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
 				Rotation r = new RotationAroundRight(graphe.getMatrice(),null); 
 				r.rotate(Math.PI/100);
-				graphe = fr.read(current);
+				graphe = fileReader.read(currentFile);
 				graphe.update(r.getMcourante());
-				cw.updateCanvasWriter(graphe);
+				canvasWriter.updateCanvasWriter(graphe);
 			}
 		});
-		btop.setOnAction(new EventHandler<ActionEvent>() {
+		buttonRotateUp.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
-				r = new RotationUp(graphe.getMatrice(),null); 
-				r.rotate(Math.PI/100);
-				graphe = fr.read(current);
-				graphe.update(r.getMcourante());
-				cw.updateCanvasWriter(graphe);
+				rotation = new RotationUp(graphe.getMatrice(),null); 
+				rotation.rotate(Math.PI/100);
+				graphe = fileReader.read(currentFile);
+				graphe.update(rotation.getMcourante());
+				canvasWriter.updateCanvasWriter(graphe);
 			}
 		});
-		bbot.setOnAction(new EventHandler<ActionEvent>() {
+		buttonRotateDown.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
-				r = new RotationDown(graphe.getMatrice(),null); 
-				r.rotate(Math.PI/100);
-				graphe = fr.read(current);
-				graphe.update(r.getMcourante());
-				cw.updateCanvasWriter(graphe);
+				rotation = new RotationDown(graphe.getMatrice(),null); 
+				rotation.rotate(Math.PI/100);
+				graphe = fileReader.read(currentFile);
+				graphe.update(rotation.getMcourante());
+				canvasWriter.updateCanvasWriter(graphe);
 			}
 		});
 		
-		bHomoplus.setOnAction(new EventHandler<ActionEvent>() {
+		buttonHomothétieDown.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent e) {
-				if(cw.homothesie<0) {
-					cw.changeHomothesie(cw.homothesie-20);
+				if(canvasWriter.homothesie<0) {
+					canvasWriter.changeHomothesie(canvasWriter.homothesie-20);
 				}
 				
 			}
 		});
 		
-		bHomomoin.setOnAction(new EventHandler<ActionEvent>() {
+		buttonHomothétieUp.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent e) {
-				if(cw.homothesie<-21) {
-					cw.changeHomothesie(cw.homothesie+20);
+				if(canvasWriter.homothesie<-21) {
+					canvasWriter.changeHomothesie(canvasWriter.homothesie+20);
 					}
 				else {
 					System.out.println("stop");
@@ -235,58 +228,58 @@ public class MainControler implements Initializable {
 			
 		});
 		
-		bright1.setOnAction(new EventHandler<ActionEvent>() {
+		buttonTranslateRight.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
-				t = new Translation(graphe.getMatrice(), -1, 0);
-				t.translate();
-				graphe = fr.read(current);
-				graphe.update(t.getMcourante());
-				cw.updateCanvasWriter(graphe);
+				translation = new Translation(graphe.getMatrice(), -1, 0);
+				translation.translate();
+				graphe = fileReader.read(currentFile);
+				graphe.update(translation.getMcourante());
+				canvasWriter.updateCanvasWriter(graphe);
 			}
 		});
-		bleft1.setOnAction(new EventHandler<ActionEvent>() {
+		buttonTranslateLeft.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
-				t = new Translation(graphe.getMatrice(), 1, 0);
-				t.translate();
-				graphe = fr.read(current);
-				graphe.update(t.getMcourante());
-				cw.updateCanvasWriter(graphe);
-			}
-		});
-		
-		btop1.setOnAction(new EventHandler<ActionEvent>() {
-			public void handle(ActionEvent e) {
-				t = new Translation(graphe.getMatrice(), 0, 1);
-				t.translate();
-				graphe = fr.read(current);
-				graphe.update(t.getMcourante());
-				cw.updateCanvasWriter(graphe);
+				translation = new Translation(graphe.getMatrice(), 1, 0);
+				translation.translate();
+				graphe = fileReader.read(currentFile);
+				graphe.update(translation.getMcourante());
+				canvasWriter.updateCanvasWriter(graphe);
 			}
 		});
 		
-		bbot1.setOnAction(new EventHandler<ActionEvent>() {
+		buttonTranslateUp.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
-				t = new Translation(graphe.getMatrice(), 0, -1);
-				t.translate();
-				graphe = fr.read(current);
-				graphe.update(t.getMcourante());
-				cw.updateCanvasWriter(graphe);
+				translation = new Translation(graphe.getMatrice(), 0, 1);
+				translation.translate();
+				graphe = fileReader.read(currentFile);
+				graphe.update(translation.getMcourante());
+				canvasWriter.updateCanvasWriter(graphe);
+			}
+		});
+		
+		buttonTranslateDown.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent e) {
+				translation = new Translation(graphe.getMatrice(), 0, -1);
+				translation.translate();
+				graphe = fileReader.read(currentFile);
+				graphe.update(translation.getMcourante());
+				canvasWriter.updateCanvasWriter(graphe);
 			}
 		});
 
         
-        brechargeCanvas.setOnAction(new EventHandler<ActionEvent>() {
+        buttonReloadCanvas.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			
 			public void handle(ActionEvent e) {
-				cw.clear(javafx.scene.paint.Color.WHITE);
-				fr = new FileReader();
-				current=ef.getFile(TV);
-				graphe = fr.read(current);
-				cw.updateCanvasWriter(graphe);
+				canvasWriter.clear(javafx.scene.paint.Color.WHITE);
+				fileReader = new FileReader();
+				currentFile=explorerFile.getFile(treeView);
+				graphe = fileReader.read(currentFile);
+				canvasWriter.updateCanvasWriter(graphe);
 			}
 		});   
-        
+        /*
         Fview.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			
@@ -303,6 +296,7 @@ public class MainControler implements Initializable {
 				}
 			}
 		});
+		*/
     }
     
     	
@@ -313,102 +307,102 @@ public class MainControler implements Initializable {
     	s.setOnKeyPressed(e->{
 			switch(e.getCode()){
 			case D:
-				r = new RotationRight(graphe.getMatrice(),null); 
-			    r.rotate(Math.PI/100);
-				graphe = fr.read(current);
-				graphe.update(r.getMcourante());
-				cw.updateCanvasWriter(graphe);
+				rotation = new RotationRight(graphe.getMatrice(),null); 
+			    rotation.rotate(Math.PI/100);
+				graphe = fileReader.read(currentFile);
+				graphe.update(rotation.getMcourante());
+				canvasWriter.updateCanvasWriter(graphe);
 			break;
 			case Q:
-				r = new RotationLeft(graphe.getMatrice(),null); 
-			    r.rotate(Math.PI/100);
-				graphe = fr.read(current);
-				graphe.update(r.getMcourante());
-				cw.updateCanvasWriter(graphe);
+				rotation = new RotationLeft(graphe.getMatrice(),null); 
+			    rotation.rotate(Math.PI/100);
+				graphe = fileReader.read(currentFile);
+				graphe.update(rotation.getMcourante());
+				canvasWriter.updateCanvasWriter(graphe);
 				break;
 			case Z:
-				r = new RotationUp(graphe.getMatrice(),null); 
-			    r.rotate(Math.PI/100);
-				graphe = fr.read(current);
-				graphe.update(r.getMcourante());
-				cw.updateCanvasWriter(graphe);
+				rotation = new RotationUp(graphe.getMatrice(),null); 
+			    rotation.rotate(Math.PI/100);
+				graphe = fileReader.read(currentFile);
+				graphe.update(rotation.getMcourante());
+				canvasWriter.updateCanvasWriter(graphe);
 				break;
 			case S:
-				r = new RotationDown(graphe.getMatrice(),null); 
-			    r.rotate(Math.PI/100);
-				graphe = fr.read(current);
-				graphe.update(r.getMcourante());
-				cw.updateCanvasWriter(graphe);
+				rotation = new RotationDown(graphe.getMatrice(),null); 
+			    rotation.rotate(Math.PI/100);
+				graphe = fileReader.read(currentFile);
+				graphe.update(rotation.getMcourante());
+				canvasWriter.updateCanvasWriter(graphe);
 				break;
 			case E:
-				r = new RotationAroundRight(graphe.getMatrice(),null); 
-			    r.rotate(Math.PI/100);
-				graphe = fr.read(current);
-				graphe.update(r.getMcourante());
-				cw.updateCanvasWriter(graphe);
+				rotation = new RotationAroundRight(graphe.getMatrice(),null); 
+			    rotation.rotate(Math.PI/100);
+				graphe = fileReader.read(currentFile);
+				graphe.update(rotation.getMcourante());
+				canvasWriter.updateCanvasWriter(graphe);
 				break;
 			case A:
-				r = new RotationAroundLeft(graphe.getMatrice(),null); 
-			    r.rotate(Math.PI/100);
-				graphe = fr.read(current);
-				graphe.update(r.getMcourante());
-				cw.updateCanvasWriter(graphe);
+				rotation = new RotationAroundLeft(graphe.getMatrice(),null); 
+			    rotation.rotate(Math.PI/100);
+				graphe = fileReader.read(currentFile);
+				graphe.update(rotation.getMcourante());
+				canvasWriter.updateCanvasWriter(graphe);
 				break;
 			//case L:
 			//	cw = new CanvasWriter(canvas,fr.read(current));
 			//	break;
 			
 			case P:
-				cw.clear(javafx.scene.paint.Color.WHITE);
-				fr = new FileReader();
-				current=ef.getFile(TV);
-				graphe = fr.read(current);
-				cw.updateCanvasWriter(graphe);
+				canvasWriter.clear(javafx.scene.paint.Color.WHITE);
+				fileReader = new FileReader();
+				currentFile=explorerFile.getFile(treeView);
+				graphe = fileReader.read(currentFile);
+				canvasWriter.updateCanvasWriter(graphe);
 				break;
 			
 			case B:
-				if(cw.homothesie<0) {
-					cw.changeHomothesie(cw.homothesie-20);
+				if(canvasWriter.homothesie<0) {
+					canvasWriter.changeHomothesie(canvasWriter.homothesie-20);
 				}
 				break;
 				
 			case N:
-				if(cw.homothesie<-21) {
-					cw.changeHomothesie(cw.homothesie+20);
+				if(canvasWriter.homothesie<-21) {
+					canvasWriter.changeHomothesie(canvasWriter.homothesie+20);
 				}
 				break;
 			case T:
-				t = new Translation(graphe.getMatrice(), 0, 1);
-				t.translate();
-				graphe = fr.read(current);
-				graphe.update(t.getMcourante());
-				cw.updateCanvasWriter(graphe);
+				translation = new Translation(graphe.getMatrice(), 0, 1);
+				translation.translate();
+				graphe = fileReader.read(currentFile);
+				graphe.update(translation.getMcourante());
+				canvasWriter.updateCanvasWriter(graphe);
 				break;
 			case F:
-				t = new Translation(graphe.getMatrice(), 1, 0);
-				t.translate();
-				graphe = fr.read(current);
-				graphe.update(t.getMcourante());
-				cw.updateCanvasWriter(graphe);
+				translation = new Translation(graphe.getMatrice(), 1, 0);
+				translation.translate();
+				graphe = fileReader.read(currentFile);
+				graphe.update(translation.getMcourante());
+				canvasWriter.updateCanvasWriter(graphe);
 				break;
 			case G:
-				t = new Translation(graphe.getMatrice(), 0, -1);
-				t.translate();
-				graphe = fr.read(current);
-				graphe.update(t.getMcourante());
-				cw.updateCanvasWriter(graphe);
+				translation = new Translation(graphe.getMatrice(), 0, -1);
+				translation.translate();
+				graphe = fileReader.read(currentFile);
+				graphe.update(translation.getMcourante());
+				canvasWriter.updateCanvasWriter(graphe);
 				break;
 			case H:
-				t = new Translation(graphe.getMatrice(), -1, 0);
-				t.translate();
-				graphe = fr.read(current);
-				graphe.update(t.getMcourante());
-				cw.updateCanvasWriter(graphe);
+				translation = new Translation(graphe.getMatrice(), -1, 0);
+				translation.translate();
+				graphe = fileReader.read(currentFile);
+				graphe.update(translation.getMcourante());
+				canvasWriter.updateCanvasWriter(graphe);
 				break;
 			case W:
-				graphe = fr.read(current);
+				graphe = fileReader.read(currentFile);
 				graphe.update(graphe.getMatriceOriginal());
-				cw.updateCanvasWriter(graphe);
+				canvasWriter.updateCanvasWriter(graphe);
 				break;
 			}
 			
