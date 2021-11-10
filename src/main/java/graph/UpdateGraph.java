@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.StringTokenizer;
 
 public class UpdateGraph extends Graph{
-	public UpdateGraph(int nbFace, List<Face> faces, Matrice matrice, List<String> sommetDeFaces) {
-		super(nbFace, faces, matrice, sommetDeFaces);
+	public UpdateGraph(int nbFace, List<Face> faces, Matrice matrice, List<String> sommetDeFaces, String auteur) {
+		super(nbFace, faces, matrice, sommetDeFaces, auteur);
 
 	}
 	

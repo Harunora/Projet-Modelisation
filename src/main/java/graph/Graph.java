@@ -1,3 +1,4 @@
+
 package graph;
 
 import java.util.ArrayList;
@@ -9,13 +10,15 @@ public class Graph {
 	protected Matrice matrice;
 	protected Matrice matriceOriginal;
 	protected List<String> sommetsDeFaces;
+	protected String auteur = "";
 	
-	public Graph(int nbFace, List<Face> faces, Matrice matrice, List<String> sommetDeFaces) {
+	public Graph(int nbFace, List<Face> faces, Matrice matrice, List<String> sommetDeFaces, String auteur) {
 		this.matriceOriginal = matrice;
 		this.matrice = matrice;
 		this.nbFaces = nbFace;
 		this.faces = faces;
 		this.sommetsDeFaces = sommetDeFaces;
+		this.auteur = auteur;
 	}
 	/*
 	public Graph(int nbFace) {
@@ -24,6 +27,14 @@ public class Graph {
 	*/
 	public Face getFace(int i) {
 		return this.faces.get(i);
+	}
+	
+	public String getAuteur() {
+		if(auteur.equals("")) {
+			return "anonymous";
+		}else {
+			return this.auteur;			
+		}
 	}
 	
 	public int getNbSommet() {

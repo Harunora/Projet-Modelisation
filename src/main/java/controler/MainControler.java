@@ -56,7 +56,7 @@ public class MainControler implements Initializable {
     
     public Stage stage = new Stage();
     UpdateGraph graphe = fileReader.read(currentFile);
-    UpdateGraph updateGraphe = new UpdateGraph(graphe.getNbFaces(),graphe.getFaces(), graphe.getMatrice(),graphe.getSommetsDeFaces());
+    UpdateGraph updateGraphe = new UpdateGraph(graphe.getNbFaces(),graphe.getFaces(), graphe.getMatrice(),graphe.getSommetsDeFaces(), graphe.getAuteur());
     CanvasWriter canvasWriter;
     Rotation rotation;
     Translation translation;
@@ -67,7 +67,7 @@ public class MainControler implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         explorerFile = new ExplorerFile();
     	stage.setResizable(true);
-    	//Scene scene  = Main.getScene();
+    	Scene scene  = Main.getScene();
     	
         buttonLoadFolder.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
@@ -148,6 +148,33 @@ public class MainControler implements Initializable {
 
 		});
 		
+        
+        buttonModelData.addEventHandler(MouseEvent.MOUSE_CLICKED, e->{
+
+
+			Label secondLabel = new Label("===========================================================================\n"
+					+ "Auteur : "+ graphe.getAuteur() +"\n\n"
+					+ "Nombre de Faces : "+ graphe.getNbFaces()+"\n\n"
+					+ "Nombre de Sommet : "+ graphe.getNbSommet() +"\n"
+					+ "\n\n\n"
+					+ "");
+
+			StackPane secondaryLayout = new StackPane();
+			secondaryLayout.getChildren().add(secondLabel);
+
+			Scene secondScene = new Scene(secondaryLayout, 630, 200);
+
+			// New window (Stage)
+			Stage newWindow = new Stage();
+			newWindow.setTitle("Info Fichier");
+			newWindow.setScene(secondScene);
+
+			// Specifies the modality for new window.
+			newWindow.initModality(Modality.WINDOW_MODAL);
+
+			newWindow.show();
+
+		});
 		
 		buttonRotateRight.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {

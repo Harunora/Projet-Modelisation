@@ -35,7 +35,7 @@ public class FileReader {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
-		return  new UpdateGraph(nbFaces, faces, matrice, sommetsDeFaces);
+		return  new UpdateGraph(nbFaces, faces, matrice, sommetsDeFaces, auteur);
 	}
 
 
