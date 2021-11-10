@@ -9,7 +9,7 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 
 class FileReaderTest {
-	String myPath = System.getProperty("user.dir")+File.separator+"data"+File.separator;
+	String myPath = System.getProperty("user.dir")+File.separator+"exemples"+File.separator;
 	File file = new File(myPath+"test.ply");
 	File file2 = new File(myPath+"apple.ply");
 	FileReader r = new FileReader();
@@ -17,16 +17,6 @@ class FileReaderTest {
 	Graph attendu = implementation();
 	Graph obtenu = r.read(file);
 	Graph obtenu2 = r2.read(file2);
-	
-	String header = "ply\n"+"format ascii 1.0\n"
-			+"element vertex 8\r\n"
-			+ "property float32 x\r\n"
-			+ "property float32 y\r\n"
-			+ "property float32 z\r\n"
-			+ "element face 6\r\n"
-			+ "property list uint8 int32 vertex_indices\r\n"
-			+ "end_header\r\n"
-			+ "";
 	
 	Graph implementation() {
 		List<Face> f = new ArrayList<Face>();
