@@ -66,7 +66,7 @@ class FileReaderTest {
 		f.add(new Face(4,listSommet5));
 		f.add(new Face(4,listSommet6));
 		matrice = new Matrice(7, 6);
-		return new Graph(6,f, matrice, null);
+		return new Graph(6,f, matrice, null, "");
 	}
 	
 	@Test

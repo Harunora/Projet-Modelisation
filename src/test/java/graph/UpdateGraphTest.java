@@ -68,7 +68,7 @@ class UpdateGraphTest {
 		string.add("4 1 5 6 2\n");
 		string.add("4 2 6 7 3\n");
 		string.add("4 3 7 4 0\n");
-		return new Graph(6,f, matrice, string);
+		return new Graph(6,f, matrice, string, "");
 	}
 	@Test
 	void testString() {
@@ -83,7 +83,7 @@ class UpdateGraphTest {
 		FileReader r = new FileReader();
 		Graph attendu = implementation();
 		Graph old = r.read(file);
-		UpdateGraph u = new UpdateGraph(old.nbFaces, old.faces, old.matrice, old.sommetsDeFaces); 
+		UpdateGraph u = new UpdateGraph(old.nbFaces, old.faces, old.matrice, old.sommetsDeFaces, ""); 
 		u.update(old.matrice);
 		assertEquals(attendu.getSommetsDeFaces(), u.getSommetsDeFaces());
 	}
@@ -93,7 +93,7 @@ class UpdateGraphTest {
 		FileReader r = new FileReader();
 		Graph old = r.read(file);
 		Graph attendu = implementation();
-		UpdateGraph u = new UpdateGraph(old.nbFaces, old.faces, old.matrice, old.sommetsDeFaces); 
+		UpdateGraph u = new UpdateGraph(old.nbFaces, old.faces, old.matrice, old.sommetsDeFaces, ""); 
 		u.update(old.matrice);
 		assertEquals(attendu.getFace(0).getSommets().get(0).getX(), u.getFace(0).getSommets().get(0).getX());
 	}
@@ -103,7 +103,7 @@ class UpdateGraphTest {
 		FileReader r = new FileReader();
 		Graph old = r.read(file);
 		Graph attendu = implementation();
-		UpdateGraph u = new UpdateGraph(old.nbFaces, old.faces, old.matrice, old.sommetsDeFaces); 
+		UpdateGraph u = new UpdateGraph(old.nbFaces, old.faces, old.matrice, old.sommetsDeFaces, ""); 
 		u.matrice.x[0] = 2;
 		u.update(old.matrice);
 		assertNotEquals(attendu.getFace(0).getSommets().get(0).getX(), u.getFace(0).getSommets().get(0).getX());
