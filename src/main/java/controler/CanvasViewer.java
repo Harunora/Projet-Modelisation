@@ -7,53 +7,50 @@ import java.util.ResourceBundle;
 import graph.CanvasWriter;
 import graph.Rotation;
 import graph.UpdateGraph;
+import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class CanvasViewer implements Initializable {
+public class CanvasViewer {
 	
 	@FXML
-	Canvas CanvasView;
+	Canvas canvasView;
+	
 	
 	protected CanvasWriter cw;
+	protected UpdateGraph updateGraph;
 	
 	
 	public CanvasViewer(CanvasWriter cw , Rotation r, int homothetie, UpdateGraph graphe) throws IOException {		 
 		this.cw = cw;
-        this.cw.canvas = CanvasView;
-        graphe.update(r.getMcourante());
-        cw.updateCanvasWriter(graphe);
+        this.cw.canvas = canvasView;
+        this.updateGraph = graphe;
+        updateGraph.update(r.getMcourante());
 	}
 	
-	public void start(Stage stage) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/View.fxml"));
-        Parent root = loader.load();
-        Scene scene = new Scene(root);
-        MainControler  m = loader.getController();
-        stage.setScene(scene);
-        stage.setResizable(false);
-        stage.setTitle("Modélisateur 3D");
-        stage.show();
-        m.setScene(scene);
+	public void canvasShow (StackPane sp) {
+		
+		Scene secondScene = new Scene(sp, 750, 510);
+		Canvas canvasView = new Canvas();
+		sp.getChildren().add(canvasView);
+		canvasView.setWidth(750.0);
+		canvasView.setHeight(510.0);
+        Stage stageView = new Stage();
+        stageView.setTitle("View");
+        stageView.setScene(secondScene);
+        stageView.setResizable(false);
+        stageView.initModality(Modality.WINDOW_MODAL);
+        stageView.show();
         
-   }
-
-
-	@Override
-	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
-		try {
-			this.start(new Stage());
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+        
+		
 		
 	}
 }

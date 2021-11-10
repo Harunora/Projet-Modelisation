@@ -65,8 +65,8 @@
                                  <children>
                                     <ToolBar prefHeight="42.0" prefWidth="480.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <items>
-                                          <Button fx:id="buttonHomothétieUp" mnemonicParsing="false" text="+" />
-                                          <Button fx:id="buttonHomothétieDown" mnemonicParsing="false" text="-" />
+                                          <Button fx:id="buttonHomothetieUp" mnemonicParsing="false" text="+" />
+                                          <Button fx:id="buttonHomothetieDown" mnemonicParsing="false" text="-" />
                                        </items>
                                     </ToolBar>
                                  </children>
