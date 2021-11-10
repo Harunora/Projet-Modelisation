@@ -22,7 +22,9 @@ import graph.UpdateGraph;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Alert;
@@ -289,18 +291,16 @@ public class MainControler implements Initializable {
 			@Override
 			
 			public void handle(ActionEvent e) {
-				Rotation tmp = r;
-				r = new RotationUp(graphe.getMatrice(),null); 
-				r.rotate(Math.PI/100);
+				r = new RotationLeft(graphe.getMatrice(),null); 
+				r.rotate(Math.PI/2);
 				CanvasWriter ocw= cw;
+				CanvasViewer cv = new CanvasViewer();
 				try {
-					ocw.updateCanvasWriter(graphe);
-					CanvasViewer cv = new CanvasViewer(ocw, r, 0);
+					cv.start(new Stage());
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-				r = tmp;
 			}
 		});
     }
