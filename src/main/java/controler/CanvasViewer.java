@@ -24,18 +24,19 @@ public class CanvasViewer {
 	Canvas canvasView;
 	
 	
-	protected CanvasWriter cw;
+	protected CanvasWriter canvasWriter;
 	protected UpdateGraph updateGraph;
-	
+	protected int homothetie;
+	protected Rotation rotation;
 	
 	public CanvasViewer(CanvasWriter cw , Rotation r, int homothetie, UpdateGraph graphe) throws IOException {		 
-		this.cw = cw;
-        this.cw.canvas = canvasView;
+		this.canvasWriter = cw;
         this.updateGraph = graphe;
-        updateGraph.update(r.getMcourante());
+        this.rotation = r;
+        this.homothetie = homothetie;
 	}
 	
-	public void canvasShow (StackPane sp) {
+	public void canvasShow (StackPane sp, String position) {
 		
 		Scene secondScene = new Scene(sp, 750, 510);
 		Canvas canvasView = new Canvas();
@@ -43,13 +44,15 @@ public class CanvasViewer {
 		canvasView.setWidth(750.0);
 		canvasView.setHeight(510.0);
         Stage stageView = new Stage();
-        stageView.setTitle("View");
+        stageView.setTitle(position);
         stageView.setScene(secondScene);
         stageView.setResizable(false);
         stageView.initModality(Modality.WINDOW_MODAL);
         stageView.show();
         
-        
+        updateGraph.update(rotation.getMcourante());
+        canvasWriter= new CanvasWriter(canvasView,updateGraph);
+        canvasWriter.changeHomothesie(homothetie);
 		
 		
 	}
