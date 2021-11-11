@@ -122,10 +122,6 @@ public class FileReader {
 			Sommet tmp;
 			actual = actualNext(scanner);
 			String[] s1 = actual.split(" ");
-			System.out.println(s1.length);
-			System.out.println(s1[4]);
-			System.out.println(s1[5]);
-			System.out.println("s1 : " + s1.toString());
 			double[] tabXyz = addXyz(s1);
 			if(hasColor) {
 				int[] rgbTab = addRgb(s1);
