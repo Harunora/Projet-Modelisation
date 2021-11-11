@@ -15,7 +15,7 @@ public class CanvasWriter {
 	List<Color> color;
 	List<double[]> x;
 	List<double[]> y;
-	
+	List<double[]> z;
 	double height;
 	double width;
 	
@@ -25,6 +25,7 @@ public class CanvasWriter {
 	public CanvasWriter(Canvas c, Graph lf) {
 		x=new ArrayList<double[]>();
 		y=new ArrayList<double[]>();
+		z=new ArrayList<double[]>();
 		canvas=c;
 		graphicContext=c.getGraphicsContext2D();
 		width=c.getWidth()/2;
@@ -46,10 +47,13 @@ public class CanvasWriter {
 	
 	public void writeOnCanvas() {
 		clear(javafx.scene.paint.Color.WHITE);
-		for(int i=0;i<x.size();i++) {
-			graphicContext.strokePolygon(this.x.get(i),this.y.get(i), this.y.get(i).length);
-			graphicContext.setFill(javafx.scene.paint.Color.GREY);
-			graphicContext.fillPolygon(this.x.get(i),this.y.get(i), this.y.get(i).length);
+		int idx=0;
+		while(this.x.size()!=0) {
+			idx=getPositionHighestZ();
+			graphicContext.strokePolygon(this.x.get(idx),this.y.get(idx), this.y.get(idx).length);
+			graphicContext.setFill(javafx.scene.paint.Color.PINK);
+			graphicContext.fillPolygon(this.x.get(idx),this.y.get(idx), this.y.get(idx).length);
+			removeFace(idx);
 		}
 	}
 	
@@ -65,15 +69,46 @@ public class CanvasWriter {
 		for(int i=0;i<listface.getNbFaces();i++) {
 			double[] i1=new double[this.listface.getFace(i).nbSommet];
 			double[] i2=new double[this.listface.getFace(i).nbSommet];
+			double[] i3=new double[this.listface.getFace(i).nbSommet];
 			for(int j=0;j<this.listface.getFace(i).nbSommet;j++) {
 				i1[j]=this.listface.getFaceX(i, j)*homothesie+height;
-				i2[j]=this.listface.getFaceY(i, j)*homothesie+width; 
+				i2[j]=this.listface.getFaceY(i, j)*homothesie+width;
+				i3[j]=this.listface.getFaceZ(i, j)*homothesie+width; 
 			}
 			
 			this.x.add(i1);
 			this.y.add(i2);
+			this.z.add(i3);
 			
 		}
 		writeOnCanvas();
+	}
+	
+	public double getHighestValue(double[] tab) {
+		double retour=-1000.00;
+		for(int i=0;i<tab.length;i++) {
+			if(retour<tab[i]) {
+				retour=tab[i];
+			}
+		}
+		return retour;
+	}
+	
+	public int getPositionHighestZ() {
+		int retour=0;
+		
+		for(int i=0;i<z.size();i++) {
+			if(getHighestValue(z.get(i))>getHighestValue(z.get(retour))) {
+				retour=i;
+			}
+		}
+		
+		return retour; 
+	}
+		
+	public void removeFace(int idx) {
+		this.x.remove(idx);
+		this.y.remove(idx);
+		this.z.remove(idx);
 	}
 }
