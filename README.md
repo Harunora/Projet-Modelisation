@@ -12,9 +12,9 @@
 - [X] Le modèle est chargé et visualisé
 - [X] Message d'erreur en cas d'erreur de format dans le fichier
 - [X] La visualisation est correcte
-- [ ] On visualise simultanément trois vues du modèle (de face, de haut, de côté)
+- [X] On visualise simultanément trois vues du modèle (de face, de haut, de côté)
 - [X] Rotation
-- [ ] Translation ( déplacement dans l'espace )
+- [X] Translation ( déplacement dans l'espace )
 - [X] Homotétie ( Agrandire reduire )
 
 ## Autres éléments demandés
@@ -34,12 +34,15 @@
 
 ### M
 
+- [X] Structure de Graph (Sommets et faces)
 - [X] Lecteur de Fichier .ply
 - [X] Matrice
+- [X] Translation
+
 ### C
  
 - [X] Dessiner sur le Canvas
-- [ ] Translation
+- [X] Homotétie
 
 ## Difficultés rencontrées
 
