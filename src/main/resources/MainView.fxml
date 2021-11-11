@@ -10,11 +10,11 @@
 <?import javafx.scene.control.TreeView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="751.0" prefWidth="1209.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controler.MainControler">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controler.MainControler">
    <children>
       <SplitPane cacheShape="false" centerShape="false" dividerPositions="0.2508361204013378" focusTraversable="false" prefHeight="500.0" prefWidth="600.0" scaleShape="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
-          <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="200.0" minHeight="160.0" minWidth="100.0" prefHeight="160.0" prefWidth="100.0">
+          <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="749.0" minWidth="400.0" prefHeight="749.0" prefWidth="400.0">
                <children>
                   <Button fx:id="buttonLoadFolder" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="40.0" prefWidth="63.0" text="Load Folder" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="56.0" AnchorPane.topAnchor="0.0" />
                   <TreeView fx:id="treeView" layoutY="54.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="459.0" prefWidth="121.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0" />

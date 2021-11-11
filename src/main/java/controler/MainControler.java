@@ -56,7 +56,6 @@ public class MainControler implements Initializable {
     
     public Stage stage = new Stage();
     UpdateGraph graphe = fileReader.read(currentFile);
-    UpdateGraph updateGraphe = new UpdateGraph(graphe.getNbFaces(),graphe.getFaces(), graphe.getMatrice(),graphe.getSommetsDeFaces(), graphe.getAuteur());
     CanvasWriter canvasWriter;
     Rotation rotation;
     Translation translation;
@@ -78,7 +77,7 @@ public class MainControler implements Initializable {
 				if (choice == null || !choice.isDirectory()) {
 					Alert alert = new Alert(AlertType.ERROR);
 					alert.setHeaderText("Could not open directory");
-					alert.setContentText("The file is invalid.");
+					alert.setContentText("Pas un dossier valide.");
 					alert.showAndWait();
 				} else {
 					try {
