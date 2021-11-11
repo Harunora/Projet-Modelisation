@@ -281,11 +281,7 @@ public class MainControler implements Initializable {
 			@Override
 			
 			public void handle(ActionEvent e) {
-				canvasWriter.clear(javafx.scene.paint.Color.WHITE);
-				fileReader = new FileReader();
-				currentFile=explorerFile.getFile(treeView);
-				graphe = fileReader.read(currentFile);
-				canvasWriter.updateCanvasWriter(graphe);
+				updateFile();
 			}
 		});   
         
