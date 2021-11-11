@@ -37,7 +37,7 @@ import javafx.stage.Stage;
 
 public class MainControler implements Initializable {
     @FXML
-    Button buttonLoadFolder, btreebase , buttonHelp, buttonRotateUp, buttonRotateRight, buttonRotateLeft, buttonRotateDown, buttonRotateAroundRight, buttonRotateAroundLeft, buttonTranslateUp, buttonTranslateRight, buttonTranslateLeft, buttonTranslateDown, buttonReloadCanvas, buttonHomothetieUp, buttonHomothetieDown, buttonModelData, Fview, Aview ,Sview;
+    Button buttonLoadFolder, btreebase , buttonHelp, buttonRotateUp, buttonRotateRight, buttonRotateLeft, buttonRotateDown, buttonRotateAroundRight, buttonRotateAroundLeft, buttonTranslateUp, buttonTranslateRight, buttonTranslateLeft, buttonTranslateDown, buttonReloadCanvas, buttonHomothetieDown, buttonHomothetieUp, buttonModelData, Fview, Aview ,Sview;
     
     @FXML
     TreeView<File> treeView;
@@ -83,6 +83,7 @@ public class MainControler implements Initializable {
 				} else {
 					try {
 						treeView.setRoot(explorerFile.getNodesForDirectory(choice));
+						updateFile();
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
@@ -100,12 +101,15 @@ public class MainControler implements Initializable {
 				File directory = new File(pwd+"/exemples");
 					try {
 						treeView.setRoot(explorerFile.getNodesForDirectory(directory));
+						updateFile();
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
 				
 			}
+
+			
     	});
         
 		fileReader=new FileReader();
@@ -146,9 +150,10 @@ public class MainControler implements Initializable {
 
 
 			Label secondLabel = new Label("===========================================================================\n"
+					+ "Nom du fichier : "+ currentFile.getName() +"\n\n"
 					+ "Auteur : "+ graphe.getAuteur() +"\n\n"
 					+ "Nombre de Faces : "+ graphe.getNbFaces()+"\n\n"
-					+ "Nombre de Sommet : "+ graphe.getNbSommet() +"\n"
+					+ "Nombre de Sommet par faces : "+ graphe.getNbSommet() +"\n"
 					+ "\n\n\n"
 					+ "");
 
@@ -225,7 +230,7 @@ public class MainControler implements Initializable {
 			}
 		});
 		
-		buttonHomothetieDown.setOnAction(new EventHandler<ActionEvent>() {
+		buttonHomothetieUp.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent e) {
 				if(canvasWriter.homothesie<0) {
@@ -235,7 +240,7 @@ public class MainControler implements Initializable {
 			}
 		});
 		
-		buttonHomothetieUp.setOnAction(new EventHandler<ActionEvent>() {
+		buttonHomothetieDown.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent e) {
 				if(canvasWriter.homothesie<-21) {
@@ -250,40 +255,24 @@ public class MainControler implements Initializable {
 		
 		buttonTranslateRight.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
-				translation = new Translation(graphe.getMatrice(), -1, 0);
-				translation.translate();
-				graphe = fileReader.read(currentFile);
-				graphe.update(translation.getMcourante());
-				canvasWriter.updateCanvasWriter(graphe);
+				translateAction(-1,0);
 			}
 		});
 		buttonTranslateLeft.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
-				translation = new Translation(graphe.getMatrice(), 1, 0);
-				translation.translate();
-				graphe = fileReader.read(currentFile);
-				graphe.update(translation.getMcourante());
-				canvasWriter.updateCanvasWriter(graphe);
+				translateAction(1,0);
 			}
 		});
 		
 		buttonTranslateUp.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
-				translation = new Translation(graphe.getMatrice(), 0, 1);
-				translation.translate();
-				graphe = fileReader.read(currentFile);
-				graphe.update(translation.getMcourante());
-				canvasWriter.updateCanvasWriter(graphe);
+				translateAction(0,1);
 			}
 		});
 		
 		buttonTranslateDown.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
-				translation = new Translation(graphe.getMatrice(), 0, -1);
-				translation.translate();
-				graphe = fileReader.read(currentFile);
-				graphe.update(translation.getMcourante());
-				canvasWriter.updateCanvasWriter(graphe);
+				translateAction(0,-1);
 			}
 		});
 
@@ -409,18 +398,8 @@ public class MainControler implements Initializable {
 				graphe.update(rotation.getMcourante());
 				canvasWriter.updateCanvasWriter(graphe);
 				break;
-			//case L:
-			//	cw = new CanvasWriter(canvas,fr.read(current));
-			//	break;
-			
 			case P:
-				canvasWriter.clear(javafx.scene.paint.Color.WHITE);
-				fileReader = new FileReader();
-				currentFile=explorerFile.getFile(treeView);
-				if(currentFile != null && currentFile.isFile()) {
-					graphe = fileReader.read(currentFile);
-					canvasWriter.updateCanvasWriter(graphe);
-				}
+				updateFile();
 				break;
 			
 			case B:
@@ -435,32 +414,16 @@ public class MainControler implements Initializable {
 				}
 				break;
 			case T:
-				translation = new Translation(graphe.getMatrice(), 0, 1);
-				translation.translate();
-				graphe = fileReader.read(currentFile);
-				graphe.update(translation.getMcourante());
-				canvasWriter.updateCanvasWriter(graphe);
+				translateAction(0,1);
 				break;
 			case F:
-				translation = new Translation(graphe.getMatrice(), 1, 0);
-				translation.translate();
-				graphe = fileReader.read(currentFile);
-				graphe.update(translation.getMcourante());
-				canvasWriter.updateCanvasWriter(graphe);
+				translateAction(1,0);
 				break;
 			case G:
-				translation = new Translation(graphe.getMatrice(), 0, -1);
-				translation.translate();
-				graphe = fileReader.read(currentFile);
-				graphe.update(translation.getMcourante());
-				canvasWriter.updateCanvasWriter(graphe);
+				translateAction(0,-1);
 				break;
 			case H:
-				translation = new Translation(graphe.getMatrice(), -1, 0);
-				translation.translate();
-				graphe = fileReader.read(currentFile);
-				graphe.update(translation.getMcourante());
-				canvasWriter.updateCanvasWriter(graphe);
+				translateAction(-1,0);
 				break;
 			case W:
 				graphe = fileReader.read(currentFile);
@@ -470,7 +433,30 @@ public class MainControler implements Initializable {
 			}
 			
 		});
+    	
+    	
     }
+
+
+
+
+	private void translateAction(int x, int y) {
+		translation = new Translation(graphe.getMatrice(), x, y);
+		translation.translate();
+		graphe = fileReader.read(currentFile);
+		graphe.update(translation.getMcourante());
+		canvasWriter.updateCanvasWriter(graphe);
+	}
+    
+    private void updateFile() {
+		canvasWriter.clear(javafx.scene.paint.Color.WHITE);
+		fileReader = new FileReader();
+		currentFile=explorerFile.getFile(treeView);
+		if(currentFile != null && currentFile.isFile()) {
+			graphe = fileReader.read(currentFile);
+			canvasWriter.updateCanvasWriter(graphe);
+		}
+	}
     
 
 }

@@ -46,7 +46,11 @@ public class FileReader {
 			if(actual.equals("end_header"+"\n")) {
 				achieved = true;
 			}
-
+			/*
+			if(actual.startsWith()) {
+				
+			}
+*/
 			if(actual.startsWith("element vertex")) {
 				nbSommets = Integer.parseInt(actual.substring(15,actual.length()-1)); 
 			}
