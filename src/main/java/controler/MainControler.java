@@ -306,12 +306,12 @@ public class MainControler implements Initializable {
 			public void handle(ActionEvent e) {
 				Rotation rotationView = new RotationLeft(graphe.getMatrice(),null); 
 				rotationView.rotate(Math.PI/2);
-				CanvasWriter ocw= canvasWriter;
-				StackPane sp = new StackPane();
-				UpdateGraph updategraph = graphe;
+				fileReader=new FileReader();
+				graphe = fileReader.read(currentFile);
+				StackPane sp1 = new StackPane();
 				try {
-					CanvasViewer cv = new CanvasViewer(ocw, rotationView, 0, updategraph);
-					cv.canvasShow(sp);
+					CanvasViewer cv = new CanvasViewer(canvasWriter, rotationView, canvasWriter.homothesie, graphe);
+					cv.canvasShow(sp1, "Front View");
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -319,6 +319,44 @@ public class MainControler implements Initializable {
 				
 			}
 		});
+        Aview.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			
+			public void handle(ActionEvent e) {
+				Rotation rotationView = new RotationUp(graphe.getMatrice(),null); 
+				rotationView.rotate(Math.PI/2);
+				fileReader=new FileReader();
+				graphe = fileReader.read(currentFile);
+				StackPane sp1 = new StackPane();
+				try {
+					CanvasViewer cv = new CanvasViewer(canvasWriter, rotationView, canvasWriter.homothesie, graphe);
+					cv.canvasShow(sp1, "Front View");
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
+			}
+		});
+		 Sview.setOnAction(new EventHandler<ActionEvent>() {
+				@Override
+				
+				public void handle(ActionEvent e) {
+					Rotation rotationView = new RotationLeft(graphe.getMatrice(),null); 
+					rotationView.rotate(Math.PI);
+					fileReader=new FileReader();
+					graphe = fileReader.read(currentFile);
+					StackPane sp1 = new StackPane();
+					try {
+						CanvasViewer cv = new CanvasViewer(canvasWriter, rotationView, canvasWriter.homothesie, graphe);
+						cv.canvasShow(sp1, "Front View");
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+					
+				}
+			});
 		
     }
     
@@ -379,8 +417,10 @@ public class MainControler implements Initializable {
 				canvasWriter.clear(javafx.scene.paint.Color.WHITE);
 				fileReader = new FileReader();
 				currentFile=explorerFile.getFile(treeView);
-				graphe = fileReader.read(currentFile);
-				canvasWriter.updateCanvasWriter(graphe);
+				if(currentFile != null && currentFile.isFile()) {
+					graphe = fileReader.read(currentFile);
+					canvasWriter.updateCanvasWriter(graphe);
+				}
 				break;
 			
 			case B:
