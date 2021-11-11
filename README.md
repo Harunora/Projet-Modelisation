@@ -31,6 +31,8 @@
 - [X] FXML
 - [X] File Explorer
 - [X] Rotation
+- [X] Tests pour la classe de calcul mathématique de multiplication de matrice
+- [X] On visualise simultanément trois vues du modèle (de face, de haut, de côté)
 
 ### M
 
