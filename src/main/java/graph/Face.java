@@ -16,11 +16,11 @@ public class Face {
 	}
 	
 	public Face(int n , List<Sommet> sommets) {
-		this(n, sommets, new Color(0, 0, 0));
+		this(n, sommets, sommets.get(0).getColor());
 	}
 	
 	public Face(int n ) {
-		this(n, new ArrayList<Sommet>(), new Color(0, 0, 0));
+		this(n, new ArrayList<Sommet>(), null);
 	}
 	
 	public void addSommet(Sommet sommet) {
@@ -33,6 +33,14 @@ public class Face {
 
 	public List<Sommet> getSommets() {
 		return sommets;
+	}
+	
+	public Color getColor() {
+		return this.color;
+	}
+	
+	public boolean hasColor() {
+		return this.color == null;
 	}
 
 	@Override
