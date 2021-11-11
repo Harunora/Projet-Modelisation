@@ -292,10 +292,10 @@ public class MainControler implements Initializable {
 				Rotation rotationView = new RotationLeft(graphe.getMatrice(),null); 
 				rotationView.rotate(Math.PI/2);
 				fileReader=new FileReader();
-				graphe = fileReader.read(currentFile);
+				UpdateGraph grph = fileReader.read(currentFile);
 				StackPane sp1 = new StackPane();
 				try {
-					CanvasViewer cv = new CanvasViewer(canvasWriter, rotationView, canvasWriter.homothesie, graphe);
+					CanvasViewer cv = new CanvasViewer(canvasWriter, rotationView, canvasWriter.homothesie, grph);
 					cv.canvasShow(sp1, "Front View");
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
@@ -311,11 +311,11 @@ public class MainControler implements Initializable {
 				Rotation rotationView = new RotationUp(graphe.getMatrice(),null); 
 				rotationView.rotate(Math.PI/2);
 				fileReader=new FileReader();
-				graphe = fileReader.read(currentFile);
+				UpdateGraph grph = fileReader.read(currentFile);
 				StackPane sp1 = new StackPane();
 				try {
-					CanvasViewer cv = new CanvasViewer(canvasWriter, rotationView, canvasWriter.homothesie, graphe);
-					cv.canvasShow(sp1, "Front View");
+					CanvasViewer cv = new CanvasViewer(canvasWriter, rotationView, canvasWriter.homothesie, grph);
+					cv.canvasShow(sp1, "Above View");
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -330,11 +330,11 @@ public class MainControler implements Initializable {
 					Rotation rotationView = new RotationLeft(graphe.getMatrice(),null); 
 					rotationView.rotate(Math.PI);
 					fileReader=new FileReader();
-					graphe = fileReader.read(currentFile);
+					UpdateGraph grph = fileReader.read(currentFile);
 					StackPane sp1 = new StackPane();
 					try {
-						CanvasViewer cv = new CanvasViewer(canvasWriter, rotationView, canvasWriter.homothesie, graphe);
-						cv.canvasShow(sp1, "Front View");
+						CanvasViewer cv = new CanvasViewer(canvasWriter, rotationView, canvasWriter.homothesie, grph);
+						cv.canvasShow(sp1, "Side View");
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
