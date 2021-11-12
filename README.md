@@ -45,6 +45,7 @@
 
 ### C
  
+- [X] Création du jar exécutable 
 - [X] Dessiner sur le Canvas
 - [X] Homotétie
 
