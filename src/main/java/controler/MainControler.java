@@ -122,15 +122,17 @@ public class MainControler implements Initializable {
 					+ "Appuiyer sur la touche P pour lancer en cas de bug \n\n"
 					+ "Si le modele ne s'affiche pas correctement allez dans source folder -> git -> exemples puis selectionnez le model a afficher\n\n"
 					+ "Le bouton reinitialiser (ou w) remet le modele a�son etat de base\n\n"
-					+ "La rotation s'effectue aussi avec les touches z q s d\n"
-					+ "La translation s'effectue aussi avec les touches t f g h\n"
-					+ "\n\n\n"
+					+ "La rotation s'effectue aussi avec les touches z(haut), q(gauche), s(bas), d(droite), \n"
+					+ "             a(droite par rapport au plan 2D), e(gauche par rapport au plan 2D)\n\n"
+					+ "La translation s'effectue aussi avec les touches t(haut) f(dgauche) g(bas) h(droite)\n"
+					+ "\n"
+					+ "Pour agrandir ou reduire le model b(agrandir) et n(reduire) "
 					+ "");
 
 			StackPane secondaryLayout = new StackPane();
 			secondaryLayout.getChildren().add(secondLabel);
 
-			Scene secondScene = new Scene(secondaryLayout, 630, 200);
+			Scene secondScene = new Scene(secondaryLayout, 750, 250);
 
 			// New window (Stage)
 			Stage newWindow = new Stage();
@@ -147,86 +149,98 @@ public class MainControler implements Initializable {
         
         buttonModelData.addEventHandler(MouseEvent.MOUSE_CLICKED, e->{
 
+        	if(currentFile != null && currentFile.isFile()) {
+        		Label secondLabel = new Label("===========================================================================\n"
+        				+ "Nom du fichier : "+ currentFile.getName() +"\n\n"
+        				+ "Auteur : "+ graphe.getAuteur() +"\n\n"
+        				+ "Nombre de Faces : "+ graphe.getNbFaces()+"\n\n"
+						+ "Nombre de Sommet par faces : "+ graphe.getNbSommet() +"\n\n"
+						+ "Autre commentaire : "+ fileReader.getCommentaire()+"\n\n"
+						+ "\n\n\n"
+						+ "");
 
-			Label secondLabel = new Label("===========================================================================\n"
-					+ "Nom du fichier : "+ currentFile.getName() +"\n\n"
-					+ "Auteur : "+ graphe.getAuteur() +"\n\n"
-					+ "Nombre de Faces : "+ graphe.getNbFaces()+"\n\n"
-					+ "Nombre de Sommet par faces : "+ graphe.getNbSommet() +"\n\n"
-					+ "Autre commentaire : "+ fileReader.getCommentaire()+"\n\n"
-					+ "\n\n\n"
-					+ "");
+        		StackPane secondaryLayout = new StackPane();
+        		secondaryLayout.getChildren().add(secondLabel);
 
-			StackPane secondaryLayout = new StackPane();
-			secondaryLayout.getChildren().add(secondLabel);
+        		Scene secondScene = new Scene(secondaryLayout, 630, 200);
 
-			Scene secondScene = new Scene(secondaryLayout, 630, 200);
+        		// New window (Stage)
+        		Stage newWindow = new Stage();
+        		newWindow.setTitle("Info Fichier");
+        		newWindow.setScene(secondScene);
 
-			// New window (Stage)
-			Stage newWindow = new Stage();
-			newWindow.setTitle("Info Fichier");
-			newWindow.setScene(secondScene);
+        		// Specifies the modality for new window.
+        		newWindow.initModality(Modality.WINDOW_MODAL);
 
-			// Specifies the modality for new window.
-			newWindow.initModality(Modality.WINDOW_MODAL);
-
-			newWindow.show();
-
+        		newWindow.show();
+        	}
 		});
 		
 		buttonRotateRight.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
-				rotation = new RotationRight(graphe.getMatrice(),null); 
-			    rotation.rotate(Math.PI/100);
-				graphe = fileReader.read(currentFile);
-				graphe.update(rotation.getMcourante());
-				canvasWriter.updateCanvasWriter(graphe);
+				if(currentFile != null && currentFile.isFile()) {
+					rotation = new RotationRight(graphe.getMatrice(),null); 
+					rotation.rotate(Math.PI/100);
+					graphe = fileReader.read(currentFile);
+					graphe.update(rotation.getMcourante());
+					canvasWriter.updateCanvasWriter(graphe);
+				}
 			}
 		});
 		buttonRotateLeft.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
-				Rotation r = new RotationLeft(graphe.getMatrice(),null); 
-				r.rotate(Math.PI/100);
-				graphe = fileReader.read(currentFile);
-				graphe.update(r.getMcourante());
-				canvasWriter.updateCanvasWriter(graphe);
+				if(currentFile != null && currentFile.isFile()) {
+					Rotation r = new RotationLeft(graphe.getMatrice(),null); 
+					r.rotate(Math.PI/100);
+					graphe = fileReader.read(currentFile);
+					graphe.update(r.getMcourante());
+					canvasWriter.updateCanvasWriter(graphe);
+				}
 			}
 		});
 		buttonRotateAroundRight.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
-				Rotation r = new RotationAroundLeft(graphe.getMatrice(),null); 
-				r.rotate(Math.PI/100);
-				graphe = fileReader.read(currentFile);
-				graphe.update(r.getMcourante());
-				canvasWriter.updateCanvasWriter(graphe);
+				if(currentFile != null && currentFile.isFile()) {
+					Rotation r = new RotationAroundLeft(graphe.getMatrice(),null); 
+					r.rotate(Math.PI/100);
+					graphe = fileReader.read(currentFile);
+					graphe.update(r.getMcourante());
+					canvasWriter.updateCanvasWriter(graphe);
+				}
 			}
 		});
 		
 		buttonRotateAroundLeft.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
-				Rotation r = new RotationAroundRight(graphe.getMatrice(),null); 
-				r.rotate(Math.PI/100);
-				graphe = fileReader.read(currentFile);
-				graphe.update(r.getMcourante());
-				canvasWriter.updateCanvasWriter(graphe);
+				if(currentFile != null && currentFile.isFile()) {
+					Rotation r = new RotationAroundRight(graphe.getMatrice(),null); 
+					r.rotate(Math.PI/100);
+					graphe = fileReader.read(currentFile);
+					graphe.update(r.getMcourante());
+					canvasWriter.updateCanvasWriter(graphe);
+				}
 			}
 		});
 		buttonRotateUp.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
-				rotation = new RotationUp(graphe.getMatrice(),null); 
-				rotation.rotate(Math.PI/100);
-				graphe = fileReader.read(currentFile);
-				graphe.update(rotation.getMcourante());
-				canvasWriter.updateCanvasWriter(graphe);
+				if(currentFile != null && currentFile.isFile()) {
+					rotation = new RotationUp(graphe.getMatrice(),null); 
+					rotation.rotate(Math.PI/100);
+					graphe = fileReader.read(currentFile);
+					graphe.update(rotation.getMcourante());
+					canvasWriter.updateCanvasWriter(graphe);
+				}
 			}
 		});
 		buttonRotateDown.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
-				rotation = new RotationDown(graphe.getMatrice(),null); 
-				rotation.rotate(Math.PI/100);
-				graphe = fileReader.read(currentFile);
-				graphe.update(rotation.getMcourante());
-				canvasWriter.updateCanvasWriter(graphe);
+				if(currentFile != null && currentFile.isFile()) {
+					rotation = new RotationDown(graphe.getMatrice(),null); 
+					rotation.rotate(Math.PI/100);
+					graphe = fileReader.read(currentFile);
+					graphe.update(rotation.getMcourante());
+					canvasWriter.updateCanvasWriter(graphe);
+				}
 			}
 		});
 		
@@ -255,24 +269,32 @@ public class MainControler implements Initializable {
 		
 		buttonTranslateRight.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
-				translateAction(-1,0);
+				if(currentFile != null && currentFile.isFile()) {
+					translateAction(-1,0);
+				}	
 			}
 		});
 		buttonTranslateLeft.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
-				translateAction(1,0);
+				if(currentFile != null && currentFile.isFile()) {
+					translateAction(1,0);
+				}
 			}
 		});
 		
 		buttonTranslateUp.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
-				translateAction(0,1);
+				if(currentFile != null && currentFile.isFile()) {
+					translateAction(0,1);
+				}	
 			}
 		});
 		
 		buttonTranslateDown.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
-				translateAction(0,-1);
+				if(currentFile != null && currentFile.isFile()) {
+					translateAction(0,-1);
+				}
 			}
 		});
 
@@ -292,16 +314,17 @@ public class MainControler implements Initializable {
 				Rotation rotationView = new RotationLeft(graphe.getMatrice(),null); 
 				rotationView.rotate(Math.PI/2);
 				fileReader=new FileReader();
-				UpdateGraph grph = fileReader.read(currentFile);
-				StackPane sp1 = new StackPane();
-				try {
-					CanvasViewer cv = new CanvasViewer(canvasWriter, rotationView, canvasWriter.homothesie, grph);
-					cv.canvasShow(sp1, "Front View");
-				} catch (IOException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-				
+				if(currentFile != null && currentFile.isFile()) {
+					UpdateGraph grph = fileReader.read(currentFile);
+					StackPane sp1 = new StackPane();
+					try {
+						CanvasViewer cv = new CanvasViewer(canvasWriter, rotationView, canvasWriter.homothesie, grph);
+						cv.canvasShow(sp1, "Front View");
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				}	
 			}
 		});
         Aview.setOnAction(new EventHandler<ActionEvent>() {
@@ -311,16 +334,17 @@ public class MainControler implements Initializable {
 				Rotation rotationView = new RotationUp(graphe.getMatrice(),null); 
 				rotationView.rotate(Math.PI/2);
 				fileReader=new FileReader();
-				UpdateGraph grph = fileReader.read(currentFile);
-				StackPane sp1 = new StackPane();
-				try {
-					CanvasViewer cv = new CanvasViewer(canvasWriter, rotationView, canvasWriter.homothesie, grph);
-					cv.canvasShow(sp1, "Above View");
-				} catch (IOException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-				
+				if(currentFile != null && currentFile.isFile()) {
+					UpdateGraph grph = fileReader.read(currentFile);
+					StackPane sp1 = new StackPane();
+					try {
+						CanvasViewer cv = new CanvasViewer(canvasWriter, rotationView, canvasWriter.homothesie, grph);
+						cv.canvasShow(sp1, "Above View");
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				}	
 			}
 		});
 		 Sview.setOnAction(new EventHandler<ActionEvent>() {
@@ -330,14 +354,16 @@ public class MainControler implements Initializable {
 					Rotation rotationView = new RotationLeft(graphe.getMatrice(),null); 
 					rotationView.rotate(Math.PI);
 					fileReader=new FileReader();
-					UpdateGraph grph = fileReader.read(currentFile);
-					StackPane sp1 = new StackPane();
-					try {
-						CanvasViewer cv = new CanvasViewer(canvasWriter, rotationView, canvasWriter.homothesie, grph);
-						cv.canvasShow(sp1, "Side View");
-					} catch (IOException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
+					if(currentFile != null && currentFile.isFile()) {
+						UpdateGraph grph = fileReader.read(currentFile);
+						StackPane sp1 = new StackPane();
+						try {
+							CanvasViewer cv = new CanvasViewer(canvasWriter, rotationView, canvasWriter.homothesie, grph);
+							cv.canvasShow(sp1, "Side View");
+						} catch (IOException e1) {
+							// TODO Auto-generated catch block
+							e1.printStackTrace();
+						}
 					}
 					
 				}
