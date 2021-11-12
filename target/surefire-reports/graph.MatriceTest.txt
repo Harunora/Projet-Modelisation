@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: graph.MatriceTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.025 s <<< FAILURE! - in graph.MatriceTest
+graph.MatriceTest.testX  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.NullPointerException
+	at graph.MatriceTest.testX(MatriceTest.java:21)
+
+graph.MatriceTest.testSommet2  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.IndexOutOfBoundsException: Index 3 out of bounds for length 0
+	at graph.MatriceTest.testSommet2(MatriceTest.java:29)
+

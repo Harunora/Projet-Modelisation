@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Built-By: chris
+Build-Jdk: 14.0.1
+Class-Path: dependency-jars/javafx-controls-11.jar dependency-jars/javaf
+ x-controls-11-win.jar dependency-jars/javafx-graphics-11.jar dependency
+ -jars/javafx-graphics-11-win.jar dependency-jars/javafx-base-11.jar dep
+ endency-jars/javafx-base-11-win.jar dependency-jars/javafx-fxml-11.jar 
+ dependency-jars/javafx-fxml-11-win.jar
+Main-Class: controler.Main
+Created-By: Maven Integration for Eclipse
+

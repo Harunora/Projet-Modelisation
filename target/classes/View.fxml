@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Scene?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.stage.Stage?>
+
+<Stage fx:id="stageView" title="View" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controler.CanvasViewer">
+    <scene>
+        <Scene>
+            <AnchorPane prefHeight="200" prefWidth="200">
+            <children>
+               <Canvas fx:id="canvasView" height="510.0" width="750.0" />
+            </children></AnchorPane>
+        </Scene>
+    </scene>
+</Stage>
