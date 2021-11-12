@@ -51,14 +51,14 @@ public class MainControler implements Initializable {
     protected Scene scene;
    
     public File currentFile = new File("exemples/cube.ply");
-    ExplorerFile explorerFile = new ExplorerFile();
-    FileReader fileReader=new FileReader();
+    private ExplorerFile explorerFile = new ExplorerFile();
+    private FileReader fileReader=new FileReader();
     
     public Stage stage = new Stage();
-    UpdateGraph graphe = fileReader.read(currentFile);
-    CanvasWriter canvasWriter;
-    Rotation rotation;
-    Translation translation;
+    private UpdateGraph graphe = fileReader.read(currentFile);
+    private CanvasWriter canvasWriter;
+    private Rotation rotation;
+    private Translation translation;
 
     
     @SuppressWarnings("incomplete-switch")
