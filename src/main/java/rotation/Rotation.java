@@ -1,4 +1,6 @@
-package graph;
+package rotation;
+
+import graph.Matrice;
 
 public abstract class Rotation {
 	protected Matrice mcourante;

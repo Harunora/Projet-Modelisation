@@ -1,4 +1,4 @@
-package controler;
+package file;
 
 import java.io.File;
 import java.io.FileFilter;
@@ -14,7 +14,7 @@ public class ExplorerFile {
 	private File current = null;
 	private String currentPath = "";
 	private Graph graph;
-	FileReader r = new FileReader();
+	public FileReader r = new FileReader();
 	public static boolean existFile(File[] f, File f1) {
 		for (int i = 0; i < f.length; i++) {
 			if (f[i].equals(f1)) {
@@ -72,5 +72,8 @@ public class ExplorerFile {
 	}
 	public void setCurrentPath(String currentPath) {
 		this.currentPath = currentPath;
+	}
+	public Graph getGraph() {
+		return graph;
 	}
 }

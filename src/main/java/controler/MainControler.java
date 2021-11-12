@@ -5,16 +5,9 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-
+import file.ExplorerFile;
 import graph.CanvasWriter;
 import graph.FileReader;
-import graph.Rotation;
-import graph.RotationAroundLeft;
-import graph.RotationAroundRight;
-import graph.RotationDown;
-import graph.RotationLeft;
-import graph.RotationRight;
-import graph.RotationUp;
 import graph.Translation;
 import graph.UpdateGraph;
 import javafx.event.ActionEvent;
@@ -34,6 +27,13 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import rotation.Rotation;
+import rotation.RotationAroundLeft;
+import rotation.RotationAroundRight;
+import rotation.RotationDown;
+import rotation.RotationLeft;
+import rotation.RotationRight;
+import rotation.RotationUp;
 
 public class MainControler implements Initializable {
     @FXML

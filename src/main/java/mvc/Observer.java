@@ -1,4 +1,4 @@
-package graph;
+package mvc;
 
 public interface Observer {
 	public void update(Subject subj);

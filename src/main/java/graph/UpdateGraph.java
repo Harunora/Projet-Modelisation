@@ -6,15 +6,17 @@ import java.util.List;
 import java.util.StringTokenizer;
 
 public class UpdateGraph extends Graph{
+	
+	
+	private List<Sommet> sommets = new ArrayList<Sommet>();
+	protected int nb,a,b,c,d,r,g,bl;
+
+
+	
 	public UpdateGraph(int nbFace, List<Face> faces, Matrice matrice, List<String> sommetDeFaces, String auteur) {
 		super(nbFace, faces, matrice, sommetDeFaces, auteur);
 
 	}
-	
-	private List<Sommet> sommets = new ArrayList<Sommet>();
-	int nb,a,b,c,d,r,g,bl;
-
-
 	public void update(Matrice ma) {
 		matrice = ma;
 		faces.clear();

@@ -15,7 +15,7 @@ public class FileReader {
 	private List<Face>faces = new ArrayList<Face>();
 	private List<String> sommetsDeFaces = new ArrayList<String>();
 	private boolean hasColor = false;
-	Matrice matrice;
+	protected Matrice matrice;
 
 
 

@@ -12,12 +12,12 @@ public class CanvasWriter {
 	public Canvas canvas;
 
 	public GraphicsContext graphicContext;
-	List<Color> color;
-	List<double[]> x;
-	List<double[]> y;
-	List<double[]> z;
-	double height;
-	double width;
+	protected List<Color> color;
+	protected List<double[]> x;
+	protected List<double[]> y;
+	protected List<double[]> z;
+	protected double height;
+	protected double width;
 
 	public int homothesie=-100;
 

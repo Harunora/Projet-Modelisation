@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Face {
-	Color color;
-	int nbSommet;
-	List<Sommet> sommets;
+	protected Color color;
+	protected int nbSommet;
+	protected List<Sommet> sommets;
 	
 	//Une face est une list de plusieurs Sommets
 	public Face(int n, List<Sommet> sommets, Color color) {

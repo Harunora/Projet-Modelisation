@@ -5,7 +5,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import graph.CanvasWriter;
-import graph.Rotation;
 import graph.UpdateGraph;
 import javafx.application.Application;
 import javafx.fxml.FXML;
@@ -17,6 +16,7 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import rotation.Rotation;
 
 public class CanvasViewer {
 	

@@ -20,9 +20,9 @@
 ## Autres éléments demandés
 
 - [X] Tests pour les classes de calcul mathématique
-- [ ] Captures d'écran pour le rendu
-- [ ] Vidéo de présentation du rendu
-- [ ] Respect du format de rendu (cf Moodle)
+- [X] Captures d'écran pour le rendu
+- [X] Vidéo de présentation du rendu
+- [/] Respect du format de rendu (cf Moodle)
 
 ## Distribution du travail (qui a fait quoi)
 
@@ -36,10 +36,12 @@
 
 ### M
 
-- [X] Structure de Graph (Sommets et faces)
+- [X] Structure de Graph (Sommets et faces) avec leurs tests 
+- [X] UpdateGraph (qui permet de mettre à jour le graph par rapport à la matrice)
 - [X] Lecteur de Fichier .ply
 - [X] Matrice
-- [X] Translation
+- [X] Translation (gauche, droite, haut, bas)
+- [X] Information du fichier (auteur, NbFace, Commentaires)
 
 ### C
  

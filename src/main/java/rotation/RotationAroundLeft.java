@@ -1,4 +1,6 @@
-package graph;
+package rotation;
+
+import graph.Matrice;
 
 public class RotationAroundLeft extends Rotation {
 	public RotationAroundLeft(Matrice m, Rotation r) {

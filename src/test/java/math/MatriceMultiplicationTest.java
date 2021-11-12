@@ -5,8 +5,8 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 import graph.Matrice;
-import graph.Rotation;
-import graph.RotationUp;
+import rotation.Rotation;
+import rotation.RotationUp;
 
 class MatriceMultiplicationTest {
 
