@@ -12,6 +12,13 @@ public class Sommet {
 		this.color = null;
 	}
 	
+	public Sommet(double x, double y, double z, Color color) {
+		this.x = x;
+		this.y = y;
+		this.z = z;
+		this.color = color;
+	}
+	
 	public Sommet(double[] tabXyz) {
 		x = tabXyz[0];
 		y = tabXyz[1];

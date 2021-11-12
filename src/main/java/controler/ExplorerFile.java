@@ -34,12 +34,10 @@ public class ExplorerFile {
 	public TreeItem<File> getNodesForDirectory(File directory) throws IOException {
 		this.currentPath = "";
 		TreeItem<File> root = new TreeItem<File>(directory.getAbsoluteFile());
-		System.out.println(directory.getAbsolutePath());
 
 		for (File f : directory.listFiles()) {
 			if (f.isDirectory()) {
 				root.getChildren().add(getNodesForDirectory(f));
-				System.out.println(getNodesForDirectory(f));
 			} else {
 				String rep = directory.getAbsolutePath();
 				this.currentPath = rep;
@@ -51,11 +49,7 @@ public class ExplorerFile {
 						return fileName.endsWith(".ply");
 					}
 				});
-				for (File fichierPly : fichiersPly) {
-					System.out.println(fichierPly.getName());
-				}
 				if (existFile(fichiersPly, f)) {
-					System.out.println("Loading " + f.getName());
 					root.getChildren().add(new TreeItem<File>(f.getCanonicalFile()));
 				}
 			}
@@ -66,7 +60,6 @@ public class ExplorerFile {
 		tv.getSelectionModel().selectedItemProperty().addListener((v, oldValue, newValue) -> {
 			if (newValue != null) {
 				current = ((TreeItem<File>) newValue).getValue();
-				System.out.println(current.getName());
 			}
 		});	
 		return current;

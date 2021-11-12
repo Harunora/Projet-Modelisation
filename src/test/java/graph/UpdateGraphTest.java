@@ -9,21 +9,21 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 
 class UpdateGraphTest {
-	String myPath = System.getProperty("user.dir")+File.separator+"data"+File.separator;
-	File file = new File(myPath+"test.ply");
+	String myPath = System.getProperty("user.dir")+File.separator+"exemples"+File.separator;
+	File file = new File(myPath+"cube.ply");
 	File file2 = new File(myPath+"apple.ply");
 	
 	Graph implementation() {
 		List<Face> f = new ArrayList<Face>();
 		Matrice matrice;
-		Sommet s0 = new Sommet(0,0,0);
-		Sommet s1 = new Sommet(0,0,1);
-		Sommet s2 = new Sommet(0,1,1);
-		Sommet s3 = new Sommet(0,1,0);
-		Sommet s4 = new Sommet(1,0,0);
-		Sommet s5 = new Sommet(1,0,1);
-		Sommet s6 = new Sommet(1,1,1);
-		Sommet s7 = new Sommet(1,1,0);
+		Sommet s0 = new Sommet(0,0,0, new Color(255,0,0));
+		Sommet s1 = new Sommet(0,0,1, new Color(0,0,0));
+		Sommet s2 = new Sommet(0,1,1, new Color(55,0,5));
+		Sommet s3 = new Sommet(0,1,0, new Color(0,25,2));
+		Sommet s4 = new Sommet(1,0,0, new Color(0,55,0));
+		Sommet s5 = new Sommet(1,0,1, new Color(0,0,25));
+		Sommet s6 = new Sommet(1,1,1, new Color(0,0,25));
+		Sommet s7 = new Sommet(1,1,0, new Color(0,0,0));
 		List<Sommet> listSommet1 = new ArrayList<Sommet>();
 		listSommet1.add(s0);
 		listSommet1.add(s1);
@@ -70,26 +70,9 @@ class UpdateGraphTest {
 		string.add("4 3 7 4 0\n");
 		return new Graph(6,f, matrice, string, "");
 	}
-	@Test
-	void testString() {
-		FileReader r = new FileReader();
-		Graph attendu = implementation();
-		Graph obtenu = r.read(file);
-		assertEquals(attendu.getSommetsDeFaces(), obtenu.getSommetsDeFaces());
-	}
 	
 	@Test
 	void testUpdate1() {
-		FileReader r = new FileReader();
-		Graph attendu = implementation();
-		Graph old = r.read(file);
-		UpdateGraph u = new UpdateGraph(old.nbFaces, old.faces, old.matrice, old.sommetsDeFaces, ""); 
-		u.update(old.matrice);
-		assertEquals(attendu.getSommetsDeFaces(), u.getSommetsDeFaces());
-	}
-	
-	@Test
-	void testUpdate2() {
 		FileReader r = new FileReader();
 		Graph old = r.read(file);
 		Graph attendu = implementation();
@@ -99,7 +82,7 @@ class UpdateGraphTest {
 	}
 	
 	@Test
-	void testUpdate3() {
+	void testUpdate2() {
 		FileReader r = new FileReader();
 		Graph old = r.read(file);
 		Graph attendu = implementation();

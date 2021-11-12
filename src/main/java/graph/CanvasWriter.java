@@ -57,7 +57,8 @@ public class CanvasWriter {
 		while(this.x.size()!=0) {
 			idx=getPositionHighestZ();
 			graphicContext.strokePolygon(this.x.get(idx),this.y.get(idx), this.y.get(idx).length);
-			graphicContext.setFill(javafx.scene.paint.Color.rgb(color.get(idx).getR(), color.get(idx).getG(), color.get(idx).getB()));
+			graphicContext.setFill(javafx.scene.paint.Color.RED);
+			//graphicContext.setFill(javafx.scene.paint.Color.rgb(color.get(idx).getR(), color.get(idx).getG(), color.get(idx).getB()));
 			graphicContext.fillPolygon(this.x.get(idx),this.y.get(idx), this.y.get(idx).length);
 			removeFace(idx);
 		}
@@ -84,11 +85,12 @@ public class CanvasWriter {
 			this.x.add(i1);
 			this.y.add(i2);
 			this.z.add(i3);
+			/*
 			if(this.listface.getFaces().get(i).getSommets().get(0).getColor() == null) {
 				this.color.add(new Color(255, 255, 255));
 			}else {
 				this.color.add(this.listface.getFaces().get(i).getSommets().get(0).getColor());
-			}
+			}*/
 		}
 		writeOnCanvas();
 	}

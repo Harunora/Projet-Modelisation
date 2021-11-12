@@ -9,7 +9,7 @@ import java.util.Scanner;
 import java.util.StringTokenizer;
 
 public class FileReader {
-	private String actual = "",auteur="";
+	private String actual = "",auteur="",commentaire="";
 	private int nbFaces = 0,nbSommets = 0;
 	private List<Sommet> sommets = new ArrayList<Sommet>();
 	private List<Face>faces = new ArrayList<Face>();
@@ -55,10 +55,16 @@ public class FileReader {
 			if(actual.startsWith("element vertex")) {
 				nbSommets = Integer.parseInt(actual.substring(15,actual.length()-1)); 
 			}
-
-			if(actual.startsWith("comment made by")) {
-				auteur = actual.substring(15);
+			
+			if(actual.startsWith("comment")) {
+				if(actual.startsWith("comment made by")) {
+					auteur = actual.substring(15);
+				}else {
+					commentaire += actual.substring(7) + "\n";
+				}
 			}
+
+			
 
 			if(actual.startsWith("element face")) {
 				nbFaces = Integer.parseInt(actual.substring(13,actual.length()-1));
@@ -88,9 +94,6 @@ public class FileReader {
 				int nb = Integer.parseInt(lineToken.nextToken());
 				for(int j = 0; j<nb; j++) {
 					listIdxSommet.add(Integer.parseInt(lineToken.nextToken()));
-				}
-				if(hasColor) {
-					System.out.println("a des couleurs");
 				}
 				for(int j = 0; j< nb; j++) {
 					listSommetTmp.add(sommets.get(listIdxSommet.get(j)));
@@ -125,7 +128,6 @@ public class FileReader {
 			double[] tabXyz = addXyz(s1);
 			if(hasColor) {
 				int[] rgbTab = addRgb(s1);
-				System.out.println("rgb tab : " + rgbTab);
 				Color colorTmp = new Color(rgbTab);
 				tmp = new Sommet(tabXyz, colorTmp);
 			}else {
@@ -143,6 +145,11 @@ public class FileReader {
 
 	public String getAuteur() {
 		return auteur;
+	}
+
+
+	public String getCommentaire() {
+		return commentaire;
 	}
 
 }

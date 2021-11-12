@@ -50,7 +50,7 @@ public class MainControler implements Initializable {
     
     protected Scene scene;
    
-    public File currentFile = new File("exemples/test.ply");
+    public File currentFile = new File("exemples/cube.ply");
     ExplorerFile explorerFile = new ExplorerFile();
     FileReader fileReader=new FileReader();
     
@@ -152,7 +152,8 @@ public class MainControler implements Initializable {
 					+ "Nom du fichier : "+ currentFile.getName() +"\n\n"
 					+ "Auteur : "+ graphe.getAuteur() +"\n\n"
 					+ "Nombre de Faces : "+ graphe.getNbFaces()+"\n\n"
-					+ "Nombre de Sommet par faces : "+ graphe.getNbSommet() +"\n"
+					+ "Nombre de Sommet par faces : "+ graphe.getNbSommet() +"\n\n"
+					+ "Autre commentaire : "+ fileReader.getCommentaire()+"\n\n"
 					+ "\n\n\n"
 					+ "");
 

@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 
 class FileReaderTest {
 	String myPath = System.getProperty("user.dir")+File.separator+"exemples"+File.separator;
-	File file = new File(myPath+"test.ply");
+	File file = new File(myPath+"cube.ply");
 	File file2 = new File(myPath+"apple.ply");
 	FileReader r = new FileReader();
 	FileReader r2 = new FileReader();
@@ -21,14 +21,14 @@ class FileReaderTest {
 	Graph implementation() {
 		List<Face> f = new ArrayList<Face>();
 		Matrice matrice;
-		Sommet s0 = new Sommet(0,0,0);
-		Sommet s1 = new Sommet(0,0,1);
-		Sommet s2 = new Sommet(0,1,1);
-		Sommet s3 = new Sommet(0,1,0);
-		Sommet s4 = new Sommet(1,0,0);
-		Sommet s5 = new Sommet(1,0,1);
-		Sommet s6 = new Sommet(1,1,1);
-		Sommet s7 = new Sommet(1,1,0);
+		Sommet s0 = new Sommet(0,0,0, new Color(255,0,0));
+		Sommet s1 = new Sommet(0,0,1, new Color(0,0,0));
+		Sommet s2 = new Sommet(0,1,1, new Color(55,0,5));
+		Sommet s3 = new Sommet(0,1,0, new Color(0,25,2));
+		Sommet s4 = new Sommet(1,0,0, new Color(0,55,0));
+		Sommet s5 = new Sommet(1,0,1, new Color(0,0,25));
+		Sommet s6 = new Sommet(1,1,1, new Color(0,0,25));
+		Sommet s7 = new Sommet(1,1,0, new Color(0,0,0));
 		List<Sommet> listSommet1 = new ArrayList<Sommet>();
 		listSommet1.add(s0);
 		listSommet1.add(s1);
