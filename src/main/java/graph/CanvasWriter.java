@@ -18,7 +18,8 @@ public class CanvasWriter {
 	protected List<double[]> z;
 	protected double height;
 	protected double width;
-
+	private boolean linePrint;
+	private boolean colorPrint;
 	public int homothesie=-100;
 
 
@@ -56,10 +57,14 @@ public class CanvasWriter {
 		int idx=0;
 		while(this.x.size()!=0) {
 			idx=getPositionHighestZ();
-			graphicContext.strokePolygon(this.x.get(idx),this.y.get(idx), this.y.get(idx).length);
-			graphicContext.setFill(javafx.scene.paint.Color.RED);
-			//graphicContext.setFill(javafx.scene.paint.Color.rgb(color.get(idx).getR(), color.get(idx).getG(), color.get(idx).getB()));
-			graphicContext.fillPolygon(this.x.get(idx),this.y.get(idx), this.y.get(idx).length);
+			if(colorPrint) {
+				graphicContext.setFill(javafx.scene.paint.Color.RED);
+				//graphicContext.setFill(javafx.scene.paint.Color.rgb(color.get(idx).getR(), color.get(idx).getG(), color.get(idx).getB()));
+				graphicContext.fillPolygon(this.x.get(idx),this.y.get(idx), this.y.get(idx).length);
+			}
+			if(linePrint) {
+				graphicContext.strokePolygon(this.x.get(idx),this.y.get(idx), this.y.get(idx).length);
+			}
 			removeFace(idx);
 		}
 	}
@@ -115,6 +120,14 @@ public class CanvasWriter {
 		}
 
 		return retour; 
+	}
+	
+	public void inversePrintLine() {
+		this.linePrint=!this.linePrint;
+	}
+	
+	public void inversePrintColor() {
+		this.colorPrint=!this.colorPrint;
 	}
 
 	public void removeFace(int idx) {

@@ -103,6 +103,16 @@
                               </AnchorPane>
                           </content>
                         </Tab>
+                        <Tab text="Option d'affichage">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Button fx:id="printLine" layoutX="33.0" layoutY="11.0" mnemonicParsing="false" text="Afficher les lignes" />
+                                    <Button fx:id="printColor" layoutX="202.0" layoutY="11.0" mnemonicParsing="false" text="Afficher les faces en couleur" />
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
                      </tabs>
                   </TabPane>
                   <Canvas fx:id="canvas" height="680.0" layoutX="-13.0" layoutY="87.0" width="1000.0" AnchorPane.bottomAnchor="-18.0" AnchorPane.leftAnchor="-13.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="87.0" />

@@ -1,0 +1,1146 @@
+src/main/java/controler/CanvasViewer.java:4:	UnusedImports:	UnusedImports: Unused import 'java.net.URL'
+src/main/java/controler/CanvasViewer.java:4:	UnusedImports:	UnusedImports: Unused import 'java.net.URL'
+src/main/java/controler/CanvasViewer.java:5:	UnusedImports:	UnusedImports: Unused import 'java.util.ResourceBundle'
+src/main/java/controler/CanvasViewer.java:5:	UnusedImports:	UnusedImports: Unused import 'java.util.ResourceBundle'
+src/main/java/controler/CanvasViewer.java:10:	UnusedImports:	UnusedImports: Unused import 'javafx.application.Application'
+src/main/java/controler/CanvasViewer.java:10:	UnusedImports:	UnusedImports: Unused import 'javafx.application.Application'
+src/main/java/controler/CanvasViewer.java:12:	UnusedImports:	UnusedImports: Unused import 'javafx.fxml.FXMLLoader'
+src/main/java/controler/CanvasViewer.java:12:	UnusedImports:	UnusedImports: Unused import 'javafx.fxml.FXMLLoader'
+src/main/java/controler/CanvasViewer.java:13:	UnusedImports:	UnusedImports: Unused import 'javafx.fxml.Initializable'
+src/main/java/controler/CanvasViewer.java:13:	UnusedImports:	UnusedImports: Unused import 'javafx.fxml.Initializable'
+src/main/java/controler/CanvasViewer.java:14:	UnusedImports:	UnusedImports: Unused import 'javafx.scene.Parent'
+src/main/java/controler/CanvasViewer.java:14:	UnusedImports:	UnusedImports: Unused import 'javafx.scene.Parent'
+src/main/java/controler/CanvasViewer.java:21:	CommentRequired:	CommentRequired: Class comments are required
+src/main/java/controler/CanvasViewer.java:21:	CommentRequired:	CommentRequired: Class comments are required
+src/main/java/controler/CanvasViewer.java:24:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/controler/CanvasViewer.java:24:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/controler/CanvasViewer.java:27:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/controler/CanvasViewer.java:27:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/controler/CanvasViewer.java:28:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/controler/CanvasViewer.java:28:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/controler/CanvasViewer.java:29:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/controler/CanvasViewer.java:29:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/controler/CanvasViewer.java:30:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/controler/CanvasViewer.java:30:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/controler/CanvasViewer.java:32:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/controler/CanvasViewer.java:32:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/controler/CanvasViewer.java:32:	ShortVariable:	ShortVariable: Avoid variables with short names like cw
+src/main/java/controler/CanvasViewer.java:32:	ShortVariable:	ShortVariable: Avoid variables with short names like cw
+src/main/java/controler/CanvasViewer.java:32:	ShortVariable:	ShortVariable: Avoid variables with short names like r
+src/main/java/controler/CanvasViewer.java:32:	ShortVariable:	ShortVariable: Avoid variables with short names like r
+src/main/java/controler/CanvasViewer.java:39:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/controler/CanvasViewer.java:39:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/controler/CanvasViewer.java:39:	ShortVariable:	ShortVariable: Avoid variables with short names like sp
+src/main/java/controler/CanvasViewer.java:39:	ShortVariable:	ShortVariable: Avoid variables with short names like sp
+src/main/java/controler/CanvasViewer.java:43:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/main/java/controler/CanvasViewer.java:43:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/main/java/controler/ExplorerFile.java:12:	CommentRequired:	CommentRequired: Class comments are required
+src/main/java/controler/ExplorerFile.java:12:	CommentRequired:	CommentRequired: Class comments are required
+src/main/java/controler/ExplorerFile.java:13:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/controler/ExplorerFile.java:13:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/controler/ExplorerFile.java:14:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/controler/ExplorerFile.java:14:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/controler/ExplorerFile.java:15:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/controler/ExplorerFile.java:15:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/controler/ExplorerFile.java:16:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/controler/ExplorerFile.java:16:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/controler/ExplorerFile.java:17:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/controler/ExplorerFile.java:17:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/controler/ExplorerFile.java:17:	ShortVariable:	ShortVariable: Avoid variables with short names like r
+src/main/java/controler/ExplorerFile.java:17:	ShortVariable:	ShortVariable: Avoid variables with short names like r
+src/main/java/controler/ExplorerFile.java:18:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/controler/ExplorerFile.java:18:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/controler/ExplorerFile.java:18:	ShortVariable:	ShortVariable: Avoid variables with short names like f
+src/main/java/controler/ExplorerFile.java:18:	ShortVariable:	ShortVariable: Avoid variables with short names like f
+src/main/java/controler/ExplorerFile.java:18:	ShortVariable:	ShortVariable: Avoid variables with short names like f1
+src/main/java/controler/ExplorerFile.java:18:	ShortVariable:	ShortVariable: Avoid variables with short names like f1
+src/main/java/controler/ExplorerFile.java:19:	ForLoopCanBeForeach:	ForLoopCanBeForeach: This for loop can be replaced by a foreach loop
+src/main/java/controler/ExplorerFile.java:19:	ForLoopCanBeForeach:	ForLoopCanBeForeach: This for loop can be replaced by a foreach loop
+src/main/java/controler/ExplorerFile.java:21:	OnlyOneReturn:	OnlyOneReturn: A method should have only one exit point, and that should be the last statement in the method
+src/main/java/controler/ExplorerFile.java:21:	OnlyOneReturn:	OnlyOneReturn: A method should have only one exit point, and that should be the last statement in the method
+src/main/java/controler/ExplorerFile.java:34:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/controler/ExplorerFile.java:34:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/controler/ExplorerFile.java:36:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/main/java/controler/ExplorerFile.java:36:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/main/java/controler/ExplorerFile.java:40:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/main/java/controler/ExplorerFile.java:40:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/main/java/controler/ExplorerFile.java:44:	AvoidInstantiatingObjectsInLoops:	AvoidInstantiatingObjectsInLoops: Avoid instantiating new objects inside loops
+src/main/java/controler/ExplorerFile.java:44:	AvoidInstantiatingObjectsInLoops:	AvoidInstantiatingObjectsInLoops: Avoid instantiating new objects inside loops
+src/main/java/controler/ExplorerFile.java:46:	AvoidInstantiatingObjectsInLoops:	AvoidInstantiatingObjectsInLoops: Avoid instantiating new objects inside loops
+src/main/java/controler/ExplorerFile.java:46:	AvoidInstantiatingObjectsInLoops:	AvoidInstantiatingObjectsInLoops: Avoid instantiating new objects inside loops
+src/main/java/controler/ExplorerFile.java:47:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/controler/ExplorerFile.java:47:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/controler/ExplorerFile.java:47:	MissingOverride:	MissingOverride: The method 'accept(File)' is missing an @Override annotation.
+src/main/java/controler/ExplorerFile.java:47:	MissingOverride:	MissingOverride: The method 'accept(File)' is missing an @Override annotation.
+src/main/java/controler/ExplorerFile.java:49:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (object not created locally)
+src/main/java/controler/ExplorerFile.java:49:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (object not created locally)
+src/main/java/controler/ExplorerFile.java:53:	AvoidInstantiatingObjectsInLoops:	AvoidInstantiatingObjectsInLoops: Avoid instantiating new objects inside loops
+src/main/java/controler/ExplorerFile.java:53:	AvoidInstantiatingObjectsInLoops:	AvoidInstantiatingObjectsInLoops: Avoid instantiating new objects inside loops
+src/main/java/controler/ExplorerFile.java:59:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/controler/ExplorerFile.java:59:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/controler/ExplorerFile.java:59:	ShortVariable:	ShortVariable: Avoid variables with short names like tv
+src/main/java/controler/ExplorerFile.java:59:	ShortVariable:	ShortVariable: Avoid variables with short names like tv
+src/main/java/controler/ExplorerFile.java:60:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/main/java/controler/ExplorerFile.java:60:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/main/java/controler/ExplorerFile.java:60:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/main/java/controler/ExplorerFile.java:60:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/main/java/controler/ExplorerFile.java:70:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/controler/ExplorerFile.java:70:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/controler/ExplorerFile.java:70:	ShortVariable:	ShortVariable: Avoid variables with short names like tv
+src/main/java/controler/ExplorerFile.java:70:	ShortVariable:	ShortVariable: Avoid variables with short names like tv
+src/main/java/controler/Main.java:12:	CommentRequired:	CommentRequired: Class comments are required
+src/main/java/controler/Main.java:12:	CommentRequired:	CommentRequired: Class comments are required
+src/main/java/controler/Main.java:13:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/controler/Main.java:13:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/controler/Main.java:14:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/controler/Main.java:14:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/controler/Main.java:14:	SingularField:	SingularField: Perhaps 'root' could be replaced by a local variable.
+src/main/java/controler/Main.java:14:	SingularField:	SingularField: Perhaps 'root' could be replaced by a local variable.
+src/main/java/controler/Main.java:15:	CommentSize:	CommentSize: Comment is too large: Line too long
+src/main/java/controler/Main.java:15:	CommentSize:	CommentSize: Comment is too large: Line too long
+src/main/java/controler/Main.java:16:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/controler/Main.java:16:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/controler/Main.java:16:	MissingOverride:	MissingOverride: The method 'start(Stage)' is missing an @Override annotation.
+src/main/java/controler/Main.java:16:	MissingOverride:	MissingOverride: The method 'start(Stage)' is missing an @Override annotation.
+src/main/java/controler/Main.java:18:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/main/java/controler/Main.java:18:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/main/java/controler/Main.java:19:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/main/java/controler/Main.java:19:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/main/java/controler/Main.java:23:	ShortVariable:	ShortVariable: Avoid variables with short names like m
+src/main/java/controler/Main.java:23:	ShortVariable:	ShortVariable: Avoid variables with short names like m
+src/main/java/controler/Main.java:28:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (object not created locally)
+src/main/java/controler/Main.java:28:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (object not created locally)
+src/main/java/controler/Main.java:32:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/controler/Main.java:32:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/controler/Main.java:37:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/controler/Main.java:37:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/controler/Main.java:41:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/controler/Main.java:41:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/controler/MainControler.java:1:	ExcessiveImports:	ExcessiveImports: A high number of imports can indicate a high degree of coupling within an object.
+src/main/java/controler/MainControler.java:1:	ExcessiveImports:	ExcessiveImports: A high number of imports can indicate a high degree of coupling within an object.
+src/main/java/controler/MainControler.java:1:	ExcessivePublicCount:	ExcessivePublicCount: This class has a bunch of public methods and attributes
+src/main/java/controler/MainControler.java:1:	ExcessivePublicCount:	ExcessivePublicCount: This class has a bunch of public methods and attributes
+src/main/java/controler/MainControler.java:38:	CommentRequired:	CommentRequired: Class comments are required
+src/main/java/controler/MainControler.java:38:	CommentRequired:	CommentRequired: Class comments are required
+src/main/java/controler/MainControler.java:38:	ExcessiveClassLength:	ExcessiveClassLength: Avoid really long classes.
+src/main/java/controler/MainControler.java:38:	ExcessiveClassLength:	ExcessiveClassLength: Avoid really long classes.
+src/main/java/controler/MainControler.java:38:	TooManyFields:	TooManyFields: Too many fields
+src/main/java/controler/MainControler.java:38:	TooManyFields:	TooManyFields: Too many fields
+src/main/java/controler/MainControler.java:40:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/controler/MainControler.java:40:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/controler/MainControler.java:40:	FieldNamingConventions:	FieldNamingConventions: The field name 'Aview' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/controler/MainControler.java:40:	FieldNamingConventions:	FieldNamingConventions: The field name 'Aview' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/controler/MainControler.java:40:	FieldNamingConventions:	FieldNamingConventions: The field name 'Fview' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/controler/MainControler.java:40:	FieldNamingConventions:	FieldNamingConventions: The field name 'Fview' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/controler/MainControler.java:40:	FieldNamingConventions:	FieldNamingConventions: The field name 'Sview' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/controler/MainControler.java:40:	FieldNamingConventions:	FieldNamingConventions: The field name 'Sview' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/controler/MainControler.java:40:	LongVariable:	LongVariable: Avoid excessively long variable names like buttonHomothetieDown
+src/main/java/controler/MainControler.java:40:	LongVariable:	LongVariable: Avoid excessively long variable names like buttonHomothetieDown
+src/main/java/controler/MainControler.java:40:	LongVariable:	LongVariable: Avoid excessively long variable names like buttonHomothetieUp
+src/main/java/controler/MainControler.java:40:	LongVariable:	LongVariable: Avoid excessively long variable names like buttonHomothetieUp
+src/main/java/controler/MainControler.java:40:	LongVariable:	LongVariable: Avoid excessively long variable names like buttonReloadCanvas
+src/main/java/controler/MainControler.java:40:	LongVariable:	LongVariable: Avoid excessively long variable names like buttonReloadCanvas
+src/main/java/controler/MainControler.java:40:	LongVariable:	LongVariable: Avoid excessively long variable names like buttonRotateAroundLeft
+src/main/java/controler/MainControler.java:40:	LongVariable:	LongVariable: Avoid excessively long variable names like buttonRotateAroundLeft
+src/main/java/controler/MainControler.java:40:	LongVariable:	LongVariable: Avoid excessively long variable names like buttonRotateAroundRight
+src/main/java/controler/MainControler.java:40:	LongVariable:	LongVariable: Avoid excessively long variable names like buttonRotateAroundRight
+src/main/java/controler/MainControler.java:40:	LongVariable:	LongVariable: Avoid excessively long variable names like buttonTranslateDown
+src/main/java/controler/MainControler.java:40:	LongVariable:	LongVariable: Avoid excessively long variable names like buttonTranslateDown
+src/main/java/controler/MainControler.java:40:	LongVariable:	LongVariable: Avoid excessively long variable names like buttonTranslateLeft
+src/main/java/controler/MainControler.java:40:	LongVariable:	LongVariable: Avoid excessively long variable names like buttonTranslateLeft
+src/main/java/controler/MainControler.java:40:	LongVariable:	LongVariable: Avoid excessively long variable names like buttonTranslateRight
+src/main/java/controler/MainControler.java:40:	LongVariable:	LongVariable: Avoid excessively long variable names like buttonTranslateRight
+src/main/java/controler/MainControler.java:43:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/controler/MainControler.java:43:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/controler/MainControler.java:46:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/controler/MainControler.java:46:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/controler/MainControler.java:49:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/controler/MainControler.java:49:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/controler/MainControler.java:51:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/controler/MainControler.java:51:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/controler/MainControler.java:53:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/controler/MainControler.java:53:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/controler/MainControler.java:54:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/controler/MainControler.java:54:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/controler/MainControler.java:55:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/controler/MainControler.java:55:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/controler/MainControler.java:57:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/controler/MainControler.java:57:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/controler/MainControler.java:58:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/controler/MainControler.java:58:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/controler/MainControler.java:59:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/controler/MainControler.java:59:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/controler/MainControler.java:60:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/controler/MainControler.java:60:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/controler/MainControler.java:61:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/controler/MainControler.java:61:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/controler/MainControler.java:66:	ExcessiveMethodLength:	ExcessiveMethodLength: Avoid really long methods.
+src/main/java/controler/MainControler.java:66:	ExcessiveMethodLength:	ExcessiveMethodLength: Avoid really long methods.
+src/main/java/controler/MainControler.java:66:	NPathComplexity:	NPathComplexity: The method 'initialize(URL, ResourceBundle)' has an NPath complexity of 362797056, current threshold is 200
+src/main/java/controler/MainControler.java:66:	NPathComplexity:	NPathComplexity: The method 'initialize(URL, ResourceBundle)' has an NPath complexity of 362797056, current threshold is 200
+src/main/java/controler/MainControler.java:66:	NcssCount:	NcssCount: The method 'initialize(URL, ResourceBundle)' has a NCSS line count of 27.
+src/main/java/controler/MainControler.java:66:	NcssCount:	NcssCount: The method 'initialize(URL, ResourceBundle)' has a NCSS line count of 27.
+src/main/java/controler/MainControler.java:69:	UnusedLocalVariable:	UnusedLocalVariable: Avoid unused local variables such as 'scene'.
+src/main/java/controler/MainControler.java:69:	UnusedLocalVariable:	UnusedLocalVariable: Avoid unused local variables such as 'scene'.
+src/main/java/controler/MainControler.java:73:	ShortVariable:	ShortVariable: Avoid variables with short names like e
+src/main/java/controler/MainControler.java:73:	ShortVariable:	ShortVariable: Avoid variables with short names like e
+src/main/java/controler/MainControler.java:74:	ShortVariable:	ShortVariable: Avoid variables with short names like dc
+src/main/java/controler/MainControler.java:74:	ShortVariable:	ShortVariable: Avoid variables with short names like dc
+src/main/java/controler/MainControler.java:77:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (object not created locally)
+src/main/java/controler/MainControler.java:77:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (object not created locally)
+src/main/java/controler/MainControler.java:97:	ShortVariable:	ShortVariable: Avoid variables with short names like e
+src/main/java/controler/MainControler.java:97:	ShortVariable:	ShortVariable: Avoid variables with short names like e
+src/main/java/controler/MainControler.java:99:	SystemPrintln:	SystemPrintln: System.out.println is used
+src/main/java/controler/MainControler.java:99:	SystemPrintln:	SystemPrintln: System.out.println is used
+src/main/java/controler/MainControler.java:130:	AddEmptyString:	AddEmptyString: Do not add empty strings
+src/main/java/controler/MainControler.java:130:	AddEmptyString:	AddEmptyString: Do not add empty strings
+src/main/java/controler/MainControler.java:154:	AvoidDuplicateLiterals:	AvoidDuplicateLiterals: The String literal "\n\n" appears 5 times in this file; the first occurrence is on line 154
+src/main/java/controler/MainControler.java:154:	AvoidDuplicateLiterals:	AvoidDuplicateLiterals: The String literal "\n\n" appears 5 times in this file; the first occurrence is on line 154
+src/main/java/controler/MainControler.java:160:	AddEmptyString:	AddEmptyString: Do not add empty strings
+src/main/java/controler/MainControler.java:160:	AddEmptyString:	AddEmptyString: Do not add empty strings
+src/main/java/controler/MainControler.java:180:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/controler/MainControler.java:180:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/controler/MainControler.java:180:	MissingOverride:	MissingOverride: The method 'handle(ActionEvent)' is missing an @Override annotation.
+src/main/java/controler/MainControler.java:180:	MissingOverride:	MissingOverride: The method 'handle(ActionEvent)' is missing an @Override annotation.
+src/main/java/controler/MainControler.java:180:	ShortVariable:	ShortVariable: Avoid variables with short names like e
+src/main/java/controler/MainControler.java:180:	ShortVariable:	ShortVariable: Avoid variables with short names like e
+src/main/java/controler/MainControler.java:191:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/controler/MainControler.java:191:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/controler/MainControler.java:191:	MissingOverride:	MissingOverride: The method 'handle(ActionEvent)' is missing an @Override annotation.
+src/main/java/controler/MainControler.java:191:	MissingOverride:	MissingOverride: The method 'handle(ActionEvent)' is missing an @Override annotation.
+src/main/java/controler/MainControler.java:191:	ShortVariable:	ShortVariable: Avoid variables with short names like e
+src/main/java/controler/MainControler.java:191:	ShortVariable:	ShortVariable: Avoid variables with short names like e
+src/main/java/controler/MainControler.java:193:	ShortVariable:	ShortVariable: Avoid variables with short names like r
+src/main/java/controler/MainControler.java:193:	ShortVariable:	ShortVariable: Avoid variables with short names like r
+src/main/java/controler/MainControler.java:202:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/controler/MainControler.java:202:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/controler/MainControler.java:202:	MissingOverride:	MissingOverride: The method 'handle(ActionEvent)' is missing an @Override annotation.
+src/main/java/controler/MainControler.java:202:	MissingOverride:	MissingOverride: The method 'handle(ActionEvent)' is missing an @Override annotation.
+src/main/java/controler/MainControler.java:202:	ShortVariable:	ShortVariable: Avoid variables with short names like e
+src/main/java/controler/MainControler.java:202:	ShortVariable:	ShortVariable: Avoid variables with short names like e
+src/main/java/controler/MainControler.java:204:	ShortVariable:	ShortVariable: Avoid variables with short names like r
+src/main/java/controler/MainControler.java:204:	ShortVariable:	ShortVariable: Avoid variables with short names like r
+src/main/java/controler/MainControler.java:214:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/controler/MainControler.java:214:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/controler/MainControler.java:214:	MissingOverride:	MissingOverride: The method 'handle(ActionEvent)' is missing an @Override annotation.
+src/main/java/controler/MainControler.java:214:	MissingOverride:	MissingOverride: The method 'handle(ActionEvent)' is missing an @Override annotation.
+src/main/java/controler/MainControler.java:214:	ShortVariable:	ShortVariable: Avoid variables with short names like e
+src/main/java/controler/MainControler.java:214:	ShortVariable:	ShortVariable: Avoid variables with short names like e
+src/main/java/controler/MainControler.java:216:	ShortVariable:	ShortVariable: Avoid variables with short names like r
+src/main/java/controler/MainControler.java:216:	ShortVariable:	ShortVariable: Avoid variables with short names like r
+src/main/java/controler/MainControler.java:225:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/controler/MainControler.java:225:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/controler/MainControler.java:225:	MissingOverride:	MissingOverride: The method 'handle(ActionEvent)' is missing an @Override annotation.
+src/main/java/controler/MainControler.java:225:	MissingOverride:	MissingOverride: The method 'handle(ActionEvent)' is missing an @Override annotation.
+src/main/java/controler/MainControler.java:225:	ShortVariable:	ShortVariable: Avoid variables with short names like e
+src/main/java/controler/MainControler.java:225:	ShortVariable:	ShortVariable: Avoid variables with short names like e
+src/main/java/controler/MainControler.java:236:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/controler/MainControler.java:236:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/controler/MainControler.java:236:	MissingOverride:	MissingOverride: The method 'handle(ActionEvent)' is missing an @Override annotation.
+src/main/java/controler/MainControler.java:236:	MissingOverride:	MissingOverride: The method 'handle(ActionEvent)' is missing an @Override annotation.
+src/main/java/controler/MainControler.java:236:	ShortVariable:	ShortVariable: Avoid variables with short names like e
+src/main/java/controler/MainControler.java:236:	ShortVariable:	ShortVariable: Avoid variables with short names like e
+src/main/java/controler/MainControler.java:249:	ShortVariable:	ShortVariable: Avoid variables with short names like e
+src/main/java/controler/MainControler.java:249:	ShortVariable:	ShortVariable: Avoid variables with short names like e
+src/main/java/controler/MainControler.java:259:	ShortVariable:	ShortVariable: Avoid variables with short names like e
+src/main/java/controler/MainControler.java:259:	ShortVariable:	ShortVariable: Avoid variables with short names like e
+src/main/java/controler/MainControler.java:264:	SystemPrintln:	SystemPrintln: System.out.println is used
+src/main/java/controler/MainControler.java:264:	SystemPrintln:	SystemPrintln: System.out.println is used
+src/main/java/controler/MainControler.java:271:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/controler/MainControler.java:271:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/controler/MainControler.java:271:	MissingOverride:	MissingOverride: The method 'handle(ActionEvent)' is missing an @Override annotation.
+src/main/java/controler/MainControler.java:271:	MissingOverride:	MissingOverride: The method 'handle(ActionEvent)' is missing an @Override annotation.
+src/main/java/controler/MainControler.java:271:	ShortVariable:	ShortVariable: Avoid variables with short names like e
+src/main/java/controler/MainControler.java:271:	ShortVariable:	ShortVariable: Avoid variables with short names like e
+src/main/java/controler/MainControler.java:278:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/controler/MainControler.java:278:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/controler/MainControler.java:278:	MissingOverride:	MissingOverride: The method 'handle(ActionEvent)' is missing an @Override annotation.
+src/main/java/controler/MainControler.java:278:	MissingOverride:	MissingOverride: The method 'handle(ActionEvent)' is missing an @Override annotation.
+src/main/java/controler/MainControler.java:278:	ShortVariable:	ShortVariable: Avoid variables with short names like e
+src/main/java/controler/MainControler.java:278:	ShortVariable:	ShortVariable: Avoid variables with short names like e
+src/main/java/controler/MainControler.java:286:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/controler/MainControler.java:286:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/controler/MainControler.java:286:	MissingOverride:	MissingOverride: The method 'handle(ActionEvent)' is missing an @Override annotation.
+src/main/java/controler/MainControler.java:286:	MissingOverride:	MissingOverride: The method 'handle(ActionEvent)' is missing an @Override annotation.
+src/main/java/controler/MainControler.java:286:	ShortVariable:	ShortVariable: Avoid variables with short names like e
+src/main/java/controler/MainControler.java:286:	ShortVariable:	ShortVariable: Avoid variables with short names like e
+src/main/java/controler/MainControler.java:294:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/controler/MainControler.java:294:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/controler/MainControler.java:294:	MissingOverride:	MissingOverride: The method 'handle(ActionEvent)' is missing an @Override annotation.
+src/main/java/controler/MainControler.java:294:	MissingOverride:	MissingOverride: The method 'handle(ActionEvent)' is missing an @Override annotation.
+src/main/java/controler/MainControler.java:294:	ShortVariable:	ShortVariable: Avoid variables with short names like e
+src/main/java/controler/MainControler.java:294:	ShortVariable:	ShortVariable: Avoid variables with short names like e
+src/main/java/controler/MainControler.java:305:	ShortVariable:	ShortVariable: Avoid variables with short names like e
+src/main/java/controler/MainControler.java:305:	ShortVariable:	ShortVariable: Avoid variables with short names like e
+src/main/java/controler/MainControler.java:313:	ShortVariable:	ShortVariable: Avoid variables with short names like e
+src/main/java/controler/MainControler.java:313:	ShortVariable:	ShortVariable: Avoid variables with short names like e
+src/main/java/controler/MainControler.java:321:	ShortVariable:	ShortVariable: Avoid variables with short names like cv
+src/main/java/controler/MainControler.java:321:	ShortVariable:	ShortVariable: Avoid variables with short names like cv
+src/main/java/controler/MainControler.java:333:	ShortVariable:	ShortVariable: Avoid variables with short names like e
+src/main/java/controler/MainControler.java:333:	ShortVariable:	ShortVariable: Avoid variables with short names like e
+src/main/java/controler/MainControler.java:341:	ShortVariable:	ShortVariable: Avoid variables with short names like cv
+src/main/java/controler/MainControler.java:341:	ShortVariable:	ShortVariable: Avoid variables with short names like cv
+src/main/java/controler/MainControler.java:353:	ShortVariable:	ShortVariable: Avoid variables with short names like e
+src/main/java/controler/MainControler.java:353:	ShortVariable:	ShortVariable: Avoid variables with short names like e
+src/main/java/controler/MainControler.java:361:	ShortVariable:	ShortVariable: Avoid variables with short names like cv
+src/main/java/controler/MainControler.java:361:	ShortVariable:	ShortVariable: Avoid variables with short names like cv
+src/main/java/controler/MainControler.java:378:	ExcessiveMethodLength:	ExcessiveMethodLength: Avoid really long methods.
+src/main/java/controler/MainControler.java:378:	ExcessiveMethodLength:	ExcessiveMethodLength: Avoid really long methods.
+src/main/java/controler/MainControler.java:378:	ShortVariable:	ShortVariable: Avoid variables with short names like s
+src/main/java/controler/MainControler.java:378:	ShortVariable:	ShortVariable: Avoid variables with short names like s
+src/main/java/controler/MainControler.java:380:	SwitchStmtsShouldHaveDefault:	SwitchStmtsShouldHaveDefault: Switch statements should be exhaustive, add a default case (or missing enum branches)
+src/main/java/controler/MainControler.java:380:	SwitchStmtsShouldHaveDefault:	SwitchStmtsShouldHaveDefault: Switch statements should be exhaustive, add a default case (or missing enum branches)
+src/main/java/controler/MainControler.java:465:	ShortVariable:	ShortVariable: Avoid variables with short names like x
+src/main/java/controler/MainControler.java:465:	ShortVariable:	ShortVariable: Avoid variables with short names like x
+src/main/java/controler/MainControler.java:465:	ShortVariable:	ShortVariable: Avoid variables with short names like y
+src/main/java/controler/MainControler.java:465:	ShortVariable:	ShortVariable: Avoid variables with short names like y
+src/main/java/graph/CanvasWriter.java:9:	CommentRequired:	CommentRequired: Class comments are required
+src/main/java/graph/CanvasWriter.java:9:	CommentRequired:	CommentRequired: Class comments are required
+src/main/java/graph/CanvasWriter.java:11:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/CanvasWriter.java:11:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/CanvasWriter.java:12:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/CanvasWriter.java:12:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/CanvasWriter.java:14:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/CanvasWriter.java:14:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/CanvasWriter.java:15:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/CanvasWriter.java:15:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/CanvasWriter.java:16:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/CanvasWriter.java:16:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/CanvasWriter.java:16:	ShortVariable:	ShortVariable: Avoid variables with short names like x
+src/main/java/graph/CanvasWriter.java:16:	ShortVariable:	ShortVariable: Avoid variables with short names like x
+src/main/java/graph/CanvasWriter.java:17:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/CanvasWriter.java:17:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/CanvasWriter.java:17:	ShortVariable:	ShortVariable: Avoid variables with short names like y
+src/main/java/graph/CanvasWriter.java:17:	ShortVariable:	ShortVariable: Avoid variables with short names like y
+src/main/java/graph/CanvasWriter.java:18:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/CanvasWriter.java:18:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/CanvasWriter.java:18:	ShortVariable:	ShortVariable: Avoid variables with short names like z
+src/main/java/graph/CanvasWriter.java:18:	ShortVariable:	ShortVariable: Avoid variables with short names like z
+src/main/java/graph/CanvasWriter.java:19:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/CanvasWriter.java:19:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/CanvasWriter.java:20:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/CanvasWriter.java:20:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/CanvasWriter.java:22:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/CanvasWriter.java:22:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/CanvasWriter.java:25:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/CanvasWriter.java:25:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/CanvasWriter.java:25:	ShortVariable:	ShortVariable: Avoid variables with short names like c
+src/main/java/graph/CanvasWriter.java:25:	ShortVariable:	ShortVariable: Avoid variables with short names like c
+src/main/java/graph/CanvasWriter.java:25:	ShortVariable:	ShortVariable: Avoid variables with short names like lf
+src/main/java/graph/CanvasWriter.java:25:	ShortVariable:	ShortVariable: Avoid variables with short names like lf
+src/main/java/graph/CanvasWriter.java:26:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/main/java/graph/CanvasWriter.java:26:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/main/java/graph/CanvasWriter.java:27:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/main/java/graph/CanvasWriter.java:27:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/main/java/graph/CanvasWriter.java:28:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/main/java/graph/CanvasWriter.java:28:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/main/java/graph/CanvasWriter.java:29:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/main/java/graph/CanvasWriter.java:29:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/main/java/graph/CanvasWriter.java:35:	ConstructorCallsOverridableMethod:	ConstructorCallsOverridableMethod: Overridable method 'useGraph' called during object construction
+src/main/java/graph/CanvasWriter.java:35:	ConstructorCallsOverridableMethod:	ConstructorCallsOverridableMethod: Overridable method 'useGraph' called during object construction
+src/main/java/graph/CanvasWriter.java:36:	ConstructorCallsOverridableMethod:	ConstructorCallsOverridableMethod: Overridable method 'addColor' called during object construction
+src/main/java/graph/CanvasWriter.java:36:	ConstructorCallsOverridableMethod:	ConstructorCallsOverridableMethod: Overridable method 'addColor' called during object construction
+src/main/java/graph/CanvasWriter.java:39:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/CanvasWriter.java:39:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/CanvasWriter.java:39:	UncommentedEmptyMethodBody:	UncommentedEmptyMethodBody: Document empty method body
+src/main/java/graph/CanvasWriter.java:39:	UncommentedEmptyMethodBody:	UncommentedEmptyMethodBody: Document empty method body
+src/main/java/graph/CanvasWriter.java:43:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/CanvasWriter.java:43:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/CanvasWriter.java:48:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/CanvasWriter.java:48:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/CanvasWriter.java:48:	ShortVariable:	ShortVariable: Avoid variables with short names like i
+src/main/java/graph/CanvasWriter.java:48:	ShortVariable:	ShortVariable: Avoid variables with short names like i
+src/main/java/graph/CanvasWriter.java:54:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/CanvasWriter.java:54:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/CanvasWriter.java:56:	UnusedAssignment:	UnusedAssignment: The initializer for variable 'idx' is never used (overwritten on line 58)
+src/main/java/graph/CanvasWriter.java:56:	UnusedAssignment:	UnusedAssignment: The initializer for variable 'idx' is never used (overwritten on line 58)
+src/main/java/graph/CanvasWriter.java:57:	UseCollectionIsEmpty:	UseCollectionIsEmpty: Substitute calls to size() == 0 (or size() != 0, size() > 0, size() < 1) with calls to isEmpty()
+src/main/java/graph/CanvasWriter.java:57:	UseCollectionIsEmpty:	UseCollectionIsEmpty: Substitute calls to size() == 0 (or size() != 0, size() > 0, size() < 1) with calls to isEmpty()
+src/main/java/graph/CanvasWriter.java:61:	CommentSize:	CommentSize: Comment is too large: Line too long
+src/main/java/graph/CanvasWriter.java:61:	CommentSize:	CommentSize: Comment is too large: Line too long
+src/main/java/graph/CanvasWriter.java:67:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/CanvasWriter.java:67:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/CanvasWriter.java:67:	ShortVariable:	ShortVariable: Avoid variables with short names like c
+src/main/java/graph/CanvasWriter.java:67:	ShortVariable:	ShortVariable: Avoid variables with short names like c
+src/main/java/graph/CanvasWriter.java:73:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/CanvasWriter.java:73:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/CanvasWriter.java:77:	AvoidInstantiatingObjectsInLoops:	AvoidInstantiatingObjectsInLoops: Avoid instantiating new objects inside loops
+src/main/java/graph/CanvasWriter.java:77:	AvoidInstantiatingObjectsInLoops:	AvoidInstantiatingObjectsInLoops: Avoid instantiating new objects inside loops
+src/main/java/graph/CanvasWriter.java:77:	ShortVariable:	ShortVariable: Avoid variables with short names like i1
+src/main/java/graph/CanvasWriter.java:77:	ShortVariable:	ShortVariable: Avoid variables with short names like i1
+src/main/java/graph/CanvasWriter.java:78:	AvoidInstantiatingObjectsInLoops:	AvoidInstantiatingObjectsInLoops: Avoid instantiating new objects inside loops
+src/main/java/graph/CanvasWriter.java:78:	AvoidInstantiatingObjectsInLoops:	AvoidInstantiatingObjectsInLoops: Avoid instantiating new objects inside loops
+src/main/java/graph/CanvasWriter.java:78:	ShortVariable:	ShortVariable: Avoid variables with short names like i2
+src/main/java/graph/CanvasWriter.java:78:	ShortVariable:	ShortVariable: Avoid variables with short names like i2
+src/main/java/graph/CanvasWriter.java:79:	AvoidInstantiatingObjectsInLoops:	AvoidInstantiatingObjectsInLoops: Avoid instantiating new objects inside loops
+src/main/java/graph/CanvasWriter.java:79:	AvoidInstantiatingObjectsInLoops:	AvoidInstantiatingObjectsInLoops: Avoid instantiating new objects inside loops
+src/main/java/graph/CanvasWriter.java:79:	ShortVariable:	ShortVariable: Avoid variables with short names like i3
+src/main/java/graph/CanvasWriter.java:79:	ShortVariable:	ShortVariable: Avoid variables with short names like i3
+src/main/java/graph/CanvasWriter.java:98:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/CanvasWriter.java:98:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/CanvasWriter.java:100:	ForLoopCanBeForeach:	ForLoopCanBeForeach: This for loop can be replaced by a foreach loop
+src/main/java/graph/CanvasWriter.java:100:	ForLoopCanBeForeach:	ForLoopCanBeForeach: This for loop can be replaced by a foreach loop
+src/main/java/graph/CanvasWriter.java:108:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/CanvasWriter.java:108:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/CanvasWriter.java:120:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/CanvasWriter.java:120:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Color.java:3:	CommentRequired:	CommentRequired: Class comments are required
+src/main/java/graph/Color.java:3:	CommentRequired:	CommentRequired: Class comments are required
+src/main/java/graph/Color.java:4:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/Color.java:4:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/Color.java:4:	ImmutableField:	ImmutableField: Private field 'b' could be made final; it is only initialized in the declaration or constructor.
+src/main/java/graph/Color.java:4:	ImmutableField:	ImmutableField: Private field 'b' could be made final; it is only initialized in the declaration or constructor.
+src/main/java/graph/Color.java:4:	ImmutableField:	ImmutableField: Private field 'g' could be made final; it is only initialized in the declaration or constructor.
+src/main/java/graph/Color.java:4:	ImmutableField:	ImmutableField: Private field 'g' could be made final; it is only initialized in the declaration or constructor.
+src/main/java/graph/Color.java:4:	ImmutableField:	ImmutableField: Private field 'r' could be made final; it is only initialized in the declaration or constructor.
+src/main/java/graph/Color.java:4:	ImmutableField:	ImmutableField: Private field 'r' could be made final; it is only initialized in the declaration or constructor.
+src/main/java/graph/Color.java:4:	ShortVariable:	ShortVariable: Avoid variables with short names like b
+src/main/java/graph/Color.java:4:	ShortVariable:	ShortVariable: Avoid variables with short names like b
+src/main/java/graph/Color.java:4:	ShortVariable:	ShortVariable: Avoid variables with short names like g
+src/main/java/graph/Color.java:4:	ShortVariable:	ShortVariable: Avoid variables with short names like g
+src/main/java/graph/Color.java:4:	ShortVariable:	ShortVariable: Avoid variables with short names like r
+src/main/java/graph/Color.java:4:	ShortVariable:	ShortVariable: Avoid variables with short names like r
+src/main/java/graph/Color.java:6:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Color.java:6:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Color.java:12:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Color.java:12:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Color.java:12:	ShortVariable:	ShortVariable: Avoid variables with short names like i
+src/main/java/graph/Color.java:12:	ShortVariable:	ShortVariable: Avoid variables with short names like i
+src/main/java/graph/Color.java:12:	ShortVariable:	ShortVariable: Avoid variables with short names like j
+src/main/java/graph/Color.java:12:	ShortVariable:	ShortVariable: Avoid variables with short names like j
+src/main/java/graph/Color.java:12:	ShortVariable:	ShortVariable: Avoid variables with short names like k
+src/main/java/graph/Color.java:12:	ShortVariable:	ShortVariable: Avoid variables with short names like k
+src/main/java/graph/Color.java:22:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Color.java:22:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Color.java:26:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Color.java:26:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Face.java:6:	CommentRequired:	CommentRequired: Class comments are required
+src/main/java/graph/Face.java:6:	CommentRequired:	CommentRequired: Class comments are required
+src/main/java/graph/Face.java:7:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/Face.java:7:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/Face.java:8:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/Face.java:8:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/Face.java:9:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/Face.java:9:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/Face.java:12:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Face.java:12:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Face.java:12:	ShortVariable:	ShortVariable: Avoid variables with short names like n
+src/main/java/graph/Face.java:12:	ShortVariable:	ShortVariable: Avoid variables with short names like n
+src/main/java/graph/Face.java:18:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Face.java:18:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Face.java:18:	ShortVariable:	ShortVariable: Avoid variables with short names like n
+src/main/java/graph/Face.java:18:	ShortVariable:	ShortVariable: Avoid variables with short names like n
+src/main/java/graph/Face.java:22:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Face.java:22:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Face.java:22:	ShortVariable:	ShortVariable: Avoid variables with short names like n
+src/main/java/graph/Face.java:22:	ShortVariable:	ShortVariable: Avoid variables with short names like n
+src/main/java/graph/Face.java:26:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Face.java:26:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Face.java:42:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Face.java:42:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/FileReader.java:11:	CommentRequired:	CommentRequired: Class comments are required
+src/main/java/graph/FileReader.java:11:	CommentRequired:	CommentRequired: Class comments are required
+src/main/java/graph/FileReader.java:12:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/FileReader.java:12:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/FileReader.java:13:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/FileReader.java:13:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/FileReader.java:14:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/FileReader.java:14:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/FileReader.java:14:	ImmutableField:	ImmutableField: Private field 'sommets' could be made final; it is only initialized in the declaration or constructor.
+src/main/java/graph/FileReader.java:14:	ImmutableField:	ImmutableField: Private field 'sommets' could be made final; it is only initialized in the declaration or constructor.
+src/main/java/graph/FileReader.java:14:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/main/java/graph/FileReader.java:14:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/main/java/graph/FileReader.java:15:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/FileReader.java:15:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/FileReader.java:15:	ImmutableField:	ImmutableField: Private field 'faces' could be made final; it is only initialized in the declaration or constructor.
+src/main/java/graph/FileReader.java:15:	ImmutableField:	ImmutableField: Private field 'faces' could be made final; it is only initialized in the declaration or constructor.
+src/main/java/graph/FileReader.java:15:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/main/java/graph/FileReader.java:15:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/main/java/graph/FileReader.java:16:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/FileReader.java:16:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/FileReader.java:16:	ImmutableField:	ImmutableField: Private field 'sommetsDeFaces' could be made final; it is only initialized in the declaration or constructor.
+src/main/java/graph/FileReader.java:16:	ImmutableField:	ImmutableField: Private field 'sommetsDeFaces' could be made final; it is only initialized in the declaration or constructor.
+src/main/java/graph/FileReader.java:16:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/main/java/graph/FileReader.java:16:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/main/java/graph/FileReader.java:17:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/FileReader.java:17:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/FileReader.java:18:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/FileReader.java:18:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/FileReader.java:23:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/FileReader.java:23:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/FileReader.java:25:	AvoidFileStream:	AvoidFileStream: Avoid instantiating FileInputStream, FileOutputStream, FileReader, or FileWriter
+src/main/java/graph/FileReader.java:25:	AvoidFileStream:	AvoidFileStream: Avoid instantiating FileInputStream, FileOutputStream, FileReader, or FileWriter
+src/main/java/graph/FileReader.java:25:	CloseResource:	CloseResource: Ensure that resources like this FileInputStream object are closed after use
+src/main/java/graph/FileReader.java:25:	CloseResource:	CloseResource: Ensure that resources like this FileInputStream object are closed after use
+src/main/java/graph/FileReader.java:26:	CloseResource:	CloseResource: Ensure that resources like this FileInputStream object are closed after use
+src/main/java/graph/FileReader.java:26:	CloseResource:	CloseResource: Ensure that resources like this FileInputStream object are closed after use
+src/main/java/graph/FileReader.java:31:	AvoidInstantiatingObjectsInLoops:	AvoidInstantiatingObjectsInLoops: Avoid instantiating new objects inside loops
+src/main/java/graph/FileReader.java:31:	AvoidInstantiatingObjectsInLoops:	AvoidInstantiatingObjectsInLoops: Avoid instantiating new objects inside loops
+src/main/java/graph/FileReader.java:43:	ExcessiveMethodLength:	ExcessiveMethodLength: Avoid really long methods.
+src/main/java/graph/FileReader.java:43:	ExcessiveMethodLength:	ExcessiveMethodLength: Avoid really long methods.
+src/main/java/graph/FileReader.java:63:	UseStringBufferForStringAppends:	UseStringBufferForStringAppends: Prefer StringBuilder (non-synchronized) or StringBuffer (synchronized) over += for concatenating strings
+src/main/java/graph/FileReader.java:63:	UseStringBufferForStringAppends:	UseStringBufferForStringAppends: Prefer StringBuilder (non-synchronized) or StringBuffer (synchronized) over += for concatenating strings
+src/main/java/graph/FileReader.java:84:	ExcessiveParameterList:	ExcessiveParameterList: Avoid long parameter lists.
+src/main/java/graph/FileReader.java:84:	ExcessiveParameterList:	ExcessiveParameterList: Avoid long parameter lists.
+src/main/java/graph/FileReader.java:87:	LiteralsFirstInComparisons:	LiteralsFirstInComparisons: Position literals first in String comparisons
+src/main/java/graph/FileReader.java:87:	LiteralsFirstInComparisons:	LiteralsFirstInComparisons: Position literals first in String comparisons
+src/main/java/graph/FileReader.java:88:	AvoidReassigningLoopVariables:	AvoidReassigningLoopVariables: Avoid reassigning the loop control variable 'i'
+src/main/java/graph/FileReader.java:88:	AvoidReassigningLoopVariables:	AvoidReassigningLoopVariables: Avoid reassigning the loop control variable 'i'
+src/main/java/graph/FileReader.java:91:	AvoidInstantiatingObjectsInLoops:	AvoidInstantiatingObjectsInLoops: Avoid instantiating new objects inside loops
+src/main/java/graph/FileReader.java:91:	AvoidInstantiatingObjectsInLoops:	AvoidInstantiatingObjectsInLoops: Avoid instantiating new objects inside loops
+src/main/java/graph/FileReader.java:91:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/main/java/graph/FileReader.java:91:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/main/java/graph/FileReader.java:92:	AvoidInstantiatingObjectsInLoops:	AvoidInstantiatingObjectsInLoops: Avoid instantiating new objects inside loops
+src/main/java/graph/FileReader.java:92:	AvoidInstantiatingObjectsInLoops:	AvoidInstantiatingObjectsInLoops: Avoid instantiating new objects inside loops
+src/main/java/graph/FileReader.java:92:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/main/java/graph/FileReader.java:92:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/main/java/graph/FileReader.java:93:	AvoidInstantiatingObjectsInLoops:	AvoidInstantiatingObjectsInLoops: Avoid instantiating new objects inside loops
+src/main/java/graph/FileReader.java:93:	AvoidInstantiatingObjectsInLoops:	AvoidInstantiatingObjectsInLoops: Avoid instantiating new objects inside loops
+src/main/java/graph/FileReader.java:94:	ShortVariable:	ShortVariable: Avoid variables with short names like nb
+src/main/java/graph/FileReader.java:94:	ShortVariable:	ShortVariable: Avoid variables with short names like nb
+src/main/java/graph/FileReader.java:107:	ShortVariable:	ShortVariable: Avoid variables with short names like nb
+src/main/java/graph/FileReader.java:107:	ShortVariable:	ShortVariable: Avoid variables with short names like nb
+src/main/java/graph/FileReader.java:107:	UnusedFormalParameter:	UnusedFormalParameter: Avoid unused method parameters such as 'actuel'.
+src/main/java/graph/FileReader.java:107:	UnusedFormalParameter:	UnusedFormalParameter: Avoid unused method parameters such as 'actuel'.
+src/main/java/graph/FileReader.java:127:	ShortVariable:	ShortVariable: Avoid variables with short names like s1
+src/main/java/graph/FileReader.java:127:	ShortVariable:	ShortVariable: Avoid variables with short names like s1
+src/main/java/graph/FileReader.java:131:	AvoidInstantiatingObjectsInLoops:	AvoidInstantiatingObjectsInLoops: Avoid instantiating new objects inside loops
+src/main/java/graph/FileReader.java:131:	AvoidInstantiatingObjectsInLoops:	AvoidInstantiatingObjectsInLoops: Avoid instantiating new objects inside loops
+src/main/java/graph/FileReader.java:132:	AvoidInstantiatingObjectsInLoops:	AvoidInstantiatingObjectsInLoops: Avoid instantiating new objects inside loops
+src/main/java/graph/FileReader.java:132:	AvoidInstantiatingObjectsInLoops:	AvoidInstantiatingObjectsInLoops: Avoid instantiating new objects inside loops
+src/main/java/graph/FileReader.java:134:	AvoidInstantiatingObjectsInLoops:	AvoidInstantiatingObjectsInLoops: Avoid instantiating new objects inside loops
+src/main/java/graph/FileReader.java:134:	AvoidInstantiatingObjectsInLoops:	AvoidInstantiatingObjectsInLoops: Avoid instantiating new objects inside loops
+src/main/java/graph/FileReader.java:141:	ShortVariable:	ShortVariable: Avoid variables with short names like s1
+src/main/java/graph/FileReader.java:141:	ShortVariable:	ShortVariable: Avoid variables with short names like s1
+src/main/java/graph/FileReader.java:146:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/FileReader.java:146:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/FileReader.java:151:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/FileReader.java:151:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Graph.java:4:	UnusedImports:	UnusedImports: Unused import 'java.util.ArrayList'
+src/main/java/graph/Graph.java:4:	UnusedImports:	UnusedImports: Unused import 'java.util.ArrayList'
+src/main/java/graph/Graph.java:7:	CommentRequired:	CommentRequired: Class comments are required
+src/main/java/graph/Graph.java:7:	CommentRequired:	CommentRequired: Class comments are required
+src/main/java/graph/Graph.java:8:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/Graph.java:8:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/Graph.java:9:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/Graph.java:9:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/Graph.java:10:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/Graph.java:10:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/Graph.java:11:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/Graph.java:11:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/Graph.java:12:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/Graph.java:12:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/Graph.java:13:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/Graph.java:13:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/Graph.java:13:	UnusedAssignment:	UnusedAssignment: The field initializer for 'auteur' is never used (overwritten on line 21)
+src/main/java/graph/Graph.java:13:	UnusedAssignment:	UnusedAssignment: The field initializer for 'auteur' is never used (overwritten on line 21)
+src/main/java/graph/Graph.java:15:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Graph.java:15:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Graph.java:15:	ExcessiveParameterList:	ExcessiveParameterList: Avoid long parameter lists.
+src/main/java/graph/Graph.java:15:	ExcessiveParameterList:	ExcessiveParameterList: Avoid long parameter lists.
+src/main/java/graph/Graph.java:28:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Graph.java:28:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Graph.java:28:	ShortVariable:	ShortVariable: Avoid variables with short names like i
+src/main/java/graph/Graph.java:28:	ShortVariable:	ShortVariable: Avoid variables with short names like i
+src/main/java/graph/Graph.java:33:	LiteralsFirstInComparisons:	LiteralsFirstInComparisons: Position literals first in String comparisons
+src/main/java/graph/Graph.java:33:	LiteralsFirstInComparisons:	LiteralsFirstInComparisons: Position literals first in String comparisons
+src/main/java/graph/Graph.java:34:	OnlyOneReturn:	OnlyOneReturn: A method should have only one exit point, and that should be the last statement in the method
+src/main/java/graph/Graph.java:34:	OnlyOneReturn:	OnlyOneReturn: A method should have only one exit point, and that should be the last statement in the method
+src/main/java/graph/Graph.java:40:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Graph.java:40:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Graph.java:44:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Graph.java:44:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Graph.java:44:	ShortVariable:	ShortVariable: Avoid variables with short names like f
+src/main/java/graph/Graph.java:44:	ShortVariable:	ShortVariable: Avoid variables with short names like f
+src/main/java/graph/Graph.java:56:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Graph.java:56:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Graph.java:56:	MissingOverride:	MissingOverride: The method 'toString()' is missing an @Override annotation.
+src/main/java/graph/Graph.java:56:	MissingOverride:	MissingOverride: The method 'toString()' is missing an @Override annotation.
+src/main/java/graph/Graph.java:59:	UseStringBufferForStringAppends:	UseStringBufferForStringAppends: Prefer StringBuilder (non-synchronized) or StringBuffer (synchronized) over += for concatenating strings
+src/main/java/graph/Graph.java:59:	UseStringBufferForStringAppends:	UseStringBufferForStringAppends: Prefer StringBuilder (non-synchronized) or StringBuffer (synchronized) over += for concatenating strings
+src/main/java/graph/Graph.java:73:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Graph.java:73:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Graph.java:73:	ShortVariable:	ShortVariable: Avoid variables with short names like i
+src/main/java/graph/Graph.java:73:	ShortVariable:	ShortVariable: Avoid variables with short names like i
+src/main/java/graph/Graph.java:73:	ShortVariable:	ShortVariable: Avoid variables with short names like j
+src/main/java/graph/Graph.java:73:	ShortVariable:	ShortVariable: Avoid variables with short names like j
+src/main/java/graph/Graph.java:77:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Graph.java:77:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Graph.java:77:	ShortVariable:	ShortVariable: Avoid variables with short names like i
+src/main/java/graph/Graph.java:77:	ShortVariable:	ShortVariable: Avoid variables with short names like i
+src/main/java/graph/Graph.java:77:	ShortVariable:	ShortVariable: Avoid variables with short names like j
+src/main/java/graph/Graph.java:77:	ShortVariable:	ShortVariable: Avoid variables with short names like j
+src/main/java/graph/Graph.java:81:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Graph.java:81:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Graph.java:81:	ShortVariable:	ShortVariable: Avoid variables with short names like i
+src/main/java/graph/Graph.java:81:	ShortVariable:	ShortVariable: Avoid variables with short names like i
+src/main/java/graph/Graph.java:81:	ShortVariable:	ShortVariable: Avoid variables with short names like j
+src/main/java/graph/Graph.java:81:	ShortVariable:	ShortVariable: Avoid variables with short names like j
+src/main/java/graph/Graph.java:84:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Graph.java:84:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Graph.java:84:	ShortVariable:	ShortVariable: Avoid variables with short names like i
+src/main/java/graph/Graph.java:84:	ShortVariable:	ShortVariable: Avoid variables with short names like i
+src/main/java/graph/Matrice.java:4:	CommentRequired:	CommentRequired: Class comments are required
+src/main/java/graph/Matrice.java:4:	CommentRequired:	CommentRequired: Class comments are required
+src/main/java/graph/Matrice.java:5:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/Matrice.java:5:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/Matrice.java:6:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/Matrice.java:6:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/Matrice.java:7:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/Matrice.java:7:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/Matrice.java:7:	ShortVariable:	ShortVariable: Avoid variables with short names like x
+src/main/java/graph/Matrice.java:7:	ShortVariable:	ShortVariable: Avoid variables with short names like x
+src/main/java/graph/Matrice.java:8:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/Matrice.java:8:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/Matrice.java:8:	ShortVariable:	ShortVariable: Avoid variables with short names like y
+src/main/java/graph/Matrice.java:8:	ShortVariable:	ShortVariable: Avoid variables with short names like y
+src/main/java/graph/Matrice.java:9:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/Matrice.java:9:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/Matrice.java:9:	ShortVariable:	ShortVariable: Avoid variables with short names like z
+src/main/java/graph/Matrice.java:9:	ShortVariable:	ShortVariable: Avoid variables with short names like z
+src/main/java/graph/Matrice.java:10:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/Matrice.java:10:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/Matrice.java:10:	ShortVariable:	ShortVariable: Avoid variables with short names like v
+src/main/java/graph/Matrice.java:10:	ShortVariable:	ShortVariable: Avoid variables with short names like v
+src/main/java/graph/Matrice.java:13:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Matrice.java:13:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Matrice.java:13:	UnusedFormalParameter:	UnusedFormalParameter: Avoid unused constructor parameters such as 'nbFaces'.
+src/main/java/graph/Matrice.java:13:	UnusedFormalParameter:	UnusedFormalParameter: Avoid unused constructor parameters such as 'nbFaces'.
+src/main/java/graph/Matrice.java:21:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Matrice.java:21:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Matrice.java:21:	ShortVariable:	ShortVariable: Avoid variables with short names like v
+src/main/java/graph/Matrice.java:21:	ShortVariable:	ShortVariable: Avoid variables with short names like v
+src/main/java/graph/Matrice.java:21:	ShortVariable:	ShortVariable: Avoid variables with short names like x
+src/main/java/graph/Matrice.java:21:	ShortVariable:	ShortVariable: Avoid variables with short names like x
+src/main/java/graph/Matrice.java:21:	ShortVariable:	ShortVariable: Avoid variables with short names like y
+src/main/java/graph/Matrice.java:21:	ShortVariable:	ShortVariable: Avoid variables with short names like y
+src/main/java/graph/Matrice.java:21:	ShortVariable:	ShortVariable: Avoid variables with short names like z
+src/main/java/graph/Matrice.java:21:	ShortVariable:	ShortVariable: Avoid variables with short names like z
+src/main/java/graph/Matrice.java:28:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Matrice.java:28:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Matrice.java:28:	ShortVariable:	ShortVariable: Avoid variables with short names like f
+src/main/java/graph/Matrice.java:28:	ShortVariable:	ShortVariable: Avoid variables with short names like f
+src/main/java/graph/Matrice.java:32:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Matrice.java:32:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Matrice.java:35:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Matrice.java:35:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Matrice.java:38:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Matrice.java:38:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Matrice.java:41:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Matrice.java:41:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Matrice.java:45:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Matrice.java:45:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Matrice.java:45:	MissingOverride:	MissingOverride: The method 'toString()' is missing an @Override annotation.
+src/main/java/graph/Matrice.java:45:	MissingOverride:	MissingOverride: The method 'toString()' is missing an @Override annotation.
+src/main/java/graph/Matrice.java:48:	UseStringBufferForStringAppends:	UseStringBufferForStringAppends: Prefer StringBuilder (non-synchronized) or StringBuffer (synchronized) over += for concatenating strings
+src/main/java/graph/Matrice.java:48:	UseStringBufferForStringAppends:	UseStringBufferForStringAppends: Prefer StringBuilder (non-synchronized) or StringBuffer (synchronized) over += for concatenating strings
+src/main/java/graph/Observer.java:3:	CommentRequired:	CommentRequired: Class comments are required
+src/main/java/graph/Observer.java:3:	CommentRequired:	CommentRequired: Class comments are required
+src/main/java/graph/Observer.java:4:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Observer.java:4:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Observer.java:5:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Observer.java:5:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Rotation.java:3:	CommentRequired:	CommentRequired: Class comments are required
+src/main/java/graph/Rotation.java:3:	CommentRequired:	CommentRequired: Class comments are required
+src/main/java/graph/Rotation.java:4:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/Rotation.java:4:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/Rotation.java:5:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/Rotation.java:5:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/Rotation.java:5:	ShortVariable:	ShortVariable: Avoid variables with short names like r
+src/main/java/graph/Rotation.java:5:	ShortVariable:	ShortVariable: Avoid variables with short names like r
+src/main/java/graph/Rotation.java:6:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Rotation.java:6:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Rotation.java:6:	ShortVariable:	ShortVariable: Avoid variables with short names like m
+src/main/java/graph/Rotation.java:6:	ShortVariable:	ShortVariable: Avoid variables with short names like m
+src/main/java/graph/Rotation.java:6:	ShortVariable:	ShortVariable: Avoid variables with short names like r
+src/main/java/graph/Rotation.java:6:	ShortVariable:	ShortVariable: Avoid variables with short names like r
+src/main/java/graph/Rotation.java:11:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Rotation.java:11:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Rotation.java:12:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Rotation.java:12:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Rotation.java:12:	ExcessiveMethodLength:	ExcessiveMethodLength: Avoid really long methods.
+src/main/java/graph/Rotation.java:12:	ExcessiveMethodLength:	ExcessiveMethodLength: Avoid really long methods.
+src/main/java/graph/Rotation.java:12:	NcssCount:	NcssCount: The method 'multipliMatrice(Matrice)' has a NCSS line count of 40.
+src/main/java/graph/Rotation.java:12:	NcssCount:	NcssCount: The method 'multipliMatrice(Matrice)' has a NCSS line count of 40.
+src/main/java/graph/Rotation.java:14:	ShortVariable:	ShortVariable: Avoid variables with short names like dx
+src/main/java/graph/Rotation.java:14:	ShortVariable:	ShortVariable: Avoid variables with short names like dx
+src/main/java/graph/Rotation.java:15:	ShortVariable:	ShortVariable: Avoid variables with short names like dy
+src/main/java/graph/Rotation.java:15:	ShortVariable:	ShortVariable: Avoid variables with short names like dy
+src/main/java/graph/Rotation.java:16:	ShortVariable:	ShortVariable: Avoid variables with short names like dz
+src/main/java/graph/Rotation.java:16:	ShortVariable:	ShortVariable: Avoid variables with short names like dz
+src/main/java/graph/Rotation.java:17:	ShortVariable:	ShortVariable: Avoid variables with short names like dv
+src/main/java/graph/Rotation.java:17:	ShortVariable:	ShortVariable: Avoid variables with short names like dv
+src/main/java/graph/Rotation.java:21:	SwitchStmtsShouldHaveDefault:	SwitchStmtsShouldHaveDefault: Switch statements should be exhaustive, add a default case (or missing enum branches)
+src/main/java/graph/Rotation.java:21:	SwitchStmtsShouldHaveDefault:	SwitchStmtsShouldHaveDefault: Switch statements should be exhaustive, add a default case (or missing enum branches)
+src/main/java/graph/RotationAroundLeft.java:3:	CommentRequired:	CommentRequired: Class comments are required
+src/main/java/graph/RotationAroundLeft.java:3:	CommentRequired:	CommentRequired: Class comments are required
+src/main/java/graph/RotationAroundLeft.java:4:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/RotationAroundLeft.java:4:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/RotationAroundLeft.java:4:	ShortVariable:	ShortVariable: Avoid variables with short names like m
+src/main/java/graph/RotationAroundLeft.java:4:	ShortVariable:	ShortVariable: Avoid variables with short names like m
+src/main/java/graph/RotationAroundLeft.java:4:	ShortVariable:	ShortVariable: Avoid variables with short names like r
+src/main/java/graph/RotationAroundLeft.java:4:	ShortVariable:	ShortVariable: Avoid variables with short names like r
+src/main/java/graph/RotationAroundRight.java:3:	CommentRequired:	CommentRequired: Class comments are required
+src/main/java/graph/RotationAroundRight.java:3:	CommentRequired:	CommentRequired: Class comments are required
+src/main/java/graph/RotationAroundRight.java:5:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/RotationAroundRight.java:5:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/RotationAroundRight.java:5:	ShortVariable:	ShortVariable: Avoid variables with short names like m
+src/main/java/graph/RotationAroundRight.java:5:	ShortVariable:	ShortVariable: Avoid variables with short names like m
+src/main/java/graph/RotationAroundRight.java:5:	ShortVariable:	ShortVariable: Avoid variables with short names like r
+src/main/java/graph/RotationAroundRight.java:5:	ShortVariable:	ShortVariable: Avoid variables with short names like r
+src/main/java/graph/RotationDown.java:3:	CommentRequired:	CommentRequired: Class comments are required
+src/main/java/graph/RotationDown.java:3:	CommentRequired:	CommentRequired: Class comments are required
+src/main/java/graph/RotationDown.java:5:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/RotationDown.java:5:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/RotationDown.java:5:	ShortVariable:	ShortVariable: Avoid variables with short names like m
+src/main/java/graph/RotationDown.java:5:	ShortVariable:	ShortVariable: Avoid variables with short names like m
+src/main/java/graph/RotationDown.java:5:	ShortVariable:	ShortVariable: Avoid variables with short names like r
+src/main/java/graph/RotationDown.java:5:	ShortVariable:	ShortVariable: Avoid variables with short names like r
+src/main/java/graph/RotationLeft.java:3:	CommentRequired:	CommentRequired: Class comments are required
+src/main/java/graph/RotationLeft.java:3:	CommentRequired:	CommentRequired: Class comments are required
+src/main/java/graph/RotationLeft.java:5:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/RotationLeft.java:5:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/RotationLeft.java:5:	ShortVariable:	ShortVariable: Avoid variables with short names like m
+src/main/java/graph/RotationLeft.java:5:	ShortVariable:	ShortVariable: Avoid variables with short names like m
+src/main/java/graph/RotationLeft.java:5:	ShortVariable:	ShortVariable: Avoid variables with short names like r
+src/main/java/graph/RotationLeft.java:5:	ShortVariable:	ShortVariable: Avoid variables with short names like r
+src/main/java/graph/RotationRight.java:3:	CommentRequired:	CommentRequired: Class comments are required
+src/main/java/graph/RotationRight.java:3:	CommentRequired:	CommentRequired: Class comments are required
+src/main/java/graph/RotationRight.java:5:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/RotationRight.java:5:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/RotationRight.java:5:	ShortVariable:	ShortVariable: Avoid variables with short names like m
+src/main/java/graph/RotationRight.java:5:	ShortVariable:	ShortVariable: Avoid variables with short names like m
+src/main/java/graph/RotationRight.java:5:	ShortVariable:	ShortVariable: Avoid variables with short names like r
+src/main/java/graph/RotationRight.java:5:	ShortVariable:	ShortVariable: Avoid variables with short names like r
+src/main/java/graph/RotationUp.java:3:	CommentRequired:	CommentRequired: Class comments are required
+src/main/java/graph/RotationUp.java:3:	CommentRequired:	CommentRequired: Class comments are required
+src/main/java/graph/RotationUp.java:5:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/RotationUp.java:5:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/RotationUp.java:5:	ShortVariable:	ShortVariable: Avoid variables with short names like m
+src/main/java/graph/RotationUp.java:5:	ShortVariable:	ShortVariable: Avoid variables with short names like m
+src/main/java/graph/RotationUp.java:5:	ShortVariable:	ShortVariable: Avoid variables with short names like r
+src/main/java/graph/RotationUp.java:5:	ShortVariable:	ShortVariable: Avoid variables with short names like r
+src/main/java/graph/Sommet.java:3:	CommentRequired:	CommentRequired: Class comments are required
+src/main/java/graph/Sommet.java:3:	CommentRequired:	CommentRequired: Class comments are required
+src/main/java/graph/Sommet.java:4:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/Sommet.java:4:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/Sommet.java:4:	ImmutableField:	ImmutableField: Private field 'x' could be made final; it is only initialized in the declaration or constructor.
+src/main/java/graph/Sommet.java:4:	ImmutableField:	ImmutableField: Private field 'x' could be made final; it is only initialized in the declaration or constructor.
+src/main/java/graph/Sommet.java:4:	ImmutableField:	ImmutableField: Private field 'y' could be made final; it is only initialized in the declaration or constructor.
+src/main/java/graph/Sommet.java:4:	ImmutableField:	ImmutableField: Private field 'y' could be made final; it is only initialized in the declaration or constructor.
+src/main/java/graph/Sommet.java:4:	ImmutableField:	ImmutableField: Private field 'z' could be made final; it is only initialized in the declaration or constructor.
+src/main/java/graph/Sommet.java:4:	ImmutableField:	ImmutableField: Private field 'z' could be made final; it is only initialized in the declaration or constructor.
+src/main/java/graph/Sommet.java:4:	ShortVariable:	ShortVariable: Avoid variables with short names like x
+src/main/java/graph/Sommet.java:4:	ShortVariable:	ShortVariable: Avoid variables with short names like x
+src/main/java/graph/Sommet.java:4:	ShortVariable:	ShortVariable: Avoid variables with short names like y
+src/main/java/graph/Sommet.java:4:	ShortVariable:	ShortVariable: Avoid variables with short names like y
+src/main/java/graph/Sommet.java:4:	ShortVariable:	ShortVariable: Avoid variables with short names like z
+src/main/java/graph/Sommet.java:4:	ShortVariable:	ShortVariable: Avoid variables with short names like z
+src/main/java/graph/Sommet.java:5:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/Sommet.java:5:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/Sommet.java:8:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Sommet.java:8:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Sommet.java:8:	ShortVariable:	ShortVariable: Avoid variables with short names like x
+src/main/java/graph/Sommet.java:8:	ShortVariable:	ShortVariable: Avoid variables with short names like x
+src/main/java/graph/Sommet.java:8:	ShortVariable:	ShortVariable: Avoid variables with short names like y
+src/main/java/graph/Sommet.java:8:	ShortVariable:	ShortVariable: Avoid variables with short names like y
+src/main/java/graph/Sommet.java:8:	ShortVariable:	ShortVariable: Avoid variables with short names like z
+src/main/java/graph/Sommet.java:8:	ShortVariable:	ShortVariable: Avoid variables with short names like z
+src/main/java/graph/Sommet.java:12:	NullAssignment:	NullAssignment: Assigning an Object to null is a code smell.  Consider refactoring.
+src/main/java/graph/Sommet.java:12:	NullAssignment:	NullAssignment: Assigning an Object to null is a code smell.  Consider refactoring.
+src/main/java/graph/Sommet.java:15:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Sommet.java:15:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Sommet.java:15:	ShortVariable:	ShortVariable: Avoid variables with short names like x
+src/main/java/graph/Sommet.java:15:	ShortVariable:	ShortVariable: Avoid variables with short names like x
+src/main/java/graph/Sommet.java:15:	ShortVariable:	ShortVariable: Avoid variables with short names like y
+src/main/java/graph/Sommet.java:15:	ShortVariable:	ShortVariable: Avoid variables with short names like y
+src/main/java/graph/Sommet.java:15:	ShortVariable:	ShortVariable: Avoid variables with short names like z
+src/main/java/graph/Sommet.java:15:	ShortVariable:	ShortVariable: Avoid variables with short names like z
+src/main/java/graph/Sommet.java:22:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Sommet.java:22:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Sommet.java:26:	NullAssignment:	NullAssignment: Assigning an Object to null is a code smell.  Consider refactoring.
+src/main/java/graph/Sommet.java:26:	NullAssignment:	NullAssignment: Assigning an Object to null is a code smell.  Consider refactoring.
+src/main/java/graph/Sommet.java:29:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Sommet.java:29:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Sommet.java:48:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Sommet.java:48:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Sommet.java:52:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Sommet.java:52:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Sommet.java:56:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Sommet.java:56:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Sommet.java:56:	MissingOverride:	MissingOverride: The method 'toString()' is missing an @Override annotation.
+src/main/java/graph/Sommet.java:56:	MissingOverride:	MissingOverride: The method 'toString()' is missing an @Override annotation.
+src/main/java/graph/Subject.java:6:	CommentRequired:	CommentRequired: Class comments are required
+src/main/java/graph/Subject.java:6:	CommentRequired:	CommentRequired: Class comments are required
+src/main/java/graph/Subject.java:8:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/Subject.java:8:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/Subject.java:8:	ImmutableField:	ImmutableField: Private field 'list' could be made final; it is only initialized in the declaration or constructor.
+src/main/java/graph/Subject.java:8:	ImmutableField:	ImmutableField: Private field 'list' could be made final; it is only initialized in the declaration or constructor.
+src/main/java/graph/Subject.java:8:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/main/java/graph/Subject.java:8:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/main/java/graph/Subject.java:10:	CommentRequired:	CommentRequired: Protected method constructor comments are required
+src/main/java/graph/Subject.java:10:	CommentRequired:	CommentRequired: Protected method constructor comments are required
+src/main/java/graph/Subject.java:16:	CommentRequired:	CommentRequired: Protected method constructor comments are required
+src/main/java/graph/Subject.java:16:	CommentRequired:	CommentRequired: Protected method constructor comments are required
+src/main/java/graph/Subject.java:22:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Subject.java:22:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Subject.java:26:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Subject.java:26:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Translation.java:3:	CommentRequired:	CommentRequired: Class comments are required
+src/main/java/graph/Translation.java:3:	CommentRequired:	CommentRequired: Class comments are required
+src/main/java/graph/Translation.java:4:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/Translation.java:4:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/Translation.java:5:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/Translation.java:5:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/Translation.java:5:	ShortVariable:	ShortVariable: Avoid variables with short names like x
+src/main/java/graph/Translation.java:5:	ShortVariable:	ShortVariable: Avoid variables with short names like x
+src/main/java/graph/Translation.java:5:	UnusedAssignment:	UnusedAssignment: The field initializer for 'x' is never used (overwritten on line 10)
+src/main/java/graph/Translation.java:5:	UnusedAssignment:	UnusedAssignment: The field initializer for 'x' is never used (overwritten on line 10)
+src/main/java/graph/Translation.java:6:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/Translation.java:6:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/Translation.java:6:	ShortVariable:	ShortVariable: Avoid variables with short names like y
+src/main/java/graph/Translation.java:6:	ShortVariable:	ShortVariable: Avoid variables with short names like y
+src/main/java/graph/Translation.java:6:	UnusedAssignment:	UnusedAssignment: The field initializer for 'y' is never used (overwritten on line 11)
+src/main/java/graph/Translation.java:6:	UnusedAssignment:	UnusedAssignment: The field initializer for 'y' is never used (overwritten on line 11)
+src/main/java/graph/Translation.java:8:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Translation.java:8:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Translation.java:8:	ShortVariable:	ShortVariable: Avoid variables with short names like m
+src/main/java/graph/Translation.java:8:	ShortVariable:	ShortVariable: Avoid variables with short names like m
+src/main/java/graph/Translation.java:8:	ShortVariable:	ShortVariable: Avoid variables with short names like x
+src/main/java/graph/Translation.java:8:	ShortVariable:	ShortVariable: Avoid variables with short names like x
+src/main/java/graph/Translation.java:8:	ShortVariable:	ShortVariable: Avoid variables with short names like y
+src/main/java/graph/Translation.java:8:	ShortVariable:	ShortVariable: Avoid variables with short names like y
+src/main/java/graph/Translation.java:14:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/Translation.java:14:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/UpdateGraph.java:8:	CommentRequired:	CommentRequired: Class comments are required
+src/main/java/graph/UpdateGraph.java:8:	CommentRequired:	CommentRequired: Class comments are required
+src/main/java/graph/UpdateGraph.java:9:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/UpdateGraph.java:9:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/UpdateGraph.java:9:	ExcessiveParameterList:	ExcessiveParameterList: Avoid long parameter lists.
+src/main/java/graph/UpdateGraph.java:9:	ExcessiveParameterList:	ExcessiveParameterList: Avoid long parameter lists.
+src/main/java/graph/UpdateGraph.java:14:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/UpdateGraph.java:14:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/UpdateGraph.java:14:	ImmutableField:	ImmutableField: Private field 'sommets' could be made final; it is only initialized in the declaration or constructor.
+src/main/java/graph/UpdateGraph.java:14:	ImmutableField:	ImmutableField: Private field 'sommets' could be made final; it is only initialized in the declaration or constructor.
+src/main/java/graph/UpdateGraph.java:14:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/main/java/graph/UpdateGraph.java:14:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/main/java/graph/UpdateGraph.java:15:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/UpdateGraph.java:15:	CommentRequired:	CommentRequired: Field comments are required
+src/main/java/graph/UpdateGraph.java:15:	ShortVariable:	ShortVariable: Avoid variables with short names like a
+src/main/java/graph/UpdateGraph.java:15:	ShortVariable:	ShortVariable: Avoid variables with short names like a
+src/main/java/graph/UpdateGraph.java:15:	ShortVariable:	ShortVariable: Avoid variables with short names like b
+src/main/java/graph/UpdateGraph.java:15:	ShortVariable:	ShortVariable: Avoid variables with short names like b
+src/main/java/graph/UpdateGraph.java:15:	ShortVariable:	ShortVariable: Avoid variables with short names like bl
+src/main/java/graph/UpdateGraph.java:15:	ShortVariable:	ShortVariable: Avoid variables with short names like bl
+src/main/java/graph/UpdateGraph.java:15:	ShortVariable:	ShortVariable: Avoid variables with short names like c
+src/main/java/graph/UpdateGraph.java:15:	ShortVariable:	ShortVariable: Avoid variables with short names like c
+src/main/java/graph/UpdateGraph.java:15:	ShortVariable:	ShortVariable: Avoid variables with short names like d
+src/main/java/graph/UpdateGraph.java:15:	ShortVariable:	ShortVariable: Avoid variables with short names like d
+src/main/java/graph/UpdateGraph.java:15:	ShortVariable:	ShortVariable: Avoid variables with short names like g
+src/main/java/graph/UpdateGraph.java:15:	ShortVariable:	ShortVariable: Avoid variables with short names like g
+src/main/java/graph/UpdateGraph.java:15:	ShortVariable:	ShortVariable: Avoid variables with short names like nb
+src/main/java/graph/UpdateGraph.java:15:	ShortVariable:	ShortVariable: Avoid variables with short names like nb
+src/main/java/graph/UpdateGraph.java:15:	ShortVariable:	ShortVariable: Avoid variables with short names like r
+src/main/java/graph/UpdateGraph.java:15:	ShortVariable:	ShortVariable: Avoid variables with short names like r
+src/main/java/graph/UpdateGraph.java:18:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/UpdateGraph.java:18:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/graph/UpdateGraph.java:18:	ShortVariable:	ShortVariable: Avoid variables with short names like ma
+src/main/java/graph/UpdateGraph.java:18:	ShortVariable:	ShortVariable: Avoid variables with short names like ma
+src/main/java/graph/UpdateGraph.java:34:	ShortVariable:	ShortVariable: Avoid variables with short names like i
+src/main/java/graph/UpdateGraph.java:34:	ShortVariable:	ShortVariable: Avoid variables with short names like i
+src/main/java/graph/UpdateGraph.java:40:	AvoidLiteralsInIfCondition:	AvoidLiteralsInIfCondition: Avoid using Literals in Conditional Statements
+src/main/java/graph/UpdateGraph.java:40:	AvoidLiteralsInIfCondition:	AvoidLiteralsInIfCondition: Avoid using Literals in Conditional Statements
+src/main/java/graph/UpdateGraph.java:50:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/main/java/graph/UpdateGraph.java:50:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/main/java/graph/UpdateGraph.java:58:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/main/java/graph/UpdateGraph.java:58:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/main/java/graph/UpdateGraph.java:69:	AvoidLiteralsInIfCondition:	AvoidLiteralsInIfCondition: Avoid using Literals in Conditional Statements
+src/main/java/graph/UpdateGraph.java:69:	AvoidLiteralsInIfCondition:	AvoidLiteralsInIfCondition: Avoid using Literals in Conditional Statements
+src/test/java/graph/FileReaderTest.java:11:	CommentRequired:	CommentRequired: Class comments are required
+src/test/java/graph/FileReaderTest.java:11:	CommentRequired:	CommentRequired: Class comments are required
+src/test/java/graph/FileReaderTest.java:12:	CommentRequired:	CommentRequired: Field comments are required
+src/test/java/graph/FileReaderTest.java:12:	CommentRequired:	CommentRequired: Field comments are required
+src/test/java/graph/FileReaderTest.java:13:	CommentRequired:	CommentRequired: Field comments are required
+src/test/java/graph/FileReaderTest.java:13:	CommentRequired:	CommentRequired: Field comments are required
+src/test/java/graph/FileReaderTest.java:14:	CommentRequired:	CommentRequired: Field comments are required
+src/test/java/graph/FileReaderTest.java:14:	CommentRequired:	CommentRequired: Field comments are required
+src/test/java/graph/FileReaderTest.java:15:	CommentRequired:	CommentRequired: Field comments are required
+src/test/java/graph/FileReaderTest.java:15:	CommentRequired:	CommentRequired: Field comments are required
+src/test/java/graph/FileReaderTest.java:15:	ShortVariable:	ShortVariable: Avoid variables with short names like r
+src/test/java/graph/FileReaderTest.java:15:	ShortVariable:	ShortVariable: Avoid variables with short names like r
+src/test/java/graph/FileReaderTest.java:16:	CommentRequired:	CommentRequired: Field comments are required
+src/test/java/graph/FileReaderTest.java:16:	CommentRequired:	CommentRequired: Field comments are required
+src/test/java/graph/FileReaderTest.java:16:	ShortVariable:	ShortVariable: Avoid variables with short names like r2
+src/test/java/graph/FileReaderTest.java:16:	ShortVariable:	ShortVariable: Avoid variables with short names like r2
+src/test/java/graph/FileReaderTest.java:17:	CommentRequired:	CommentRequired: Field comments are required
+src/test/java/graph/FileReaderTest.java:17:	CommentRequired:	CommentRequired: Field comments are required
+src/test/java/graph/FileReaderTest.java:18:	CommentRequired:	CommentRequired: Field comments are required
+src/test/java/graph/FileReaderTest.java:18:	CommentRequired:	CommentRequired: Field comments are required
+src/test/java/graph/FileReaderTest.java:19:	CommentRequired:	CommentRequired: Field comments are required
+src/test/java/graph/FileReaderTest.java:19:	CommentRequired:	CommentRequired: Field comments are required
+src/test/java/graph/FileReaderTest.java:21:	ExcessiveMethodLength:	ExcessiveMethodLength: Avoid really long methods.
+src/test/java/graph/FileReaderTest.java:21:	ExcessiveMethodLength:	ExcessiveMethodLength: Avoid really long methods.
+src/test/java/graph/FileReaderTest.java:21:	NcssCount:	NcssCount: The method 'implementation()' has a NCSS line count of 49.
+src/test/java/graph/FileReaderTest.java:21:	NcssCount:	NcssCount: The method 'implementation()' has a NCSS line count of 49.
+src/test/java/graph/FileReaderTest.java:22:	ShortVariable:	ShortVariable: Avoid variables with short names like f
+src/test/java/graph/FileReaderTest.java:22:	ShortVariable:	ShortVariable: Avoid variables with short names like f
+src/test/java/graph/FileReaderTest.java:22:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/test/java/graph/FileReaderTest.java:22:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/test/java/graph/FileReaderTest.java:24:	ShortVariable:	ShortVariable: Avoid variables with short names like s0
+src/test/java/graph/FileReaderTest.java:24:	ShortVariable:	ShortVariable: Avoid variables with short names like s0
+src/test/java/graph/FileReaderTest.java:25:	ShortVariable:	ShortVariable: Avoid variables with short names like s1
+src/test/java/graph/FileReaderTest.java:25:	ShortVariable:	ShortVariable: Avoid variables with short names like s1
+src/test/java/graph/FileReaderTest.java:26:	ShortVariable:	ShortVariable: Avoid variables with short names like s2
+src/test/java/graph/FileReaderTest.java:26:	ShortVariable:	ShortVariable: Avoid variables with short names like s2
+src/test/java/graph/FileReaderTest.java:27:	ShortVariable:	ShortVariable: Avoid variables with short names like s3
+src/test/java/graph/FileReaderTest.java:27:	ShortVariable:	ShortVariable: Avoid variables with short names like s3
+src/test/java/graph/FileReaderTest.java:28:	ShortVariable:	ShortVariable: Avoid variables with short names like s4
+src/test/java/graph/FileReaderTest.java:28:	ShortVariable:	ShortVariable: Avoid variables with short names like s4
+src/test/java/graph/FileReaderTest.java:29:	ShortVariable:	ShortVariable: Avoid variables with short names like s5
+src/test/java/graph/FileReaderTest.java:29:	ShortVariable:	ShortVariable: Avoid variables with short names like s5
+src/test/java/graph/FileReaderTest.java:30:	ShortVariable:	ShortVariable: Avoid variables with short names like s6
+src/test/java/graph/FileReaderTest.java:30:	ShortVariable:	ShortVariable: Avoid variables with short names like s6
+src/test/java/graph/FileReaderTest.java:31:	ShortVariable:	ShortVariable: Avoid variables with short names like s7
+src/test/java/graph/FileReaderTest.java:31:	ShortVariable:	ShortVariable: Avoid variables with short names like s7
+src/test/java/graph/FileReaderTest.java:32:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/test/java/graph/FileReaderTest.java:32:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/test/java/graph/FileReaderTest.java:37:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/test/java/graph/FileReaderTest.java:37:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/test/java/graph/FileReaderTest.java:42:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/test/java/graph/FileReaderTest.java:42:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/test/java/graph/FileReaderTest.java:47:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/test/java/graph/FileReaderTest.java:47:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/test/java/graph/FileReaderTest.java:52:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/test/java/graph/FileReaderTest.java:52:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/test/java/graph/FileReaderTest.java:57:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/test/java/graph/FileReaderTest.java:57:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/test/java/graph/FileReaderTest.java:78:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/FileReaderTest.java:78:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/FileReaderTest.java:78:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/FileReaderTest.java:78:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/FileReaderTest.java:78:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/FileReaderTest.java:78:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/FileReaderTest.java:78:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/FileReaderTest.java:78:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/FileReaderTest.java:82:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/FileReaderTest.java:82:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/FileReaderTest.java:82:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/FileReaderTest.java:82:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/FileReaderTest.java:82:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/FileReaderTest.java:82:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/FileReaderTest.java:82:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/FileReaderTest.java:82:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/FileReaderTest.java:87:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/FileReaderTest.java:87:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/FileReaderTest.java:87:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/FileReaderTest.java:87:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/FileReaderTest.java:87:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/FileReaderTest.java:87:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/FileReaderTest.java:87:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/FileReaderTest.java:87:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/FileReaderTest.java:92:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/FileReaderTest.java:92:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/FileReaderTest.java:92:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/FileReaderTest.java:92:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/FileReaderTest.java:92:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/FileReaderTest.java:92:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/FileReaderTest.java:92:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/FileReaderTest.java:92:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/FileReaderTest.java:92:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/FileReaderTest.java:92:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/FileReaderTest.java:92:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/FileReaderTest.java:92:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/FileReaderTest.java:97:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/FileReaderTest.java:97:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/FileReaderTest.java:97:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/FileReaderTest.java:97:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/FileReaderTest.java:97:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/FileReaderTest.java:97:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/FileReaderTest.java:97:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/FileReaderTest.java:97:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/FileReaderTest.java:97:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/FileReaderTest.java:97:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/FileReaderTest.java:97:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/FileReaderTest.java:97:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/FileReaderTest.java:119:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/FileReaderTest.java:119:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/UpdateGraphTest.java:11:	CommentRequired:	CommentRequired: Class comments are required
+src/test/java/graph/UpdateGraphTest.java:11:	CommentRequired:	CommentRequired: Class comments are required
+src/test/java/graph/UpdateGraphTest.java:12:	CommentRequired:	CommentRequired: Field comments are required
+src/test/java/graph/UpdateGraphTest.java:12:	CommentRequired:	CommentRequired: Field comments are required
+src/test/java/graph/UpdateGraphTest.java:13:	CommentRequired:	CommentRequired: Field comments are required
+src/test/java/graph/UpdateGraphTest.java:13:	CommentRequired:	CommentRequired: Field comments are required
+src/test/java/graph/UpdateGraphTest.java:14:	CommentRequired:	CommentRequired: Field comments are required
+src/test/java/graph/UpdateGraphTest.java:14:	CommentRequired:	CommentRequired: Field comments are required
+src/test/java/graph/UpdateGraphTest.java:16:	ExcessiveMethodLength:	ExcessiveMethodLength: Avoid really long methods.
+src/test/java/graph/UpdateGraphTest.java:16:	ExcessiveMethodLength:	ExcessiveMethodLength: Avoid really long methods.
+src/test/java/graph/UpdateGraphTest.java:16:	NcssCount:	NcssCount: The method 'implementation()' has a NCSS line count of 56.
+src/test/java/graph/UpdateGraphTest.java:16:	NcssCount:	NcssCount: The method 'implementation()' has a NCSS line count of 56.
+src/test/java/graph/UpdateGraphTest.java:17:	ShortVariable:	ShortVariable: Avoid variables with short names like f
+src/test/java/graph/UpdateGraphTest.java:17:	ShortVariable:	ShortVariable: Avoid variables with short names like f
+src/test/java/graph/UpdateGraphTest.java:17:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/test/java/graph/UpdateGraphTest.java:17:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/test/java/graph/UpdateGraphTest.java:19:	ShortVariable:	ShortVariable: Avoid variables with short names like s0
+src/test/java/graph/UpdateGraphTest.java:19:	ShortVariable:	ShortVariable: Avoid variables with short names like s0
+src/test/java/graph/UpdateGraphTest.java:20:	ShortVariable:	ShortVariable: Avoid variables with short names like s1
+src/test/java/graph/UpdateGraphTest.java:20:	ShortVariable:	ShortVariable: Avoid variables with short names like s1
+src/test/java/graph/UpdateGraphTest.java:21:	ShortVariable:	ShortVariable: Avoid variables with short names like s2
+src/test/java/graph/UpdateGraphTest.java:21:	ShortVariable:	ShortVariable: Avoid variables with short names like s2
+src/test/java/graph/UpdateGraphTest.java:22:	ShortVariable:	ShortVariable: Avoid variables with short names like s3
+src/test/java/graph/UpdateGraphTest.java:22:	ShortVariable:	ShortVariable: Avoid variables with short names like s3
+src/test/java/graph/UpdateGraphTest.java:23:	ShortVariable:	ShortVariable: Avoid variables with short names like s4
+src/test/java/graph/UpdateGraphTest.java:23:	ShortVariable:	ShortVariable: Avoid variables with short names like s4
+src/test/java/graph/UpdateGraphTest.java:24:	ShortVariable:	ShortVariable: Avoid variables with short names like s5
+src/test/java/graph/UpdateGraphTest.java:24:	ShortVariable:	ShortVariable: Avoid variables with short names like s5
+src/test/java/graph/UpdateGraphTest.java:25:	ShortVariable:	ShortVariable: Avoid variables with short names like s6
+src/test/java/graph/UpdateGraphTest.java:25:	ShortVariable:	ShortVariable: Avoid variables with short names like s6
+src/test/java/graph/UpdateGraphTest.java:26:	ShortVariable:	ShortVariable: Avoid variables with short names like s7
+src/test/java/graph/UpdateGraphTest.java:26:	ShortVariable:	ShortVariable: Avoid variables with short names like s7
+src/test/java/graph/UpdateGraphTest.java:27:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/test/java/graph/UpdateGraphTest.java:27:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/test/java/graph/UpdateGraphTest.java:32:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/test/java/graph/UpdateGraphTest.java:32:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/test/java/graph/UpdateGraphTest.java:37:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/test/java/graph/UpdateGraphTest.java:37:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/test/java/graph/UpdateGraphTest.java:42:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/test/java/graph/UpdateGraphTest.java:42:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/test/java/graph/UpdateGraphTest.java:47:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/test/java/graph/UpdateGraphTest.java:47:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/test/java/graph/UpdateGraphTest.java:52:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/test/java/graph/UpdateGraphTest.java:52:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/test/java/graph/UpdateGraphTest.java:64:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/test/java/graph/UpdateGraphTest.java:64:	UseDiamondOperator:	UseDiamondOperator: Explicit type arguments can be replaced by Diamond Operator
+src/test/java/graph/UpdateGraphTest.java:76:	ShortVariable:	ShortVariable: Avoid variables with short names like r
+src/test/java/graph/UpdateGraphTest.java:76:	ShortVariable:	ShortVariable: Avoid variables with short names like r
+src/test/java/graph/UpdateGraphTest.java:79:	ShortVariable:	ShortVariable: Avoid variables with short names like u
+src/test/java/graph/UpdateGraphTest.java:79:	ShortVariable:	ShortVariable: Avoid variables with short names like u
+src/test/java/graph/UpdateGraphTest.java:81:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/UpdateGraphTest.java:81:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/UpdateGraphTest.java:81:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/UpdateGraphTest.java:81:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/UpdateGraphTest.java:81:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/UpdateGraphTest.java:81:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/UpdateGraphTest.java:81:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/UpdateGraphTest.java:81:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/UpdateGraphTest.java:81:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/UpdateGraphTest.java:81:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/UpdateGraphTest.java:81:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/UpdateGraphTest.java:81:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/UpdateGraphTest.java:81:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (object not created locally)
+src/test/java/graph/UpdateGraphTest.java:81:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (object not created locally)
+src/test/java/graph/UpdateGraphTest.java:86:	ShortVariable:	ShortVariable: Avoid variables with short names like r
+src/test/java/graph/UpdateGraphTest.java:86:	ShortVariable:	ShortVariable: Avoid variables with short names like r
+src/test/java/graph/UpdateGraphTest.java:89:	ShortVariable:	ShortVariable: Avoid variables with short names like u
+src/test/java/graph/UpdateGraphTest.java:89:	ShortVariable:	ShortVariable: Avoid variables with short names like u
+src/test/java/graph/UpdateGraphTest.java:92:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/UpdateGraphTest.java:92:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/UpdateGraphTest.java:92:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/UpdateGraphTest.java:92:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/UpdateGraphTest.java:92:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/UpdateGraphTest.java:92:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/UpdateGraphTest.java:92:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/UpdateGraphTest.java:92:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/UpdateGraphTest.java:92:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/UpdateGraphTest.java:92:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/UpdateGraphTest.java:92:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/UpdateGraphTest.java:92:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (method chain calls)
+src/test/java/graph/UpdateGraphTest.java:92:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (object not created locally)
+src/test/java/graph/UpdateGraphTest.java:92:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (object not created locally)
+src/test/java/math/MatriceMultiplicationTest.java:11:	CommentRequired:	CommentRequired: Class comments are required
+src/test/java/math/MatriceMultiplicationTest.java:11:	CommentRequired:	CommentRequired: Class comments are required
+src/test/java/math/MatriceMultiplicationTest.java:14:	MethodNamingConventions:	MethodNamingConventions: The JUnit 5 test method name 'Simpletest' doesn't match '[a-z][a-zA-Z0-9]*'
+src/test/java/math/MatriceMultiplicationTest.java:14:	MethodNamingConventions:	MethodNamingConventions: The JUnit 5 test method name 'Simpletest' doesn't match '[a-z][a-zA-Z0-9]*'
+src/test/java/math/MatriceMultiplicationTest.java:15:	ShortVariable:	ShortVariable: Avoid variables with short names like m1
+src/test/java/math/MatriceMultiplicationTest.java:15:	ShortVariable:	ShortVariable: Avoid variables with short names like m1
+src/test/java/math/MatriceMultiplicationTest.java:16:	ShortVariable:	ShortVariable: Avoid variables with short names like m2
+src/test/java/math/MatriceMultiplicationTest.java:16:	ShortVariable:	ShortVariable: Avoid variables with short names like m2
+src/test/java/math/MatriceMultiplicationTest.java:34:	ShortVariable:	ShortVariable: Avoid variables with short names like r1
+src/test/java/math/MatriceMultiplicationTest.java:34:	ShortVariable:	ShortVariable: Avoid variables with short names like r1
+src/test/java/math/MatriceMultiplicationTest.java:36:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (object not created locally)
+src/test/java/math/MatriceMultiplicationTest.java:36:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (object not created locally)
+src/test/java/math/MatriceMultiplicationTest.java:40:	MethodNamingConventions:	MethodNamingConventions: The JUnit 5 test method name 'Difftailletest' doesn't match '[a-z][a-zA-Z0-9]*'
+src/test/java/math/MatriceMultiplicationTest.java:40:	MethodNamingConventions:	MethodNamingConventions: The JUnit 5 test method name 'Difftailletest' doesn't match '[a-z][a-zA-Z0-9]*'
+src/test/java/math/MatriceMultiplicationTest.java:41:	ShortVariable:	ShortVariable: Avoid variables with short names like m1
+src/test/java/math/MatriceMultiplicationTest.java:41:	ShortVariable:	ShortVariable: Avoid variables with short names like m1
+src/test/java/math/MatriceMultiplicationTest.java:42:	ShortVariable:	ShortVariable: Avoid variables with short names like m2
+src/test/java/math/MatriceMultiplicationTest.java:42:	ShortVariable:	ShortVariable: Avoid variables with short names like m2
+src/test/java/math/MatriceMultiplicationTest.java:64:	ShortVariable:	ShortVariable: Avoid variables with short names like r1
+src/test/java/math/MatriceMultiplicationTest.java:64:	ShortVariable:	ShortVariable: Avoid variables with short names like r1
+src/test/java/math/MatriceMultiplicationTest.java:67:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (object not created locally)
+src/test/java/math/MatriceMultiplicationTest.java:67:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (object not created locally)
+src/test/java/math/MatriceMultiplicationTest.java:71:	MethodNamingConventions:	MethodNamingConventions: The JUnit 5 test method name 'Complexetest' doesn't match '[a-z][a-zA-Z0-9]*'
+src/test/java/math/MatriceMultiplicationTest.java:71:	MethodNamingConventions:	MethodNamingConventions: The JUnit 5 test method name 'Complexetest' doesn't match '[a-z][a-zA-Z0-9]*'
+src/test/java/math/MatriceMultiplicationTest.java:71:	NcssCount:	NcssCount: The method 'Complexetest()' has a NCSS line count of 25.
+src/test/java/math/MatriceMultiplicationTest.java:71:	NcssCount:	NcssCount: The method 'Complexetest()' has a NCSS line count of 25.
+src/test/java/math/MatriceMultiplicationTest.java:72:	ShortVariable:	ShortVariable: Avoid variables with short names like m1
+src/test/java/math/MatriceMultiplicationTest.java:72:	ShortVariable:	ShortVariable: Avoid variables with short names like m1
+src/test/java/math/MatriceMultiplicationTest.java:73:	ShortVariable:	ShortVariable: Avoid variables with short names like m2
+src/test/java/math/MatriceMultiplicationTest.java:73:	ShortVariable:	ShortVariable: Avoid variables with short names like m2
+src/test/java/math/MatriceMultiplicationTest.java:97:	ShortVariable:	ShortVariable: Avoid variables with short names like r1
+src/test/java/math/MatriceMultiplicationTest.java:97:	ShortVariable:	ShortVariable: Avoid variables with short names like r1
+src/test/java/math/MatriceMultiplicationTest.java:99:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (object not created locally)
+src/test/java/math/MatriceMultiplicationTest.java:99:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (object not created locally)
+src/test/java/math/MatriceMultiplicationTest.java:103:	ExcessiveMethodLength:	ExcessiveMethodLength: Avoid really long methods.
+src/test/java/math/MatriceMultiplicationTest.java:103:	ExcessiveMethodLength:	ExcessiveMethodLength: Avoid really long methods.
+src/test/java/math/MatriceMultiplicationTest.java:103:	MethodNamingConventions:	MethodNamingConventions: The JUnit 5 test method name 'TwoMulitplytest' doesn't match '[a-z][a-zA-Z0-9]*'
+src/test/java/math/MatriceMultiplicationTest.java:103:	MethodNamingConventions:	MethodNamingConventions: The JUnit 5 test method name 'TwoMulitplytest' doesn't match '[a-z][a-zA-Z0-9]*'
+src/test/java/math/MatriceMultiplicationTest.java:103:	NcssCount:	NcssCount: The method 'TwoMulitplytest()' has a NCSS line count of 31.
+src/test/java/math/MatriceMultiplicationTest.java:103:	NcssCount:	NcssCount: The method 'TwoMulitplytest()' has a NCSS line count of 31.
+src/test/java/math/MatriceMultiplicationTest.java:104:	ShortVariable:	ShortVariable: Avoid variables with short names like m1
+src/test/java/math/MatriceMultiplicationTest.java:104:	ShortVariable:	ShortVariable: Avoid variables with short names like m1
+src/test/java/math/MatriceMultiplicationTest.java:105:	ShortVariable:	ShortVariable: Avoid variables with short names like m2
+src/test/java/math/MatriceMultiplicationTest.java:105:	ShortVariable:	ShortVariable: Avoid variables with short names like m2
+src/test/java/math/MatriceMultiplicationTest.java:123:	ShortVariable:	ShortVariable: Avoid variables with short names like r1
+src/test/java/math/MatriceMultiplicationTest.java:123:	ShortVariable:	ShortVariable: Avoid variables with short names like r1
+src/test/java/math/MatriceMultiplicationTest.java:125:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (object not created locally)
+src/test/java/math/MatriceMultiplicationTest.java:125:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (object not created locally)
+src/test/java/math/MatriceMultiplicationTest.java:128:	ShortVariable:	ShortVariable: Avoid variables with short names like m3
+src/test/java/math/MatriceMultiplicationTest.java:128:	ShortVariable:	ShortVariable: Avoid variables with short names like m3
+src/test/java/math/MatriceMultiplicationTest.java:141:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (object not created locally)
+src/test/java/math/MatriceMultiplicationTest.java:141:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (object not created locally)
+src/test/java/math/MatriceMultiplicationTest.java:146:	JUnitTestsShouldIncludeAssert:	JUnitTestsShouldIncludeAssert: JUnit tests should include assert() or fail()
+src/test/java/math/MatriceMultiplicationTest.java:146:	JUnitTestsShouldIncludeAssert:	JUnitTestsShouldIncludeAssert: JUnit tests should include assert() or fail()
+src/test/java/math/MatriceMultiplicationTest.java:147:	ShortVariable:	ShortVariable: Avoid variables with short names like m1
+src/test/java/math/MatriceMultiplicationTest.java:147:	ShortVariable:	ShortVariable: Avoid variables with short names like m1
+src/test/java/math/MatriceMultiplicationTest.java:153:	SystemPrintln:	SystemPrintln: System.out.println is used
+src/test/java/math/MatriceMultiplicationTest.java:153:	SystemPrintln:	SystemPrintln: System.out.println is used
+src/test/java/math/MatriceMultiplicationTest.java:154:	SystemPrintln:	SystemPrintln: System.out.println is used
+src/test/java/math/MatriceMultiplicationTest.java:154:	SystemPrintln:	SystemPrintln: System.out.println is used
+src/test/java/math/MatriceMultiplicationTest.java:155:	ShortVariable:	ShortVariable: Avoid variables with short names like r1
+src/test/java/math/MatriceMultiplicationTest.java:155:	ShortVariable:	ShortVariable: Avoid variables with short names like r1
+src/test/java/math/MatriceMultiplicationTest.java:157:	SystemPrintln:	SystemPrintln: System.out.println is used
+src/test/java/math/MatriceMultiplicationTest.java:157:	SystemPrintln:	SystemPrintln: System.out.println is used
+src/test/java/math/MatriceMultiplicationTest.java:158:	SystemPrintln:	SystemPrintln: System.out.println is used
+src/test/java/math/MatriceMultiplicationTest.java:158:	SystemPrintln:	SystemPrintln: System.out.println is used
+src/test/java/math/MatriceMultiplicationTest.java:159:	SystemPrintln:	SystemPrintln: System.out.println is used
+src/test/java/math/MatriceMultiplicationTest.java:159:	SystemPrintln:	SystemPrintln: System.out.println is used
+src/test/java/math/MatriceMultiplicationTest.java:160:	ShortVariable:	ShortVariable: Avoid variables with short names like r2
+src/test/java/math/MatriceMultiplicationTest.java:160:	ShortVariable:	ShortVariable: Avoid variables with short names like r2
+src/test/java/math/MatriceMultiplicationTest.java:162:	SystemPrintln:	SystemPrintln: System.out.println is used
+src/test/java/math/MatriceMultiplicationTest.java:162:	SystemPrintln:	SystemPrintln: System.out.println is used
+src/test/java/math/TranslationMatriceTest.java:10:	CommentRequired:	CommentRequired: Class comments are required
+src/test/java/math/TranslationMatriceTest.java:10:	CommentRequired:	CommentRequired: Class comments are required
+src/test/java/math/TranslationMatriceTest.java:13:	MethodNamingConventions:	MethodNamingConventions: The JUnit 5 test method name 'TranslateRightTest' doesn't match '[a-z][a-zA-Z0-9]*'
+src/test/java/math/TranslationMatriceTest.java:13:	MethodNamingConventions:	MethodNamingConventions: The JUnit 5 test method name 'TranslateRightTest' doesn't match '[a-z][a-zA-Z0-9]*'
+src/test/java/math/TranslationMatriceTest.java:14:	ShortVariable:	ShortVariable: Avoid variables with short names like m1
+src/test/java/math/TranslationMatriceTest.java:14:	ShortVariable:	ShortVariable: Avoid variables with short names like m1
+src/test/java/math/TranslationMatriceTest.java:29:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (object not created locally)
+src/test/java/math/TranslationMatriceTest.java:29:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (object not created locally)
+src/test/java/math/TranslationMatriceTest.java:33:	MethodNamingConventions:	MethodNamingConventions: The JUnit 5 test method name 'TranslateLeftTest' doesn't match '[a-z][a-zA-Z0-9]*'
+src/test/java/math/TranslationMatriceTest.java:33:	MethodNamingConventions:	MethodNamingConventions: The JUnit 5 test method name 'TranslateLeftTest' doesn't match '[a-z][a-zA-Z0-9]*'
+src/test/java/math/TranslationMatriceTest.java:34:	ShortVariable:	ShortVariable: Avoid variables with short names like m1
+src/test/java/math/TranslationMatriceTest.java:34:	ShortVariable:	ShortVariable: Avoid variables with short names like m1
+src/test/java/math/TranslationMatriceTest.java:49:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (object not created locally)
+src/test/java/math/TranslationMatriceTest.java:49:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (object not created locally)
+src/test/java/math/TranslationMatriceTest.java:53:	MethodNamingConventions:	MethodNamingConventions: The JUnit 5 test method name 'TranslateDownTest' doesn't match '[a-z][a-zA-Z0-9]*'
+src/test/java/math/TranslationMatriceTest.java:53:	MethodNamingConventions:	MethodNamingConventions: The JUnit 5 test method name 'TranslateDownTest' doesn't match '[a-z][a-zA-Z0-9]*'
+src/test/java/math/TranslationMatriceTest.java:54:	ShortVariable:	ShortVariable: Avoid variables with short names like m1
+src/test/java/math/TranslationMatriceTest.java:54:	ShortVariable:	ShortVariable: Avoid variables with short names like m1
+src/test/java/math/TranslationMatriceTest.java:69:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (object not created locally)
+src/test/java/math/TranslationMatriceTest.java:69:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (object not created locally)
+src/test/java/math/TranslationMatriceTest.java:73:	MethodNamingConventions:	MethodNamingConventions: The JUnit 5 test method name 'TranslateTopTest' doesn't match '[a-z][a-zA-Z0-9]*'
+src/test/java/math/TranslationMatriceTest.java:73:	MethodNamingConventions:	MethodNamingConventions: The JUnit 5 test method name 'TranslateTopTest' doesn't match '[a-z][a-zA-Z0-9]*'
+src/test/java/math/TranslationMatriceTest.java:74:	ShortVariable:	ShortVariable: Avoid variables with short names like m1
+src/test/java/math/TranslationMatriceTest.java:74:	ShortVariable:	ShortVariable: Avoid variables with short names like m1
+src/test/java/math/TranslationMatriceTest.java:89:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (object not created locally)
+src/test/java/math/TranslationMatriceTest.java:89:	LawOfDemeter:	LawOfDemeter: Potential violation of Law of Demeter (object not created locally)

@@ -37,7 +37,7 @@ import rotation.RotationUp;
 
 public class MainControler implements Initializable {
     @FXML
-    Button buttonLoadFolder, btreebase , buttonHelp, buttonRotateUp, buttonRotateRight, buttonRotateLeft, buttonRotateDown, buttonRotateAroundRight, buttonRotateAroundLeft, buttonTranslateUp, buttonTranslateRight, buttonTranslateLeft, buttonTranslateDown, buttonReloadCanvas, buttonHomothetieDown, buttonHomothetieUp, buttonModelData, Fview, Aview ,Sview;
+    Button buttonLoadFolder, btreebase , buttonHelp, buttonRotateUp, buttonRotateRight, buttonRotateLeft, buttonRotateDown, buttonRotateAroundRight, buttonRotateAroundLeft, buttonTranslateUp, buttonTranslateRight, buttonTranslateLeft, buttonTranslateDown, buttonReloadCanvas, buttonHomothetieDown, buttonHomothetieUp, buttonModelData, Fview, Aview ,Sview,printColor,printLine;
     
     @FXML
     TreeView<File> treeView;
@@ -306,6 +306,24 @@ public class MainControler implements Initializable {
 				updateFile();
 			}
 		});   
+        
+        printLine.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			
+			public void handle(ActionEvent e) {
+				canvasWriter.inversePrintLine();
+				canvasWriter.updateCanvasWriter(graphe);
+			}
+		});   
+        
+        printColor.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			
+			public void handle(ActionEvent e) {
+				canvasWriter.inversePrintColor();
+				canvasWriter.updateCanvasWriter(graphe);
+			}
+		});
         
         Fview.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
