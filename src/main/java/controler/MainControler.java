@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
 import file.ExplorerFile;
 import graph.CanvasWriter;
 import graph.FileReader;
@@ -18,6 +17,7 @@ import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TreeView;
 import javafx.scene.input.MouseEvent;
@@ -41,6 +41,9 @@ public class MainControler implements Initializable {
     
     @FXML
     TreeView<File> treeView;
+    
+    @FXML
+    ColorPicker faceColor;
     
     @FXML
     Canvas canvas;
@@ -322,6 +325,15 @@ public class MainControler implements Initializable {
 			public void handle(ActionEvent e) {
 				canvasWriter.inversePrintColor();
 				canvasWriter.updateCanvasWriter(graphe);
+			}
+		});
+        
+        faceColor.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			
+			public void handle(ActionEvent e) {
+				
+				canvasWriter.setColor(faceColor.getValue().getRed(), faceColor.getValue().getGreen(), faceColor.getValue().getBlue());
 			}
 		});
         
