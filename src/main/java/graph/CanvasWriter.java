@@ -3,6 +3,7 @@ package graph;
 import java.util.ArrayList;
 import java.util.List;
 import javafx.scene.paint.*;
+import javafx.scene.paint.Color;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 
@@ -12,14 +13,15 @@ public class CanvasWriter {
 	public Canvas canvas;
 
 	public GraphicsContext graphicContext;
-	protected Color color;
+	protected javafx.scene.paint.Color modelColor;
+	protected javafx.scene.paint.Color backgroundColor;
 	protected List<double[]> x;
 	protected List<double[]> y;
 	protected List<double[]> z;
 	protected double height;
 	protected double width;
-	private boolean linePrint;
-	private boolean colorPrint;
+	private boolean linePrint = true;
+	private boolean colorPrint = true;
 	public int homothesie=-100;
 
 
@@ -27,17 +29,13 @@ public class CanvasWriter {
 		x=new ArrayList<double[]>();
 		y=new ArrayList<double[]>();
 		z=new ArrayList<double[]>();
-		color = new Color(0,0,0);
+		modelColor = modelColor.WHITE;
+		backgroundColor = backgroundColor.GRAY;
 		canvas=c;
 		graphicContext=c.getGraphicsContext2D();
 		width=c.getWidth()/2;
 		height=c.getHeight()/2;
 		listface=lf;
-		useGraph();
-	}
-
-	public void setColor(double r,double g,double b) {
-		this.color=new Color(r,g,b);
 		useGraph();
 	}
 
@@ -53,12 +51,12 @@ public class CanvasWriter {
 	}
 
 	public void writeOnCanvas() {
-		clear(javafx.scene.paint.Color.WHITE);
+		clear(backgroundColor);
 		int idx=0;
 		while(this.x.size()!=0) {
 			idx=getPositionHighestZ();
 			if(colorPrint) {
-				graphicContext.setFill(javafx.scene.paint.Color.rgb(color.getR(), color.getG(), color.getB()));
+				graphicContext.setFill(modelColor);
 				graphicContext.fillPolygon(this.x.get(idx),this.y.get(idx), this.y.get(idx).length);
 			}
 			if(linePrint) {
@@ -127,5 +125,19 @@ public class CanvasWriter {
 		this.x.remove(idx);
 		this.y.remove(idx);
 		this.z.remove(idx);
+	}
+
+	public void setModelColor(Color value) {
+		this.modelColor=value;
+		System.out.println(modelColor);
+		useGraph();
+		
+	}
+	
+	public void setBackgroundColor(Color value) {
+		this.backgroundColor=value;
+		System.out.println(backgroundColor);
+		useGraph();
+		
 	}
 }

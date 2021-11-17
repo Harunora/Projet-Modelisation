@@ -43,7 +43,7 @@ public class MainControler implements Initializable {
     TreeView<File> treeView;
     
     @FXML
-    ColorPicker faceColor;
+    ColorPicker faceColor, backgroundColor;
     
     @FXML
     Canvas canvas;
@@ -165,7 +165,7 @@ public class MainControler implements Initializable {
         		StackPane secondaryLayout = new StackPane();
         		secondaryLayout.getChildren().add(secondLabel);
 
-        		Scene secondScene = new Scene(secondaryLayout, 630, 200);
+        		Scene secondScene = new Scene(secondaryLayout, 1000, 400);
 
         		// New window (Stage)
         		Stage newWindow = new Stage();
@@ -332,8 +332,16 @@ public class MainControler implements Initializable {
 			@Override
 			
 			public void handle(ActionEvent e) {
-				
-				canvasWriter.setColor(faceColor.getValue().getRed(), faceColor.getValue().getGreen(), faceColor.getValue().getBlue());
+				canvasWriter.setModelColor(faceColor.getValue());
+			}
+		});
+        
+        
+        backgroundColor.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			
+			public void handle(ActionEvent e) {
+				canvasWriter.setBackgroundColor(faceColor.getValue());
 			}
 		});
         

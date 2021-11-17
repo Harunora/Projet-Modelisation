@@ -6,13 +6,13 @@ import java.util.List;
 import java.util.StringTokenizer;
 
 public class UpdateGraph extends Graph{
-	
-	
+
+
 	private List<Sommet> sommets = new ArrayList<Sommet>();
 	protected int nb,a,b,c,d,r,g,bl;
 
 
-	
+
 	public UpdateGraph(int nbFace, List<Face> faces, Matrice matrice, List<String> sommetDeFaces, String auteur) {
 		super(nbFace, faces, matrice, sommetDeFaces, auteur);
 
@@ -42,26 +42,11 @@ public class UpdateGraph extends Graph{
 		if(nb==4) {
 			d = Integer.parseInt(lineToken.nextToken());			
 		}
-		if(lineToken.hasMoreElements()) {
-			r = Integer.parseInt(lineToken.nextToken());
-			g = Integer.parseInt(lineToken.nextToken());
-			bl = Integer.parseInt(lineToken.nextToken());
-			addFaceColor();
-
-		}else {
-			List<Sommet> tmp = new ArrayList<Sommet>();
-			addListSommet(tmp);
-			Face faceTmp = new Face(nb, tmp);
-			faces.add(faceTmp);
-		}
-	}
-
-	private void addFaceColor() {
 		List<Sommet> tmp = new ArrayList<Sommet>();
 		addListSommet(tmp);
-		Face faceTmp = new Face(nb, tmp,new Color(r,g,bl));
+		Face faceTmp = new Face(nb, tmp);
 		faces.add(faceTmp);
-		
+
 	}
 
 	private void addListSommet(List<Sommet> tmp) {

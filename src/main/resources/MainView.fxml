@@ -110,7 +110,8 @@
                                  <children>
                                     <Button fx:id="printLine" layoutX="33.0" layoutY="11.0" mnemonicParsing="false" text="Afficher les lignes" />
                                     <Button fx:id="printColor" layoutX="202.0" layoutY="11.0" mnemonicParsing="false" text="Afficher les faces en couleur" />
-                                    <ColorPicker fx:id="faceColor" layoutX="413.0" layoutY="11.0" />
+                                    <ColorPicker fx:id="backgroundColor" layoutX="577.0" layoutY="10.0" promptText="BackgroundColor" />
+                                    <ColorPicker fx:id="faceColor" layoutX="419.0" layoutY="11.0" promptText="ModelColor" />
                                  </children>
                               </AnchorPane>
                           </content>
