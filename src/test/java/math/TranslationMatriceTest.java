@@ -24,7 +24,7 @@ class TranslationMatriceTest {
 		res.add(3.0, 4.0, 3.0, 3.0);
 		res.add(4.0, 5.0, 4.0, 4.0);
 		
-		Translation translation = new Translation(m1, 0, 1);
+		Translation translation = new Translation(m1, 0, 10);
 		Matrice sol = translation.translate();
 		assertEquals(res.toString(), sol.toString());
 	}
@@ -44,7 +44,7 @@ class TranslationMatriceTest {
 		res.add(3.0, 2.0, 3.0, 3.0);
 		res.add(4.0, 3.0, 4.0, 4.0);
 		
-		Translation translation = new Translation(m1, 0, -1);
+		Translation translation = new Translation(m1, 0, -10);
 		Matrice sol = translation.translate();
 		assertEquals(res.toString(), sol.toString());
 	}
@@ -64,7 +64,7 @@ class TranslationMatriceTest {
 		res.add(2.0, 3.0, 3.0, 3.0);
 		res.add(3.0, 4.0, 4.0, 4.0);
 		
-		Translation translation = new Translation(m1, -1, 0);
+		Translation translation = new Translation(m1, -10, 0);
 		Matrice sol = translation.translate();
 		assertEquals(res.toString(), sol.toString());
 	}
@@ -84,7 +84,7 @@ class TranslationMatriceTest {
 		res.add(4.0, 3.0, 3.0, 3.0);
 		res.add(5.0, 4.0, 4.0, 4.0);
 		
-		Translation translation = new Translation(m1, 1, 0);
+		Translation translation = new Translation(m1, 10, 0);
 		Matrice sol = translation.translate();
 		assertEquals(res.toString(), sol.toString());
 	}
