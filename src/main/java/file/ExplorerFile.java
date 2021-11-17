@@ -11,9 +11,11 @@ import javafx.scene.control.TreeView;
 
 public class ExplorerFile {
 	private TreeView<File> tree;
+	protected MapFile mapFile = new MapFile();
 	private File current = null;
 	private String currentPath = "";
 	private Graph graph;
+	private String tmp;
 	public FileReader r = new FileReader();
 	public static boolean existFile(File[] f, File f1) {
 		for (int i = 0; i < f.length; i++) {
@@ -31,14 +33,12 @@ public class ExplorerFile {
 		this.tree = tree;
 	}
 
-	public TreeItem<File> getNodesForDirectory(File directory) throws IOException {
+	public TreeItem<String> getNodesForDirectory(File directory) throws IOException {
 		this.currentPath = "";
-		TreeItem<File> root = new TreeItem<File>(directory.getAbsoluteFile());
+		TreeItem<String> root = new TreeItem<String>();
 
 		for (File f : directory.listFiles()) {
-			if (f.isDirectory()) {
-				root.getChildren().add(getNodesForDirectory(f));
-			} else {
+			if (!f.isDirectory()) {
 				String rep = directory.getAbsolutePath();
 				this.currentPath = rep;
 				File repFile = new File(rep);
@@ -49,19 +49,25 @@ public class ExplorerFile {
 						return fileName.endsWith(".ply");
 					}
 				});
+				
 				if (existFile(fichiersPly, f)) {
-					root.getChildren().add(new TreeItem<File>(f.getCanonicalFile()));
+					for(int i = 0; i < fichiersPly.length ; i++) {
+						mapFile.add(fichiersPly[i].getName(), fichiersPly[i]);
+					}
+					root.getChildren().add(new TreeItem<String>(f.getName()));
+					
 				}
-			}
+			}			
 		}
 		return root;
 	}
-	public File getFile(TreeView<File> tv) {
+	public File getFile(TreeView<String> tv) {
 		tv.getSelectionModel().selectedItemProperty().addListener((v, oldValue, newValue) -> {
 			if (newValue != null) {
-				current = ((TreeItem<File>) newValue).getValue();
+				tmp = ((TreeItem<String>) newValue).getValue();
 			}
 		});	
+		current = mapFile.getFileOf(tmp);
 		return current;
 	}
 	public void setCurrent(File current) {
