@@ -14,7 +14,6 @@ public class FileReader {
 	private List<Sommet> sommets = new ArrayList<Sommet>();
 	private List<Face>faces = new ArrayList<Face>();
 	private List<String> sommetsDeFaces = new ArrayList<String>();
-	private boolean hasColor = false;
 	protected Matrice matrice;
 
 
@@ -47,10 +46,7 @@ public class FileReader {
 			if(actual.equals("end_header"+"\n")) {
 				achieved = true;
 			}
-			
-			if(actual.equals("property uchar red"+"\n")) {
-				hasColor = true;
-			}
+
 			 
 			if(actual.startsWith("element vertex")) {
 				nbSommets = Integer.parseInt(actual.substring(15,actual.length()-1)); 
@@ -105,20 +101,10 @@ public class FileReader {
 	}
 
 	private void faceAdd(List<Face> faces, List<Sommet> listSommetTmp, StringTokenizer actuel, int nb) {
-		if(hasColor) {
 			Face faceTmp = new Face(nb,listSommetTmp);
 			faces.add(faceTmp);
-		}else {
-			Face faceTmp = new Face(nb,listSommetTmp);
-			faces.add(faceTmp);
-		}
-
-
 	}
 
-	private int[] addRgb(String[] tab) {
-		return new int[] {Integer.parseInt(tab[3]),Integer.parseInt(tab[4]),Integer.parseInt(tab[5].substring(0,1))};
-	}
 
 	private void readSommet(int nbSommets, List<Sommet> sommets, Scanner scanner) {
 		for(int i = 0; i<nbSommets; i++) {
@@ -126,13 +112,7 @@ public class FileReader {
 			actual = actualNext(scanner);
 			String[] s1 = actual.split(" ");
 			double[] tabXyz = addXyz(s1);
-			if(hasColor) {
-				int[] rgbTab = addRgb(s1);
-				Color colorTmp = new Color(rgbTab);
-				tmp = new Sommet(tabXyz, colorTmp);
-			}else {
-				tmp = new Sommet(tabXyz);
-			}
+			tmp = new Sommet(tabXyz);
 			sommets.add(tmp);
 			matrice.add(tmp);
 		}

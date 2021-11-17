@@ -50,17 +50,18 @@
 - [X] Homotétie
 
 ## Difficultés rencontrées
-
-
+Problème de classNotFoundException avant le rendu
+Le tri n'est pas assez obtimisé 
+Nous n'avons pas encore trouvé comment afficher uniquement le nom du fichier 
 
 # Livrable 2
 
 ## Fonctionnalités implémentées
 
 
-- [ ] Affichage faces seulement / segments seulement
+- [X] Affichage faces seulement / segments seulement
 - [ ] Affichage avancé de la bibliothèque de modèles
-- [ ] Recherche dans la bibliothèque de modèles
+- [X] Recherche dans la bibliothèque de modèles
 - [ ] Éditer les informations sur un modèle
 - [ ] Modèle centré
 - [ ] Éclairage
@@ -80,6 +81,13 @@
 - [ ] Respect du format de rendu
 
 ## Distribution du travail (qui a fait quoi)
+
+###C
+- [X] Affichage face seulement / segments seulement 
+ 
+###M
+
+###J
 
 
 ## Difficultés rencontrées

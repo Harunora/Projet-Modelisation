@@ -12,7 +12,7 @@ public class CanvasWriter {
 	public Canvas canvas;
 
 	public GraphicsContext graphicContext;
-	protected List<Color> color;
+	protected Color color;
 	protected List<double[]> x;
 	protected List<double[]> y;
 	protected List<double[]> z;
@@ -27,18 +27,18 @@ public class CanvasWriter {
 		x=new ArrayList<double[]>();
 		y=new ArrayList<double[]>();
 		z=new ArrayList<double[]>();
-		color = new ArrayList<Color>();
+		color = new Color(0,0,0);
 		canvas=c;
 		graphicContext=c.getGraphicsContext2D();
 		width=c.getWidth()/2;
 		height=c.getHeight()/2;
 		listface=lf;
 		useGraph();
-		addColor();
 	}
 
-	public void addColor() {
-
+	public void setColor(double r,double g,double b) {
+		this.color=new Color(r,g,b);
+		useGraph();
 	}
 
 	public void updateCanvasWriter(Graph newGraph){
@@ -58,8 +58,7 @@ public class CanvasWriter {
 		while(this.x.size()!=0) {
 			idx=getPositionHighestZ();
 			if(colorPrint) {
-				graphicContext.setFill(javafx.scene.paint.Color.RED);
-				//graphicContext.setFill(javafx.scene.paint.Color.rgb(color.get(idx).getR(), color.get(idx).getG(), color.get(idx).getB()));
+				graphicContext.setFill(javafx.scene.paint.Color.rgb(color.getR(), color.getG(), color.getB()));
 				graphicContext.fillPolygon(this.x.get(idx),this.y.get(idx), this.y.get(idx).length);
 			}
 			if(linePrint) {
@@ -90,12 +89,6 @@ public class CanvasWriter {
 			this.x.add(i1);
 			this.y.add(i2);
 			this.z.add(i3);
-			/*
-			if(this.listface.getFaces().get(i).getSommets().get(0).getColor() == null) {
-				this.color.add(new Color(255, 255, 255));
-			}else {
-				this.color.add(this.listface.getFaces().get(i).getSommets().get(0).getColor());
-			}*/
 		}
 		writeOnCanvas();
 	}
