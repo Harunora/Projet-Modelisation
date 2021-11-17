@@ -40,7 +40,7 @@ public class MainControler implements Initializable {
     Button buttonLoadFolder, btreebase , buttonHelp, buttonRotateUp, buttonRotateRight, buttonRotateLeft, buttonRotateDown, buttonRotateAroundRight, buttonRotateAroundLeft, buttonTranslateUp, buttonTranslateRight, buttonTranslateLeft, buttonTranslateDown, buttonReloadCanvas, buttonHomothetieDown, buttonHomothetieUp, buttonModelData, Fview, Aview ,Sview,printColor,printLine;
     
     @FXML
-    TreeView<File> treeView;
+    TreeView<String> treeView;
     
     @FXML
     Canvas canvas;
