@@ -1,0 +1,26 @@
+package math;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+import graph.Matrice;
+import graph.Sommet;
+
+class NormeproduitTest {
+
+	@Test
+	void testNorme() {
+		Sommet a = new Sommet(1, 2, 3);
+		Sommet b = new Sommet(2,3,3);
+		Sommet c = new Sommet(2,2,5);
+		ProduitScalaire p1 = new ProduitScalaire(a ,b);
+		ProduitScalaire p2 = new ProduitScalaire(a , c);
+		p1.ProdScal(p2.getMatrice());
+		Normeprod n = new Normeprod(p1);
+		Matrice res1 = new Matrice(1,1);
+		res1.add(2.0/3.0, -(2.0/3.0), -(1.0/3.0), 1.0);
+		assertEquals(res1.toString(), n.getNorme().toString());
+	}
+
+}

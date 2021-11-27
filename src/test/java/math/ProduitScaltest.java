@@ -30,7 +30,6 @@ class ProduitScaltest {
 		Sommet c = new Sommet(2,2,5);
 		ProduitScalaire p1 = new ProduitScalaire(a ,b);
 		ProduitScalaire p2 = new ProduitScalaire(a , c);
-		p1.CalcScal(p2.getMatrice());
 		Matrice res1 = new Matrice(1,1) ;
 		res1.add(1, 1, 0, 1);
 		assertEquals(res1.toString() , p1.getMatrice().toString());
