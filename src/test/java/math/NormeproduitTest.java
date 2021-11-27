@@ -22,5 +22,17 @@ class NormeproduitTest {
 		res1.add(2.0/3.0, -(2.0/3.0), -(1.0/3.0), 1.0);
 		assertEquals(res1.toString(), n.getNorme().toString());
 	}
+	
+	@Test
+	void testNormeComplexe() {
+		Matrice l = new Matrice(1,1);
+		l.add(1.0,1.0,1.0,1.0);
+		ProduitScalaire p = new ProduitScalaire(l);
+		Normeprod n = new Normeprod(p);
+		Matrice res2 = new Matrice(1,1);
+		res2.add(1.0/Math.sqrt(3.0), 1.0/Math.sqrt(3.0), 1.0/Math.sqrt(3.0), 1);
+		assertEquals(res2.toString(), n.getNorme().toString());
+		
+	}
 
 }
