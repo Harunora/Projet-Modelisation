@@ -30,6 +30,7 @@ public class CanvasWriter {
 		x=new ArrayList<double[]>();
 		y=new ArrayList<double[]>();
 		z=new ArrayList<double[]>();
+		color=new ArrayList<Color>();
 		backgroundColor = backgroundColor.GRAY;
 		canvas=c;
 		graphicContext=c.getGraphicsContext2D();
@@ -87,7 +88,7 @@ public class CanvasWriter {
 			this.x.add(i1);
 			this.y.add(i2);
 			this.z.add(i3);
-			Color tmp=new Color();
+			Color tmp=this.listface.getFace(i).getColor();
 			this.color.add(tmp);
 		}
 		writeOnCanvas();
