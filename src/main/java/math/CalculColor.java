@@ -24,7 +24,7 @@ public class CalculColor {
 			p1.ProdScal(new ProduitScalaire(listsommet.get(0), listsommet.get(2)).getMatrice());
 			Normeprod norme = new Normeprod(p1);
 			// la il reste a faire le calcule avec la couleur
-			double coef = calcfactlumière(norme);
+			double coef = calcfactlumiere(norme);
 			
 			double r = couleur.getR();
 			double g = couleur.getG();
@@ -36,7 +36,7 @@ public class CalculColor {
 		return couleur;
 	}
 
-	private double calcfactlumière(Normeprod norme) {
+	private double calcfactlumiere(Normeprod norme) {
 		double dx = norme.getNorme().getX(0) * vecteurlumiere.getX(0); 
 		double dy =norme.getNorme().getY(0) * vecteurlumiere.getY(0) ;
 		double dz =norme.getNorme().getZ(0) * vecteurlumiere.getZ(0);
