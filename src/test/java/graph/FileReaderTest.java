@@ -21,14 +21,14 @@ class FileReaderTest {
 	Graph implementation() {
 		List<Face> f = new ArrayList<Face>();
 		Matrice matrice;
-		Sommet s0 = new Sommet(0,0,0, new Color(255,0,0));
-		Sommet s1 = new Sommet(0,0,1, new Color(0,0,0));
-		Sommet s2 = new Sommet(0,1,1, new Color(55,0,5));
-		Sommet s3 = new Sommet(0,1,0, new Color(0,25,2));
-		Sommet s4 = new Sommet(1,0,0, new Color(0,55,0));
-		Sommet s5 = new Sommet(1,0,1, new Color(0,0,25));
-		Sommet s6 = new Sommet(1,1,1, new Color(0,0,25));
-		Sommet s7 = new Sommet(1,1,0, new Color(0,0,0));
+		Sommet s0 = new Sommet(0,0,0);
+		Sommet s1 = new Sommet(0,0,1);
+		Sommet s2 = new Sommet(0,1,1);
+		Sommet s3 = new Sommet(0,1,0);
+		Sommet s4 = new Sommet(1,0,0);
+		Sommet s5 = new Sommet(1,0,1);
+		Sommet s6 = new Sommet(1,1,1);
+		Sommet s7 = new Sommet(1,1,0);
 		List<Sommet> listSommet1 = new ArrayList<Sommet>();
 		listSommet1.add(s0);
 		listSommet1.add(s1);
@@ -59,12 +59,12 @@ class FileReaderTest {
 		listSommet6.add(s7);
 		listSommet6.add(s4);
 		listSommet6.add(s0);
-		f.add(new Face(4,listSommet1));
-		f.add(new Face(4,listSommet2));
-		f.add(new Face(4,listSommet3));
-		f.add(new Face(4,listSommet4));
-		f.add(new Face(4,listSommet5));
-		f.add(new Face(4,listSommet6));
+		f.add(new Face(4,listSommet1, null));
+		f.add(new Face(4,listSommet2, null));
+		f.add(new Face(4,listSommet3, null));
+		f.add(new Face(4,listSommet4, null));
+		f.add(new Face(4,listSommet5, null));
+		f.add(new Face(4,listSommet6, null));
 		matrice = new Matrice(7, 6);
 		return new Graph(6,f, matrice, null, "");
 	}

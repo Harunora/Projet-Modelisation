@@ -13,7 +13,6 @@ public class CanvasWriter {
 	public Canvas canvas;
 
 	public GraphicsContext graphicContext;
-	protected Color modelColor;
 	protected Color backgroundColor;
 	protected List<double[]> x;
 	protected List<double[]> y;
@@ -30,13 +29,13 @@ public class CanvasWriter {
 		x=new ArrayList<double[]>();
 		y=new ArrayList<double[]>();
 		z=new ArrayList<double[]>();
-		color=new ArrayList<Color>();
+		listface=lf;
+		color = new ArrayList<Color>();
 		backgroundColor = backgroundColor.GRAY;
 		canvas=c;
 		graphicContext=c.getGraphicsContext2D();
 		width=c.getWidth()/2;
 		height=c.getHeight()/2;
-		listface=lf;
 		useGraph();
 	}
 
@@ -57,7 +56,7 @@ public class CanvasWriter {
 		while(this.x.size()!=0) {
 			idx=getPositionHighestZ();
 			if(colorPrint) {
-				graphicContext.setFill(this.color.get(idx));
+				graphicContext.setFill(color.get(idx));
 				graphicContext.fillPolygon(this.x.get(idx),this.y.get(idx), this.y.get(idx).length);
 			}
 			if(linePrint) {
@@ -74,6 +73,7 @@ public class CanvasWriter {
 	}
 
 	public void useGraph() {
+		this.color.clear();
 		this.x.clear();
 		this.y.clear();
 		for(int i=0;i<listface.getNbFaces();i++) {

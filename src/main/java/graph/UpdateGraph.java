@@ -5,11 +5,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 
+import math.CalculColor;
+
 public class UpdateGraph extends Graph{
 
 
 	private List<Sommet> sommets = new ArrayList<Sommet>();
 	protected int nb,a,b,c,d,r,g,bl;
+	private CalculColor calculColor = new CalculColor(new Matrice(1,1), this.color);
 
 
 
@@ -25,6 +28,14 @@ public class UpdateGraph extends Graph{
 		}
 		readFace();	
 
+	}
+	
+	public void setColor(javafx.scene.paint.Color colo) {
+		System.out.println("entre dans l'autre");
+		this.color = colo;
+		for(int i = 0; i< this.nbFaces; i++) {
+			faces.get(i).setColor(colo);
+		}
 	}
 
 	private void readFace() {
@@ -44,6 +55,7 @@ public class UpdateGraph extends Graph{
 		}
 		List<Sommet> tmp = new ArrayList<Sommet>();
 		addListSommet(tmp);
+		
 		Face faceTmp = new Face(nb, tmp, color);
 		faces.add(faceTmp);
 

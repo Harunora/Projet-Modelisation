@@ -15,7 +15,7 @@ public class Face {
 		this.sommets = sommets;
 	}
 	
-	public Face(int n ) {
+	public Face(int n) {
 		this(n, new ArrayList<Sommet>(), null);
 	}
 	

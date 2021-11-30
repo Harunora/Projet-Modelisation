@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
+import javafx.scene.paint.Color;
+
 public class FileReader {
 	private String actual = "",auteur="",commentaire="";
 	private int nbFaces = 0,nbSommets = 0;
@@ -101,7 +103,7 @@ public class FileReader {
 	}
 
 	private void faceAdd(List<Face> faces, List<Sommet> listSommetTmp, StringTokenizer actuel, int nb) {
-			Face faceTmp = new Face(nb,listSommetTmp, null);
+			Face faceTmp = new Face(nb,listSommetTmp, Color.WHITE);
 			faces.add(faceTmp);
 	}
 

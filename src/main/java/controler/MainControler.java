@@ -333,6 +333,7 @@ public class MainControler implements Initializable {
 			@Override
 			
 			public void handle(ActionEvent e) {
+				System.out.println(faceColor.getValue());
 				graphe.setColor(faceColor.getValue());
 			}
 		});

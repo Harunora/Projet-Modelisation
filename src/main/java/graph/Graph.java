@@ -20,12 +20,14 @@ public class Graph {
 		this.faces = faces;
 		this.sommetsDeFaces = sommetDeFaces;
 		this.auteur = auteur;
+		this.color = this.faces.get(0).getColor();
 	}
 	
 	public void setColor(javafx.scene.paint.Color colo) {
+		System.out.println("entre dans la fonction");
 		this.color = colo;
 		for(int i = 0; i< this.nbFaces; i++) {
-			faces.get(i).setColor(this.color);
+			faces.get(i).setColor(colo);
 		}
 	}
 	
