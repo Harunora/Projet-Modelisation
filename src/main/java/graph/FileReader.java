@@ -88,7 +88,7 @@ public class FileReader {
 				List<Integer> listIdxSommet = new ArrayList<Integer>();
 				StringTokenizer lineToken = new StringTokenizer(actual);
 				int nb = Integer.parseInt(lineToken.nextToken());
-				for(int j = 0; j<nb; j++) {
+				for(int j = 0; j<nb; j++ ) {
 					listIdxSommet.add(Integer.parseInt(lineToken.nextToken()));
 				}
 				for(int j = 0; j< nb; j++) {
