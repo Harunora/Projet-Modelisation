@@ -44,7 +44,7 @@ public class UpdateGraph extends Graph{
 		}
 		List<Sommet> tmp = new ArrayList<Sommet>();
 		addListSommet(tmp);
-		Face faceTmp = new Face(nb, tmp);
+		Face faceTmp = new Face(nb, tmp, color);
 		faces.add(faceTmp);
 
 	}

@@ -21,6 +21,7 @@ import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TreeView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Background;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.control.Alert.AlertType;
@@ -332,7 +333,7 @@ public class MainControler implements Initializable {
 			@Override
 			
 			public void handle(ActionEvent e) {
-				canvasWriter.setModelColor(faceColor.getValue());
+				graphe.setColor(faceColor.getValue());
 			}
 		});
         
@@ -341,7 +342,7 @@ public class MainControler implements Initializable {
 			@Override
 			
 			public void handle(ActionEvent e) {
-				canvasWriter.setBackgroundColor(faceColor.getValue());
+				canvasWriter.setBackgroundColor(backgroundColor.getValue());
 			}
 		});
         

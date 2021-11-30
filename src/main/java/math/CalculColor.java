@@ -10,8 +10,8 @@ import graph.Color;
 public class CalculColor {
 	Color couleur;
 	Matrice vecteurlumiere;
-	public CalculColor(Matrice positionlumière, Color c) {
-		ProduitScalaire p = new ProduitScalaire(positionlumière);
+	public CalculColor(Matrice positionlumiere, Color c) {
+		ProduitScalaire p = new ProduitScalaire(positionlumiere);
 		Normeprod n =  new Normeprod(p);
 		this.vecteurlumiere = n.getNorme();
 		couleur = c;
