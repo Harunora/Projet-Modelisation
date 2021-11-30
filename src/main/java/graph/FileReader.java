@@ -101,7 +101,7 @@ public class FileReader {
 	}
 
 	private void faceAdd(List<Face> faces, List<Sommet> listSommetTmp, StringTokenizer actuel, int nb) {
-			Face faceTmp = new Face(nb,listSommetTmp);
+			Face faceTmp = new Face(nb,listSommetTmp, null);
 			faces.add(faceTmp);
 	}
 
