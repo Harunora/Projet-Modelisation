@@ -60,7 +60,7 @@ Nous n'avons pas encore trouvé comment afficher uniquement le nom du fichier
 
 
 - [X] Affichage faces seulement / segments seulement
-- [ ] Affichage avancé de la bibliothèque de modèles
+- [X] Affichage avancé de la bibliothèque de modèles
 - [X] Recherche dans la bibliothèque de modèles
 - [ ] Éditer les informations sur un modèle (auteur, comment etc...)
 - [ ] Modèle centré
@@ -70,7 +70,7 @@ Nous n'avons pas encore trouvé comment afficher uniquement le nom du fichier
 - [ ] Vue en tranches
 - [ ] Controleur horloge
 - [ ] Autres, préciser :
-- [ ] On peut choisir nos propres couleurs 
+- [X] On peut choisir nos propres couleurs 
 
 ## Autres exigences
 
@@ -90,7 +90,8 @@ Nous n'avons pas encore trouvé comment afficher uniquement le nom du fichier
 - [ ] Reorganisation du MainController 
 
 ###J
-- [ ] Affichage avancé de la bibliothèque de modèle 
+- [X] Affichage avancé de la bibliothèque de modèle 
+- [ ] Éclairage
 
 ## Difficultés rencontrées
 
