@@ -88,7 +88,8 @@ public class CanvasWriter {
 			this.x.add(i1);
 			this.y.add(i2);
 			this.z.add(i3);
-			Color tmp=this.listface.getFace(i).getColor();
+			graph.Color tp = this.listface.getFace(i).getColor();
+			Color tmp= new Color(tp.getR()/255,tp.getG()/255,tp.getB()/255,1);
 			this.color.add(tmp);
 		}
 		writeOnCanvas();
@@ -130,7 +131,7 @@ public class CanvasWriter {
 		this.z.remove(idx);
 	}
 	
-	public void setBackgroundColor(Color value) {
+	public void setBackgroundColor(javafx.scene.paint.Color value) {
 		this.backgroundColor=value;
 		System.out.println(backgroundColor);
 		useGraph();

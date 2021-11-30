@@ -4,10 +4,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 
 import org.junit.jupiter.api.Test;
+
+import graph.Color;
 import graph.Face;
 import graph.Matrice;
 import graph.Sommet;
-import graph.Color;
 
 class ColorFacecalcTest {
 
@@ -24,6 +25,8 @@ class ColorFacecalcTest {
 		
 		Color res = cC.getColor(f);
 		Color sol1 = new Color(12.0, 49.0, 12.0);
+		System.out.println(cC.getColor(f));
+		System.out.println(cC.getColor(f));
 		assertEquals(sol1.toString(), res.toString());
 		
 	}

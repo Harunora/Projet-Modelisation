@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Face {
-	protected javafx.scene.paint.Color color;
+	protected Color color;
 	protected int nbSommet;
 	protected List<Sommet> sommets;
 	
 	//Une face est une list de plusieurs Sommets
-	public Face(int n, List<Sommet> sommets, javafx.scene.paint.Color color) {
+	public Face(int n, List<Sommet> sommets, Color color) {
 		this.color = color;
 		nbSommet = n;
 		this.sommets = sommets;
@@ -19,7 +19,7 @@ public class Face {
 		this(n, new ArrayList<Sommet>(), null);
 	}
 	
-	public void setColor(javafx.scene.paint.Color color2) {
+	public void setColor(Color color2) {
 		this.color = color2;
 	}
 	
@@ -35,7 +35,7 @@ public class Face {
 		return sommets;
 	}
 	
-	public javafx.scene.paint.Color getColor() {
+	public Color getColor() {
 		return this.color;
 	}
 	

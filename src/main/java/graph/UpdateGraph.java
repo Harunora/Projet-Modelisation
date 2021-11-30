@@ -12,7 +12,8 @@ public class UpdateGraph extends Graph{
 
 	private List<Sommet> sommets = new ArrayList<Sommet>();
 	protected int nb,a,b,c,d,r,g,bl;
-	private CalculColor calculColor = new CalculColor(new Matrice(1,1), this.color);
+	Matrice lumiere = new Matrice(1,1,1,1,1,1);
+	private CalculColor calculColor = new CalculColor(lumiere,this.color);
 
 
 
@@ -30,11 +31,14 @@ public class UpdateGraph extends Graph{
 
 	}
 	
-	public void setColor(javafx.scene.paint.Color colo) {
+	public void setColor(javafx.scene.paint.Color color) {
 		System.out.println("entre dans l'autre");
-		this.color = colo;
+		double r = color.getRed()*255;
+		double g = color.getGreen()*255;
+		double b = color.getBlue()*255;
+		this.color = new Color(r,g,b);
 		for(int i = 0; i< this.nbFaces; i++) {
-			faces.get(i).setColor(colo);
+			faces.get(i).setColor(this.color);
 		}
 	}
 
@@ -55,8 +59,11 @@ public class UpdateGraph extends Graph{
 		}
 		List<Sommet> tmp = new ArrayList<Sommet>();
 		addListSommet(tmp);
-		
 		Face faceTmp = new Face(nb, tmp, color);
+		//Color colorTmp = calculColor.getColor(faceTmp);
+		//faceTmp = new Face(nb, tmp, colorTmp);
+		//System.out.println("couleur ombre " + colorTmp);
+		//System.out.println("couleur globale : " + color);
 		faces.add(faceTmp);
 
 	}

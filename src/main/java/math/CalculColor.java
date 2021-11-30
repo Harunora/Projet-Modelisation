@@ -2,10 +2,10 @@ package math;
 
 import java.util.ArrayList;
 
+import graph.Color;
 import graph.Face;
 import graph.Matrice;
 import graph.Sommet;
-import graph.Color;
 
 public class CalculColor {
 	Color couleur;

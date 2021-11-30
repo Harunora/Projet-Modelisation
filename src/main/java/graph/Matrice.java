@@ -18,6 +18,19 @@ public class Matrice {
 		this.v =new double[taille];
 	}
 	
+	public Matrice(int nbSommets, int nbFaces, double x, double y, double z, double v) {
+		this.taille = nbSommets;
+		this.x = new double[taille];
+		this.y =new double[taille];
+		this.z =new double[taille];
+		this.v =new double[taille];
+		this.x[idx] = x;
+		this.y[idx] = y;
+		this.z[idx] = z;
+		this.v[idx] = v;
+		idx ++;
+	}
+	
 	public void add(double x, double y, double z, double v) {
 		this.x[idx] = x;
 		this.y[idx] = y;

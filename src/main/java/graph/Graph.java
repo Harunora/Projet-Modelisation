@@ -10,7 +10,7 @@ public class Graph {
 	protected Matrice matrice;
 	protected Matrice matriceOriginal;
 	protected List<String> sommetsDeFaces;
-	protected javafx.scene.paint.Color color;
+	protected Color color;
 	protected String auteur = "";
 	
 	public Graph(int nbFace, List<Face> faces, Matrice matrice, List<String> sommetDeFaces, String auteur) {
@@ -21,14 +21,6 @@ public class Graph {
 		this.sommetsDeFaces = sommetDeFaces;
 		this.auteur = auteur;
 		this.color = this.faces.get(0).getColor();
-	}
-	
-	public void setColor(javafx.scene.paint.Color colo) {
-		System.out.println("entre dans la fonction");
-		this.color = colo;
-		for(int i = 0; i< this.nbFaces; i++) {
-			faces.get(i).setColor(colo);
-		}
 	}
 	
 	public Face getFace(int i) {
