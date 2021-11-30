@@ -13,11 +13,12 @@ public class CanvasWriter {
 	public Canvas canvas;
 
 	public GraphicsContext graphicContext;
-	protected javafx.scene.paint.Color modelColor;
-	protected javafx.scene.paint.Color backgroundColor;
+	protected Color modelColor;
+	protected Color backgroundColor;
 	protected List<double[]> x;
 	protected List<double[]> y;
 	protected List<double[]> z;
+	protected List<Color> color;
 	protected double height;
 	protected double width;
 	private boolean linePrint = true;
@@ -29,7 +30,6 @@ public class CanvasWriter {
 		x=new ArrayList<double[]>();
 		y=new ArrayList<double[]>();
 		z=new ArrayList<double[]>();
-		modelColor = modelColor.WHITE;
 		backgroundColor = backgroundColor.GRAY;
 		canvas=c;
 		graphicContext=c.getGraphicsContext2D();
@@ -56,7 +56,7 @@ public class CanvasWriter {
 		while(this.x.size()!=0) {
 			idx=getPositionHighestZ();
 			if(colorPrint) {
-				graphicContext.setFill(modelColor);
+				graphicContext.setFill(this.color.get(idx));
 				graphicContext.fillPolygon(this.x.get(idx),this.y.get(idx), this.y.get(idx).length);
 			}
 			if(linePrint) {
@@ -87,6 +87,8 @@ public class CanvasWriter {
 			this.x.add(i1);
 			this.y.add(i2);
 			this.z.add(i3);
+			Color tmp=new Color();
+			this.color.add(tmp);
 		}
 		writeOnCanvas();
 	}
@@ -125,13 +127,6 @@ public class CanvasWriter {
 		this.x.remove(idx);
 		this.y.remove(idx);
 		this.z.remove(idx);
-	}
-
-	public void setModelColor(Color value) {
-		this.modelColor=value;
-		System.out.println(modelColor);
-		useGraph();
-		
 	}
 	
 	public void setBackgroundColor(Color value) {
