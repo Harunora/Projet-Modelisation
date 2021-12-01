@@ -10,6 +10,7 @@ import java.util.StringTokenizer;
 
 public class FileReader {
 	private String actual = "",auteur="",commentaire="";
+	private boolean hasColor;
 	private int nbFaces = 0,nbSommets = 0;
 	private List<Sommet> sommets = new ArrayList<Sommet>();
 	private List<Face>faces = new ArrayList<Face>();
@@ -47,11 +48,11 @@ public class FileReader {
 				achieved = true;
 			}
 
-			 
+
 			if(actual.startsWith("element vertex")) {
 				nbSommets = Integer.parseInt(actual.substring(15,actual.length()-1)); 
 			}
-			
+
 			if(actual.startsWith("comment")) {
 				if(actual.startsWith("comment made by")) {
 					auteur = actual.substring(15);
@@ -60,7 +61,10 @@ public class FileReader {
 				}
 			}
 
-			
+			if(actual.startsWith("property uchar red\n")) {
+				hasColor = true;
+			}
+
 
 			if(actual.startsWith("element face")) {
 				nbFaces = Integer.parseInt(actual.substring(13,actual.length()-1));
@@ -100,9 +104,17 @@ public class FileReader {
 		}
 	}
 
-	private void faceAdd(List<Face> faces, List<Sommet> listSommetTmp, StringTokenizer actuel, int nb) {
-			Face faceTmp = new Face(nb,listSommetTmp, new Color(155.0,155.0,155.0));
+	private void faceAdd(List<Face> faces, List<Sommet> listSommetTmp, StringTokenizer lineToken, int nb) {
+		if(hasColor) {
+			double r = Double.parseDouble(lineToken.nextToken());
+			double g = Double.parseDouble(lineToken.nextToken());
+			double b = Double.parseDouble(lineToken.nextToken());
+			Face faceTmp = new Face(nb,listSommetTmp, new Color(r,g,b));
 			faces.add(faceTmp);
+		}else {
+			Face faceTmp = new Face(nb,listSommetTmp, new Color(155.0,155.0,155.0));			
+			faces.add(faceTmp);
+		}
 	}
 
 

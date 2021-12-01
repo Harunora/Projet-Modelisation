@@ -57,6 +57,7 @@ public class CanvasWriter {
 			idx=getPositionHighestZ();
 			if(colorPrint) {
 				graphicContext.setFill(color.get(idx));
+				System.out.println(color.get(idx));
 				graphicContext.fillPolygon(this.x.get(idx),this.y.get(idx), this.y.get(idx).length);
 			}
 			if(linePrint) {
