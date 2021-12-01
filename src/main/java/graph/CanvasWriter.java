@@ -1,18 +1,23 @@
 package graph;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import javafx.scene.paint.*;
 import javafx.scene.paint.Color;
+import mvc.Observer;
+import mvc.Subject;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 
-public class CanvasWriter {
+public class CanvasWriter implements Observer{
 
-	public Graph listface;
+	public Graph model;
 	public Canvas canvas;
-
 	public GraphicsContext graphicContext;
+	protected Color modelColor;
 	protected Color backgroundColor;
 	protected List<double[]> x;
 	protected List<double[]> y;
@@ -24,23 +29,23 @@ public class CanvasWriter {
 	private boolean colorPrint = true;
 	public int homothesie=-100;
 
-
 	public CanvasWriter(Canvas c, Graph lf) {
 		x=new ArrayList<double[]>();
 		y=new ArrayList<double[]>();
 		z=new ArrayList<double[]>();
-		listface=lf;
-		color = new ArrayList<Color>();
-		backgroundColor = backgroundColor.GRAY;
+		color=new ArrayList<Color>();
+		backgroundColor = Color.GRAY;
 		canvas=c;
 		graphicContext=c.getGraphicsContext2D();
 		width=c.getWidth()/2;
 		height=c.getHeight()/2;
-		useGraph();
+		model=lf;
+		this.update(model);
 	}
 
 	public void updateCanvasWriter(Graph newGraph){
-		this.listface=newGraph;
+		this.model=newGraph;
+		this.model.attach(this);
 		useGraph();
 	}
 
@@ -52,18 +57,14 @@ public class CanvasWriter {
 
 	public void writeOnCanvas() {
 		clear(backgroundColor);
-		int idx=0;
-		while(this.x.size()!=0) {
-			idx=getPositionHighestZ();
+		for(int i=0;i<this.x.size();i++){
 			if(colorPrint) {
-				graphicContext.setFill(color.get(idx));
-				System.out.println(color.get(idx));
-				graphicContext.fillPolygon(this.x.get(idx),this.y.get(idx), this.y.get(idx).length);
+				graphicContext.setFill(this.color.get(i));
+				graphicContext.fillPolygon(this.x.get(i),this.y.get(i), this.y.get(i).length);
 			}
 			if(linePrint) {
-				graphicContext.strokePolygon(this.x.get(idx),this.y.get(idx), this.y.get(idx).length);
+				graphicContext.strokePolygon(this.x.get(i),this.y.get(i), this.y.get(i).length);
 			}
-			removeFace(idx);
 		}
 	}
 
@@ -74,23 +75,25 @@ public class CanvasWriter {
 	}
 
 	public void useGraph() {
-		this.color.clear();
 		this.x.clear();
 		this.y.clear();
-		for(int i=0;i<listface.getNbFaces();i++) {
-			double[] i1=new double[this.listface.getFace(i).nbSommet];
-			double[] i2=new double[this.listface.getFace(i).nbSommet];
-			double[] i3=new double[this.listface.getFace(i).nbSommet];
-			for(int j=0;j<this.listface.getFace(i).nbSommet;j++) {
-				i1[j]=this.listface.getFaceX(i, j)*homothesie+height;
-				i2[j]=this.listface.getFaceY(i, j)*homothesie+width;
-				i3[j]=this.listface.getFaceZ(i, j)*homothesie+width;
-			}			
+		this.z.clear();
+		this.color.clear();
+		Collections.sort(model.getFaces());
+		System.out.println("oui");
+		for(int i=0;i<model.getNbFaces();i++) {
+			double[] i1=new double[this.model.getFace(i).nbSommet];
+			double[] i2=new double[this.model.getFace(i).nbSommet];
+			double[] i3=new double[this.model.getFace(i).nbSommet];
+			for(int j=0;j<this.model.getFace(i).nbSommet;j++) {
+				i1[j]=this.model.getFaceX(i, j)*homothesie+height;
+				i2[j]=this.model.getFaceY(i, j)*homothesie+width;
+				i3[j]=this.model.getFaceZ(i, j)*homothesie+width;
+			}
 			this.x.add(i1);
 			this.y.add(i2);
 			this.z.add(i3);
-			graph.Color tp = this.listface.getFace(i).getColor();
-			Color tmp= new Color(tp.getR()/255,tp.getG()/255,tp.getB()/255,1);
+			Color tmp=this.model.getFace(i).getColor();
 			this.color.add(tmp);
 		}
 		writeOnCanvas();
@@ -115,13 +118,13 @@ public class CanvasWriter {
 			}
 		}
 
-		return retour; 
+		return retour;
 	}
-	
+
 	public void inversePrintLine() {
 		this.linePrint=!this.linePrint;
 	}
-	
+
 	public void inversePrintColor() {
 		this.colorPrint=!this.colorPrint;
 	}
@@ -130,12 +133,25 @@ public class CanvasWriter {
 		this.x.remove(idx);
 		this.y.remove(idx);
 		this.z.remove(idx);
+		this.color.remove(idx);
 	}
-	
-	public void setBackgroundColor(javafx.scene.paint.Color value) {
+
+	public void setBackgroundColor(Color value) {
 		this.backgroundColor=value;
 		System.out.println(backgroundColor);
 		useGraph();
-		
 	}
+
+	@Override
+	public void update(Subject subj) {
+		// TODO Auto-generated method stub
+		update(subj, null);
+	}
+
+	@Override
+	public void update(Subject subj, Object data) {
+		// TODO Auto-generated method stub
+		useGraph();
+	}
+
 }
