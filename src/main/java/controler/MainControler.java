@@ -455,49 +455,42 @@ public class MainControler implements Initializable {
 	private void rotateRight() {
 		rotation = new RotationRight(graphe.getMatrice(),null); 
 		rotation.rotate(Math.PI/100);
-		graphe.attach(canvasWriter);
 		graphe.update(rotation.getMcourante());
 	}
 
 	private void rotationLeft() {
 		rotation = new RotationLeft(graphe.getMatrice(),null); 
 		rotation.rotate(Math.PI/100);
-		graphe.attach(canvasWriter);
 		graphe.update(rotation.getMcourante());
 	}
 
 	private void rotationDown() {
 		rotation = new RotationDown(graphe.getMatrice(),null); 
 		rotation.rotate(Math.PI/100);
-		graphe.attach(canvasWriter);
 		graphe.update(rotation.getMcourante());
 	}
 	
 	private void rotationUp() {
 		rotation = new RotationUp(graphe.getMatrice(),null); 
-		rotation.rotate(Math.PI/100);
-		graphe.attach(canvasWriter);
+		rotation.rotate(Math.PI/100);	
 		graphe.update(rotation.getMcourante());
 	}
 	
 	private void rotationAroundLeft() {
 		rotation = new RotationAroundLeft(graphe.getMatrice(),null); 
 		rotation.rotate(Math.PI/100);
-		graphe.attach(canvasWriter);
 		graphe.update(rotation.getMcourante());
 	}
 	
 	private void rotationAroundRight() {
 		rotation = new RotationAroundRight(graphe.getMatrice(),null); 
-		rotation.rotate(Math.PI/100);
-		graphe.attach(canvasWriter);
+		rotation.rotate(Math.PI/100);		
 		graphe.update(rotation.getMcourante());
 	}
 
 	private void translateAction(int x, int y) {
 		translation = new Translation(graphe.getMatrice(), x, y);
 		translation.translate();
-		graphe.attach(canvasWriter);
 		graphe.update(translation.getMcourante());
 	}
     
