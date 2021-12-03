@@ -106,13 +106,13 @@ public class FileReader {
 
 	private void faceAdd(List<Face> faces, List<Sommet> listSommetTmp, StringTokenizer lineToken, int nb) {
 		if(hasColor) {
-			double r = Double.parseDouble(lineToken.nextToken());
-			double g = Double.parseDouble(lineToken.nextToken());
-			double b = Double.parseDouble(lineToken.nextToken());
-			Face faceTmp = new Face(nb,listSommetTmp, new Color(r,g,b));
+			//double r = Double.parseDouble(lineToken.nextToken());
+			//double g = Double.parseDouble(lineToken.nextToken());
+			//double b = Double.parseDouble(lineToken.nextToken());
+			Face faceTmp = new Face(nb,listSommetTmp, null);
 			faces.add(faceTmp);
 		}else {
-			Face faceTmp = new Face(nb,listSommetTmp, new Color(155.0,155.0,155.0));			
+			Face faceTmp = new Face(nb,listSommetTmp, null);			
 			faces.add(faceTmp);
 		}
 	}

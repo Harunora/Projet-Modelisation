@@ -43,12 +43,6 @@ public class CanvasWriter implements Observer{
 		this.update(model);
 	}
 
-	public void updateCanvasWriter(Graph newGraph){
-		this.model=newGraph;
-		this.model.attach(this);
-		useGraph();
-	}
-
 	public void changeHomothesie(int i) {
 		homothesie=i;
 		useGraph();
@@ -150,7 +144,7 @@ public class CanvasWriter implements Observer{
 
 	@Override
 	public void update(Subject subj, Object data) {
-		// TODO Auto-generated method stub
+		this.model= (UpdateGraph) subj;
 		useGraph();
 	}
 

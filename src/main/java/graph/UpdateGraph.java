@@ -26,11 +26,12 @@ public class UpdateGraph extends Graph{
 	public void update(Matrice ma) {
 		matrice = ma;
 		faces.clear();
+		sommets.clear();
 		for(int i = 0; i<matrice.taille; i++) {
 			sommets.add(new Sommet(matrice.getX(i),matrice.getY(i),matrice.getZ(i)));
 		}
 		readFace();	
-
+		notifyObserver();
 	}
 	
 	public void setColor(javafx.scene.paint.Color color) {
@@ -40,7 +41,7 @@ public class UpdateGraph extends Graph{
 		double b = color.getBlue()*255;
 		this.color = new Color(r,g,b);
 		for(int i = 0; i< this.nbFaces; i++) {
-			faces.get(i).setColor(this.color);
+			//faces.get(i).setColor(this.color);
 		}
 	}
 
@@ -66,7 +67,7 @@ public class UpdateGraph extends Graph{
 		}
 		List<Sommet> tmp = new ArrayList<Sommet>();
 		addListSommet(tmp);
-		Face faceTmp = new Face(nb, tmp, new Color(r,b,bl));
+		Face faceTmp = new Face(nb, tmp, null);
 		//Color colorTmp = calculColor.getColor(faceTmp);
 		//faceTmp = new Face(nb, tmp, colorTmp);
 		//System.out.println("couleur ombre " + colorTmp);

@@ -183,33 +183,22 @@ public class MainControler implements Initializable {
 		buttonRotateRight.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
 				if(currentFile != null && currentFile.isFile()) {
-					rotation = new RotationRight(graphe.getMatrice(),null); 
-					rotation.rotate(Math.PI/100);
-					graphe = fileReader.read(currentFile);
-					graphe.update(rotation.getMcourante());
-					canvasWriter.updateCanvasWriter(graphe);
+					rotateRight();
 				}
 			}
 		});
 		buttonRotateLeft.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
 				if(currentFile != null && currentFile.isFile()) {
-					Rotation r = new RotationLeft(graphe.getMatrice(),null); 
-					r.rotate(Math.PI/100);
-					graphe = fileReader.read(currentFile);
-					graphe.update(r.getMcourante());
-					canvasWriter.updateCanvasWriter(graphe);
+					rotationLeft();
 				}
 			}
 		});
 		buttonRotateAroundRight.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
 				if(currentFile != null && currentFile.isFile()) {
-					Rotation r = new RotationAroundLeft(graphe.getMatrice(),null); 
-					r.rotate(Math.PI/100);
-					graphe = fileReader.read(currentFile);
-					graphe.update(r.getMcourante());
-					canvasWriter.updateCanvasWriter(graphe);
+					rotationAroundLeft();
+					
 				}
 			}
 		});
@@ -217,33 +206,21 @@ public class MainControler implements Initializable {
 		buttonRotateAroundLeft.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
 				if(currentFile != null && currentFile.isFile()) {
-					Rotation r = new RotationAroundRight(graphe.getMatrice(),null); 
-					r.rotate(Math.PI/100);
-					graphe = fileReader.read(currentFile);
-					graphe.update(r.getMcourante());
-					canvasWriter.updateCanvasWriter(graphe);
+					rotationAroundLeft();
 				}
 			}
 		});
 		buttonRotateUp.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
 				if(currentFile != null && currentFile.isFile()) {
-					rotation = new RotationUp(graphe.getMatrice(),null); 
-					rotation.rotate(Math.PI/100);
-					graphe = fileReader.read(currentFile);
-					graphe.update(rotation.getMcourante());
-					canvasWriter.updateCanvasWriter(graphe);
+					rotationUp();
 				}
 			}
 		});
 		buttonRotateDown.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
 				if(currentFile != null && currentFile.isFile()) {
-					rotation = new RotationDown(graphe.getMatrice(),null); 
-					rotation.rotate(Math.PI/100);
-					graphe = fileReader.read(currentFile);
-					graphe.update(rotation.getMcourante());
-					canvasWriter.updateCanvasWriter(graphe);
+					rotationDown(); 
 				}
 			}
 		});
@@ -316,7 +293,7 @@ public class MainControler implements Initializable {
 			
 			public void handle(ActionEvent e) {
 				canvasWriter.inversePrintLine();
-				canvasWriter.updateCanvasWriter(graphe);
+				canvasWriter.update(graphe);
 			}
 		});   
         
@@ -325,7 +302,7 @@ public class MainControler implements Initializable {
 			
 			public void handle(ActionEvent e) {
 				canvasWriter.inversePrintColor();
-				canvasWriter.updateCanvasWriter(graphe);
+				canvasWriter.update(graphe);
 			}
 		});
         
@@ -411,54 +388,27 @@ public class MainControler implements Initializable {
 		
     }
     
-    	
-    
-    
     @SuppressWarnings("incomplete-switch")
 	public void setScene (Scene s) {
     	s.setOnKeyPressed(e->{
 			switch(e.getCode()){
 			case D:
-				rotation = new RotationRight(graphe.getMatrice(),null); 
-			    rotation.rotate(Math.PI/100);
-				graphe = fileReader.read(currentFile);
-				graphe.update(rotation.getMcourante());
-				canvasWriter.updateCanvasWriter(graphe);
+				rotateRight();
 			break;
 			case Q:
-				rotation = new RotationLeft(graphe.getMatrice(),null); 
-			    rotation.rotate(Math.PI/100);
-				graphe = fileReader.read(currentFile);
-				graphe.update(rotation.getMcourante());
-				canvasWriter.updateCanvasWriter(graphe);
+				rotationLeft();
 				break;
 			case Z:
-				rotation = new RotationUp(graphe.getMatrice(),null); 
-			    rotation.rotate(Math.PI/100);
-				graphe = fileReader.read(currentFile);
-				graphe.update(rotation.getMcourante());
-				canvasWriter.updateCanvasWriter(graphe);
+				rotationUp();
 				break;
 			case S:
-				rotation = new RotationDown(graphe.getMatrice(),null); 
-			    rotation.rotate(Math.PI/100);
-				graphe = fileReader.read(currentFile);
-				graphe.update(rotation.getMcourante());
-				canvasWriter.updateCanvasWriter(graphe);
+				rotationDown();
 				break;
 			case E:
-				rotation = new RotationAroundRight(graphe.getMatrice(),null); 
-			    rotation.rotate(Math.PI/100);
-				graphe = fileReader.read(currentFile);
-				graphe.update(rotation.getMcourante());
-				canvasWriter.updateCanvasWriter(graphe);
+				rotationAroundRight();
 				break;
 			case A:
-				rotation = new RotationAroundLeft(graphe.getMatrice(),null); 
-			    rotation.rotate(Math.PI/100);
-				graphe = fileReader.read(currentFile);
-				graphe.update(rotation.getMcourante());
-				canvasWriter.updateCanvasWriter(graphe);
+				rotationAroundLeft();
 				break;
 			case P:
 				updateFile();
@@ -489,8 +439,8 @@ public class MainControler implements Initializable {
 				break;
 			case W:
 				graphe = fileReader.read(currentFile);
+				graphe.attach(canvasWriter);
 				graphe.update(graphe.getMatriceOriginal());
-				canvasWriter.updateCanvasWriter(graphe);
 				break;
 			}
 			
@@ -502,12 +452,60 @@ public class MainControler implements Initializable {
 
 
 
+	private void rotateRight() {
+		rotation = new RotationRight(graphe.getMatrice(),null); 
+		rotation.rotate(Math.PI/100);
+		graphe = fileReader.read(currentFile);
+		graphe.attach(canvasWriter);
+		graphe.update(rotation.getMcourante());
+	}
+
+	private void rotationLeft() {
+		rotation = new RotationLeft(graphe.getMatrice(),null); 
+		rotation.rotate(Math.PI/100);
+		graphe = fileReader.read(currentFile);
+		graphe.attach(canvasWriter);
+		graphe.update(rotation.getMcourante());
+	}
+
+	private void rotationDown() {
+		rotation = new RotationDown(graphe.getMatrice(),null); 
+		rotation.rotate(Math.PI/100);
+		graphe = fileReader.read(currentFile);
+		graphe.attach(canvasWriter);
+		graphe.update(rotation.getMcourante());
+	}
+	
+	private void rotationUp() {
+		rotation = new RotationUp(graphe.getMatrice(),null); 
+		rotation.rotate(Math.PI/100);
+		graphe = fileReader.read(currentFile);
+		graphe.attach(canvasWriter);
+		graphe.update(rotation.getMcourante());
+	}
+	
+	private void rotationAroundLeft() {
+		rotation = new RotationAroundLeft(graphe.getMatrice(),null); 
+		rotation.rotate(Math.PI/100);
+		graphe = fileReader.read(currentFile);
+		graphe.attach(canvasWriter);
+		graphe.update(rotation.getMcourante());
+	}
+	
+	private void rotationAroundRight() {
+		rotation = new RotationAroundRight(graphe.getMatrice(),null); 
+		rotation.rotate(Math.PI/100);
+		graphe = fileReader.read(currentFile);
+		graphe.attach(canvasWriter);
+		graphe.update(rotation.getMcourante());
+	}
+
 	private void translateAction(int x, int y) {
 		translation = new Translation(graphe.getMatrice(), x, y);
 		translation.translate();
 		graphe = fileReader.read(currentFile);
+		graphe.attach(canvasWriter);
 		graphe.update(translation.getMcourante());
-		canvasWriter.updateCanvasWriter(graphe);
 	}
     
     private void updateFile() {
@@ -516,7 +514,8 @@ public class MainControler implements Initializable {
 		currentFile=explorerFile.getFile(treeView);
 		if(currentFile != null && currentFile.isFile()) {
 			graphe = fileReader.read(currentFile);
-			canvasWriter.updateCanvasWriter(graphe);
+			graphe.attach(canvasWriter);
+			canvasWriter.update(graphe);		
 		}
 	}
     

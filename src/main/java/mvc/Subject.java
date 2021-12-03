@@ -7,7 +7,7 @@ public abstract class Subject {
 
 	private List<Observer> list = new ArrayList<Observer>();
 	
-	protected void notifyObserver() {
+	public void notifyObserver() {
 		for(int i = 0; i<this.list.size(); i++) {
 			this.list.get(i).update(this);
 		}

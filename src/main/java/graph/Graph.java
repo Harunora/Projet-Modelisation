@@ -4,7 +4,9 @@ package graph;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Graph {
+import mvc.Subject;
+
+public class Graph extends Subject{
 	protected int nbFaces;
 	protected List<Face> faces;
 	protected Matrice matrice;
@@ -20,7 +22,7 @@ public class Graph {
 		this.faces = faces;
 		this.sommetsDeFaces = sommetDeFaces;
 		this.auteur = auteur;
-		this.color = this.faces.get(0).getColor();
+		//this.color = this.faces.get(0).getColor();
 	}
 	
 	public Face getFace(int i) {
