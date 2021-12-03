@@ -16,14 +16,18 @@ public class UpdateGraph extends Graph{
 	private double r,g,bl;
 	Matrice lumiere = new Matrice(1,1,1,1,1,1);
 	private CalculColor calculColor = new CalculColor(lumiere,this.color);
-
+	private Graph original;
 
 
 	public UpdateGraph(int nbFace, List<Face> faces, Matrice matrice, List<String> sommetDeFaces, String auteur) {
 		super(nbFace, faces, matrice, sommetDeFaces, auteur);
-
+		this.original=new Graph(nbFace, faces, matrice, sommetDeFaces, auteur);
 	}
 	public void update(Matrice ma) {
+		this.faces=this.original.faces;
+		this.matrice=this.original.matrice;
+		this.sommetsDeFaces=this.original.sommetsDeFaces;
+		
 		matrice = ma;
 		faces.clear();
 		sommets.clear();
