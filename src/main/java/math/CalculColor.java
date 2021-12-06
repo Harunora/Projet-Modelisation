@@ -2,7 +2,6 @@ package math;
 
 import java.util.ArrayList;
 
-import graph.Coloration;
 import graph.Face;
 import graph.Matrice;
 import graph.Sommet;

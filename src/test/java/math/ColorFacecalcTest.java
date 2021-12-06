@@ -5,7 +5,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import graph.Coloration;
 import graph.Face;
 import graph.Matrice;
 import graph.Sommet;
