@@ -1,15 +1,15 @@
 package graph;
 
-public class Color {
+public class Coloration {
     private double r,g,b;
 
-    public Color(double[] rgbTab) {
+    public Coloration(double[] rgbTab) {
         this.r = rgbTab[0];
         this.g = rgbTab[1];
         this.b = rgbTab[2];
     }
 
-    public Color(double i, double j, double k) {
+    public Coloration(double i, double j, double k) {
         this.r = i;
         this.g = j;
         this.b = k;

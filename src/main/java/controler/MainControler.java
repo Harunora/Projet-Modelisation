@@ -312,6 +312,7 @@ public class MainControler implements Initializable {
 			public void handle(ActionEvent e) {
 				System.out.println(faceColor.getValue());
 				graphe.setColor(faceColor.getValue());
+				
 			}
 		});
         

@@ -2,19 +2,20 @@ package math;
 
 import java.util.ArrayList;
 
-import graph.Color;
+import graph.Coloration;
 import graph.Face;
 import graph.Matrice;
 import graph.Sommet;
+import javafx.scene.paint.Color;
 
 public class CalculColor {
 	Color couleur;
 	Matrice vecteurlumiere;
-	public CalculColor(Matrice positionlumiere, Color c) {
+	public CalculColor(Matrice positionlumiere, Color color) {
 		ProduitScalaire p = new ProduitScalaire(positionlumiere);
 		Normeprod n =  new Normeprod(p);
 		this.vecteurlumiere = n.getNorme();
-		couleur = c;
+		couleur = color;
 	}
 	
 	public Color getColor(Face f) {
@@ -26,11 +27,21 @@ public class CalculColor {
 			// la il reste a faire le calcule avec la couleur
 			double coef = calcfactlumiere(norme);
 			
-			double r = couleur.getR();
-			double g = couleur.getG();
-			double b = couleur.getB();
+			System.out.println(f.getColor().getRed());
 			
-			couleur = new Color((int)(r * coef),(int) (g * coef),(int) (b* coef));
+				double r = f.getColor().getRed();
+				double g = f.getColor().getGreen();
+				double b = f.getColor().getBlue();
+				if(coef > 0.0) {
+					couleur = new Color((r * coef), (g * coef), (b* coef), 1.0);
+				}else {
+					couleur = new Color(0.0,0.0,0.0,1.0);
+				}
+				
+			
+			
+			
+			
 		}
 		
 		return couleur;
