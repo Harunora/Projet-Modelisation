@@ -22,7 +22,7 @@ public class Graph extends Subject{
 		this.faces = faces;
 		this.sommetsDeFaces = sommetDeFaces;
 		this.auteur = auteur;
-		//this.color = this.faces.get(0).getColor();
+		this.color = Color.WHITE;
 	}
 	
 	public Face getFace(int i) {

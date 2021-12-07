@@ -8,9 +8,10 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
+import javafx.scene.paint.Color;
+
 public class FileReader {
 	private String actual = "",auteur="",commentaire="";
-	private boolean hasColor;
 	private int nbFaces = 0,nbSommets = 0;
 	private List<Sommet> sommets = new ArrayList<Sommet>();
 	private List<Face>faces = new ArrayList<Face>();
@@ -61,11 +62,6 @@ public class FileReader {
 				}
 			}
 
-			if(actual.startsWith("property uchar red\n")) {
-				hasColor = true;
-			}
-
-
 			if(actual.startsWith("element face")) {
 				nbFaces = Integer.parseInt(actual.substring(13,actual.length()-1));
 			}
@@ -105,16 +101,10 @@ public class FileReader {
 	}
 
 	private void faceAdd(List<Face> faces, List<Sommet> listSommetTmp, StringTokenizer lineToken, int nb) {
-		if(hasColor) {
-			//double r = Double.parseDouble(lineToken.nextToken());
-			//double g = Double.parseDouble(lineToken.nextToken());
-			//double b = Double.parseDouble(lineToken.nextToken());
-			Face faceTmp = new Face(nb,listSommetTmp, null);
-			faces.add(faceTmp);
-		}else {
-			Face faceTmp = new Face(nb,listSommetTmp, null);			
-			faces.add(faceTmp);
-		}
+
+		Face faceTmp = new Face(nb,listSommetTmp, Color.WHITE);			
+		faces.add(faceTmp);
+
 	}
 
 

@@ -74,7 +74,6 @@ public class CanvasWriter implements Observer{
 		this.z.clear();
 		this.color.clear();
 		Collections.sort(model.getFaces());
-		System.out.println("oui");
 		for(int i=0;i<model.getNbFaces();i++) {
 			double[] i1=new double[this.model.getFace(i).nbSommet];
 			double[] i2=new double[this.model.getFace(i).nbSommet];
@@ -87,8 +86,7 @@ public class CanvasWriter implements Observer{
 			this.x.add(i1);
 			this.y.add(i2);
 			this.z.add(i3);
-			Color tmp=this.model.getFace(i).getColor();
-			this.color.add(tmp);
+			this.color.add(this.model.getFace(i).getColor());
 		}
 		writeOnCanvas();
 	}
