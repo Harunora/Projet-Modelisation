@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import file.ExplorerFile;
+import file.UpdateFile;
 import graph.CanvasWriter;
 import graph.FileReader;
 import graph.Translation;
@@ -154,12 +155,14 @@ public class MainControler implements Initializable {
         buttonModelData.addEventHandler(MouseEvent.MOUSE_CLICKED, e->{
 
         	if(currentFile != null && currentFile.isFile()) {
+        		UpdateFile updateFile = new UpdateFile(currentFile,fileReader.getLigneAuteur(),fileReader.getLigneCom());
         		Label secondLabel = new Label("===========================================================================\n"
         				+ "Nom du fichier : "+ currentFile.getName() +"\n\n"
-        				+ "Auteur : "+ graphe.getAuteur() +"\n\n"
+        				+ "Auteur : "+ graphe.getAuteur() + "a la ligne " + fileReader.getLigneAuteur() +"\n\n"
         				+ "Nombre de Faces : "+ graphe.getNbFaces()+"\n\n"
 						+ "Nombre de Sommet par faces : "+ graphe.getNbSommet() +"\n\n"
-						+ "Autre commentaire : "+ fileReader.getCommentaire()+"\n\n"
+						+ "Autre commentaire : "+ fileReader.getCommentaire()+ "a la ligne " + fileReader.getLigneCom()+"\n\n"
+						+ "info update file : " + updateFile.toString()
 						+ "\n\n\n"
 						+ "");
 
@@ -177,6 +180,7 @@ public class MainControler implements Initializable {
         		newWindow.initModality(Modality.WINDOW_MODAL);
 
         		newWindow.show();
+        		updateFile.remplaceText(fileReader.getLigneAuteur(), "matheo");
         	}
 		});
 		

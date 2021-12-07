@@ -12,6 +12,7 @@ import javafx.scene.paint.Color;
 
 public class FileReader {
 	private String actual = "",auteur="",commentaire="";
+	private int ligneAuteur = 0,ligneCom = 0;
 	private int nbFaces = 0,nbSommets = 0;
 	private List<Sommet> sommets = new ArrayList<Sommet>();
 	private List<Face>faces = new ArrayList<Face>();
@@ -25,10 +26,11 @@ public class FileReader {
 		try {
 			FileInputStream file = new FileInputStream(fileTest);
 			Scanner scanner = new Scanner(file);
+			int ligne = 1;
 			while(scanner.hasNextLine())
 			{
 				actual = actualNext(scanner);
-				startFile(scanner);
+				startFile(scanner,  ligne);
 				matrice = new Matrice(nbSommets, nbFaces);
 				readSommet(nbSommets, sommets, scanner);
 				readFace(nbFaces, sommets, faces, sommetsDeFaces, scanner);	
@@ -41,9 +43,10 @@ public class FileReader {
 	}
 
 
-	private void startFile(Scanner scanner) {
+	private void startFile(Scanner scanner, int ligne) {
 		boolean achieved = false;
 		while(!achieved) {
+			ligne++;
 			actual = actualNext(scanner);
 			if(actual.equals("end_header"+"\n")) {
 				achieved = true;
@@ -57,9 +60,12 @@ public class FileReader {
 			if(actual.startsWith("comment")) {
 				if(actual.startsWith("comment made by")) {
 					auteur = actual.substring(15);
+					ligneAuteur = ligne;
 				}else {
 					commentaire += actual.substring(7) + "\n";
+					ligneCom = ligne;
 				}
+				
 			}
 
 			if(actual.startsWith("element face")) {
@@ -132,6 +138,16 @@ public class FileReader {
 
 	public String getCommentaire() {
 		return commentaire;
+	}
+
+
+	public int getLigneAuteur() {
+		return ligneAuteur;
+	}
+
+
+	public int getLigneCom() {
+		return ligneCom;
 	}
 
 }
