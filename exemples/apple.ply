@@ -1,5 +1,7 @@
 ply
 format ascii 1.0
+comment Ce commentaire est un test
+comment made by matheo
 element vertex 867
 property float32 x
 property float32 y
