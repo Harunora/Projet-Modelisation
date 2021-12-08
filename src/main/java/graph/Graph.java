@@ -4,6 +4,7 @@ package graph;
 import java.util.ArrayList;
 import java.util.List;
 
+import javafx.scene.paint.Color;
 import mvc.Subject;
 
 public class Graph extends Subject{

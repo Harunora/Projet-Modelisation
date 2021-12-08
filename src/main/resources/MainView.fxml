@@ -28,7 +28,7 @@
                         <Button fx:id="btreebase" layoutX="63.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="45.0" text="Base" AnchorPane.bottomAnchor="760.0" AnchorPane.leftAnchor="128.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                      </children>
                   </AnchorPane>
-                <AnchorPane minHeight="-Infinity" minWidth="-Infinity">
+                <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="900.0">
                      <children>
                         <TabPane prefHeight="75.0" prefWidth="471.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                            <tabs>
@@ -129,7 +129,7 @@
                               </Tab>
                            </tabs>
                         </TabPane>
-                        <Canvas fx:id="canvas" height="734.0" layoutX="-13.0" layoutY="68.0" width="1000.0" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="68.0" />
+                        <Canvas fx:id="canvas" height="734.0" layoutX="-13.0" layoutY="68.0" width="900.0" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="68.0" />
                      </children>
                   </AnchorPane>
               </items>

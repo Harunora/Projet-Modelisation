@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
+import javafx.scene.paint.Color;
+
 public class Face implements Comparable<Face> {
 	protected javafx.scene.paint.Color color;
 	protected int nbSommet;
@@ -14,14 +16,21 @@ public class Face implements Comparable<Face> {
 	public Face(int n, List<Sommet> sommets, javafx.scene.paint.Color color) {
 		this.color = color;
 		nbSommet = n;
-		this.sommets = sommets;
-		this.HighestZ=findHighestZ();
+		this.sommets = sommets;	
+		this.HighestZ=findHighestZ();	
+		
+	}
+	
+	public Face(int n, Color c) {
+		this(n,new ArrayList<Sommet>(), c);
 	}
 	
 	public Face(int n ) {
-		this(n, new ArrayList<Sommet>(), null);
+		this(n, null);
 	}
 	
+	
+
 	public void setColor(javafx.scene.paint.Color color2) {
 		this.color = color2;
 	}

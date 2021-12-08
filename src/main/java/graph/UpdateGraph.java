@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 
+import javafx.scene.paint.Color;
 import math.CalculColor;
 
 public class UpdateGraph extends Graph{
@@ -40,12 +41,9 @@ public class UpdateGraph extends Graph{
 	
 	public void setColor(javafx.scene.paint.Color color) {
 		hasSetColor = true;
-		double r = color.getRed()*255;
-		double g = color.getGreen()*255;
-		double b = color.getBlue()*255;
-		this.color = new Color(r,g,b);
+		this.color = color;
 		for(int i = 0; i< this.nbFaces; i++) {
-			//faces.get(i).setColor(this.color);
+			faces.get(i).setColor(this.color);
 		}
 	}
 
@@ -71,7 +69,7 @@ public class UpdateGraph extends Graph{
 		}
 		List<Sommet> tmp = new ArrayList<Sommet>();
 		addListSommet(tmp);
-		Face faceTmp = new Face(nb, tmp, null);
+		Face faceTmp = new Face(nb, tmp, color);
 		//Color colorTmp = calculColor.getColor(faceTmp);
 		//faceTmp = new Face(nb, tmp, colorTmp);
 		//System.out.println("couleur ombre " + colorTmp);
