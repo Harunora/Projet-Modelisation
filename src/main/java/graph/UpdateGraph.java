@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 
-import javafx.scene.paint.Color;
 import math.CalculColor;
 
 public class UpdateGraph extends Graph{
@@ -14,7 +13,8 @@ public class UpdateGraph extends Graph{
 	private List<Sommet> sommets = new ArrayList<Sommet>();
 	private boolean hasSetColor;
 	private int nb,a,b,c,d;
-	Matrice lumiere = new Matrice(1,1,100,100,100,1);
+	private double r,g,bl;
+	Matrice lumiere = new Matrice(1,1,1,1,1,1);
 	private CalculColor calculColor = new CalculColor(lumiere,this.color);
 	private Graph original;
 
@@ -40,9 +40,12 @@ public class UpdateGraph extends Graph{
 	
 	public void setColor(javafx.scene.paint.Color color) {
 		hasSetColor = true;
-		this.color = color;
+		double r = color.getRed()*255;
+		double g = color.getGreen()*255;
+		double b = color.getBlue()*255;
+		this.color = new Color(r,g,b);
 		for(int i = 0; i< this.nbFaces; i++) {
-			faces.get(i).setColor(this.color);
+			//faces.get(i).setColor(this.color);
 		}
 	}
 
@@ -61,11 +64,16 @@ public class UpdateGraph extends Graph{
 		if(nb==4) {
 			d = Integer.parseInt(lineToken.nextToken());			
 		}
+		if(lineToken.hasMoreTokens() && !hasSetColor) {
+			r = Double.parseDouble(lineToken.nextToken());
+			g = Double.parseDouble(lineToken.nextToken());
+			bl = Double.parseDouble(lineToken.nextToken());
+		}
 		List<Sommet> tmp = new ArrayList<Sommet>();
 		addListSommet(tmp);
-		Face faceTmp = new Face(nb, tmp, color);
-		Color colorTmp = calculColor.getColor(faceTmp);
-		faceTmp = new Face(nb, tmp, colorTmp);
+		Face faceTmp = new Face(nb, tmp, null);
+		//Color colorTmp = calculColor.getColor(faceTmp);
+		//faceTmp = new Face(nb, tmp, colorTmp);
 		//System.out.println("couleur ombre " + colorTmp);
 		//System.out.println("couleur globale : " + color);
 		faces.add(faceTmp);

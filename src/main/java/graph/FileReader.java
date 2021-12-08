@@ -8,11 +8,9 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
-import javafx.scene.paint.Color;
-
 public class FileReader {
 	private String actual = "",auteur="",commentaire="";
-	private int ligneAuteur = 0,ligneCom = 0;
+	private boolean hasColor;
 	private int nbFaces = 0,nbSommets = 0;
 	private List<Sommet> sommets = new ArrayList<Sommet>();
 	private List<Face>faces = new ArrayList<Face>();
@@ -26,11 +24,10 @@ public class FileReader {
 		try {
 			FileInputStream file = new FileInputStream(fileTest);
 			Scanner scanner = new Scanner(file);
-			int ligne = 1;
 			while(scanner.hasNextLine())
 			{
 				actual = actualNext(scanner);
-				startFile(scanner,  ligne);
+				startFile(scanner);
 				matrice = new Matrice(nbSommets, nbFaces);
 				readSommet(nbSommets, sommets, scanner);
 				readFace(nbFaces, sommets, faces, sommetsDeFaces, scanner);	
@@ -43,10 +40,9 @@ public class FileReader {
 	}
 
 
-	private void startFile(Scanner scanner, int ligne) {
+	private void startFile(Scanner scanner) {
 		boolean achieved = false;
 		while(!achieved) {
-			ligne++;
 			actual = actualNext(scanner);
 			if(actual.equals("end_header"+"\n")) {
 				achieved = true;
@@ -60,13 +56,15 @@ public class FileReader {
 			if(actual.startsWith("comment")) {
 				if(actual.startsWith("comment made by")) {
 					auteur = actual.substring(15);
-					ligneAuteur = ligne;
 				}else {
 					commentaire += actual.substring(7) + "\n";
-					ligneCom = ligne;
 				}
-				
 			}
+
+			if(actual.startsWith("property uchar red\n")) {
+				hasColor = true;
+			}
+
 
 			if(actual.startsWith("element face")) {
 				nbFaces = Integer.parseInt(actual.substring(13,actual.length()-1));
@@ -107,10 +105,16 @@ public class FileReader {
 	}
 
 	private void faceAdd(List<Face> faces, List<Sommet> listSommetTmp, StringTokenizer lineToken, int nb) {
-
-		Face faceTmp = new Face(nb,listSommetTmp, Color.WHITE);			
-		faces.add(faceTmp);
-
+		if(hasColor) {
+			//double r = Double.parseDouble(lineToken.nextToken());
+			//double g = Double.parseDouble(lineToken.nextToken());
+			//double b = Double.parseDouble(lineToken.nextToken());
+			Face faceTmp = new Face(nb,listSommetTmp, null);
+			faces.add(faceTmp);
+		}else {
+			Face faceTmp = new Face(nb,listSommetTmp, null);			
+			faces.add(faceTmp);
+		}
 	}
 
 
@@ -138,16 +142,6 @@ public class FileReader {
 
 	public String getCommentaire() {
 		return commentaire;
-	}
-
-
-	public int getLigneAuteur() {
-		return ligneAuteur;
-	}
-
-
-	public int getLigneCom() {
-		return ligneCom;
 	}
 
 }

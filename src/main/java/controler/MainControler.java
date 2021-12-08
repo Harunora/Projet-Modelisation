@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import file.ExplorerFile;
-import file.UpdateFile;
 import graph.CanvasWriter;
 import graph.FileReader;
 import graph.Translation;
@@ -71,7 +70,7 @@ public class MainControler implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         explorerFile = new ExplorerFile();
     	stage.setResizable(true);
-    	Scene scene  = Main.getScene();
+    	Scene scene = Main.getScene();
     	
         buttonLoadFolder.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
@@ -155,14 +154,12 @@ public class MainControler implements Initializable {
         buttonModelData.addEventHandler(MouseEvent.MOUSE_CLICKED, e->{
 
         	if(currentFile != null && currentFile.isFile()) {
-        		UpdateFile updateFile = new UpdateFile(currentFile,fileReader.getLigneAuteur(),fileReader.getLigneCom());
         		Label secondLabel = new Label("===========================================================================\n"
         				+ "Nom du fichier : "+ currentFile.getName() +"\n\n"
-        				+ "Auteur : "+ graphe.getAuteur() + "a la ligne " + fileReader.getLigneAuteur() +"\n\n"
+        				+ "Auteur : "+ graphe.getAuteur() +"\n\n"
         				+ "Nombre de Faces : "+ graphe.getNbFaces()+"\n\n"
 						+ "Nombre de Sommet par faces : "+ graphe.getNbSommet() +"\n\n"
-						+ "Autre commentaire : "+ fileReader.getCommentaire()+ "a la ligne " + fileReader.getLigneCom()+"\n\n"
-						+ "info update file : " + updateFile.toString()
+						+ "Autre commentaire : "+ fileReader.getCommentaire()+"\n\n"
 						+ "\n\n\n"
 						+ "");
 
@@ -180,7 +177,6 @@ public class MainControler implements Initializable {
         		newWindow.initModality(Modality.WINDOW_MODAL);
 
         		newWindow.show();
-        		updateFile.remplaceText(fileReader.getLigneAuteur(), "matheo");
         	}
 		});
 		
@@ -282,19 +278,16 @@ public class MainControler implements Initializable {
 				}
 			}
 		});
-
         
         buttonReloadCanvas.setOnAction(new EventHandler<ActionEvent>() {
-			@Override
-			
+			@Override	
 			public void handle(ActionEvent e) {
 				updateFile();
 			}
 		});   
         
         printLine.setOnAction(new EventHandler<ActionEvent>() {
-			@Override
-			
+			@Override	
 			public void handle(ActionEvent e) {
 				canvasWriter.inversePrintLine();
 				canvasWriter.update(graphe);
@@ -302,8 +295,7 @@ public class MainControler implements Initializable {
 		});   
         
         printColor.setOnAction(new EventHandler<ActionEvent>() {
-			@Override
-			
+			@Override	
 			public void handle(ActionEvent e) {
 				canvasWriter.inversePrintColor();
 				canvasWriter.update(graphe);
@@ -312,26 +304,21 @@ public class MainControler implements Initializable {
         
         faceColor.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
-			
 			public void handle(ActionEvent e) {
 				System.out.println(faceColor.getValue());
 				graphe.setColor(faceColor.getValue());
-				
 			}
 		});
         
-        
         backgroundColor.setOnAction(new EventHandler<ActionEvent>() {
-			@Override
-			
+			@Override	
 			public void handle(ActionEvent e) {
 				canvasWriter.setBackgroundColor(backgroundColor.getValue());
 			}
 		});
         
         Fview.setOnAction(new EventHandler<ActionEvent>() {
-			@Override
-			
+			@Override	
 			public void handle(ActionEvent e) {
 				Rotation rotationView = new RotationLeft(graphe.getMatrice(),null); 
 				rotationView.rotate(Math.PI/2);
@@ -351,7 +338,6 @@ public class MainControler implements Initializable {
 		});
         Aview.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
-			
 			public void handle(ActionEvent e) {
 				Rotation rotationView = new RotationUp(graphe.getMatrice(),null); 
 				rotationView.rotate(Math.PI/2);
@@ -370,8 +356,7 @@ public class MainControler implements Initializable {
 			}
 		});
 		 Sview.setOnAction(new EventHandler<ActionEvent>() {
-				@Override
-				
+				@Override	
 				public void handle(ActionEvent e) {
 					Rotation rotationView = new RotationLeft(graphe.getMatrice(),null); 
 					rotationView.rotate(Math.PI);
@@ -386,11 +371,9 @@ public class MainControler implements Initializable {
 							// TODO Auto-generated catch block
 							e1.printStackTrace();
 						}
-					}
-					
+					}	
 				}
-			});
-		
+			});	
     }
     
     @SuppressWarnings("incomplete-switch")
@@ -418,7 +401,6 @@ public class MainControler implements Initializable {
 			case P:
 				updateFile();
 				break;
-			
 			case B:
 				if(canvasWriter.homothesie<0) {
 					canvasWriter.changeHomothesie(canvasWriter.homothesie-20);
@@ -447,15 +429,10 @@ public class MainControler implements Initializable {
 				graphe.attach(canvasWriter);
 				graphe.update(graphe.getMatriceOriginal());
 				break;
-			}
-			
+			}			
 		});
     	
-    	
     }
-
-
-
 
 	private void rotateRight() {
 		rotation = new RotationRight(graphe.getMatrice(),null); 

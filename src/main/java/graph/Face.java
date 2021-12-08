@@ -1,35 +1,28 @@
 package graph;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
-import javafx.scene.paint.Color;
 
 public class Face implements Comparable<Face> {
-	protected Color color;
+	protected javafx.scene.paint.Color color;
 	protected int nbSommet;
 	protected List<Sommet> sommets;
 	protected double HighestZ;
 	
 	//Une face est une list de plusieurs Sommets
-	public Face(int n, List<Sommet> sommets, Color color) {
+	public Face(int n, List<Sommet> sommets, javafx.scene.paint.Color color) {
 		this.color = color;
 		nbSommet = n;
 		this.sommets = sommets;
-		if (this.HighestZ != 0) {
-			this.HighestZ=findHighestZ();
-		}
-		
-	}
-	
-	public Face(int n , Color c) {
-		this(n, new ArrayList<Sommet>(), c);
+		this.HighestZ=findHighestZ();
 	}
 	
 	public Face(int n ) {
-		this(n, null);
+		this(n, new ArrayList<Sommet>(), null);
 	}
 	
-	public void setColor(Color color2) {
+	public void setColor(javafx.scene.paint.Color color2) {
 		this.color = color2;
 	}
 	
