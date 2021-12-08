@@ -14,7 +14,6 @@ public class UpdateGraph extends Graph{
 	private List<Sommet> sommets = new ArrayList<Sommet>();
 	private boolean hasSetColor;
 	private int nb,a,b,c,d;
-	private double r,g,bl;
 	Matrice lumiere = new Matrice(1,1,1,1,1,1);
 	private CalculColor calculColor = new CalculColor(lumiere,this.color);
 	private Graph original;
@@ -28,7 +27,6 @@ public class UpdateGraph extends Graph{
 		this.faces=this.original.faces;
 		this.matrice=this.original.matrice;
 		this.sommetsDeFaces=this.original.sommetsDeFaces;
-		
 		matrice = ma;
 		faces.clear();
 		sommets.clear();
@@ -62,16 +60,11 @@ public class UpdateGraph extends Graph{
 		if(nb==4) {
 			d = Integer.parseInt(lineToken.nextToken());			
 		}
-		if(lineToken.hasMoreTokens() && !hasSetColor) {
-			r = Double.parseDouble(lineToken.nextToken());
-			g = Double.parseDouble(lineToken.nextToken());
-			bl = Double.parseDouble(lineToken.nextToken());
-		}
 		List<Sommet> tmp = new ArrayList<Sommet>();
 		addListSommet(tmp);
 		Face faceTmp = new Face(nb, tmp, color);
-		//Color colorTmp = calculColor.getColor(faceTmp);
-		//faceTmp = new Face(nb, tmp, colorTmp);
+		Color colorTmp = calculColor.getColor(faceTmp);
+		faceTmp = new Face(nb, tmp, colorTmp);
 		//System.out.println("couleur ombre " + colorTmp);
 		//System.out.println("couleur globale : " + color);
 		faces.add(faceTmp);
