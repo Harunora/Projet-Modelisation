@@ -45,7 +45,7 @@ public class MainControler implements Initializable {
     TreeView<String> treeView;
     
     @FXML
-    ColorPicker faceColor, backgroundColor;
+    ColorPicker areteColorPicker, faceColor, backgroundColor;
     
     @FXML
     Canvas canvas;
@@ -319,6 +319,13 @@ public class MainControler implements Initializable {
 			@Override	
 			public void handle(ActionEvent e) {
 				canvasWriter.setBackgroundColor(backgroundColor.getValue());
+			}
+		});
+        
+        areteColorPicker.setOnAction(new EventHandler<ActionEvent>() {
+			@Override	
+			public void handle(ActionEvent e) {
+				canvasWriter.setLineColor(areteColorPicker.getValue());
 			}
 		});
         

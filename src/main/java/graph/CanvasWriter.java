@@ -19,6 +19,7 @@ public class CanvasWriter implements Observer{
 	public GraphicsContext graphicContext;
 	protected Color modelColor;
 	protected Color backgroundColor;
+	protected Color lineColor;
 	protected List<double[]> x;
 	protected List<double[]> y;
 	protected List<double[]> z;
@@ -35,6 +36,7 @@ public class CanvasWriter implements Observer{
 		z=new ArrayList<double[]>();
 		color=new ArrayList<Color>();
 		backgroundColor = Color.GRAY;
+		lineColor= Color.BLACK;
 		canvas=c;
 		graphicContext=c.getGraphicsContext2D();
 		width=c.getWidth()/2;
@@ -57,6 +59,7 @@ public class CanvasWriter implements Observer{
 				graphicContext.fillPolygon(this.x.get(i),this.y.get(i), this.y.get(i).length);
 			}
 			if(linePrint) {
+				graphicContext.setStroke(lineColor);
 				graphicContext.strokePolygon(this.x.get(i),this.y.get(i), this.y.get(i).length);
 			}
 		}
@@ -123,16 +126,13 @@ public class CanvasWriter implements Observer{
 		this.colorPrint=!this.colorPrint;
 	}
 
-	public void removeFace(int idx) {
-		this.x.remove(idx);
-		this.y.remove(idx);
-		this.z.remove(idx);
-		this.color.remove(idx);
-	}
-
 	public void setBackgroundColor(Color value) {
 		this.backgroundColor=value;
-		System.out.println(backgroundColor);
+		useGraph();
+	}
+	
+	public void setLineColor(Color value) {
+		this.lineColor=value;
 		useGraph();
 	}
 
