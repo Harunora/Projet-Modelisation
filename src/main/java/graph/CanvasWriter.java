@@ -28,6 +28,7 @@ public class CanvasWriter implements Observer{
 	protected double width;
 	private boolean linePrint = true;
 	private boolean colorPrint = true;
+	private boolean pointPrint = true;
 	public int homothesie=-100;
 
 	public CanvasWriter(Canvas c, Graph lf) {
@@ -54,6 +55,12 @@ public class CanvasWriter implements Observer{
 	public void writeOnCanvas() {
 		clear(backgroundColor);
 		for(int i=0;i<this.x.size();i++){
+			if(pointPrint) {
+				graphicContext.setStroke(Color.BLACK);
+				for(int j=0;j<this.x.get(i).length;j++) {
+					graphicContext.strokeLine(this.x.get(i)[j],this.y.get(i)[j] ,this.x.get(i)[j] ,this.y.get(i)[j] );
+				}
+			}
 			if(colorPrint) {
 				graphicContext.setFill(this.color.get(i));
 				graphicContext.fillPolygon(this.x.get(i),this.y.get(i), this.y.get(i).length);
