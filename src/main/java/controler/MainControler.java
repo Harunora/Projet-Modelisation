@@ -124,6 +124,8 @@ public class MainControler implements Initializable {
         
 		fileReader=new FileReader();
 		graphe = fileReader.read(currentFile);
+		grapheTop = graphe;
+		grapheDown = graphe;
 		canvasWriterMain= new CanvasWriter(canvas,graphe);
 		canvasWriterTop= new CanvasWriter(canvasTop,graphe);
 		canvasWriterDown= new CanvasWriter(canvasDown,graphe);
@@ -530,16 +532,16 @@ public class MainControler implements Initializable {
 		currentFile=explorerFile.getFile(treeView);
 		if(currentFile != null && currentFile.isFile()) {
 			graphe = fileReader.read(currentFile);
-			graphe.attach(canvasWriterMain);
-			graphe.attach(canvasWriterTop);
-			graphe.attach(canvasWriterDown);
-			canvasWriterMain.update(graphe);
-			Matrice rotationTop = new RotationUp(graphe.getMatrice(), null).rotate(Math.PI/2.0);
 			grapheTop = graphe;
-			grapheTop.update(rotationTop);
-			canvasWriterTop.update(grapheTop);
-			Matrice rotationSide = new RotationLeft(graphe.getMatrice(), null).rotate(Math.PI/2.0);
 			grapheDown = graphe;
+			canvasWriterMain.update(graphe);
+			Matrice rotationTop = new RotationUp(grapheTop.getMatrice(), null).rotate(Math.PI/2.0);
+			grapheTop.update(rotationTop);
+			Matrice rotationSide = new RotationLeft(grapheDown.getMatrice(), null).rotate(Math.PI/2.0);
+			graphe.attach(canvasWriterMain);
+			grapheTop.attach(canvasWriterTop);
+			grapheDown.attach(canvasWriterDown);
+			canvasWriterTop.update(grapheTop);
 			grapheDown.update(rotationSide);
 			canvasWriterDown.update(grapheDown);
 		}
