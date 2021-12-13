@@ -8,6 +8,7 @@ import file.ExplorerFile;
 import file.UpdateFile;
 import graph.CanvasWriter;
 import graph.FileReader;
+import graph.Matrice;
 import graph.Translation;
 import graph.UpdateGraph;
 import javafx.event.ActionEvent;
@@ -49,7 +50,7 @@ public class MainControler implements Initializable {
     ColorPicker areteColorPicker,pointColor, faceColor, backgroundColor;
     
     @FXML
-    Canvas canvas;
+    Canvas canvas, canvasTop, canvasDown;
     
     @FXML
     CheckBox checkOmbre,printPoint,printColor,printLine;
@@ -65,7 +66,8 @@ public class MainControler implements Initializable {
     
     public Stage stage = new Stage();
     private UpdateGraph graphe = fileReader.read(currentFile);
-    private CanvasWriter canvasWriter;
+    private UpdateGraph grapheTop, grapheDown;
+    private CanvasWriter canvasWriterMain, canvasWriterTop, canvasWriterDown;
     private Rotation rotation;
     private Translation translation;
 
@@ -122,7 +124,9 @@ public class MainControler implements Initializable {
         
 		fileReader=new FileReader();
 		graphe = fileReader.read(currentFile);
-		canvasWriter= new CanvasWriter(canvas,graphe);
+		canvasWriterMain= new CanvasWriter(canvas,graphe);
+		canvasWriterTop= new CanvasWriter(canvasTop,graphe);
+		canvasWriterDown= new CanvasWriter(canvasDown,graphe);
         
         buttonHelp.addEventHandler(MouseEvent.MOUSE_CLICKED, e->{
 
@@ -237,8 +241,8 @@ public class MainControler implements Initializable {
 		buttonHomothetieUp.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent e) {
-				if(canvasWriter.homothesie<0) {
-					canvasWriter.changeHomothesie(canvasWriter.homothesie-20);
+				if(canvasWriterMain.homothesie<0) {
+					canvasWriterMain.changeHomothesie(canvasWriterMain.homothesie-20);
 				}
 				
 			}
@@ -247,8 +251,8 @@ public class MainControler implements Initializable {
 		buttonHomothetieDown.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent e) {
-				if(canvasWriter.homothesie<-21) {
-					canvasWriter.changeHomothesie(canvasWriter.homothesie+20);
+				if(canvasWriterMain.homothesie<-21) {
+					canvasWriterMain.changeHomothesie(canvasWriterMain.homothesie+20);
 					}
 				else {
 					System.out.println("stop");
@@ -298,24 +302,36 @@ public class MainControler implements Initializable {
         printLine.setOnAction(new EventHandler<ActionEvent>() {
 			@Override	
 			public void handle(ActionEvent e) {
-				canvasWriter.printLine(printLine.isSelected());
-				canvasWriter.update(graphe);
+				canvasWriterMain.printLine(printLine.isSelected());
+				canvasWriterMain.update(graphe);
+				canvasWriterTop.printLine(printLine.isSelected());
+				canvasWriterTop.update(graphe);
+				canvasWriterDown.printLine(printLine.isSelected());
+				canvasWriterDown.update(graphe);
 			}
 		});   
         
         printColor.setOnAction(new EventHandler<ActionEvent>() {
 			@Override	
 			public void handle(ActionEvent e) {
-				canvasWriter.printColor(printColor.isSelected());
-				canvasWriter.update(graphe);
+				canvasWriterMain.printColor(printColor.isSelected());
+				canvasWriterMain.update(graphe);
+				canvasWriterTop.printColor(printColor.isSelected());
+				canvasWriterTop.update(graphe);
+				canvasWriterDown.printColor(printColor.isSelected());
+				canvasWriterDown.update(graphe);
 			}
 		});
         
         printPoint.setOnAction(new EventHandler<ActionEvent>() {
 			@Override	
 			public void handle(ActionEvent e) {
-				canvasWriter.printPoint(printPoint.isSelected());
-				canvasWriter.update(graphe);
+				canvasWriterMain.printPoint(printPoint.isSelected());
+				canvasWriterMain.update(graphe);
+				canvasWriterTop.printPoint(printPoint.isSelected());
+				canvasWriterTop.update(graphe);
+				canvasWriterDown.printPoint(printPoint.isSelected());
+				canvasWriterDown.update(graphe);
 			}
 		});
         
@@ -329,21 +345,27 @@ public class MainControler implements Initializable {
         pointColor.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent e) {
-				canvasWriter.setPointColor(pointColor.getValue());
+				canvasWriterMain.setPointColor(pointColor.getValue());
+				canvasWriterTop.setPointColor(pointColor.getValue());
+				canvasWriterDown.setPointColor(pointColor.getValue());
 			}
 		});
         
         backgroundColor.setOnAction(new EventHandler<ActionEvent>() {
 			@Override	
 			public void handle(ActionEvent e) {
-				canvasWriter.setBackgroundColor(backgroundColor.getValue());
+				canvasWriterMain.setBackgroundColor(backgroundColor.getValue());
+				canvasWriterTop.setBackgroundColor(backgroundColor.getValue());
+				canvasWriterDown.setBackgroundColor(backgroundColor.getValue());
 			}
 		});
         
         areteColorPicker.setOnAction(new EventHandler<ActionEvent>() {
 			@Override	
 			public void handle(ActionEvent e) {
-				canvasWriter.setLineColor(areteColorPicker.getValue());
+				canvasWriterMain.setLineColor(areteColorPicker.getValue());
+				canvasWriterTop.setLineColor(areteColorPicker.getValue());
+				canvasWriterDown.setLineColor(areteColorPicker.getValue());
 			}
 		});
         
@@ -394,66 +416,9 @@ public class MainControler implements Initializable {
 			public void handle(ActionEvent e) {
 				graphe.modifierLumiere(0, 0, -1);
 			}
-		}); 
+		});}
         
-        Fview.setOnAction(new EventHandler<ActionEvent>() {
-			@Override	
-			public void handle(ActionEvent e) {
-				Rotation rotationView = new RotationLeft(graphe.getMatrice(),null); 
-				rotationView.rotate(Math.PI/2);
-				fileReader=new FileReader();
-				if(currentFile != null && currentFile.isFile()) {
-					UpdateGraph grph = fileReader.read(currentFile);
-					StackPane sp1 = new StackPane();
-					try {
-						CanvasViewer cv = new CanvasViewer(canvasWriter, rotationView, canvasWriter.homothesie, grph);
-						cv.canvasShow(sp1, "Front View");
-					} catch (IOException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
-				}	
-			}
-		});
-        Aview.setOnAction(new EventHandler<ActionEvent>() {
-			@Override
-			public void handle(ActionEvent e) {
-				Rotation rotationView = new RotationUp(graphe.getMatrice(),null); 
-				rotationView.rotate(Math.PI/2);
-				fileReader=new FileReader();
-				if(currentFile != null && currentFile.isFile()) {
-					UpdateGraph grph = fileReader.read(currentFile);
-					StackPane sp1 = new StackPane();
-					try {
-						CanvasViewer cv = new CanvasViewer(canvasWriter, rotationView, canvasWriter.homothesie, grph);
-						cv.canvasShow(sp1, "Above View");
-					} catch (IOException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
-				}	
-			}
-		});
-		Sview.setOnAction(new EventHandler<ActionEvent>() {
-				@Override	
-				public void handle(ActionEvent e) {
-					Rotation rotationView = new RotationLeft(graphe.getMatrice(),null); 
-					rotationView.rotate(Math.PI);
-					fileReader=new FileReader();
-					if(currentFile != null && currentFile.isFile()) {
-						UpdateGraph grph = fileReader.read(currentFile);
-						StackPane sp1 = new StackPane();
-						try {
-							CanvasViewer cv = new CanvasViewer(canvasWriter, rotationView, canvasWriter.homothesie, grph);
-							cv.canvasShow(sp1, "Side View");
-						} catch (IOException e1) {
-							// TODO Auto-generated catch block
-							e1.printStackTrace();
-						}
-					}	
-				}
-			});	
-    }
+       
     
     @SuppressWarnings("incomplete-switch")
 	public void setScene (Scene s) {
@@ -481,14 +446,14 @@ public class MainControler implements Initializable {
 				updateFile();
 				break;
 			case B:
-				if(canvasWriter.homothesie<0) {
-					canvasWriter.changeHomothesie(canvasWriter.homothesie-20);
+				if(canvasWriterMain.homothesie<0) {
+					canvasWriterMain.changeHomothesie(canvasWriterMain.homothesie-20);
 				}
 				break;
 				
 			case N:
-				if(canvasWriter.homothesie<-21) {
-					canvasWriter.changeHomothesie(canvasWriter.homothesie+20);
+				if(canvasWriterMain.homothesie<-21) {
+					canvasWriterMain.changeHomothesie(canvasWriterMain.homothesie+20);
 				}
 				break;
 			case T:
@@ -505,7 +470,9 @@ public class MainControler implements Initializable {
 				break;
 			case W:
 				graphe = fileReader.read(currentFile);
-				graphe.attach(canvasWriter);
+				graphe.attach(canvasWriterMain);
+				graphe.attach(canvasWriterTop);
+				graphe.attach(canvasWriterDown);
 				graphe.update(graphe.getMatriceOriginal());
 				break;
 			}			
@@ -556,13 +523,25 @@ public class MainControler implements Initializable {
 	}
     
     private void updateFile() {
-		canvasWriter.clear(javafx.scene.paint.Color.WHITE);
+		canvasWriterMain.clear(javafx.scene.paint.Color.WHITE);
+		canvasWriterTop.clear(javafx.scene.paint.Color.WHITE);
+		canvasWriterDown.clear(javafx.scene.paint.Color.WHITE);
 		fileReader = new FileReader();
 		currentFile=explorerFile.getFile(treeView);
 		if(currentFile != null && currentFile.isFile()) {
 			graphe = fileReader.read(currentFile);
-			graphe.attach(canvasWriter);
-			canvasWriter.update(graphe);		
+			graphe.attach(canvasWriterMain);
+			graphe.attach(canvasWriterTop);
+			graphe.attach(canvasWriterDown);
+			canvasWriterMain.update(graphe);
+			Matrice rotationTop = new RotationUp(graphe.getMatrice(), null).rotate(Math.PI/2.0);
+			grapheTop = graphe;
+			grapheTop.update(rotationTop);
+			canvasWriterTop.update(grapheTop);
+			Matrice rotationSide = new RotationLeft(graphe.getMatrice(), null).rotate(Math.PI/2.0);
+			grapheDown = graphe;
+			grapheDown.update(rotationSide);
+			canvasWriterDown.update(grapheDown);
 		}
 	}
     
