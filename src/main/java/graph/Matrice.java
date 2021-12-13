@@ -55,6 +55,16 @@ public class Matrice {
 		return v[idplace];
 	}
 	
+	public void modifieX(int idplace,double addX) {
+		this.x[idplace]+=addX;
+	}
+	public void modifieY(int idplace,double addY) {
+		this.y[idplace]+=addY;
+	}
+	public void modifieZ(int idplace,double addZ) {
+		this.z[idplace]+=addZ;
+	}
+	
 	public String toString() {
 		String res = "";
 		for(int i = 0; i<taille; i++) {

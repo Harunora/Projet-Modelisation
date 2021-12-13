@@ -67,8 +67,10 @@
                                        <children>
                                           <ToolBar prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                             <items>
-                                                <Button fx:id="printLine" mnemonicParsing="false" text="Afficher les lignes" />
-                                                <Button fx:id="printColor" mnemonicParsing="false" text="Afficher les faces en couleur" />
+                                                <CheckBox fx:id="printPoint" mnemonicParsing="false" selected="true" text="Afficher les points" />
+                                                <CheckBox fx:id="printLine" mnemonicParsing="false" selected="true" text="Afficher les lignes" />
+                                                <CheckBox fx:id="printColor" mnemonicParsing="false" selected="true" text="Afficher des faces" />
+                                                <CheckBox fx:id="checkOmbre" mnemonicParsing="false" selected="true" text="Ombres" />
                                             </items>
                                           </ToolBar>
                                        </children>
@@ -81,14 +83,15 @@
                                        <children>
                                           <ToolBar prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                              <items>
+                                                <Label text="Couleur des points :" />
+                                                <ColorPicker fx:id="pointColor" prefHeight="26.0" prefWidth="78.0" />
                                                 <Label text="Couleur des arêtes :" />
-                                                <ColorPicker fx:id="areteColorPicker" promptText="BackgroundColor" />
+                                                <ColorPicker fx:id="areteColorPicker" prefHeight="26.0" prefWidth="78.0" promptText="BackgroundColor" />
                                                 <Label text="Couleur des faces :" />
-                                                <ColorPicker fx:id="faceColor" promptText="ModelColor" />
+                                                <ColorPicker fx:id="faceColor" prefHeight="26.0" prefWidth="78.0" promptText="ModelColor" />
                                                 <Label text="Couleur du fond :" />
-                                                <ColorPicker fx:id="backgroundColor" promptText="BackgroundColor" />
+                                                <ColorPicker fx:id="backgroundColor" prefHeight="26.0" prefWidth="78.0" promptText="BackgroundColor" />
                                                 <Label text="                     " />
-                                                <CheckBox fx:id="checkOmbre" mnemonicParsing="false" text="Ombres" />
                                              </items>
                                           </ToolBar>
                                        </children>
@@ -127,9 +130,28 @@
                                     </AnchorPane>
                                 </content>
                               </Tab>
+                              <Tab closable="false" text="Lumiere">
+                                 <content>
+                                    <AnchorPane>
+                                       <children>
+                                          <ToolBar prefHeight="40.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <items>
+                                                <Label text="Déplacement :" />
+                                                <Button fx:id="buttonLightLeft" mnemonicParsing="false" text="←" />
+                                                <Button fx:id="buttonLightUp" mnemonicParsing="false" text="↑" />
+                                                <Button fx:id="buttonLightRight" mnemonicParsing="false" text="→" />
+                                                <Button fx:id="buttonLightDown" mnemonicParsing="false" text="↓" />
+                                                <Button fx:id="buttonLightZUp" mnemonicParsing="false" text="Z+" />
+                                                <Button fx:id="buttonLightZDown" mnemonicParsing="false" text="Z-" />
+                                             </items>
+                                          </ToolBar>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
                            </tabs>
                         </TabPane>
-                        <Canvas fx:id="canvas" height="734.0" layoutX="-13.0" layoutY="68.0" width="900.0" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="68.0" />
+                        <Canvas fx:id="canvas" height="734.0" layoutY="67.0" width="900.0" AnchorPane.bottomAnchor="-0.20000000000004547" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="67.0" />
                      </children>
                   </AnchorPane>
               </items>

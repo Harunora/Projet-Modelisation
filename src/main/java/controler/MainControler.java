@@ -40,19 +40,19 @@ import rotation.RotationUp;
 
 public class MainControler implements Initializable {
     @FXML
-    Button buttonLoadFolder, btreebase , buttonHelp, buttonRotateUp, buttonRotateRight, buttonRotateLeft, buttonRotateDown, buttonRotateAroundRight, buttonRotateAroundLeft, buttonTranslateUp, buttonTranslateRight, buttonTranslateLeft, buttonTranslateDown, buttonReloadCanvas, buttonHomothetieDown, buttonHomothetieUp, buttonModelData, Fview, Aview ,Sview,printColor,printLine;
+    Button buttonLoadFolder, btreebase ,buttonLightZDown,buttonLightZUp,buttonLightUp,buttonLightDown,buttonLightRight,buttonLightLeft,buttonHelp, buttonRotateUp, buttonRotateRight, buttonRotateLeft, buttonRotateDown, buttonRotateAroundRight, buttonRotateAroundLeft, buttonTranslateUp, buttonTranslateRight, buttonTranslateLeft, buttonTranslateDown, buttonReloadCanvas, buttonHomothetieDown, buttonHomothetieUp, buttonModelData, Fview, Aview ,Sview;
     
     @FXML
     TreeView<String> treeView;
     
     @FXML
-    ColorPicker areteColorPicker, faceColor, backgroundColor;
+    ColorPicker areteColorPicker,pointColor, faceColor, backgroundColor;
     
     @FXML
     Canvas canvas;
     
     @FXML
-    CheckBox checkOmbre;
+    CheckBox checkOmbre,printPoint,printColor,printLine;
     
     @FXML
     HBox hcontainerCanvas;
@@ -298,7 +298,7 @@ public class MainControler implements Initializable {
         printLine.setOnAction(new EventHandler<ActionEvent>() {
 			@Override	
 			public void handle(ActionEvent e) {
-				canvasWriter.inversePrintLine();
+				canvasWriter.printLine(printLine.isSelected());
 				canvasWriter.update(graphe);
 			}
 		});   
@@ -306,7 +306,15 @@ public class MainControler implements Initializable {
         printColor.setOnAction(new EventHandler<ActionEvent>() {
 			@Override	
 			public void handle(ActionEvent e) {
-				canvasWriter.inversePrintColor();
+				canvasWriter.printColor(printColor.isSelected());
+				canvasWriter.update(graphe);
+			}
+		});
+        
+        printPoint.setOnAction(new EventHandler<ActionEvent>() {
+			@Override	
+			public void handle(ActionEvent e) {
+				canvasWriter.printPoint(printPoint.isSelected());
 				canvasWriter.update(graphe);
 			}
 		});
@@ -315,6 +323,13 @@ public class MainControler implements Initializable {
 			@Override
 			public void handle(ActionEvent e) {
 				graphe.setColor(faceColor.getValue());
+			}
+		});
+        
+        pointColor.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent e) {
+				canvasWriter.setPointColor(pointColor.getValue());
 			}
 		});
         
@@ -338,6 +353,48 @@ public class MainControler implements Initializable {
 				graphe.ombrage(checkOmbre.isSelected());
 			}
 		});
+        
+        buttonLightUp.setOnAction(new EventHandler<ActionEvent>() {
+			@Override	
+			public void handle(ActionEvent e) {
+				graphe.modifierLumiere(0, 1, 0);
+			}
+		}); 
+        
+        buttonLightDown.setOnAction(new EventHandler<ActionEvent>() {
+			@Override	
+			public void handle(ActionEvent e) {
+				graphe.modifierLumiere(0, -1, 0);
+			}
+		});  
+        
+        buttonLightRight.setOnAction(new EventHandler<ActionEvent>() {
+			@Override	
+			public void handle(ActionEvent e) {
+				graphe.modifierLumiere(-1, 0, 0);
+			}
+		});  
+        
+        buttonLightLeft.setOnAction(new EventHandler<ActionEvent>() {
+			@Override	
+			public void handle(ActionEvent e) {
+				graphe.modifierLumiere(1, 0, 0);
+			}
+		});  
+        
+        buttonLightZUp.setOnAction(new EventHandler<ActionEvent>() {
+			@Override	
+			public void handle(ActionEvent e) {
+				graphe.modifierLumiere(0, 0, 1);
+			}
+		}); 
+        
+        buttonLightZDown.setOnAction(new EventHandler<ActionEvent>() {
+			@Override	
+			public void handle(ActionEvent e) {
+				graphe.modifierLumiere(0, 0, -1);
+			}
+		}); 
         
         Fview.setOnAction(new EventHandler<ActionEvent>() {
 			@Override	
@@ -377,7 +434,7 @@ public class MainControler implements Initializable {
 				}	
 			}
 		});
-		 Sview.setOnAction(new EventHandler<ActionEvent>() {
+		Sview.setOnAction(new EventHandler<ActionEvent>() {
 				@Override	
 				public void handle(ActionEvent e) {
 					Rotation rotationView = new RotationLeft(graphe.getMatrice(),null); 

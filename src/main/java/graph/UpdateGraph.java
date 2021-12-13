@@ -88,4 +88,12 @@ public class UpdateGraph extends Graph{
 			tmp.add(sommets.get(d));			
 		}
 	}
+	
+	public void modifierLumiere(int x,int y,int z) {
+		lumiere.modifieX(0, x);
+		lumiere.modifieY(0, y);
+		lumiere.modifieZ(0, z);
+		calculColor = new CalculColor(lumiere,this.color);
+		update(matrice);
+	}
 }

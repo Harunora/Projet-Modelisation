@@ -17,7 +17,7 @@ public class CanvasWriter implements Observer{
 	public Graph model;
 	public Canvas canvas;
 	public GraphicsContext graphicContext;
-	protected Color modelColor;
+	protected Color pointColor;
 	protected Color backgroundColor;
 	protected Color lineColor;
 	protected List<double[]> x;
@@ -38,6 +38,7 @@ public class CanvasWriter implements Observer{
 		color=new ArrayList<Color>();
 		backgroundColor = Color.GRAY;
 		lineColor= Color.BLACK;
+		pointColor=Color.BLACK;
 		canvas=c;
 		graphicContext=c.getGraphicsContext2D();
 		width=c.getWidth()/2;
@@ -56,7 +57,7 @@ public class CanvasWriter implements Observer{
 		clear(backgroundColor);
 		for(int i=0;i<this.x.size();i++){
 			if(pointPrint) {
-				graphicContext.setStroke(Color.BLACK);
+				graphicContext.setStroke(pointColor);
 				for(int j=0;j<this.x.get(i).length;j++) {
 					graphicContext.strokeLine(this.x.get(i)[j],this.y.get(i)[j] ,this.x.get(i)[j] ,this.y.get(i)[j] );
 				}
@@ -103,36 +104,18 @@ public class CanvasWriter implements Observer{
 		writeOnCanvas();
 	}
 
-	public double getHighestValue(double[] tab) {
-		double retour=-1000.00;
-		for(int i=0;i<tab.length;i++) {
-			if(retour<tab[i]) {
-				retour=tab[i];
-			}
-		}
-		return retour;
+	public void printLine(boolean value) {
+		this.linePrint=value;
 	}
 
-	public int getPositionHighestZ() {
-		int retour=0;
-
-		for(int i=0;i<z.size();i++) {
-			if(getHighestValue(z.get(i))>getHighestValue(z.get(retour))) {
-				retour=i;
-			}
-		}
-
-		return retour;
+	public void printColor(boolean value) {
+		this.colorPrint=value;
 	}
-
-	public void inversePrintLine() {
-		this.linePrint=!this.linePrint;
+	
+	public void printPoint(boolean value) {
+		this.pointPrint=value;
 	}
-
-	public void inversePrintColor() {
-		this.colorPrint=!this.colorPrint;
-	}
-
+	
 	public void setBackgroundColor(Color value) {
 		this.backgroundColor=value;
 		useGraph();
@@ -140,6 +123,11 @@ public class CanvasWriter implements Observer{
 	
 	public void setLineColor(Color value) {
 		this.lineColor=value;
+		useGraph();
+	}
+	
+	public void setPointColor(Color value) {
+		this.pointColor=value;
 		useGraph();
 	}
 
