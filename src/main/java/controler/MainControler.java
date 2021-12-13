@@ -18,6 +18,7 @@ import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TreeView;
@@ -49,6 +50,9 @@ public class MainControler implements Initializable {
     
     @FXML
     Canvas canvas;
+    
+    @FXML
+    CheckBox checkOmbre;
     
     @FXML
     HBox hcontainerCanvas;
@@ -310,7 +314,6 @@ public class MainControler implements Initializable {
         faceColor.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent e) {
-				System.out.println(faceColor.getValue());
 				graphe.setColor(faceColor.getValue());
 			}
 		});
@@ -326,6 +329,13 @@ public class MainControler implements Initializable {
 			@Override	
 			public void handle(ActionEvent e) {
 				canvasWriter.setLineColor(areteColorPicker.getValue());
+			}
+		});
+        
+        checkOmbre.setOnAction(new EventHandler<ActionEvent>() {
+			@Override	
+			public void handle(ActionEvent e) {
+				graphe.ombrage(checkOmbre.isSelected());
 			}
 		});
         

@@ -17,6 +17,7 @@ public class UpdateGraph extends Graph{
 	Matrice lumiere = new Matrice(1,1,1,1,1,1);
 	private CalculColor calculColor = new CalculColor(lumiere,this.color);
 	private Graph original;
+	protected boolean calculeLumiere = true;
 
 
 	public UpdateGraph(int nbFace, List<Face> faces, Matrice matrice, List<String> sommetDeFaces, String auteur) {
@@ -36,7 +37,7 @@ public class UpdateGraph extends Graph{
 		readFace();	
 		notifyObserver();
 	}
-	
+
 	public void setColor(javafx.scene.paint.Color color) {
 		hasSetColor = true;
 		this.color = color;
@@ -63,12 +64,20 @@ public class UpdateGraph extends Graph{
 		List<Sommet> tmp = new ArrayList<Sommet>();
 		addListSommet(tmp);
 		Face faceTmp = new Face(nb, tmp, color);
-		Color colorTmp = calculColor.getColor(faceTmp);
+		Color colorTmp = color;
+		if(calculeLumiere){
+			colorTmp=calculColor.getColor(faceTmp);
+		}
 		faceTmp = new Face(nb, tmp, colorTmp);
 		//System.out.println("couleur ombre " + colorTmp);
 		//System.out.println("couleur globale : " + color);
 		faces.add(faceTmp);
 
+	}
+	
+	public void ombrage(boolean value) {
+		this.calculeLumiere=value;
+		update(matrice);
 	}
 
 	private void addListSommet(List<Sommet> tmp) {
