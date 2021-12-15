@@ -7,6 +7,8 @@ import java.util.StringTokenizer;
 
 import javafx.scene.paint.Color;
 import math.CalculColor;
+import rotation.RotationLeft;
+import rotation.RotationUp;
 
 public class UpdateGraph extends Graph{
 
@@ -74,6 +76,20 @@ public class UpdateGraph extends Graph{
 		faces.add(faceTmp);
 
 	}
+	/*
+
+    public UpdateGraph getVueDessus() {
+        Matrice rotationTop = new RotationUp(this.getMatrice(), null).rotate(Math.PI/2.0);
+        UpdateGraph tmp = this.update(rotationTop);
+        return retour;
+    }
+	
+	public UpdateGraph getVueCote() {
+        Matrice rotationSide = new RotationLeft(this.getMatrice(), null).rotate(Math.PI/2.0);
+        UpdateGraph retour= new UpdateGraph(nb, faces, rotationSide, sommetsDeFaces, auteur);
+        return retour;
+    }
+    */
 	
 	public void ombrage(boolean value) {
 		this.calculeLumiere=value;
