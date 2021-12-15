@@ -184,11 +184,11 @@ public class MainControler implements Initializable {
         		secondaryLayout.getChildren().add(textField);
         		secondaryLayout.getChildren().add(validButton);
 */
-        		Scene secondScene = new Scene(secondaryLayout, 200, 80);
+        		Scene secondScene = new Scene(secondaryLayout, 250,80);
 
         		// New window (Stage)
         		Stage newWindow = new Stage();
-        		newWindow.setTitle("Info Fichier");
+        		newWindow.setTitle("Info Auteur");
         		newWindow.setScene(secondScene);
 
         		// Specifies the modality for new window.
@@ -210,10 +210,15 @@ public class MainControler implements Initializable {
         		TextArea textField = new TextArea();
         		Button validButton = new Button();
         		StackPane secondaryLayout = new StackPane();
+        		validButton.setText("Confirmer");
+        		textField.setPrefSize(100.0,40.0);
+        		textField.setMinSize(Region.USE_PREF_SIZE, Region.USE_PREF_SIZE);
+        		validButton.setPrefSize(100.0, 40.0);
+        		validButton.setMinSize(Region.USE_PREF_SIZE, Region.USE_PREF_SIZE);
         		secondaryLayout.getChildren().add(textField);
         		secondaryLayout.getChildren().add(validButton);
 
-        		Scene secondScene = new Scene(secondaryLayout, 200, 80);
+        		Scene secondScene = new Scene(secondaryLayout, 250, 80);
 
         		// New window (Stage)
         		Stage newWindow = new Stage();
