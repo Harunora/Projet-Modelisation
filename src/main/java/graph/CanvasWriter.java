@@ -47,11 +47,13 @@ public class CanvasWriter implements Observer{
 		this.update(model);
 	}
 
+	/*
 	public void changeHomothesie(int i) {
 		homothesie=i;
 		useGraph();
 
 	}
+	*/
 
 	public void writeOnCanvas() {
 		clear(backgroundColor);

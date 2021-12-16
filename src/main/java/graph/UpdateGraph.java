@@ -33,7 +33,7 @@ public class UpdateGraph extends Graph{
 		matrice = ma;
 		faces.clear();
 		sommets.clear();
-		for(int i = 0; i<matrice.taille; i++) {
+		for(int i = 0; i<matrice.getTaille(); i++) {
 			sommets.add(new Sommet(matrice.getX(i),matrice.getY(i),matrice.getZ(i)));
 		}
 		readFace();	

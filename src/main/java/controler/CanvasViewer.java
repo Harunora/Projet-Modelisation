@@ -45,7 +45,7 @@ public class CanvasViewer {
         
         updateGraph.update(rotation.getMcourante());
         canvasWriter= new CanvasWriter(canvasView,updateGraph);
-        canvasWriter.changeHomothesie(homothetie);
+        //canvasWriter.changeHomothesie(homothetie);
 		
 		
 	}

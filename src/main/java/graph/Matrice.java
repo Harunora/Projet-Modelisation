@@ -2,12 +2,12 @@ package graph;
 
 
 public class Matrice {
-	protected int idx = 0;
-	protected int taille;
-	protected double[] x ;
-	protected double[] y ;
-	protected double[] z ;
-	protected double[] v;
+	private int idx = 0;
+	private int taille;
+	private double[] x ;
+	private double[] y ;
+	private double[] z ;
+	private double[] v;
 
 
 	public Matrice(int nbSommets, int nbFaces) {
@@ -38,6 +38,15 @@ public class Matrice {
 		this.v[idx] = v;
 		idx ++;
 	}
+	
+	public void update() {
+		for(int i = 0; i<taille; i++) {
+			x[i] = x[i]*z[i];
+			y[i] = y[i]*z[i];
+		    z[i] = z[i]*z[i];
+		}
+	}
+	
 	public void add(Sommet f) {
 		this.add(f.getX(),f.getY(),f.getZ(), 1);
 	}
@@ -76,4 +85,26 @@ public class Matrice {
 	public int getTaille() {
 		return taille;
 	}
+
+	public int getIdx() {
+		return idx;
+	}
+
+	public double[] getX() {
+		return x;
+	}
+
+	public double[] getY() {
+		return y;
+	}
+
+	public double[] getZ() {
+		return z;
+	}
+
+	public double[] getV() {
+		return v;
+	}
+	
+	
 }

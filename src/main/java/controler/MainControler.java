@@ -9,7 +9,6 @@ import file.UpdateFile;
 import graph.CanvasWriter;
 import graph.FileReader;
 import graph.Matrice;
-import graph.Translation;
 import graph.UpdateGraph;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -35,6 +34,8 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import math.Homothetie;
+import math.Translation;
 import rotation.Rotation;
 import rotation.RotationAroundLeft;
 import rotation.RotationAroundRight;
@@ -74,6 +75,7 @@ public class MainControler implements Initializable {
     private CanvasWriter canvasWriterMain, canvasWriterTop, canvasWriterDown;
     private Rotation rotation;
     private Translation translation;
+    private Homothetie homothetie;
 
     
     @SuppressWarnings("incomplete-switch")
@@ -317,7 +319,7 @@ public class MainControler implements Initializable {
 			@Override
 			public void handle(ActionEvent e) {
 				if(canvasWriterMain.homothesie<0) {
-					canvasWriterMain.changeHomothesie(canvasWriterMain.homothesie-20);
+					homothetieAction(5);
 				}
 				
 			}
@@ -327,7 +329,7 @@ public class MainControler implements Initializable {
 			@Override
 			public void handle(ActionEvent e) {
 				if(canvasWriterMain.homothesie<-21) {
-					canvasWriterMain.changeHomothesie(canvasWriterMain.homothesie+20);
+					homothetieAction(-5);
 					}
 				else {
 					System.out.println("stop");
@@ -339,14 +341,14 @@ public class MainControler implements Initializable {
 		buttonTranslateRight.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
 				if(currentFile != null && currentFile.isFile()) {
-					translateAction(-1,0);
+					translateAction(0.9,0.0,0.0);
 				}	
 			}
 		});
 		buttonTranslateLeft.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
 				if(currentFile != null && currentFile.isFile()) {
-					translateAction(1,0);
+					translateAction(1.1,0.0,0.0);
 				}
 			}
 		});
@@ -354,7 +356,7 @@ public class MainControler implements Initializable {
 		buttonTranslateUp.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
 				if(currentFile != null && currentFile.isFile()) {
-					translateAction(0,1);
+					translateAction(0.0,1.1,0.0);
 				}	
 			}
 		});
@@ -362,7 +364,7 @@ public class MainControler implements Initializable {
 		buttonTranslateDown.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
 				if(currentFile != null && currentFile.isFile()) {
-					translateAction(0,-1);
+					translateAction(0.0,0.9,0.0);
 				}
 			}
 		});
@@ -522,26 +524,26 @@ public class MainControler implements Initializable {
 				break;
 			case B:
 				if(canvasWriterMain.homothesie<0) {
-					canvasWriterMain.changeHomothesie(canvasWriterMain.homothesie-20);
+					homothetieAction(1.2);
 				}
 				break;
 				
 			case N:
 				if(canvasWriterMain.homothesie<-21) {
-					canvasWriterMain.changeHomothesie(canvasWriterMain.homothesie+20);
+					homothetieAction(0.8);
 				}
 				break;
 			case T:
-				translateAction(0,1);
+				translateAction(0.0,1.1,0.0);
 				break;
 			case F:
-				translateAction(1,0);
+				translateAction(1.1,0.0,0.0);
 				break;
 			case G:
-				translateAction(0,-1);
+				translateAction(0.0,0.9,0.0);
 				break;
 			case H:
-				translateAction(-1,0);
+				translateAction(0.9,0.0,0.0);
 				break;
 			case W:
 				graphe = fileReader.read(currentFile);
@@ -591,10 +593,19 @@ public class MainControler implements Initializable {
 		graphe.update(rotation.getMcourante());
 	}
 
-	private void translateAction(int x, int y) {
-		translation = new Translation(graphe.getMatrice(), x, y);
-		translation.translate();
+	private void translateAction(double x, double y, double z) {
+		translation = new Translation(graphe.getMatrice());
+		System.out.println("avant : " + translation.getMcourante().getX(0));
+		translation.translate(x, y, z);
 		graphe.update(translation.getMcourante());
+		System.out.println("apres : " + translation.getMcourante().getX(0));
+
+	}
+	
+	private void homothetieAction(double k) {
+		homothetie = new Homothetie(graphe.getMatrice());
+		homothetie.homothetate(k);
+		graphe.update(homothetie.getMcourante());
 	}
     
     private void updateFile() {
