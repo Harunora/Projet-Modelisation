@@ -341,14 +341,14 @@ public class MainControler implements Initializable {
 		buttonTranslateRight.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
 				if(currentFile != null && currentFile.isFile()) {
-					translateAction(0.9,0.0,0.0);
+					translateAction(-0.5,0.0,0.0);
 				}	
 			}
 		});
 		buttonTranslateLeft.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
 				if(currentFile != null && currentFile.isFile()) {
-					translateAction(1.1,0.0,0.0);
+					translateAction(0.5,0.0,0.0);
 				}
 			}
 		});
@@ -356,7 +356,7 @@ public class MainControler implements Initializable {
 		buttonTranslateUp.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
 				if(currentFile != null && currentFile.isFile()) {
-					translateAction(0.0,1.1,0.0);
+					translateAction(0.0,0.5,0.0);
 				}	
 			}
 		});
@@ -364,7 +364,7 @@ public class MainControler implements Initializable {
 		buttonTranslateDown.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
 				if(currentFile != null && currentFile.isFile()) {
-					translateAction(0.0,0.9,0.0);
+					translateAction(0.0,-0.5,0.0);
 				}
 			}
 		});
@@ -534,16 +534,16 @@ public class MainControler implements Initializable {
 				}
 				break;
 			case T:
-				translateAction(0.0,1.1,0.0);
+				translateAction(0.0,0.5,0.0);
 				break;
 			case F:
-				translateAction(1.1,0.0,0.0);
+				translateAction(0.5,0.0,0.0);
 				break;
 			case G:
-				translateAction(0.0,0.9,0.0);
+				translateAction(0.0,-0.5,0.0);
 				break;
 			case H:
-				translateAction(0.9,0.0,0.0);
+				translateAction(-0.5,0.0,0.0);
 				break;
 			case W:
 				graphe = fileReader.read(currentFile);
@@ -595,10 +595,10 @@ public class MainControler implements Initializable {
 
 	private void translateAction(double x, double y, double z) {
 		translation = new Translation(graphe.getMatrice());
-		System.out.println("avant : " + translation.getMcourante().getX(0));
-		translation.translate(x, y, z);
+		System.out.println("avant : " + graphe.getMatrice().getX(0));
+		translation.translate(new Matrice(1, 1 , x , y, z ,1.0));
 		graphe.update(translation.getMcourante());
-		System.out.println("apres : " + translation.getMcourante().getX(0));
+		System.out.println("apres : " + graphe.getMatrice().getX(0));
 
 	}
 	
