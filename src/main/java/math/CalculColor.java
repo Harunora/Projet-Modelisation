@@ -42,7 +42,7 @@ public class CalculColor {
 		ArrayList<Sommet> listsommet = (ArrayList<Sommet>) face.getSommets();
 		if(face.getNbSommet()== 3) {
 			ProduitScalaire produitScalaire = new ProduitScalaire(listsommet.get(0), listsommet.get(1));
-			produitScalaire.ProdScal(new ProduitScalaire(listsommet.get(0), listsommet.get(2)).getMatrice());
+			produitScalaire.prodScal(new ProduitScalaire(listsommet.get(0), listsommet.get(2)).getMatrice());
 			ProdVectoUni prodVectoUni = new ProdVectoUni(produitScalaire);
 			// la il reste a faire le calcule avec la couleur
 			double coef = calcfactlumiere(prodVectoUni);	

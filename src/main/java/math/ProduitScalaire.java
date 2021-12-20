@@ -47,10 +47,10 @@ public class ProduitScalaire {
 	 *
 	 * @param matrice the m
 	 */
-	public void ProdScal(Matrice matrice) {
+	public void prodScal(Matrice matrice) {
 		Matrice res;
 		if(verifProd(matrice)){
-			res = CalcScal(matrice);
+			res = calcScal(matrice);
 		}else {
 			res = new Matrice(1,1);
 		}
@@ -63,12 +63,12 @@ public class ProduitScalaire {
 	 * @param matrice the m
 	 * @return the matrice
 	 */
-	public Matrice CalcScal(Matrice matrice) {
+	public Matrice calcScal(Matrice matrice) {
 		Matrice res = new Matrice(1,1);
-		double coord_x = this.matrice.getY(0) * matrice.getZ(0) - this.matrice.getZ(0) * matrice.getY(0);
-		double coord_y = this.matrice.getZ(0) * matrice.getX(0) - this.matrice.getX(0) * matrice.getZ(0);
-		double coord_z = this.matrice.getX(0) * matrice.getY(0) - this.matrice.getY(0) * matrice.getX(0);
-		res.add(coord_x, coord_y, coord_z, 1);
+		double coordX = this.matrice.getY(0) * matrice.getZ(0) - this.matrice.getZ(0) * matrice.getY(0);
+		double coordY = this.matrice.getZ(0) * matrice.getX(0) - this.matrice.getX(0) * matrice.getZ(0);
+		double coordZ = this.matrice.getX(0) * matrice.getY(0) - this.matrice.getY(0) * matrice.getX(0);
+		res.add(coordX, coordY, coordZ, 1);
 		return res;
 	}
 

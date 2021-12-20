@@ -19,17 +19,18 @@ class ColorFacecalcTest {
 	 * Simpletest face.
 	 */
 	@Test
-	void SimpletestFace() {
-		Color c = new Color(64.0/255.0, 255.0/255.0, 64.0/255.0, 1.0);
+	void simpletestFace() {
+		Color color = new Color(64.0/255.0, 255.0/255.0, 64.0/255.0, 1.0);
 		Matrice lumiere = new Matrice(1,1);
 		lumiere.add(100,100,100,1);
-		CalculColor cC = new CalculColor(lumiere, c);
-		Face f = new Face(3, c);
-		f.addSommet(new Sommet(1, 2, 3));
-		f.addSommet(new Sommet(2,2,5));
-		f.addSommet(new Sommet(2,3,3));
+		CalculColor calcolor = new CalculColor(lumiere, color);
+		Face face = new Face(0, color);
 		
-		Color res = cC.getColor(f);
+		face.addSommet(new Sommet(1, 2, 3));
+		face.addSommet(new Sommet(2,2,5));
+		face.addSommet(new Sommet(2,3,3));
+		
+		Color res = calcolor.getColor(face);
 		Color sol1 = new Color(12.0/255.0, 49.0/255.0, 12.0/255.0, 1.0);
 		assertEquals(sol1.toString(), res.toString());
 		
@@ -40,16 +41,16 @@ class ColorFacecalcTest {
 	 */
 	@Test
 	void colorbehind() {
-		Color c = new Color(64.0/255.0, 255.0/255.0, 64.0/255.0, 1.0);
+		Color color = new Color(64.0/255.0, 255.0/255.0, 64.0/255.0, 1.0);
 		Matrice lumiere = new Matrice(1,1);
 		lumiere.add(1,1,1,1);
-		CalculColor cC = new CalculColor(lumiere, c);
-		Face f = new Face(3, c);
-		f.addSommet(new Sommet(1, 2, 3));
-		f.addSommet(new Sommet(2,2,5));
-		f.addSommet(new Sommet(2,3,3));
+		CalculColor colorCalc = new CalculColor(lumiere, color);
+		Face faces= new Face(3, color);
+		faces.addSommet(new Sommet(1, 2, 3));
+		faces.addSommet(new Sommet(2,2,5));
+		faces.addSommet(new Sommet(2,3,3));
 		
-		Color res = cC.getColor(f);
+		Color res = colorCalc.getColor(faces);
 		Color sol1 = new Color(12.0/255.0, 49.0/255.0, 12.0/255.0, 1.0);
 		assertEquals(sol1.toString(), res.toString());
 	}

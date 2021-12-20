@@ -10,18 +10,18 @@ public class RotationAroundLeft extends Mouvement {
 	/**
 	 * Instantiates a new rotation around left.
 	 *
-	 * @param m the m
-	 * @param r the r
+	 * @param matrice 
+	 * @param mouvement 
 	 */
-	public RotationAroundLeft(Matrice m, Mouvement r) {
-		super(m, r);
+	public RotationAroundLeft(Matrice matrice, Mouvement mouvement) {
+		super(matrice, mouvement);
 		// TODO Auto-generated constructor stub
 	}
 
 	/**
 	 * Rotate.
 	 *
-	 * @param sensibility the sensibility
+	 * @param sensibility 
 	 * @return the matrice
 	 */
 	@Override

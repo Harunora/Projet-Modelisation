@@ -10,11 +10,11 @@ public class RotationDown extends Mouvement {
 	/**
 	 * Instantiates a new rotation down.
 	 *
-	 * @param m the m
-	 * @param r the r
+	 * @param matrice the m
+	 * @param mouvement the r
 	 */
-	public RotationDown(Matrice m, Mouvement r) {
-		super(m, r);
+	public RotationDown(Matrice matrice, Mouvement mouvement) {
+		super(matrice, mouvement);
 		// TODO Auto-generated constructor stub
 	}
 

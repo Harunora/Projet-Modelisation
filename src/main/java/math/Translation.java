@@ -11,13 +11,13 @@ public class Translation {
 	protected Matrice matriceCourante;
 	
 	/** The mx. */
-	private double matricecoord_x ;
+	private double matricecoordX ;
 	
 	/** The mz. */
-	private double matricecoord_z; 
+	private double matricecoordZ; 
 	
 	/** The my. */
-	private double matricecoord_y ;
+	private double matricecoordY ;
 	
 	/**
 	 * Instantiates a new translation.
@@ -41,17 +41,17 @@ public class Translation {
 		Matrice matriceConverted = new Matrice(matriceCourante.getTaille(),matriceCourante.getTaille());
 		for(int i = 0 ; i < matriceCourante.getTaille(); i++) {
 
-			matricecoord_x =  matriceCourante.getX(i) + coord_x;
+			matricecoordX =  matriceCourante.getX(i) + coord_x;
 
-			matricecoord_y =  matriceCourante.getY(i) + coord_y;
+			matricecoordY =  matriceCourante.getY(i) + coord_y;
 			
-			matricecoord_z =  matriceCourante.getZ(i) + coord_z;
+			matricecoordZ =  matriceCourante.getZ(i) + coord_z;
 			
-			matriceConverted .add(matricecoord_x, matricecoord_y, matricecoord_z, matriceCourante.getV(i));
+			matriceConverted .add(matricecoordX, matricecoordY, matricecoordZ, matriceCourante.getV(i));
 			
-			matricecoord_x = 0.0;
-			matricecoord_y = 0.0;
-			matricecoord_z = 0.0;
+			matricecoordX = 0.0;
+			matricecoordY = 0.0;
+			matricecoordZ = 0.0;
 			
 		}
 

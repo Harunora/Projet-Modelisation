@@ -10,11 +10,11 @@ public class RotationLeft extends Mouvement {
 	/**
 	 * Instantiates a new rotation left.
 	 *
-	 * @param m the m
-	 * @param r the r
+	 * @param matrice the m
+	 * @param mouvement the r
 	 */
-	public RotationLeft(Matrice m, Mouvement r) {
-		super(m, r);
+	public RotationLeft(Matrice matrice, Mouvement mouvement) {
+		super(matrice, mouvement);
 		// TODO Auto-generated constructor stub
 	}
 

@@ -11,17 +11,17 @@ public abstract class Mouvement {
 	protected Matrice mcourante;
 	
 	/** The r. */
-	protected Mouvement r;
+	protected Mouvement movement;
 	
 	/**
 	 * Instantiates a new rotation.
 	 *
-	 * @param m the m
-	 * @param r the r
+	 * @param matrice the m
+	 * @param mouvement the r
 	 */
-	public Mouvement(Matrice m, Mouvement r) {
-		mcourante = m;
-		this.r = r;
+	public Mouvement(Matrice matrice, Mouvement mouvement) {
+		mcourante = matrice;
+		this.movement = mouvement;
 	}
 	
 	/**
@@ -40,45 +40,45 @@ public abstract class Mouvement {
 	 */
 	public  Matrice multipliMatrice(Matrice mconverter) {
 		Matrice mConverted = new Matrice(mcourante.getTaille(), mcourante.getTaille());
-		double dx = 0.0;
-		double dy = 0.0;
-		double dz = 0.0;
-		double dv = 0.0;
+		double coordX = 0.0;
+		double coordY = 0.0;
+		double coordZ = 0.0;
+		double coordV = 0.0;
 		for(int i = 0 ; i < mcourante.getTaille();i++ ) {
 			//jusqu'a 4 prend tout les x tout les y tout les z et tout les v 
 			for(int j = 0; j < mconverter.getTaille(); j++) {
 				switch(j) {
 					case 0:
-						dx += mconverter.getX(j) * mcourante.getX(i);
-						dy += mconverter.getY(j) * mcourante.getX(i);
-						dz += mconverter.getZ(j) * mcourante.getX(i);
-						dv += mconverter.getV(j) * mcourante.getX(i);
+						coordX += mconverter.getX(j) * mcourante.getX(i);
+						coordY += mconverter.getY(j) * mcourante.getX(i);
+						coordZ += mconverter.getZ(j) * mcourante.getX(i);
+						coordV += mconverter.getV(j) * mcourante.getX(i);
 						break;
 					case 1:
-						dx += mconverter.getX(j) * mcourante.getY(i);
-						dy += mconverter.getY(j) * mcourante.getY(i);
-						dz += mconverter.getZ(j) * mcourante.getY(i);
-						dv += mconverter.getV(j) * mcourante.getY(i);
+						coordX += mconverter.getX(j) * mcourante.getY(i);
+						coordY += mconverter.getY(j) * mcourante.getY(i);
+						coordZ += mconverter.getZ(j) * mcourante.getY(i);
+						coordV += mconverter.getV(j) * mcourante.getY(i);
 						break;
 					case 2:
-						dx += mconverter.getX(j) * mcourante.getZ(i);
-						dy += mconverter.getY(j) * mcourante.getZ(i);
-						dz += mconverter.getZ(j) * mcourante.getZ(i);
-						dv += mconverter.getV(j) * mcourante.getZ(i);
+						coordX += mconverter.getX(j) * mcourante.getZ(i);
+						coordY += mconverter.getY(j) * mcourante.getZ(i);
+						coordZ += mconverter.getZ(j) * mcourante.getZ(i);
+						coordV += mconverter.getV(j) * mcourante.getZ(i);
 						break;
 					case 3:
-						dx += mconverter.getX(j) * mcourante.getV(i);
-						dy += mconverter.getY(j) * mcourante.getV(i);
-						dz += mconverter.getZ(j) * mcourante.getV(i);
-						dv += mconverter.getV(j) * mcourante.getV(i);
+						coordX += mconverter.getX(j) * mcourante.getV(i);
+						coordY += mconverter.getY(j) * mcourante.getV(i);
+						coordZ += mconverter.getZ(j) * mcourante.getV(i);
+						coordV += mconverter.getV(j) * mcourante.getV(i);
 						break;
 				}
 			}
-			mConverted.add(dx, dy, dz, dv);
-			dx = 0.0;
-			dy = 0.0;
-			dz = 0.0;
-			dv = 0.0;
+			mConverted.add(coordX, coordY, coordZ, coordV);
+			coordX = 0.0;
+			coordY = 0.0;
+			coordZ = 0.0;
+			coordV = 0.0;
 		}
 		this.mcourante = mConverted;
 		return mConverted;

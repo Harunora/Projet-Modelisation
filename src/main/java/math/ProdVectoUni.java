@@ -17,13 +17,13 @@ public class ProdVectoUni {
 	protected Matrice matrice; 
 	
 	/** The dx. */
-	private double coord_x;
+	private double coordX;
 	
 	/** The dy. */
-	private double coord_y;
+	private double coordY;
 	
 	/** The dz. */
-	private double coord_z;
+	private double coordZ;
 	
 	/**
 	 * Instantiates a new normeprod.
@@ -32,12 +32,12 @@ public class ProdVectoUni {
 	 */
 	public ProdVectoUni(ProduitScalaire produitScal){
 		produitScalaire = produitScal;		
-		coord_x = produitScalaire.getMatrice().getX(0);
-		coord_y = produitScalaire.getMatrice().getY(0);
-		coord_z = produitScalaire.getMatrice().getZ(0);
-		norme = Math.sqrt(coord_x*coord_x + coord_y*coord_y +coord_z*coord_z);
+		coordX = produitScalaire.getMatrice().getX(0);
+		coordY = produitScalaire.getMatrice().getY(0);
+		coordZ = produitScalaire.getMatrice().getZ(0);
+		norme = Math.sqrt(coordX*coordX + coordY*coordY +coordZ*coordZ);
 		matrice = new Matrice(1,1);
-		matrice.add(coord_x/norme, coord_y/norme, coord_z/norme, 1);
+		matrice.add(coordX/norme, coordY/norme, coordZ/norme, 1);
 	}
 	
 	/**

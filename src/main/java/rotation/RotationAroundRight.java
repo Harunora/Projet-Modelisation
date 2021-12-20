@@ -10,11 +10,11 @@ public class RotationAroundRight extends Mouvement  {
 	/**
 	 * Instantiates a new rotation around right.
 	 *
-	 * @param m the m
-	 * @param r the r
+	 * @param matrice the m
+	 * @param mouvement the r
 	 */
-	public RotationAroundRight(Matrice m, Mouvement r) {
-		super(m ,r);
+	public RotationAroundRight(Matrice matrice, Mouvement mouvement) {
+		super(matrice ,mouvement);
 		// TODO Auto-generated constructor stub
 	}
 

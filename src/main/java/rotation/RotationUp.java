@@ -10,11 +10,11 @@ public class RotationUp extends Mouvement {
 	/**
 	 * Instantiates a new rotation up.
 	 *
-	 * @param m the m
-	 * @param r the r
+	 * @param matrice the m
+	 * @param mouvement the r
 	 */
-	public RotationUp(Matrice m, Mouvement r) {
-		super(m, r);
+	public RotationUp(Matrice matrice, Mouvement mouvement) {
+		super(matrice, mouvement);
 		// TODO Auto-generated constructor stub
 	}
 
