@@ -10,22 +10,53 @@ import math.CalculColor;
 import rotation.RotationLeft;
 import rotation.RotationUp;
 
+/**
+ * The Class UpdateGraph.
+ */
 public class UpdateGraph extends Graph{
 
 
+	/** The sommets. */
 	private List<Sommet> sommets = new ArrayList<Sommet>();
+	
+	/** The has set color. */
 	private boolean hasSetColor;
+	
+	/** The d. */
 	private int nb,a,b,c,d;
+	
+	/** The lumiere. */
 	Matrice lumiere = new Matrice(1,1,1,1,1,1);
+	
+	/** The calcul color. */
 	private CalculColor calculColor = new CalculColor(lumiere,this.color);
+	
+	/** The original. */
 	private Graph original;
+	
+	/** The calcule lumiere. */
 	protected boolean calculeLumiere = true;
 
 
+	/**
+	 * Instantiates a new update graph.
+	 *
+	 * @param nbFace the nb face
+	 * @param faces the faces
+	 * @param matrice the matrice
+	 * @param sommetDeFaces the sommet de faces
+	 * @param auteur the auteur
+	 */
 	public UpdateGraph(int nbFace, List<Face> faces, Matrice matrice, List<String> sommetDeFaces, String auteur) {
 		super(nbFace, faces, matrice, sommetDeFaces, auteur);
 		this.original=new Graph(nbFace, faces, matrice, sommetDeFaces, auteur);
 	}
+	
+	/**
+	 * Update.
+	 *
+	 * @param ma the ma
+	 */
 	public void update(Matrice ma) {
 		this.faces=this.original.faces;
 		this.matrice=this.original.matrice;
@@ -40,6 +71,11 @@ public class UpdateGraph extends Graph{
 		notifyObserver();
 	}
 
+	/**
+	 * Sets the color.
+	 *
+	 * @param color the new color
+	 */
 	public void setColor(javafx.scene.paint.Color color) {
 		hasSetColor = true;
 		this.color = color;
@@ -48,12 +84,20 @@ public class UpdateGraph extends Graph{
 		}
 	}
 
+	/**
+	 * Read face.
+	 */
 	private void readFace() {
 		for(int i = 0; i<nbFaces; i++) {
 			readNbFace(i);
 		}
 	}
 
+	/**
+	 * Read nb face.
+	 *
+	 * @param i the i
+	 */
 	private void readNbFace(int i) {
 		StringTokenizer lineToken = new StringTokenizer(sommetsDeFaces.get(i));
 		nb = Integer.parseInt(lineToken.nextToken());
@@ -91,11 +135,21 @@ public class UpdateGraph extends Graph{
     }
     */
 	
+	/**
+	 * Ombrage.
+	 *
+	 * @param value the value
+	 */
 	public void ombrage(boolean value) {
 		this.calculeLumiere=value;
 		update(matrice);
 	}
 
+	/**
+	 * Adds the list sommet.
+	 *
+	 * @param tmp the tmp
+	 */
 	private void addListSommet(List<Sommet> tmp) {
 		tmp.add(sommets.get(a));
 		tmp.add(sommets.get(b));
@@ -105,6 +159,13 @@ public class UpdateGraph extends Graph{
 		}
 	}
 	
+	/**
+	 * Modifier lumiere.
+	 *
+	 * @param x the x
+	 * @param y the y
+	 * @param z the z
+	 */
 	public void modifierLumiere(int x,int y,int z) {
 		lumiere.modifieX(0, x);
 		lumiere.modifieY(0, y);

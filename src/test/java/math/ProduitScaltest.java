@@ -7,8 +7,14 @@ import org.junit.jupiter.api.Test;
 import graph.Matrice;
 import graph.Sommet;
 
+/**
+ * The Class ProduitScaltest.
+ */
 class ProduitScaltest {
 
+	/**
+	 * Produit simple matricetest.
+	 */
 	@Test
 	void ProduitSimpleMatricetest() {
 		Matrice m1 = new Matrice(1,1);
@@ -23,6 +29,9 @@ class ProduitScaltest {
 		assertEquals(res3.toString(), p1.getMatrice().toString());
 	}
 	
+	/**
+	 * Produit avec sommet.
+	 */
 	@Test
 	void ProduitAvecSommet() {
 		Sommet a = new Sommet(1, 2, 3);

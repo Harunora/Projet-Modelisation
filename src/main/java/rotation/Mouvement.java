@@ -2,15 +2,42 @@ package rotation;
 
 import graph.Matrice;
 
-public abstract class Rotation {
+/**
+ * The Class Rotation.
+ */
+public abstract class Mouvement {
+	
+	/** The mcourante. */
 	protected Matrice mcourante;
-	protected Rotation r;
-	public Rotation(Matrice m, Rotation r) {
+	
+	/** The r. */
+	protected Mouvement r;
+	
+	/**
+	 * Instantiates a new rotation.
+	 *
+	 * @param m the m
+	 * @param r the r
+	 */
+	public Mouvement(Matrice m, Mouvement r) {
 		mcourante = m;
 		this.r = r;
 	}
 	
-	public abstract Matrice rotate(double sensibility);
+	/**
+	 * Rotate.
+	 *
+	 * @param sensibility the sensibility
+	 * @return the matrice
+	 */
+	public abstract Matrice mouvement(double sensibility);
+	
+	/**
+	 * Multipli matrice.
+	 *
+	 * @param mconverter the mconverter
+	 * @return the matrice
+	 */
 	public  Matrice multipliMatrice(Matrice mconverter) {
 		Matrice mConverted = new Matrice(mcourante.getTaille(), mcourante.getTaille());
 		double dx = 0.0;
@@ -57,10 +84,20 @@ public abstract class Rotation {
 		return mConverted;
 	}
 
+	/**
+	 * Gets the mcourante.
+	 *
+	 * @return the mcourante
+	 */
 	public Matrice getMcourante() {
 		return mcourante;
 	}
 
+	/**
+	 * Sets the mcourante.
+	 *
+	 * @param mcourante the new mcourante
+	 */
 	public void setMcourante(Matrice mcourante) {
 		this.mcourante = mcourante;
 	}

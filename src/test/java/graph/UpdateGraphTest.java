@@ -8,11 +8,25 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
+/**
+ * The Class UpdateGraphTest.
+ */
 class UpdateGraphTest {
+	
+	/** The my path. */
 	String myPath = System.getProperty("user.dir")+File.separator+"exemples"+File.separator;
+	
+	/** The file. */
 	File file = new File(myPath+"cube.ply");
+	
+	/** The file 2. */
 	File file2 = new File(myPath+"apple.ply");
 	
+	/**
+	 * Implementation.
+	 *
+	 * @return the graph
+	 */
 	Graph implementation() {
 		List<Face> f = new ArrayList<Face>();
 		Matrice matrice;
@@ -71,6 +85,9 @@ class UpdateGraphTest {
 		return new Graph(6,f, matrice, string, "");
 	}
 	
+	/**
+	 * Test update 1.
+	 */
 	@Test
 	void testUpdate1() {
 		FileReader r = new FileReader();
@@ -81,13 +98,16 @@ class UpdateGraphTest {
 		assertEquals(attendu.getFace(0).getSommets().get(0).getX(), u.getFace(0).getSommets().get(0).getX());
 	}
 	
+	/**
+	 * Test update 2.
+	 */
 	@Test
 	void testUpdate2() {
 		FileReader r = new FileReader();
 		Graph old = r.read(file);
 		Graph attendu = implementation();
 		UpdateGraph u = new UpdateGraph(old.nbFaces, old.faces, old.matrice, old.sommetsDeFaces, ""); 
-		u.matrice.x[0] = 2;
+		u.matrice.getX()[0] = 2;
 		u.update(old.matrice);
 		assertNotEquals(attendu.getFace(0).getSommets().get(0).getX(), u.getFace(0).getSommets().get(0).getX());
 	}

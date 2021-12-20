@@ -36,7 +36,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import math.Homothetie;
 import math.Translation;
-import rotation.Rotation;
+import rotation.Mouvement;
 import rotation.RotationAroundLeft;
 import rotation.RotationAroundRight;
 import rotation.RotationDown;
@@ -44,40 +44,75 @@ import rotation.RotationLeft;
 import rotation.RotationRight;
 import rotation.RotationUp;
 
+/**
+ * The Class MainControler.
+ */
 public class MainControler implements Initializable {
+    
+    /** The edit auteur button. */
     @FXML
     Button buttonLoadFolder, btreebase ,buttonLightZDown,buttonLightZUp,buttonLightUp,buttonLightDown,buttonLightRight,buttonLightLeft,buttonHelp, buttonRotateUp, buttonRotateRight, buttonRotateLeft, buttonRotateDown, buttonRotateAroundRight, buttonRotateAroundLeft, buttonTranslateUp, buttonTranslateRight, buttonTranslateLeft, buttonTranslateDown, buttonReloadCanvas, buttonHomothetieDown, buttonHomothetieUp, buttonModelData, Fview, Aview ,Sview, editCommentaireButton, editAuteurButton;
     
+    /** The tree view. */
     @FXML
     TreeView<String> treeView;
     
+    /** The background color. */
     @FXML
     ColorPicker areteColorPicker,pointColor, faceColor, backgroundColor;
     
+    /** The canvas down. */
     @FXML
     Canvas canvas, canvasTop, canvasDown;
     
+    /** The print line. */
     @FXML
     CheckBox checkOmbre,printPoint,printColor,printLine;
     
+    /** The hcontainer canvas. */
     @FXML
     HBox hcontainerCanvas;
     
+    /** The scene. */
     protected Scene scene;
    
+    /** The current file. */
     public File currentFile = new File("exemples/cube.ply");
+    
+    /** The explorer file. */
     private ExplorerFile explorerFile = new ExplorerFile();
+    
+    /** The file reader. */
     private FileReader fileReader=new FileReader();
     
+    /** The stage. */
     public Stage stage = new Stage();
+    
+    /** The graphe. */
     private UpdateGraph graphe = fileReader.read(currentFile);
+    
+    /** The graphe down. */
     private UpdateGraph grapheTop, grapheDown;
+    
+    /** The canvas writer down. */
     private CanvasWriter canvasWriterMain, canvasWriterTop, canvasWriterDown;
-    private Rotation rotation;
+    
+    /** The rotation. */
+    private Mouvement rotation;
+    
+    /** The translation. */
     private Translation translation;
+    
+    /** The homothetie. */
     private Homothetie homothetie;
 
     
+    /**
+     * Initialize.
+     *
+     * @param location the location
+     * @param resources the resources
+     */
     @SuppressWarnings("incomplete-switch")
 	@Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -497,6 +532,11 @@ public class MainControler implements Initializable {
         
        
     
+    /**
+     * Sets the scene.
+     *
+     * @param s the new scene
+     */
     @SuppressWarnings("incomplete-switch")
 	public void setScene (Scene s) {
     	s.setOnKeyPressed(e->{
@@ -557,42 +597,67 @@ public class MainControler implements Initializable {
     	
     }
 
+	/**
+	 * Rotate right.
+	 */
 	private void rotateRight() {
 		rotation = new RotationRight(graphe.getMatrice(),null); 
-		rotation.rotate(Math.PI/100);
+		rotation.mouvement(Math.PI/100);
 		graphe.update(rotation.getMcourante());
 	}
 
+	/**
+	 * Rotation left.
+	 */
 	private void rotationLeft() {
 		rotation = new RotationLeft(graphe.getMatrice(),null); 
-		rotation.rotate(Math.PI/100);
+		rotation.mouvement(Math.PI/100);
 		graphe.update(rotation.getMcourante());
 	}
 
+	/**
+	 * Rotation down.
+	 */
 	private void rotationDown() {
 		rotation = new RotationDown(graphe.getMatrice(),null); 
-		rotation.rotate(Math.PI/100);
+		rotation.mouvement(Math.PI/100);
 		graphe.update(rotation.getMcourante());
 	}
 	
+	/**
+	 * Rotation up.
+	 */
 	private void rotationUp() {
 		rotation = new RotationUp(graphe.getMatrice(),null); 
-		rotation.rotate(Math.PI/100);	
+		rotation.mouvement(Math.PI/100);	
 		graphe.update(rotation.getMcourante());
 	}
 	
+	/**
+	 * Rotation around left.
+	 */
 	private void rotationAroundLeft() {
 		rotation = new RotationAroundLeft(graphe.getMatrice(),null); 
-		rotation.rotate(Math.PI/100);
+		rotation.mouvement(Math.PI/100);
 		graphe.update(rotation.getMcourante());
 	}
 	
+	/**
+	 * Rotation around right.
+	 */
 	private void rotationAroundRight() {
 		rotation = new RotationAroundRight(graphe.getMatrice(),null); 
-		rotation.rotate(Math.PI/100);		
+		rotation.mouvement(Math.PI/100);		
 		graphe.update(rotation.getMcourante());
 	}
 
+	/**
+	 * Translate action.
+	 *
+	 * @param x the x
+	 * @param y the y
+	 * @param z the z
+	 */
 	private void translateAction(double x, double y, double z) {
 		translation = new Translation(graphe.getMatrice());
 		System.out.println("avant : " + graphe.getMatrice().getX(0));
@@ -602,12 +667,20 @@ public class MainControler implements Initializable {
 
 	}
 	
+	/**
+	 * Homothetie action.
+	 *
+	 * @param k the k
+	 */
 	private void homothetieAction(double k) {
 		homothetie = new Homothetie(graphe.getMatrice());
-		homothetie.homothetate(k);
+		homothetie.mouvement(k);
 		graphe.update(homothetie.getMcourante());
 	}
     
+    /**
+     * Update file.
+     */
     private void updateFile() {
 		canvasWriterMain.clear(javafx.scene.paint.Color.WHITE);
 		//canvasWriterTop.clear(javafx.scene.paint.Color.WHITE);

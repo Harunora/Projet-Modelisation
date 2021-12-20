@@ -10,18 +10,41 @@ import java.util.StringTokenizer;
 
 import javafx.scene.paint.Color;
 
+/**
+ * The Class FileReader.
+ */
 public class FileReader {
+	
+	/** The commentaire. */
 	private String actual = "",auteur="",commentaire="";
+	
+	/** The ligne com. */
 	private int ligneAuteur = 0,ligneCom = 0;
+	
+	/** The nb sommets. */
 	private int nbFaces = 0,nbSommets = 0;
+	
+	/** The sommets. */
 	private List<Sommet> sommets = new ArrayList<Sommet>();
+	
+	/** The faces. */
 	private List<Face>faces = new ArrayList<Face>();
+	
+	/** The sommets de faces. */
 	private List<String> sommetsDeFaces = new ArrayList<String>();
+	
+	/** The matrice. */
 	protected Matrice matrice;
 
 
 
 
+	/**
+	 * Read.
+	 *
+	 * @param fileTest the file test
+	 * @return the update graph
+	 */
 	public UpdateGraph read(File fileTest) {
 		try {
 			FileInputStream file = new FileInputStream(fileTest);
@@ -43,6 +66,12 @@ public class FileReader {
 	}
 
 
+	/**
+	 * Start file.
+	 *
+	 * @param scanner the scanner
+	 * @param ligne the ligne
+	 */
 	private void startFile(Scanner scanner, int ligne) {
 		boolean achieved = false;
 		while(!achieved) {
@@ -78,11 +107,26 @@ public class FileReader {
 		}
 	}
 
+	/**
+	 * Actual next.
+	 *
+	 * @param scanner the scanner
+	 * @return the string
+	 */
 	private String actualNext(Scanner scanner) {
 		actual=scanner.nextLine()+"\n";
 		return actual;
 	}
 
+	/**
+	 * Read face.
+	 *
+	 * @param nbFaces the nb faces
+	 * @param sommets the sommets
+	 * @param faces the faces
+	 * @param stringFace the string face
+	 * @param scanner the scanner
+	 */
 	private void readFace(int nbFaces, List<Sommet> sommets, List<Face> faces,List<String> stringFace, Scanner scanner) {
 		for(int i = 0; i<nbFaces; i++) {
 			actual = actualNext(scanner);
@@ -106,6 +150,14 @@ public class FileReader {
 		}
 	}
 
+	/**
+	 * Face add.
+	 *
+	 * @param faces the faces
+	 * @param listSommetTmp the list sommet tmp
+	 * @param lineToken the line token
+	 * @param nb the nb
+	 */
 	private void faceAdd(List<Face> faces, List<Sommet> listSommetTmp, StringTokenizer lineToken, int nb) {
 
 		Face faceTmp = new Face(nb,listSommetTmp, Color.WHITE);			
@@ -114,6 +166,13 @@ public class FileReader {
 	}
 
 
+	/**
+	 * Read sommet.
+	 *
+	 * @param nbSommets the nb sommets
+	 * @param sommets the sommets
+	 * @param scanner the scanner
+	 */
 	private void readSommet(int nbSommets, List<Sommet> sommets, Scanner scanner) {
 		for(int i = 0; i<nbSommets; i++) {
 			Sommet tmp;
@@ -126,26 +185,52 @@ public class FileReader {
 		}
 	}
 
+	/**
+	 * Adds the xyz.
+	 *
+	 * @param s1 the s 1
+	 * @return the double[]
+	 */
 	private double[] addXyz(String[] s1) {
 		return new double[] {Double.parseDouble(s1[0]),Double.parseDouble(s1[1]),Double.parseDouble(s1[2])};
 	}
 
 
+	/**
+	 * Gets the auteur.
+	 *
+	 * @return the auteur
+	 */
 	public String getAuteur() {
 		return auteur;
 	}
 
 
+	/**
+	 * Gets the commentaire.
+	 *
+	 * @return the commentaire
+	 */
 	public String getCommentaire() {
 		return commentaire;
 	}
 
 
+	/**
+	 * Gets the ligne auteur.
+	 *
+	 * @return the ligne auteur
+	 */
 	public int getLigneAuteur() {
 		return ligneAuteur;
 	}
 
 
+	/**
+	 * Gets the ligne com.
+	 *
+	 * @return the ligne com
+	 */
 	public int getLigneCom() {
 		return ligneCom;
 	}

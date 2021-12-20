@@ -9,9 +9,23 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.fxml.FXMLLoader;
 
+/**
+ * The Class Main.
+ */
 public class Main extends Application {
+	
+	/** The scene. */
 	static Scene scene;
+	
+	/** The root. */
 	private Parent root;
+    
+    /**
+     * Start.
+     *
+     * @param stage the stage
+     * @throws IOException Signals that an I/O exception has occurred.
+     */
     // java --module-path 'path-to-javafx-binaries/lib' --add-modules javafx.controls,javafx.fxml -jar .\projetmode.jar
     public void start(Stage stage) throws IOException {
             FXMLLoader loader = new FXMLLoader();
@@ -29,15 +43,31 @@ public class Main extends Application {
             
         
     }
+    
+    /**
+     * Gets the stage.
+     *
+     * @return the stage
+     */
     public Stage getStage() {
     	return getStage();
     }
     
 
+    /**
+     * The main method.
+     *
+     * @param args the arguments
+     */
     public static void main(String[] args) {
             Application.launch(args);
     }
     
+    /**
+     * Gets the scene.
+     *
+     * @return the scene
+     */
     public static Scene getScene() {
     	return scene;
     }

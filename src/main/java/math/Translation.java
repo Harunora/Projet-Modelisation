@@ -2,32 +2,56 @@ package math;
 
 import graph.Matrice;
 
+/**
+ * The Class Translation.
+ */
 public class Translation {
-	protected Matrice matriceCourante;
-	private double mx ;
-	private double mz; 
-	private double my ;
 	
-	public Translation(Matrice m) {
-		matriceCourante = m;
+	/** The matrice courante. */
+	protected Matrice matriceCourante;
+	
+	/** The mx. */
+	private double matricecoord_x ;
+	
+	/** The mz. */
+	private double matricecoord_z; 
+	
+	/** The my. */
+	private double matricecoord_y ;
+	
+	/**
+	 * Instantiates a new translation.
+	 *
+	 * @param matrice the m
+	 */
+	public Translation(Matrice matrice) {
+		matriceCourante = matrice;
 	}
 	
 	
-	public  Matrice addToMatrice(double x, double y , double z) {
+	/**
+	 * Adds the to matrice.
+	 *
+	 * @param coord_x the x
+	 * @param coord_y the y
+	 * @param coord_z the z
+	 * @return the matrice
+	 */
+	public  Matrice addToMatrice(double coord_x, double coord_y , double coord_z) {
 		Matrice matriceConverted = new Matrice(matriceCourante.getTaille(),matriceCourante.getTaille());
 		for(int i = 0 ; i < matriceCourante.getTaille(); i++) {
 
-			mx =  matriceCourante.getX(i) + x;
+			matricecoord_x =  matriceCourante.getX(i) + coord_x;
 
-			my =  matriceCourante.getY(i) + y;
+			matricecoord_y =  matriceCourante.getY(i) + coord_y;
 			
-			mz =  matriceCourante.getZ(i) + z;
+			matricecoord_z =  matriceCourante.getZ(i) + coord_z;
 			
-			matriceConverted .add(mx, my, mz, matriceCourante.getV(i));
+			matriceConverted .add(matricecoord_x, matricecoord_y, matricecoord_z, matriceCourante.getV(i));
 			
-			mx = 0.0;
-			my = 0.0;
-			mz = 0.0;
+			matricecoord_x = 0.0;
+			matricecoord_y = 0.0;
+			matricecoord_z = 0.0;
 			
 		}
 
@@ -36,12 +60,23 @@ public class Translation {
 		return matriceCourante;
 	}
 	
-	public Matrice translate(Matrice m) {
-		this.addToMatrice(m.getX(0), m.getY(0),m.getZ(0));
+	/**
+	 * Translate.
+	 *
+	 * @param matrice the m
+	 * @return the matrice
+	 */
+	public Matrice translate(Matrice matrice) {
+		this.addToMatrice(matrice.getX(0), matrice.getY(0),matrice.getZ(0));
 		return this.getMcourante();
 
 	}
 
+	/**
+	 * Gets the mcourante.
+	 *
+	 * @return the mcourante
+	 */
 	public Matrice getMcourante() {
 		return this.matriceCourante;
 	}

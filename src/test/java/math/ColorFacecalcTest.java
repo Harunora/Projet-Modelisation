@@ -10,8 +10,14 @@ import graph.Matrice;
 import graph.Sommet;
 import javafx.scene.paint.Color;
 
+/**
+ * The Class ColorFacecalcTest.
+ */
 class ColorFacecalcTest {
 
+	/**
+	 * Simpletest face.
+	 */
 	@Test
 	void SimpletestFace() {
 		Color c = new Color(64.0/255.0, 255.0/255.0, 64.0/255.0, 1.0);
@@ -29,6 +35,9 @@ class ColorFacecalcTest {
 		
 	}
 	
+	/**
+	 * Colorbehind.
+	 */
 	@Test
 	void colorbehind() {
 		Color c = new Color(64.0/255.0, 255.0/255.0, 64.0/255.0, 1.0);

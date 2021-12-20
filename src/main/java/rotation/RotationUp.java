@@ -2,15 +2,30 @@ package rotation;
 
 import graph.Matrice;
 
-public class RotationUp extends Rotation {
+/**
+ * The Class RotationUp.
+ */
+public class RotationUp extends Mouvement {
 
-	public RotationUp(Matrice m, Rotation r) {
+	/**
+	 * Instantiates a new rotation up.
+	 *
+	 * @param m the m
+	 * @param r the r
+	 */
+	public RotationUp(Matrice m, Mouvement r) {
 		super(m, r);
 		// TODO Auto-generated constructor stub
 	}
 
+	/**
+	 * Rotate.
+	 *
+	 * @param sensibility the sensibility
+	 * @return the matrice
+	 */
 	@Override
-	public Matrice rotate(double sensibility) {
+	public Matrice mouvement(double sensibility) {
 		// a regarder
 		Matrice newMatrice = new Matrice(4, 4);
 		newMatrice.add(1.0, 0.0, 0.0, 0.0);

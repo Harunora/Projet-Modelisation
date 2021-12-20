@@ -9,26 +9,52 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import rotation.Rotation;
+import rotation.Mouvement;
 
+/**
+ * The Class CanvasViewer.
+ */
 public class CanvasViewer {
 	
+	/** The canvas view. */
 	@FXML
 	Canvas canvasView;
 	
 	
+	/** The canvas writer. */
 	protected CanvasWriter canvasWriter;
-	protected UpdateGraph updateGraph;
-	protected int homothetie;
-	protected Rotation rotation;
 	
-	public CanvasViewer(CanvasWriter cw , Rotation r, int homothetie, UpdateGraph graphe) throws IOException {		 
+	/** The update graph. */
+	protected UpdateGraph updateGraph;
+	
+	/** The homothetie. */
+	protected int homothetie;
+	
+	/** The rotation. */
+	protected Mouvement rotation;
+	
+	/**
+	 * Instantiates a new canvas viewer.
+	 *
+	 * @param cw the cw
+	 * @param r the r
+	 * @param homothetie the homothetie
+	 * @param graphe the graphe
+	 * @throws IOException Signals that an I/O exception has occurred.
+	 */
+	public CanvasViewer(CanvasWriter cw , Mouvement r, int homothetie, UpdateGraph graphe) throws IOException {		 
 		this.canvasWriter = cw;
         this.updateGraph = graphe;
         this.rotation = r;
         this.homothetie = homothetie;
 	}
 	
+	/**
+	 * Canvas show.
+	 *
+	 * @param sp the sp
+	 * @param position the position
+	 */
 	public void canvasShow (StackPane sp, String position) {
 		
 		Scene secondScene = new Scene(sp, 750, 510);

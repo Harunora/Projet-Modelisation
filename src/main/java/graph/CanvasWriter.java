@@ -12,25 +12,66 @@ import mvc.Subject;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 
+
+/**
+ * The Class CanvasWriter.
+ */
 public class CanvasWriter implements Observer{
 
+	/** The model. */
 	public Graph model;
+	
+	/** The canvas. */
 	public Canvas canvas;
+	
+	/** The graphic context. */
 	public GraphicsContext graphicContext;
+	
+	/** The point color. */
 	protected Color pointColor;
+	
+	/** The background color. */
 	protected Color backgroundColor;
+	
+	/** The line color. */
 	protected Color lineColor;
+	
+	/** The x. */
 	protected List<double[]> x;
+	
+	/** The y. */
 	protected List<double[]> y;
+	
+	/** The z. */
 	protected List<double[]> z;
+	
+	/** The color. */
 	protected List<Color> color;
+	
+	/** The height. */
 	protected double height;
+	
+	/** The width. */
 	protected double width;
+	
+	/** The line print. */
 	private boolean linePrint = true;
+	
+	/** The color print. */
 	private boolean colorPrint = true;
+	
+	/** The point print. */
 	private boolean pointPrint = true;
+	
+	/** The homothesie. */
 	public int homothesie=-100;
 
+	/**
+	 * Instantiates a new canvas writer.
+	 *
+	 * @param c the c
+	 * @param lf the lf
+	 */
 	public CanvasWriter(Canvas c, Graph lf) {
 		x=new ArrayList<double[]>();
 		y=new ArrayList<double[]>();
@@ -55,6 +96,9 @@ public class CanvasWriter implements Observer{
 	}
 	*/
 
+	/**
+	 * Write on canvas.
+	 */
 	public void writeOnCanvas() {
 		clear(backgroundColor);
 		for(int i=0;i<this.x.size();i++){
@@ -75,12 +119,20 @@ public class CanvasWriter implements Observer{
 		}
 	}
 
+	/**
+	 * Clear.
+	 *
+	 * @param c the c
+	 */
 	public void clear(Paint c) {
 		graphicContext.setFill(c);
 		graphicContext.fillRect(0, 0, canvas.getWidth(), canvas.getHeight());
 
 	}
 
+	/**
+	 * Use graph.
+	 */
 	public void useGraph() {
 		this.x.clear();
 		this.y.clear();
@@ -106,39 +158,80 @@ public class CanvasWriter implements Observer{
 		writeOnCanvas();
 	}
 
+	/**
+	 * Prints the line.
+	 *
+	 * @param value the value
+	 */
 	public void printLine(boolean value) {
 		this.linePrint=value;
 	}
 
+	/**
+	 * Prints the color.
+	 *
+	 * @param value the value
+	 */
 	public void printColor(boolean value) {
 		this.colorPrint=value;
 	}
 	
+	/**
+	 * Prints the point.
+	 *
+	 * @param value the value
+	 */
 	public void printPoint(boolean value) {
 		this.pointPrint=value;
 	}
 	
+	/**
+	 * Sets the background color.
+	 *
+	 * @param value the new background color
+	 */
 	public void setBackgroundColor(Color value) {
 		this.backgroundColor=value;
 		useGraph();
 	}
 	
+	/**
+	 * Sets the line color.
+	 *
+	 * @param value the new line color
+	 */
 	public void setLineColor(Color value) {
 		this.lineColor=value;
 		useGraph();
 	}
 	
+	/**
+	 * Sets the point color.
+	 *
+	 * @param value the new point color
+	 */
 	public void setPointColor(Color value) {
 		this.pointColor=value;
 		useGraph();
 	}
 
+	/**
+	 * Update.
+	 *
+	 * @param subj the subj
+	 */
 	@Override
 	public void update(Subject subj) {
 		// TODO Auto-generated method stub
 		update(subj, null);
 	}
 
+	/**
+	 * Update.
+	 *
+	 * @param subj the subj
+	 * @param data the data
+	 */
 	@Override
 	public void update(Subject subj, Object data) {
 		this.model= (UpdateGraph) subj;

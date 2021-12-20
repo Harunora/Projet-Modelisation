@@ -6,8 +6,14 @@ import org.junit.jupiter.api.Test;
 
 import graph.Matrice;
 
+/**
+ * The Class TranslationMatriceTest.
+ */
 class TranslationMatriceTest {
 
+	/**
+	 * Translate right test.
+	 */
 	@Test
 	void TranslateRightTest() {
 		Matrice m1 = new Matrice(4,4);
@@ -31,6 +37,9 @@ class TranslationMatriceTest {
 		assertEquals(res.toString(), m1.toString());
 	}
 	
+	/**
+	 * Translate left test.
+	 */
 	@Test
 	void TranslateLeftTest() {
 		Matrice m1 = new Matrice(4,4);
@@ -55,6 +64,9 @@ class TranslationMatriceTest {
 		assertEquals(res.toString(), m1.toString());
 	}
 	
+	/**
+	 * Translate down test.
+	 */
 	@Test
 	void TranslateDownTest() {
 		Matrice m1 = new Matrice(4,4);
@@ -78,6 +90,9 @@ class TranslationMatriceTest {
 		assertEquals(res.toString(), m1.toString());
 	}
 	
+	/**
+	 * Translate top test.
+	 */
 	@Test
 	void TranslateTopTest() {
 		Matrice m1 = new Matrice(4,4);

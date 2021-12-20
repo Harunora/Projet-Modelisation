@@ -9,32 +9,57 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * The Class UpdateFile.
+ */
 public class UpdateFile {
+	
+	/** The ligne com. */
 	int ligneAuteur,ligneCom;
+	
+	/** The contenu fichier. */
 	List<String> contenuFichier = new ArrayList<String>();
+	
+	/** The fichier. */
 	File fichier;
 
+	/**
+	 * Instantiates a new update file.
+	 *
+	 * @param fichier the fichier
+	 * @param ligneAuteur the ligne auteur
+	 * @param ligneCom the ligne com
+	 */
 	public UpdateFile(File fichier, int ligneAuteur, int ligneCom){
 		this.ligneAuteur = ligneAuteur;
 		this.ligneCom = ligneCom;
 		this.fichier = fichier;
-		System.out.println(ligneAuteur);
 		fileReader();
 	}
 
+	/**
+	 * Remplace auteur.
+	 *
+	 * @param ligne the ligne
+	 * @param comment the comment
+	 */
 	public void remplaceAuteur(int ligne, String comment) {
 		if(ligneAuteur == 0) {
 			contenuFichier.add(2, "comment made by " + comment);
 		}else {
-			if(ligne != ligneAuteur && ligne != ligneCom) {
-				System.out.println("Erreur \n la ligne de donnée est " + ligne + " elle doit etre = " + ligneAuteur);
-			}else {
+			if(ligne == ligneAuteur && ligne == ligneCom) {
 				contenuFichier.set(ligne-1, ("comment made by " + comment) ) ;
 			}	
 		}
 		fileWriter();
 	}
 	
+	/**
+	 * Remplace commentaire.
+	 *
+	 * @param ligne the ligne
+	 * @param comment the comment
+	 */
 	public void remplaceCommentaire(int ligne, String comment) {
 		if(ligneCom == 0) {
 			if(ligneAuteur==0) {
@@ -43,27 +68,29 @@ public class UpdateFile {
 				contenuFichier.add(3, "comment " + comment);
 			}
 		}else {
-			if(ligne != ligneCom) {
-				System.out.println("Erreur \n la ligne de donnée est " + ligne + " elle doit etre = " + ligneCom);
-			}else {
+			if(ligne == ligneCom) {
 				contenuFichier.set(ligne-1, ("comment " + comment) ) ;
 			}	
 		}
 		fileWriter();
 	}
 
+	/**
+	 * File writer.
+	 */
 	public void fileWriter() {
 		try(PrintWriter pw = new PrintWriter(fichier)){
 			for(int i = 0; i<contenuFichier.size(); i++) {
 				pw.println(String.valueOf(contenuFichier.get(i)));				
 			}
 		} catch (IOException e) {
-			System.out.println("Writing error : " + e.getMessage());
 			e.printStackTrace();
 		}
-		System.out.println("remplacement fait");
 	}
 
+	/**
+	 * File reader.
+	 */
 	public void fileReader() {
 		contenuFichier.clear();
 		String text;
@@ -83,6 +110,11 @@ public class UpdateFile {
 		scanner.close();
 	}
 
+	/**
+	 * To string.
+	 *
+	 * @return the string
+	 */
 	public String toString() {
 		String res = "";
 		for(int i = 0; i<contenuFichier.size();i++) {

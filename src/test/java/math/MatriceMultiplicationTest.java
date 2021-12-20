@@ -5,11 +5,17 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 import graph.Matrice;
-import rotation.Rotation;
+import rotation.Mouvement;
 import rotation.RotationUp;
 
+/**
+ * The Class MatriceMultiplicationTest.
+ */
 class MatriceMultiplicationTest {
 
+	/**
+	 * Simpletest.
+	 */
 	@Test
 	void Simpletest() {
 		Matrice m1 = new Matrice(4,4);
@@ -31,11 +37,14 @@ class MatriceMultiplicationTest {
 		res.add(3.0, 6.0, 6.0, 3.0);
 		res.add(4.0, 8.0, 8.0, 4.0);
 		
-		Rotation r1 = new RotationUp(m1 , null);
+		Mouvement r1 = new RotationUp(m1 , null);
 		Matrice sol = r1.multipliMatrice(m2);
 		assertEquals(sol.toString() , res.toString());	
 	}
 	
+	/**
+	 * Difftailletest.
+	 */
 	@Test
 	void Difftailletest() {
 		Matrice m1 = new Matrice(6,4);
@@ -61,12 +70,15 @@ class MatriceMultiplicationTest {
 		res.add(5.0, 10.0, 10.0, 5.0);
 		res.add(6.0, 12.0, 12.0, 6.0);
 		
-		Rotation r1 = new RotationUp(m1, null);
+		Mouvement r1 = new RotationUp(m1, null);
 		Matrice sol = r1.multipliMatrice(m2);
 		
 		assertEquals(sol.toString() , res.toString());	
 	}
 	
+	/**
+	 * Complexetest.
+	 */
 	@Test
 	void Complexetest() {
 		Matrice m1 = new Matrice(7,4);
@@ -94,11 +106,14 @@ class MatriceMultiplicationTest {
 		res.add(7.0, 5.0, 5.0, 1.0);
 		res.add(2.0, 4.5, 10.5, 1.0);
 		
-		Rotation r1 = new RotationUp(m1, null);
+		Mouvement r1 = new RotationUp(m1, null);
 		Matrice sol = r1.multipliMatrice(m2);
 		assertEquals(sol.toString() , res.toString());	
 	}
 	
+	/**
+	 * Two mulitplytest.
+	 */
 	@Test
 	void TwoMulitplytest() {
 		Matrice m1 = new Matrice(4,4);
@@ -120,7 +135,7 @@ class MatriceMultiplicationTest {
 		res.add(3.0, 6.0, 6.0, 3.0);
 		res.add(4.0, 8.0, 8.0, 4.0);
 		
-		Rotation r1 = new RotationUp(m1 , null);
+		Mouvement r1 = new RotationUp(m1 , null);
 		Matrice sol = r1.multipliMatrice(m2);
 		assertEquals(sol.toString() , res.toString());	
 		
@@ -142,6 +157,9 @@ class MatriceMultiplicationTest {
 		
 	}
 	
+	/**
+	 * Testrotate.
+	 */
 	@Test
 	void testrotate() {
 		Matrice m1 = new Matrice(4,4);
@@ -152,13 +170,13 @@ class MatriceMultiplicationTest {
 		
 		System.out.println("avant");
 		System.out.println(m1.toString());
-		Rotation r1 = new RotationUp(m1 , null);
-		Matrice sol = r1.rotate(18);
+		Mouvement r1 = new RotationUp(m1 , null);
+		Matrice sol = r1.mouvement(18);
 		System.out.println("Premiere rotation");
 		System.out.println(sol);
 		System.out.println("Deuxieme r");
-		Rotation r2 = new RotationUp(sol, null);
-		sol = r2.rotate(18);
+		Mouvement r2 = new RotationUp(sol, null);
+		sol = r2.mouvement(18);
 		System.out.println(sol);
 	}
 	

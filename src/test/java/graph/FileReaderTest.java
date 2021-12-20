@@ -8,16 +8,40 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
+/**
+ * The Class FileReaderTest.
+ */
 class FileReaderTest {
+	
+	/** The my path. */
 	String myPath = System.getProperty("user.dir")+File.separator+"exemples"+File.separator;
+	
+	/** The file. */
 	File file = new File(myPath+"cube.ply");
+	
+	/** The file 2. */
 	File file2 = new File(myPath+"apple.ply");
+	
+	/** The r. */
 	FileReader r = new FileReader();
+	
+	/** The r 2. */
 	FileReader r2 = new FileReader();
+	
+	/** The attendu. */
 	Graph attendu = implementation();
+	
+	/** The obtenu. */
 	Graph obtenu = r.read(file);
+	
+	/** The obtenu 2. */
 	Graph obtenu2 = r2.read(file2);
 	
+	/**
+	 * Implementation.
+	 *
+	 * @return the graph
+	 */
 	Graph implementation() {
 		List<Face> f = new ArrayList<Face>();
 		Matrice matrice;
@@ -69,51 +93,83 @@ class FileReaderTest {
 		return new Graph(6,f, matrice, null, "");
 	}
 	
+	/**
+	 * Test nb faces.
+	 */
 	@Test
 	void testNbFaces() {
 		assertEquals(attendu.getNbFaces(), obtenu.getNbFaces());
 	}
+	
+	/**
+	 * Test nb sommets.
+	 */
 	@Test
 	void testNbSommets() {
 		assertEquals(attendu.getFaces().get(0).getNbSommet(), obtenu.getFaces().get(0).getNbSommet());
 	}
+	
+	/**
+	 * Test face 1.
+	 */
 	@Test
 	void testFace1() {
 		assertEquals(attendu.getFaces().get(0).toString(), obtenu.getFaces().get(0).toString());
 	}
 	
+	/**
+	 * Test face 2.
+	 */
 	@Test
 	void testFace2() {
 		assertEquals(attendu.getFaces().get(1).toString(), obtenu.getFaces().get(1).toString());
 	}
 	
+	/**
+	 * Test sommet 1.
+	 */
 	@Test
 	void testSommet1() {
 		assertEquals(attendu.getFaces().get(1).getSommets().toString(), obtenu.getFaces().get(1).getSommets().toString());
 	}
 	
+	/**
+	 * Test sommet 2.
+	 */
 	@Test
 	void testSommet2() {
 		assertEquals(attendu.getFaces().get(3).getSommets().toString(), obtenu.getFaces().get(3).getSommets().toString());
 	}
 	
+	/**
+	 * Test graph.
+	 */
 	@Test
 	void testGraph() {
 		assertEquals(attendu.toString(), obtenu.toString());
 	}
 	
+	/**
+	 * Test nb faces EF.
+	 */
 	@Test
 	void testNbFacesEF() {
 		assertEquals(1704, obtenu2.getNbFaces());
 		
 	}
 	
+	/**
+	 * Test nb sommets file reader.
+	 */
 	@Test
 	void testNbSommetsFileReader() {
 		assertEquals(3, obtenu2.getNbSommet());
 	}
 	
 	
+	/**
+	 * Test size sommets.
+	 */
 	@Test
 	void testSizeSommets() {
 		assertEquals(6, obtenu.getFaces().size());
