@@ -105,7 +105,7 @@ public class CanvasWriter implements Observer{
 			if(pointPrint) {
 				graphicContext.setStroke(pointColor);
 				for(int j=0;j<this.x.get(i).length;j++) {
-					graphicContext.strokeLine(this.x.get(i)[j],this.y.get(i)[j] ,this.x.get(i)[j] ,this.y.get(i)[j] );
+					graphicContext.strokeOval(this.x.get(i)[j]-1,this.y.get(i)[j]-1,2, 2);
 				}
 			}
 			if(colorPrint) {
