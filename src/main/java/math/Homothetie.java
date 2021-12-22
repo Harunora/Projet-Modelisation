@@ -3,32 +3,39 @@ package math;
 import graph.Matrice;
 import rotation.Mouvement;
 
+
 /**
- * The Class Homothetie.
+ * La classe Homothetie derivee de Mouvement.
  */
 public class Homothetie extends Mouvement {
 	
-	/** The matrice courante. */
+	/** La matrice courante. */
 	private Matrice matriceCourante;
 	
 	/**
-	 * Instantiates a new homothetie.
+	 * Instantie une nouvelle homothetie.
 	 *
-	 * @param matrice the m
+	 * @param matrice la matrice
 	 */
 	public Homothetie(Matrice matrice) {
 		super(matrice, null);
 	}
 
 	/**
-	 * Gets the mcourante.
+	 * Prendre la matrice courante.
 	 *
-	 * @return the mcourante
+	 * @return la matrice courante
 	 */
 	public Matrice getMcourante() {
 		return this.matriceCourante;
 	}
 
+	/**
+	 * Mouvement.
+	 *
+	 * @param sensibility la sensibilitee
+	 * @return la matrice apres l'homothetie
+	 */
 	@Override
 	public Matrice mouvement(double sensibility) {
 		Matrice newMatrice = new Matrice(4, 4);

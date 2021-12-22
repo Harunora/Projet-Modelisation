@@ -3,15 +3,17 @@ package rotation;
 import graph.Matrice;
 
 /**
- * The Class RotationAroundLeft.
+ * La classe RotationAroundLeft.
+ * 
+ * @author Julien Lalloyer
  */
 public class RotationAroundLeft extends Mouvement {
 	
 	/**
-	 * Instantiates a new rotation around left.
+	 * Instantie une nouvelle rotation dans le sens anti-horraire.
 	 *
-	 * @param matrice 
-	 * @param mouvement 
+	 * @param matrice la matrice de base
+	 * @param mouvement le mouvement a apliquer
 	 */
 	public RotationAroundLeft(Matrice matrice, Mouvement mouvement) {
 		super(matrice, mouvement);
@@ -19,10 +21,10 @@ public class RotationAroundLeft extends Mouvement {
 	}
 
 	/**
-	 * Rotate.
+	 * Rotation dans le sens anti-horraire.
 	 *
-	 * @param sensibility 
-	 * @return the matrice
+	 * @param sensibility la sensibilitee
+	 * @return la matrice apres rotation
 	 */
 	@Override
 	public Matrice mouvement(double sensibility) {

@@ -1,6 +1,5 @@
 package math;
 
-
 import java.util.ArrayList;
 
 import graph.Face;
@@ -9,21 +8,23 @@ import graph.Sommet;
 import javafx.scene.paint.Color;
 
 /**
- * The Class CalculColor.
+ * La classe CalculColor qui calcule la couleur d'une face en fonction de la position de la lumière.
+ * 
+ * @author Julien Lalloyer
  */
 public class CalculColor {
 	
-	/** The couleur. */
+	/** La couleur. */
 	Color couleur;
 	
-	/** The vecteurlumiere. */
+	/** Le vecteur lumiere. */
 	Matrice vecteurlumiere;
 	
 	/**
-	 * Instantiates a new calcul color.
+	 * Constructeur de calculColor.
 	 *
-	 * @param positionlumiere the positionlumiere
-	 * @param color the color
+	 * @param positionlumiere position de la lumiere 
+	 * @param color la couleur
 	 */
 	public CalculColor(Matrice positionlumiere, Color color) {
 		ProduitScalaire produitScalaire = new ProduitScalaire(positionlumiere);
@@ -33,10 +34,10 @@ public class CalculColor {
 	}
 	
 	/**
-	 * Gets the color.
+	 * Getter pour prendre la couleur de la face et retourne une couleur en fonction de la lumiere.
 	 *
-	 * @param face the f
-	 * @return the color
+	 * @param face la face choisis
+	 * @return la couleur en fonction de la lumiere
 	 */
 	public Color getColor(Face face) {
 		ArrayList<Sommet> listsommet = (ArrayList<Sommet>) face.getSommets();
@@ -59,10 +60,10 @@ public class CalculColor {
 	}
 
 	/**
-	 * Calcfactlumiere.
+	 * Permet de calculer le coefficient a appliquer a la couleur de base.
 	 *
-	 * @param produitVectoUni the norme
-	 * @return the double
+	 * @param le produit vetoriel unitaire des faces
+	 * @return le coefficient a appliquer a la couleur
 	 */
 	private double calcfactlumiere(ProdVectoUni produitVectoUni) {
 		double coord_x = produitVectoUni.getNormeX() * vecteurlumiere.getX(0); 

@@ -3,32 +3,34 @@ package math;
 import graph.Matrice;
 
 /**
- * The Class Normeprod.
+ * La classe produit vectoriel unitaire.
+ * 
+ * @author Julien Lalloyer
  */
 public class ProdVectoUni {
 	
-	/** The produit scalaire. */
+	/** Le produit scalaire. */
 	protected ProduitScalaire produitScalaire;
 	
-	/** The racine prod scalaire. */
+	/** La racine du produit scalaire. */
 	protected double norme;
 	
-	/** The matrice. */
+	/** La matrice. */
 	protected Matrice matrice; 
 	
-	/** The dx. */
+	/** La coordonee X. */
 	private double coordX;
 	
-	/** The dy. */
+	/** La coordonee Y. */
 	private double coordY;
 	
-	/** The dz. */
+	/** La coordonee Z. */
 	private double coordZ;
 	
 	/**
-	 * Instantiates a new normeprod.
+	 * Instantie un nouveau produit vectoriel unitaire.
 	 *
-	 * @param produitScal the ps
+	 * @param produitScal le produit scalaire de la matrice de base
 	 */
 	public ProdVectoUni(ProduitScalaire produitScal){
 		produitScalaire = produitScal;		
@@ -41,9 +43,9 @@ public class ProdVectoUni {
 	}
 	
 	/**
-	 * Gets the norme.
+	 * Prendre le produit vectoriel unitaire.
 	 *
-	 * @return the norme
+	 * @return la matrice du produit vectoriel unitaire
 	 */
 	public Matrice getNorme() {
 		return matrice;
@@ -51,9 +53,9 @@ public class ProdVectoUni {
 	
 	
 	/**
-	 * Gets the norme X.
+	 * Prendre le produit vectoriel unitaire coordone X.
 	 *
-	 * @return the norme X
+	 * @return la coordonee X du produit vectoriel unitaire
 	 */
 	public double getNormeX() {
 		return matrice.getX(0);
@@ -61,9 +63,9 @@ public class ProdVectoUni {
 	
 	
 	/**
-	 * Gets the norme Y.
+	 * Prendre le produit vectoriel unitaire coordone Y.
 	 *
-	 * @return the norme Y
+	 * @return la coordonee Y du produit vectoriel unitaire
 	 */
 	public double getNormeY() {
 		return matrice.getY(0);
@@ -71,9 +73,9 @@ public class ProdVectoUni {
 	
 	
 	/**
-	 * Gets the norme Z.
+	 * Prendre le produit vectoriel unitaire coordone Y.
 	 *
-	 * @return the norme Z
+	 * @return la coordonee Y du produit vectoriel unitaire
 	 */
 	public double getNormeZ() {
 		return matrice.getZ(0);

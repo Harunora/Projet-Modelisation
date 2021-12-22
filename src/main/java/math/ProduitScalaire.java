@@ -5,26 +5,28 @@ import graph.Sommet;
 
 /**
  * The Class ProduitScalaire.
+ * 
+ * @author Julien Lalloyer
  */
 public class ProduitScalaire {	
 	
-	/** The matrice. */
+	/** La matrice. */
 	protected Matrice matrice;
 	
 	/**
-	 * Instantiates a new produit scalaire.
+	 * Instantie un nouveau produit scalaire.
 	 *
-	 * @param matrice the m
+	 * @param matrice la matrice
 	 */
 	public ProduitScalaire(Matrice matrice) {
 		this.matrice = matrice;
 	}
 	
 	/**
-	 * Instantiates a new produit scalaire.
+	 * Instantie un nouveau produit scalaire.
 	 *
-	 * @param sommet1 the p 1
-	 * @param sommet2 the p 2
+	 * @param sommet1 le premier sommet qui permetra a faire une matrice
+	 * @param sommet2 le second sommet qui permetra a faire une matrice
 	 */
 	public ProduitScalaire(Sommet sommet1, Sommet sommet2) {
 		matrice = new Matrice(1,1);
@@ -32,10 +34,10 @@ public class ProduitScalaire {
 	}
 	
 	/**
-	 * Verif prod.
+	 * Verifie la possibilité de faire un produit matricielle.
 	 *
-	 * @param matrice the matrice
-	 * @return true, if successful
+	 * @param matrice la matrice
+	 * @return true, si c'est possible
 	 */
 	public boolean verifProd(Matrice matrice) {
 		
@@ -43,9 +45,9 @@ public class ProduitScalaire {
 	}
 	
 	/**
-	 * Prod scal.
+	 * Produit scalaire.
 	 *
-	 * @param matrice the m
+	 * @param matrice la matrice
 	 */
 	public void prodScal(Matrice matrice) {
 		Matrice res;
@@ -58,10 +60,10 @@ public class ProduitScalaire {
 	}
 	
 	/**
-	 * Calc scal.
+	 * Calcule scalaire.
 	 *
-	 * @param matrice the m
-	 * @return the matrice
+	 * @param matrice la matrice utilisee pour le produit 
+	 * @return le produit scalaire des deux matrices
 	 */
 	public Matrice calcScal(Matrice matrice) {
 		Matrice res = new Matrice(1,1);
@@ -73,9 +75,9 @@ public class ProduitScalaire {
 	}
 
 	/**
-	 * Gets the matrice.
+	 * Prendre la matrice de l'homothetie.
 	 *
-	 * @return the matrice
+	 * @return la matrice
 	 */
 	public Matrice getMatrice() {
 		// TODO Auto-generated method stub

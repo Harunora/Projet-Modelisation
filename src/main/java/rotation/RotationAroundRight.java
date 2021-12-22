@@ -3,15 +3,17 @@ package rotation;
 import graph.Matrice;
 
 /**
- * The Class RotationAroundRight.
+ * La classe RotationAroundRight.
+ * 
+ * @author Julien Lalloyer
  */
 public class RotationAroundRight extends Mouvement  {
 
 	/**
-	 * Instantiates a new rotation around right.
+	 * Instantie une nouvelle rotation dans le sens horraire.
 	 *
-	 * @param matrice the m
-	 * @param mouvement the r
+	 * @param matrice la matrice de base
+	 * @param mouvement le mouvement a apliquer
 	 */
 	public RotationAroundRight(Matrice matrice, Mouvement mouvement) {
 		super(matrice ,mouvement);
@@ -19,10 +21,10 @@ public class RotationAroundRight extends Mouvement  {
 	}
 
 	/**
-	 * Rotate.
+	 * Rotation dans le sens horraire.
 	 *
-	 * @param sensibility the sensibility
-	 * @return the matrice
+	 * @param sensibility la sensibilitee
+	 * @return la matrice apres rotation
 	 */
 	@Override
 	public Matrice mouvement(double sensibility) {

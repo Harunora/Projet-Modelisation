@@ -3,26 +3,27 @@ package rotation;
 import graph.Matrice;
 
 /**
- * The Class RotationRight.
+ * La classe RotationRight.
+ * 
+ * @author Julien Lalloyer
  */
 public class RotationRight extends Mouvement{
 
 	/**
-	 * Instantiates a new rotation right.
+	 * Instantie une nouvelle rotation a droite.
 	 *
-	 * @param matrice the m
-	 * @param r the r
+	 * @param matrice la matrice de base
+	 * @param mouvement le mouvement a apliquer
 	 */
 	public RotationRight(Matrice matrice, Mouvement mouvement) {
 		super(matrice, mouvement);
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
-	 * Rotate.
+	 * Rotation par la droite.
 	 *
-	 * @param sensibility the sensibility
-	 * @return the matrice
+	 * @param sensibility la sensibilitee
+	 * @return la matrice apres rotation
 	 */
 	@Override
 	public Matrice mouvement(double sensibility) {

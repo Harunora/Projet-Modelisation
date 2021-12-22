@@ -4,20 +4,22 @@ import graph.Matrice;
 
 /**
  * The Class Rotation.
+ * 
+ * @author Julien Lalloyer
  */
 public abstract class Mouvement {
 	
-	/** The mcourante. */
+	/** La matrice courante. */
 	protected Matrice mcourante;
 	
-	/** The r. */
+	/** Le mouvement appliquer de base. */
 	protected Mouvement movement;
 	
 	/**
-	 * Instantiates a new rotation.
+	 * Instantie une nouvelle rotation.
 	 *
-	 * @param matrice the m
-	 * @param mouvement the r
+	 * @param matrice la matrice de base
+	 * @param mouvement le mouvement appliquer de base 
 	 */
 	public Mouvement(Matrice matrice, Mouvement mouvement) {
 		mcourante = matrice;
@@ -25,18 +27,18 @@ public abstract class Mouvement {
 	}
 	
 	/**
-	 * Rotate.
+	 * Permet le mouvement.
 	 *
-	 * @param sensibility the sensibility
+	 * @param sensibility la sensibilite de ce mouvement
 	 * @return the matrice
 	 */
 	public abstract Matrice mouvement(double sensibility);
 	
 	/**
-	 * Multipli matrice.
+	 * Produit matricielle.
 	 *
-	 * @param mconverter the mconverter
-	 * @return the matrice
+	 * @param mconverter la matrice de convertion (avec laquelle on multiplie celle de base)
+	 * @return la matrice multipliee
 	 */
 	public  Matrice multipliMatrice(Matrice mconverter) {
 		Matrice mConverted = new Matrice(mcourante.getTaille(), mcourante.getTaille());
@@ -85,9 +87,9 @@ public abstract class Mouvement {
 	}
 
 	/**
-	 * Gets the mcourante.
+	 * Prend la matrice courante.
 	 *
-	 * @return the mcourante
+	 * @return la matrice courante
 	 */
 	public Matrice getMcourante() {
 		return mcourante;

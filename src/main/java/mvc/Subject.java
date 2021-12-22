@@ -4,15 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * The Class Subject.
+ * La classe Subject(Sujet).
  */
 public abstract class Subject {
 
-	/** The list. */
+	/** La liste d'observeur. */
 	private List<Observer> list = new ArrayList<>();
 	
 	/**
-	 * Notify observer.
+	 * Notifie l'observeur.
 	 */
 	public void notifyObserver() {
 		for(int i = 0; i<this.list.size(); i++) {
@@ -21,9 +21,9 @@ public abstract class Subject {
 	}
 
 	/**
-	 * Notify observer.
+	 * Notifie l'observeur.
 	 *
-	 * @param data the data
+	 * @param data les donnees
 	 */
 	protected void notifyObserver(Object data) {
 		for(int i = 0; i<this.list.size(); i++) {
@@ -32,18 +32,18 @@ public abstract class Subject {
 	}
 
 	/**
-	 * Attach.
+	 * Atache un obeserveur au modele.
 	 *
-	 * @param observer the observer
+	 * @param observer l'observeur
 	 */
 	public void attach(Observer observer) {
 		this.list.add(observer);
 	}
 
 	/**
-	 * Detach.
+	 * Detache un obeserveur au modele.
 	 *
-	 * @param observer the observer
+	 * @param observer l'observeur
 	 */
 	public void detach(Observer observer) {
 		this.list.remove(observer);

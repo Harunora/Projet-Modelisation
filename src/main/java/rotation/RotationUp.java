@@ -3,26 +3,27 @@ package rotation;
 import graph.Matrice;
 
 /**
- * The Class RotationUp.
+ * La classe RotationUp.
+ * 
+ * @author Julien Lalloyer
  */
 public class RotationUp extends Mouvement {
 
 	/**
-	 * Instantiates a new rotation up.
+	 * Instantie une nouvelle rotation vers le haut.
 	 *
-	 * @param matrice the m
-	 * @param mouvement the r
+	 * @param matrice la matrice de base
+	 * @param mouvement le mouvement a apliquer
 	 */
 	public RotationUp(Matrice matrice, Mouvement mouvement) {
 		super(matrice, mouvement);
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
-	 * Rotate.
+	 * Rotation vers le haut.
 	 *
-	 * @param sensibility the sensibility
-	 * @return the matrice
+	 * @param sensibility la sensibilitee
+	 * @return la matrice apres rotation
 	 */
 	@Override
 	public Matrice mouvement(double sensibility) {

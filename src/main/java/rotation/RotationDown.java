@@ -3,15 +3,17 @@ package rotation;
 import graph.Matrice;
 
 /**
- * The Class RotationDown.
+ * La classe RotationDown.
+ * 
+ * @author Julien Lalloyer
  */
 public class RotationDown extends Mouvement {
 
 	/**
-	 * Instantiates a new rotation down.
+	 * Instantie une nouvelle rotation vers le bas.
 	 *
-	 * @param matrice the m
-	 * @param mouvement the r
+	 * @param matrice la matrice de base
+	 * @param mouvement le mouvement a apliquer
 	 */
 	public RotationDown(Matrice matrice, Mouvement mouvement) {
 		super(matrice, mouvement);
@@ -19,10 +21,10 @@ public class RotationDown extends Mouvement {
 	}
 
 	/**
-	 * Rotate.
+	 * Rotation vers le bas.
 	 *
-	 * @param sensibility the sensibility
-	 * @return the matrice
+	 * @param sensibility la sensibilitee
+	 * @return la matrice apres rotation
 	 */
 	@Override
 	public Matrice mouvement(double sensibility) {
