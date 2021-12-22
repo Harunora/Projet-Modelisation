@@ -11,47 +11,44 @@ import javafx.scene.control.TreeView;
 
 
 /**
- * The Class ExplorerFile.
+ * la classe ExplorerFile.
  *
- * @author Julien
+ * @author Julien Lalloyer
  */
 public class ExplorerFile {
 	
-	/** The tree. */
+	/** L'arbre de fichier. */
 	private TreeView<File> tree;
 	
-	/** The map file. */
+	/** La table de fichier. */
 	protected MapFile mapFile = new MapFile();
 	
-	/** The current. */
+	/** Le fichier courant. */
 	private File current = null;
 	
-	/** The current path. */
+	/** Le cheminn courant. */
 	private String currentPath = "";
 	
-	/** The graph. */
+	/** Le graphe. */
 	private Graph graph;
 	
-	/** The tmp. */
+	/** String temporaire. */
 	private String tmp;
 	
-	/** The r. */
-	public FileReader r = new FileReader();
+	/** Le lecteur de fichier. */
+	public FileReader fileReader = new FileReader();
 	
 	/**
-	 * Exist file.
-	 *
-	 * @param f the f
-	 * @param f1 the f 1
-	 * @return true, if successful
-	 */
-	/*
 	 * Methode static qui permet de voir si un fichier f existe dans un tableau de fichier
-	 * 
+	 *
+	 * @param tabFile le tableau de fichier
+	 * @param file le fichier a chercher
+	 * @return true, si il existe dans le tableau tabFile
+	 *  
 	 */
-	public static boolean existFile(File[] f, File f1) {
-		for (int i = 0; i < f.length; i++) {
-			if (f[i].equals(f1)) {
+	public static boolean existFile(File[] tabFile, File file) {
+		for (int i = 0; i < tabFile.length; i++) {
+			if (tabFile[i].equals(file)) {
 				return true;
 			}
 		}
@@ -59,33 +56,29 @@ public class ExplorerFile {
 	}
 	
 	/**
-	 * Gets the tree.
+	 * Prendre l'abre de fichier.
 	 *
-	 * @return the tree
+	 * @return L'arbre
 	 */
 	public TreeView<File> getTree() {
 		return tree;
 	}
 
 	/**
-	 * Sets the tree.
+	 * Donne une valeur a l'arbre.
 	 *
-	 * @param tree the new tree
+	 * @param tree le nouveau tree
 	 */
 	public void setTree(TreeView<File> tree) {
 		this.tree = tree;
 	}
 
 	/**
-	 * Gets the nodes for directory.
-	 *
-	 * @param directory the directory
-	 * @return the nodes for directory
-	 * @throws IOException Signals that an I/O exception has occurred.
-	 */
-	/*
 	 * Methode qui permet de trouver les Fils d'un repertoire
-	 * 
+	 *
+	 * @param directory le repertoire
+	 * @return les elements fils de ce repertoire
+	 * @throws IOException Signale une I/O exception s'est produit.
 	 */
 	public TreeItem<String> getNodesForDirectory(File directory) throws IOException {
 		this.currentPath = "";
@@ -118,13 +111,13 @@ public class ExplorerFile {
 	}
 	
 	/**
-	 * Gets the file.
+	 * Prend le fichier selectionne file.
 	 *
-	 * @param tv the tv
-	 * @return the file
+	 * @param treeView l'abre de fichier
+	 * @return le fichier selectionné
 	 */
-	public File getFile(TreeView<String> tv) {
-		tv.getSelectionModel().selectedItemProperty().addListener((v, oldValue, newValue) -> {
+	public File getFile(TreeView<String> treeView) {
+		treeView.getSelectionModel().selectedItemProperty().addListener((v, oldValue, newValue) -> {
 			if (newValue != null) {
 				tmp = ((TreeItem<String>) newValue).getValue();
 			}
@@ -134,41 +127,37 @@ public class ExplorerFile {
 	}
 	
 	/**
-	 * Sets the current.
+	 * Donne une valeur pour le nouveau fichier courant.
 	 *
-	 * @param current the new current
+	 * @param current le nouveau fichier courant
 	 */
 	public void setCurrent(File current) {
 		this.current = current;
 	}
 	
 	/**
-	 * Gets the current path.
+	 * Retourne le chemin courant
 	 *
-	 * @param treeView the tree view
-	 * @return the current path
+	 * @param treeView l'abre de chaine de caractere
+	 * @return le chemin courant
 	 */
 	public String getCurrentPath(TreeView<String> treeView) {
-		/*
-		 * Retourne le chemin courant
-		 * @param treeView TreeView
-		 */
 		return currentPath;
 	}
 	
 	/**
-	 * Sets the current path.
+	 * Donne une valeur au chemin courant.
 	 *
-	 * @param currentPath the new current path
+	 * @param currentPath le nouveau chemin courant
 	 */
 	public void setCurrentPath(String currentPath) {
 		this.currentPath = currentPath;
 	}
 	
 	/**
-	 * Gets the graph.
+	 * Retourne le graphe.
 	 *
-	 * @return the graph
+	 * @return le graphe
 	 */
 	public Graph getGraph() {
 		return graph;

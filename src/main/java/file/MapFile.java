@@ -5,41 +5,42 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * The Class MapFile.
+ * La classe MapFile.
+ * 
+ * @author Julien Lalloyer
  */
 public class MapFile {
 	
-	/** The mapfile. */
+	/** Le tableau fichier. */
 	protected Map<String, File> mapfile;
 	
 	/**
-	 * Instantiates a new map file.
+	 * Instantie un nouveau tableau fichier.
 	 */
-	@SuppressWarnings("unchecked")
 	public MapFile() {
-		mapfile = new HashMap<String, File>();
+		mapfile = new HashMap<>();
 	}
 	
 	/**
-	 * Adds the.
+	 * ajoute a la table.
 	 *
-	 * @param s the s
-	 * @param f the f
-	 * @return true, if successful
+	 * @param chaine la chaine associee au fichier
+	 * @param fichier  le fichier associer a la chaine
+	 * @return true, si cela est bien effectue
 	 */
-	public boolean add(String s , File f) {
-		mapfile.put(s, f);
+	public boolean add(String chaine , File fichier) {
+		mapfile.put(chaine, fichier);
 		return true;
 	}
 	
 	/**
-	 * Gets the file of.
+	 * Prend le fichier associer a la chaine
 	 *
-	 * @param s the s
-	 * @return the file of
+	 * @param chaine la chaine associee au fichier
+	 * @return le fichier associer a la chaine
 	 */
-	public File getFileOf(String s) {
-		return mapfile.get(s);
+	public File getFileOf(String chaine) {
+		return mapfile.get(chaine);
 	}
 	
 }

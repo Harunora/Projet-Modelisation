@@ -10,25 +10,25 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * The Class UpdateFile.
+ * La classe UpdateFile.
  */
 public class UpdateFile {
 	
-	/** The ligne com. */
+	/** La ligne auteur et la ligne commentaire. */
 	int ligneAuteur,ligneCom;
 	
-	/** The contenu fichier. */
-	List<String> contenuFichier = new ArrayList<String>();
+	/** Le contenu du fichier. */
+	List<String> contenuFichier = new ArrayList<>();
 	
-	/** The fichier. */
+	/** Le fichier. */
 	File fichier;
 
 	/**
-	 * Instantiates a new update file.
+	 * Instantie un nouveau fichier mis a jour.
 	 *
-	 * @param fichier the fichier
-	 * @param ligneAuteur the ligne auteur
-	 * @param ligneCom the ligne com
+	 * @param fichier le fichier
+	 * @param ligneAuteur le ligne auteur
+	 * @param ligneCom le ligne commentaire
 	 */
 	public UpdateFile(File fichier, int ligneAuteur, int ligneCom){
 		this.ligneAuteur = ligneAuteur;
@@ -40,8 +40,8 @@ public class UpdateFile {
 	/**
 	 * Remplace auteur.
 	 *
-	 * @param ligne the ligne
-	 * @param comment the comment
+	 * @param ligne le numero de la ligne
+	 * @param comment le nouveau auteur
 	 */
 	public void remplaceAuteur(int ligne, String comment) {
 		if(ligneAuteur == 0) {
@@ -57,8 +57,8 @@ public class UpdateFile {
 	/**
 	 * Remplace commentaire.
 	 *
-	 * @param ligne the ligne
-	 * @param comment the comment
+	 * @param ligne le numero de la ligne
+	 * @param comment le nouveau commentaire
 	 */
 	public void remplaceCommentaire(int ligne, String comment) {
 		if(ligneCom == 0) {
@@ -111,7 +111,7 @@ public class UpdateFile {
 	}
 
 	/**
-	 * To string.
+	 * Methode Tostring.
 	 *
 	 * @return the string
 	 */
