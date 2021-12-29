@@ -15,6 +15,9 @@ public class Graph extends Subject{
 	/** The nb faces. */
 	protected int nbFaces;
 	
+	/**
+	 * other graph for the views 
+	 */	
 	/** The faces. */
 	protected List<Face> faces;
 	
@@ -194,4 +197,6 @@ public class Graph extends Subject{
 	public List<String> getSommetsDeFaces() {
 		return sommetsDeFaces;
 	}
+	
+
 }

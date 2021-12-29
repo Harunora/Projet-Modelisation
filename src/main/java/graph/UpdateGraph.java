@@ -37,7 +37,9 @@ public class UpdateGraph extends Graph{
 	/** The calcule lumiere. */
 	protected boolean calculeLumiere = true;
 
+	protected Graph graph1, graph2;
 
+	
 	/**
 	 * Instantiates a new update graph.
 	 *
@@ -50,6 +52,15 @@ public class UpdateGraph extends Graph{
 	public UpdateGraph(int nbFace, List<Face> faces, Matrice matrice, List<String> sommetDeFaces, String auteur) {
 		super(nbFace, faces, matrice, sommetDeFaces, auteur);
 		this.original=new Graph(nbFace, faces, matrice, sommetDeFaces, auteur);
+		this.graph1 = new Graph(nbFace, faces, matrice, sommetDeFaces, auteur);
+		this.graph2 = new Graph(nbFace, faces, matrice, sommetDeFaces, auteur);
+	}
+	
+	public UpdateGraph(Graph graph) {
+		super(graph.nbFaces, graph.faces, graph.matrice, graph.sommetsDeFaces, graph.auteur);
+		this.original = new Graph(graph.nbFaces, graph.faces, graph.matrice, graph.sommetsDeFaces, graph.auteur);
+		this.graph1 = new Graph(graph.nbFaces, graph.faces, graph.matrice, graph.sommetsDeFaces, graph.auteur);
+		this.graph2 = new Graph(graph.nbFaces, graph.faces, graph.matrice, graph.sommetsDeFaces, graph.auteur);
 	}
 	
 	/**
@@ -172,5 +183,21 @@ public class UpdateGraph extends Graph{
 		lumiere.modifieZ(0, z);
 		calculColor = new CalculColor(lumiere,this.color);
 		update(matrice);
+	}
+	
+	public Graph getGraphDown() {
+		return this.graph1;
+	}
+	
+	public Graph getGraphSide() {
+		return this.graph2;
+	}
+	
+	public void setGraphDown(UpdateGraph graph) {
+		this.graph1 = graph;
+	}
+	
+	public void setGraphSide(UpdateGraph graph) {
+		this.graph2 = graph;
 	}
 }

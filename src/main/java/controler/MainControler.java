@@ -8,6 +8,7 @@ import file.ExplorerFile;
 import file.UpdateFile;
 import graph.CanvasWriter;
 import graph.FileReader;
+import graph.Graph;
 import graph.Matrice;
 import graph.UpdateGraph;
 import javafx.event.ActionEvent;
@@ -36,6 +37,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import math.Homothetie;
 import math.Translation;
+import mvc.Observer;
 import rotation.Mouvement;
 import rotation.RotationAroundLeft;
 import rotation.RotationAroundRight;
@@ -168,8 +170,8 @@ public class MainControler implements Initializable {
 		grapheTop = graphe;
 		grapheDown = graphe;
 		canvasWriterMain= new CanvasWriter(canvas,graphe);
-		//canvasWriterTop= new CanvasWriter(canvasTop,graphe.getVueCote());
-		//canvasWriterDown= new CanvasWriter(canvasDown,graphe.getVueDessus());
+		canvasWriterTop= new CanvasWriter(canvasTop,grapheTop);
+		canvasWriterDown= new CanvasWriter(canvasDown,grapheDown);
         
         buttonHelp.addEventHandler(MouseEvent.MOUSE_CLICKED, e->{
 
@@ -683,20 +685,23 @@ public class MainControler implements Initializable {
      */
     private void updateFile() {
 		canvasWriterMain.clear(javafx.scene.paint.Color.WHITE);
-		//canvasWriterTop.clear(javafx.scene.paint.Color.WHITE);
-		//canvasWriterDown.clear(javafx.scene.paint.Color.WHITE);
+		canvasWriterTop.clear(javafx.scene.paint.Color.WHITE);
+		canvasWriterDown.clear(javafx.scene.paint.Color.WHITE);
 		fileReader = new FileReader();
 		currentFile=explorerFile.getFile(treeView);
 		if(currentFile != null && currentFile.isFile()) {
 			graphe = fileReader.read(currentFile);
-			//grapheTop = graphe.getVueCote();
-			//grapheDown = graphe.getVueDessus();
+			grapheTop = new UpdateGraph(graphe.getGraphDown());
+			rotation = new RotationAroundRight(grapheTop.getMatrice(),null); 
+			rotation.mouvement(Math.PI/10);		
+			grapheTop.update(rotation.getMcourante());
+			graphe.setGraphDown(grapheTop);
 			canvasWriterMain.update(graphe);
+			canvasWriterTop.update(grapheTop);
+			canvasWriterDown.update(grapheDown);
 			graphe.attach(canvasWriterMain);
-			grapheDown.attach(canvasWriterDown);
-			grapheTop.attach(canvasWriterTop);
-			//canvasWriterTop.update(graphe.getVueCote());
-			//canvasWriterDown.update(graphe.getVueDessus());
+			grapheTop.attach(canvasWriterDown);
+			grapheDown.attach(canvasWriterTop);
 		}
 	}
     
