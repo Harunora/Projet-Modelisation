@@ -80,6 +80,8 @@ public class MainControler implements Initializable {
    
     /** The current file. */
     public File currentFile = new File("exemples/cube.ply");
+    public File defaultFile = new File("exemples/apple.ply");
+
     
     /** The explorer file. */
     private ExplorerFile explorerFile = new ExplorerFile();
@@ -92,9 +94,6 @@ public class MainControler implements Initializable {
     
     /** The graphe. */
     private UpdateGraph graphe = fileReader.read(currentFile);
-    
-    /** The graphe down. */
-    private UpdateGraph grapheTop, grapheDown;
     
     /** The canvas writer down. */
     private CanvasWriter canvasWriterMain, canvasWriterTop, canvasWriterDown;
@@ -166,12 +165,10 @@ public class MainControler implements Initializable {
     	});
         
 		fileReader=new FileReader();
-		graphe = fileReader.read(currentFile);
-		grapheTop = graphe;
-		grapheDown = graphe;
+		graphe = fileReader.read(currentFile);			
 		canvasWriterMain= new CanvasWriter(canvas,graphe);
-		canvasWriterTop= new CanvasWriter(canvasTop,grapheTop);
-		canvasWriterDown= new CanvasWriter(canvasDown,grapheDown);
+		canvasWriterTop= new CanvasWriter(canvasTop,graphe);
+		canvasWriterDown= new CanvasWriter(canvasDown,graphe);
         
         buttonHelp.addEventHandler(MouseEvent.MOUSE_CLICKED, e->{
 
@@ -690,18 +687,11 @@ public class MainControler implements Initializable {
 		fileReader = new FileReader();
 		currentFile=explorerFile.getFile(treeView);
 		if(currentFile != null && currentFile.isFile()) {
-			graphe = fileReader.read(currentFile);
-			grapheTop = new UpdateGraph(graphe.getGraphDown());
-			rotation = new RotationAroundRight(grapheTop.getMatrice(),null); 
-			rotation.mouvement(Math.PI/10);		
-			grapheTop.update(rotation.getMcourante());
-			graphe.setGraphDown(grapheTop);
+			graphe = fileReader.read(currentFile);		
 			canvasWriterMain.update(graphe);
-			canvasWriterTop.update(grapheTop);
-			canvasWriterDown.update(grapheDown);
+			canvasWriterTop.update(graphe);
+			canvasWriterDown.update(graphe);
 			graphe.attach(canvasWriterMain);
-			grapheTop.attach(canvasWriterDown);
-			grapheDown.attach(canvasWriterTop);
 		}
 	}
     

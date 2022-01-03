@@ -56,7 +56,7 @@ public class FileReader {
 				startFile(scanner,  ligne);
 				matrice = new Matrice(nbSommets, nbFaces);
 				readSommet(nbSommets, sommets, scanner);
-				readFace(nbFaces, sommets, faces, sommetsDeFaces, scanner);	
+				readFace(nbFaces, sommets, faces, sommetsDeFaces, scanner);
 			}
 			scanner.close();
 		} catch (FileNotFoundException e) {
@@ -79,6 +79,10 @@ public class FileReader {
 			actual = actualNext(scanner);
 			if(actual.equals("end_header"+"\n")) {
 				achieved = true;
+			}
+			
+			if(actual.equals("\n")) {
+				ligne--;
 			}
 
 
@@ -130,9 +134,10 @@ public class FileReader {
 	private void readFace(int nbFaces, List<Sommet> sommets, List<Face> faces,List<String> stringFace, Scanner scanner) {
 		for(int i = 0; i<nbFaces; i++) {
 			actual = actualNext(scanner);
-			if(actual.equals("")) {
+			if(actual.equals("\n")) {
 				i--;
-			}else {
+			}
+			else {
 				stringFace.add(actual);
 				List<Sommet> listSommetTmp = new ArrayList<Sommet>();
 				List<Integer> listIdxSommet = new ArrayList<Integer>();
@@ -177,11 +182,15 @@ public class FileReader {
 		for(int i = 0; i<nbSommets; i++) {
 			Sommet tmp;
 			actual = actualNext(scanner);
-			String[] s1 = actual.split(" ");
-			double[] tabXyz = addXyz(s1);
-			tmp = new Sommet(tabXyz);
-			sommets.add(tmp);
-			matrice.add(tmp);
+			if(actual.equals("\n")) {
+				i--;
+			}else {
+				String[] s1 = actual.split(" ");
+				double[] tabXyz = addXyz(s1);
+				tmp = new Sommet(tabXyz);
+				sommets.add(tmp);
+				matrice.add(tmp);				
+			}
 		}
 	}
 
@@ -234,5 +243,6 @@ public class FileReader {
 	public int getLigneCom() {
 		return ligneCom;
 	}
+
 
 }
