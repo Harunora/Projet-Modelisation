@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import graph.Matrice;
+import graph.Matrix;
 
 /**
  * The Class TranslationMatriceTest.
@@ -16,9 +16,9 @@ class TranslationMatriceTest {
 	 */
 	@Test
 	void translateRightTest() {
-		Matrice matrice1 = new Matrice(4,4);
-		Matrice res = new Matrice(4,4);
-		Matrice mtrans = new Matrice(1,1);
+		Matrix matrice1 = new Matrix(4,4);
+		Matrix res = new Matrix(4,4);
+		Matrix mtrans = new Matrix(1,1);
 		mtrans.add(0, 1.0, 0, 0);
 		
 		matrice1.add(1.0, 1.0, 1.0, 1.0);
@@ -42,9 +42,9 @@ class TranslationMatriceTest {
 	 */
 	@Test
 	void translateLeftTest() {
-		Matrice matrice1 = new Matrice(4,4);
-		Matrice res = new Matrice(4,4);
-		Matrice mtrans = new Matrice(1,1);
+		Matrix matrice1 = new Matrix(4,4);
+		Matrix res = new Matrix(4,4);
+		Matrix mtrans = new Matrix(1,1);
 		mtrans.add(0, -1.0, 0, 0);
 		
 		matrice1.add(1.0, 1.0, 1.0, 1.0);
@@ -69,9 +69,9 @@ class TranslationMatriceTest {
 	 */
 	@Test
 	void translateDownTest() {
-		Matrice matrice1 = new Matrice(4,4);
-		Matrice res = new Matrice(4,4);
-		Matrice mtrans = new Matrice(1,1);
+		Matrix matrice1 = new Matrix(4,4);
+		Matrix res = new Matrix(4,4);
+		Matrix mtrans = new Matrix(1,1);
 		mtrans.add(-1.0, 0, 0, 0);
 		
 		matrice1.add(1.0, 1.0, 1.0, 1.0);
@@ -95,9 +95,9 @@ class TranslationMatriceTest {
 	 */
 	@Test
 	void translateTopTest() {
-		Matrice matrice1 = new Matrice(4,4);
-		Matrice res = new Matrice(4,4);
-		Matrice mtrans = new Matrice(1,1);
+		Matrix matrice1 = new Matrix(4,4);
+		Matrix res = new Matrix(4,4);
+		Matrix mtrans = new Matrix(1,1);
 		mtrans.add(1.0, 0, 0, 0);
 		
 		matrice1.add(1.0, 1.0, 1.0, 1.0);

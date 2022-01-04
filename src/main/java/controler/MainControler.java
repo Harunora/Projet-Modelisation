@@ -9,7 +9,7 @@ import file.UpdateFile;
 import graph.CanvasWriter;
 import graph.FileReader;
 import graph.Graph;
-import graph.Matrice;
+import graph.Matrix;
 import graph.UpdateGraph;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -203,7 +203,7 @@ public class MainControler implements Initializable {
         
         editAuteurButton.addEventHandler(MouseEvent.MOUSE_CLICKED, e->{
         	if(currentFile != null && currentFile.isFile()) {
-        		UpdateFile updateFile = new UpdateFile(currentFile,fileReader.getLigneAuteur(),fileReader.getLigneCom());
+        		UpdateFile updateFile = new UpdateFile(currentFile,fileReader.getAuthorLine(),fileReader.getCommentLine());
         		TextArea textField = new TextArea();
         		Button validButton = new Button();
         		validButton.setText("Confirmer");
@@ -233,7 +233,7 @@ public class MainControler implements Initializable {
         		newWindow.show();
         		
         		validButton.addEventHandler(MouseEvent.MOUSE_CLICKED, i->{
-        			updateFile.remplaceAuteur(fileReader.getLigneAuteur(), textField.getText());
+        			updateFile.remplaceAuteur(fileReader.getAuthorLine(), textField.getText());
         			newWindow.close();
         		});
         		
@@ -242,7 +242,7 @@ public class MainControler implements Initializable {
         
         editCommentaireButton.addEventHandler(MouseEvent.MOUSE_CLICKED, e->{
         	if(currentFile != null && currentFile.isFile()) {
-        		UpdateFile updateFile = new UpdateFile(currentFile,fileReader.getLigneAuteur(),fileReader.getLigneCom());
+        		UpdateFile updateFile = new UpdateFile(currentFile,fileReader.getAuthorLine(),fileReader.getCommentLine());
         		TextArea textField = new TextArea();
         		Button validButton = new Button();
         		StackPane secondaryLayout = new StackPane();
@@ -267,7 +267,7 @@ public class MainControler implements Initializable {
         		newWindow.show();
         		
         		validButton.addEventHandler(MouseEvent.MOUSE_CLICKED, i->{
-        			updateFile.remplaceCommentaire(fileReader.getLigneCom(), textField.getText());
+        			updateFile.remplaceCommentaire(fileReader.getCommentLine(), textField.getText());
         			newWindow.close();
         		});
         		
@@ -280,10 +280,10 @@ public class MainControler implements Initializable {
         	if(currentFile != null && currentFile.isFile()) {
         		Label secondLabel = new Label("===========================================================================\n"
         				+ "Nom du fichier : "+ currentFile.getName() +"\n\n"
-        				+ "Auteur : "+ graphe.getAuteur() + "a la ligne " + fileReader.getLigneAuteur() +"\n\n"
+        				+ "Auteur : "+ graphe.getAuthor() + "a la ligne " + fileReader.getAuthorLine() +"\n\n"
         				+ "Nombre de Faces : "+ graphe.getNbFaces()+"\n\n"
-						+ "Nombre de Sommet par faces : "+ graphe.getNbSommet() +"\n\n"
-						+ "Autre commentaire : "+ fileReader.getCommentaire()+ "a la ligne " + fileReader.getLigneCom()+"\n\n"
+						+ "Nombre de Sommet par faces : "+ graphe.getNbVertex() +"\n\n"
+						+ "Autre commentaire : "+ fileReader.getComment()+ "a la ligne " + fileReader.getCommentLine()+"\n\n"
 						+ "\n\n\n"
 						+ "");
 
@@ -589,7 +589,7 @@ public class MainControler implements Initializable {
 				graphe.attach(canvasWriterMain);
 				graphe.attach(canvasWriterTop);
 				graphe.attach(canvasWriterDown);
-				graphe.update(graphe.getMatriceOriginal());
+				graphe.update(graphe.getOriginalMatrix());
 				break;
 			}			
 		});
@@ -600,7 +600,7 @@ public class MainControler implements Initializable {
 	 * Rotate right.
 	 */
 	private void rotateRight() {
-		rotation = new RotationRight(graphe.getMatrice(),null); 
+		rotation = new RotationRight(graphe.getMatrix(),null); 
 		rotation.mouvement(Math.PI/100);
 		graphe.update(rotation.getMcourante());
 	}
@@ -609,7 +609,7 @@ public class MainControler implements Initializable {
 	 * Rotation left.
 	 */
 	private void rotationLeft() {
-		rotation = new RotationLeft(graphe.getMatrice(),null); 
+		rotation = new RotationLeft(graphe.getMatrix(),null); 
 		rotation.mouvement(Math.PI/100);
 		graphe.update(rotation.getMcourante());
 	}
@@ -618,7 +618,7 @@ public class MainControler implements Initializable {
 	 * Rotation down.
 	 */
 	private void rotationDown() {
-		rotation = new RotationDown(graphe.getMatrice(),null); 
+		rotation = new RotationDown(graphe.getMatrix(),null); 
 		rotation.mouvement(Math.PI/100);
 		graphe.update(rotation.getMcourante());
 	}
@@ -627,7 +627,7 @@ public class MainControler implements Initializable {
 	 * Rotation up.
 	 */
 	private void rotationUp() {
-		rotation = new RotationUp(graphe.getMatrice(),null); 
+		rotation = new RotationUp(graphe.getMatrix(),null); 
 		rotation.mouvement(Math.PI/100);	
 		graphe.update(rotation.getMcourante());
 	}
@@ -636,7 +636,7 @@ public class MainControler implements Initializable {
 	 * Rotation around left.
 	 */
 	private void rotationAroundLeft() {
-		rotation = new RotationAroundLeft(graphe.getMatrice(),null); 
+		rotation = new RotationAroundLeft(graphe.getMatrix(),null); 
 		rotation.mouvement(Math.PI/100);
 		graphe.update(rotation.getMcourante());
 	}
@@ -645,7 +645,7 @@ public class MainControler implements Initializable {
 	 * Rotation around right.
 	 */
 	private void rotationAroundRight() {
-		rotation = new RotationAroundRight(graphe.getMatrice(),null); 
+		rotation = new RotationAroundRight(graphe.getMatrix(),null); 
 		rotation.mouvement(Math.PI/100);		
 		graphe.update(rotation.getMcourante());
 	}
@@ -658,11 +658,11 @@ public class MainControler implements Initializable {
 	 * @param z the z
 	 */
 	private void translateAction(double x, double y, double z) {
-		translation = new Translation(graphe.getMatrice());
-		System.out.println("avant : " + graphe.getMatrice().getX(0));
-		translation.translate(new Matrice(1, 1 , x , y, z ,1.0));
+		translation = new Translation(graphe.getMatrix());
+		System.out.println("avant : " + graphe.getMatrix().getX(0));
+		translation.translate(new Matrix(1, 1 , x , y, z ,1.0));
 		graphe.update(translation.getMcourante());
-		System.out.println("apres : " + graphe.getMatrice().getX(0));
+		System.out.println("apres : " + graphe.getMatrix().getX(0));
 
 	}
 	
@@ -672,7 +672,7 @@ public class MainControler implements Initializable {
 	 * @param k the k
 	 */
 	private void homothetieAction(double k) {
-		homothetie = new Homothetie(graphe.getMatrice());
+		homothetie = new Homothetie(graphe.getMatrix());
 		homothetie.mouvement(k);
 		graphe.update(homothetie.getMcourante());
 	}

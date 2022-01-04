@@ -4,11 +4,9 @@ package graph;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
-
 import javafx.scene.paint.Color;
 import math.CalculColor;
-import rotation.RotationLeft;
-import rotation.RotationUp;
+
 
 /**
  * The Class UpdateGraph.
@@ -17,16 +15,16 @@ public class UpdateGraph extends Graph{
 
 
 	/** The sommets. */
-	private List<Sommet> sommets = new ArrayList<Sommet>();
+	private List<Vertex> sommets = new ArrayList<Vertex>();
 	
 	/** The has set color. */
 	private boolean hasSetColor;
 	
 	/** The d. */
-	private int nb,a,b,c,d;
+	private int number,vertexA,vertexB,vertexC,vertexD;
 	
 	/** The lumiere. */
-	Matrice lumiere = new Matrice(1,1,1,1,1,1);
+	Matrix lumiere = new Matrix(1,1,1,1,1);
 	
 	/** The calcul color. */
 	private CalculColor calculColor = new CalculColor(lumiere,this.color);
@@ -47,7 +45,7 @@ public class UpdateGraph extends Graph{
 	 * @param sommetDeFaces the sommet de faces
 	 * @param auteur the auteur
 	 */
-	public UpdateGraph(int nbFace, List<Face> faces, Matrice matrice, List<String> sommetDeFaces, String auteur) {
+	public UpdateGraph(int nbFace, List<Face> faces, Matrix matrice, List<String> sommetDeFaces, String auteur) {
 		super(nbFace, faces, matrice, sommetDeFaces, auteur);
 		this.original=new Graph(nbFace, faces, matrice, sommetDeFaces, auteur);
 	}
@@ -55,17 +53,17 @@ public class UpdateGraph extends Graph{
 	/**
 	 * Update.
 	 *
-	 * @param ma the ma
+	 * @param matrix the ma
 	 */
-	public void update(Matrice ma) {
+	public void update(Matrix matrix) {
 		this.faces=this.original.faces;
-		this.matrice=this.original.matrice;
-		this.sommetsDeFaces=this.original.sommetsDeFaces;
-		matrice = ma;
+		this.matrix=this.original.matrix;
+		this.listOfFaces=this.original.listOfFaces;
+		matrix = matrix;
 		faces.clear();
 		sommets.clear();
-		for(int i = 0; i<matrice.getTaille(); i++) {
-			sommets.add(new Sommet(matrice.getX(i),matrice.getY(i),matrice.getZ(i)));
+		for(int i = 0; i<matrix.getTaille(); i++) {
+			sommets.add(new Vertex(matrix.getX(i),matrix.getY(i),matrix.getZ(i)));
 		}
 		readFace();	
 		notifyObserver();
@@ -79,8 +77,8 @@ public class UpdateGraph extends Graph{
 	public void setColor(javafx.scene.paint.Color color) {
 		hasSetColor = true;
 		this.color = color;
-		for(int i = 0; i< this.nbFaces; i++) {
-			faces.get(i).setColor(this.color);
+		for(int index = 0; index< this.nbFaces; index++) {
+			setFaceColor(index, color);
 		}
 	}
 
@@ -96,25 +94,25 @@ public class UpdateGraph extends Graph{
 	/**
 	 * Read nb face.
 	 *
-	 * @param i the i
+	 * @param index the i
 	 */
-	private void readNbFace(int i) {
-		StringTokenizer lineToken = new StringTokenizer(sommetsDeFaces.get(i));
-		nb = Integer.parseInt(lineToken.nextToken());
-		a = Integer.parseInt(lineToken.nextToken());
-		b = Integer.parseInt(lineToken.nextToken());
-		c = Integer.parseInt(lineToken.nextToken());
-		if(nb==4) {
-			d = Integer.parseInt(lineToken.nextToken());			
+	private void readNbFace(int index) {
+		StringTokenizer lineToken = new StringTokenizer(listOfFaces.get(index));
+		number = Integer.parseInt(lineToken.nextToken());
+		vertexA = Integer.parseInt(lineToken.nextToken());
+		vertexB = Integer.parseInt(lineToken.nextToken());
+		vertexC = Integer.parseInt(lineToken.nextToken());
+		if(number==4) {
+			vertexD = Integer.parseInt(lineToken.nextToken());			
 		}
-		List<Sommet> tmp = new ArrayList<Sommet>();
+		List<Vertex> tmp = new ArrayList<Vertex>();
 		addListSommet(tmp);
-		Face faceTmp = new Face(nb, tmp, color);
+		Face faceTmp = new Face(number, tmp, color);
 		Color colorTmp = color;
 		if(calculeLumiere){
 			colorTmp=calculColor.getColor(faceTmp);
 		}
-		faceTmp = new Face(nb, tmp, colorTmp);
+		faceTmp = new Face(number, tmp, colorTmp);
 		//System.out.println("couleur ombre " + colorTmp);
 		//System.out.println("couleur globale : " + color);
 		faces.add(faceTmp);
@@ -142,7 +140,7 @@ public class UpdateGraph extends Graph{
 	 */
 	public void ombrage(boolean value) {
 		this.calculeLumiere=value;
-		update(matrice);
+		update(matrix);
 	}
 
 	/**
@@ -150,27 +148,27 @@ public class UpdateGraph extends Graph{
 	 *
 	 * @param tmp the tmp
 	 */
-	private void addListSommet(List<Sommet> tmp) {
-		tmp.add(sommets.get(a));
-		tmp.add(sommets.get(b));
-		tmp.add(sommets.get(c));
-		if(nb == 4) {
-			tmp.add(sommets.get(d));			
+	private void addListSommet(List<Vertex> tmp) {
+		tmp.add(sommets.get(vertexA));
+		tmp.add(sommets.get(vertexB));
+		tmp.add(sommets.get(vertexC));
+		if(number == 4) {
+			tmp.add(sommets.get(vertexD));			
 		}
 	}
 	
 	/**
 	 * Modifier lumiere.
 	 *
-	 * @param x the x
-	 * @param y the y
-	 * @param z the z
+	 * @param xCoordinate the x
+	 * @param yCoordinate the y
+	 * @param zCoordinate the z
 	 */
-	public void modifierLumiere(int x,int y,int z) {
-		lumiere.modifieX(0, x);
-		lumiere.modifieY(0, y);
-		lumiere.modifieZ(0, z);
+	public void modifierLumiere(int xCoordinate,int yCoordinate,int zCoordinate) {
+		lumiere.modifieX(0, xCoordinate);
+		lumiere.modifieY(0, yCoordinate);
+		lumiere.modifieZ(0, zCoordinate);
 		calculColor = new CalculColor(lumiere,this.color);
-		update(matrice);
+		update(matrix);
 	}
 }

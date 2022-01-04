@@ -1,6 +1,6 @@
 package math;
 
-import graph.Matrice;
+import graph.Matrix;
 
 /**
  * La classe Translation.
@@ -10,7 +10,7 @@ import graph.Matrice;
 public class Translation {
 	
 	/** La matrice courante. */
-	protected Matrice matriceCourante;
+	protected Matrix matriceCourante;
 	
 	/** La coordonee X de la matrice. */
 	private double matricecoordX ;
@@ -26,7 +26,7 @@ public class Translation {
 	 *
 	 * @param matrice la matrice
 	 */
-	public Translation(Matrice matrice) {
+	public Translation(Matrix matrice) {
 		matriceCourante = matrice;
 	}
 	
@@ -39,12 +39,12 @@ public class Translation {
 	 * @param coord_z le z qu'on ajoute a la matrice.
 	 * @return la matrice apres la translation
 	 */
-	public  Matrice addToMatrice(double coord_x, double coord_y , double coord_z) {
-		Matrice matriceConverted = new Matrice(matriceCourante.getTaille(),matriceCourante.getTaille());
+	public  Matrix addToMatrice(double coordx, double coordy , double coordz) {
+		Matrix matriceConverted = new Matrix(matriceCourante.getTaille(),matriceCourante.getTaille());
 		for(int i = 0 ; i < matriceCourante.getTaille(); i++) {
-			matricecoordX =  matriceCourante.getX(i) + coord_x;
-			matricecoordY =  matriceCourante.getY(i) + coord_y;
-			matricecoordZ =  matriceCourante.getZ(i) + coord_z;
+			matricecoordX =  matriceCourante.getX(i) + coordx;
+			matricecoordY =  matriceCourante.getY(i) + coordy;
+			matricecoordZ =  matriceCourante.getZ(i) + coordz;
 			matriceConverted .add(matricecoordX, matricecoordY, matricecoordZ, matriceCourante.getV(i));
 			matricecoordX = 0.0;
 			matricecoordY = 0.0;
@@ -60,7 +60,7 @@ public class Translation {
 	 * @param matrice la matrice
 	 * @return la matrice translaté
 	 */
-	public Matrice translate(Matrice matrice) {
+	public Matrix translate(Matrix matrice) {
 		this.addToMatrice(matrice.getX(0), matrice.getY(0),matrice.getZ(0));
 		return this.getMcourante();
 
@@ -71,7 +71,7 @@ public class Translation {
 	 *
 	 * @return la matrice courante
 	 */
-	public Matrice getMcourante() {
+	public Matrix getMcourante() {
 		return this.matriceCourante;
 	}
 }

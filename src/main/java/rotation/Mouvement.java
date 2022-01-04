@@ -1,6 +1,6 @@
 package rotation;
 
-import graph.Matrice;
+import graph.Matrix;
 
 /**
  * The Class Rotation.
@@ -10,7 +10,7 @@ import graph.Matrice;
 public abstract class Mouvement {
 	
 	/** La matrice courante. */
-	protected Matrice mcourante;
+	protected Matrix mcourante;
 	
 	/** Le mouvement appliquer de base. */
 	protected Mouvement movement;
@@ -21,7 +21,7 @@ public abstract class Mouvement {
 	 * @param matrice la matrice de base
 	 * @param mouvement le mouvement appliquer de base 
 	 */
-	public Mouvement(Matrice matrice, Mouvement mouvement) {
+	public Mouvement(Matrix matrice, Mouvement mouvement) {
 		mcourante = matrice;
 		this.movement = mouvement;
 	}
@@ -32,7 +32,7 @@ public abstract class Mouvement {
 	 * @param sensibility la sensibilite de ce mouvement
 	 * @return the matrice
 	 */
-	public abstract Matrice mouvement(double sensibility);
+	public abstract Matrix mouvement(double sensibility);
 	
 	/**
 	 * Produit matricielle.
@@ -40,8 +40,8 @@ public abstract class Mouvement {
 	 * @param mconverter la matrice de convertion (avec laquelle on multiplie celle de base)
 	 * @return la matrice multipliee
 	 */
-	public  Matrice multipliMatrice(Matrice mconverter) {
-		Matrice mConverted = new Matrice(mcourante.getTaille(), mcourante.getTaille());
+	public  Matrix multipliMatrice(Matrix mconverter) {
+		Matrix mConverted = new Matrix(mcourante.getTaille(), mcourante.getTaille());
 		double coordX = 0.0;
 		double coordY = 0.0;
 		double coordZ = 0.0;
@@ -91,7 +91,7 @@ public abstract class Mouvement {
 	 *
 	 * @return la matrice courante
 	 */
-	public Matrice getMcourante() {
+	public Matrix getMcourante() {
 		return mcourante;
 	}
 
@@ -100,7 +100,7 @@ public abstract class Mouvement {
 	 *
 	 * @param mcourante the new mcourante
 	 */
-	public void setMcourante(Matrice mcourante) {
+	public void setMcourante(Matrix mcourante) {
 		this.mcourante = mcourante;
 	}
 	

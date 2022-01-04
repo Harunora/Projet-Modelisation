@@ -1,7 +1,6 @@
 package graph;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 import javafx.scene.paint.Color;
@@ -15,27 +14,27 @@ public class Face implements Comparable<Face> {
 	protected javafx.scene.paint.Color color;
 	
 	/** The nb sommet. */
-	protected int nbSommet;
+	protected int nbvertices;
 	
 	/** The sommets. */
-	protected List<Sommet> sommets;
+	protected List<Vertex> vertices;
 	
 	/** The Highest Z. */
-	protected double HighestZ;
+	protected double highestZ;
 	
 	/**
 	 * Instantiates a new face.
 	 *
 	 * @param n the n
-	 * @param sommets the sommets
+	 * @param vertices the sommets
 	 * @param color the color
 	 */
 	//Une face est une list de plusieurs Sommets
-	public Face(int n, List<Sommet> sommets, javafx.scene.paint.Color color) {
+	public Face(int index, List<Vertex> vertices, javafx.scene.paint.Color color) {
 		this.color = color;
-		nbSommet = n;
-		this.sommets = sommets;	
-		this.HighestZ=findHighestZ();	
+		nbvertices = index;
+		this.vertices = vertices;	
+		this.highestZ=findHighestZ();	
 		
 	}
 	
@@ -45,8 +44,8 @@ public class Face implements Comparable<Face> {
 	 * @param n the n
 	 * @param c the c
 	 */
-	public Face(int n, Color c) {
-		this(n,new ArrayList<Sommet>(), c);
+	public Face(int index, Color color) {
+		this(index,new ArrayList<Vertex>(), color);
 	}
 	
 	/**
@@ -54,8 +53,8 @@ public class Face implements Comparable<Face> {
 	 *
 	 * @param n the n
 	 */
-	public Face(int n ) {
-		this(n, null);
+	public Face(int index ) {
+		this(index, null);
 	}
 	
 	
@@ -74,8 +73,8 @@ public class Face implements Comparable<Face> {
 	 *
 	 * @param sommet the sommet
 	 */
-	public void addSommet(Sommet sommet) {
-		this.sommets.add(sommet);
+	public void addVertex(Vertex sommet) {
+		this.vertices.add(sommet);
 	}
 
 	/**
@@ -83,8 +82,8 @@ public class Face implements Comparable<Face> {
 	 *
 	 * @return the nb sommet
 	 */
-	public int getNbSommet() {
-		return nbSommet;
+	public int getNbVertex() {
+		return nbvertices;
 	}
 
 	/**
@@ -92,8 +91,8 @@ public class Face implements Comparable<Face> {
 	 *
 	 * @return the sommets
 	 */
-	public List<Sommet> getSommets() {
-		return sommets;
+	public List<Vertex> getVertex() {
+		return vertices;
 	}
 	
 	/**
@@ -148,7 +147,7 @@ public class Face implements Comparable<Face> {
 	 */
 	@Override
 	public String toString() {
-		return "Face [color=" + color + ", nbSommet=" + nbSommet + ", sommets=" + sommets.toString()+ "]";
+		return "Face [color=" + color + ", nbSommet=" + nbvertices + ", sommets=" + vertices.toString()+ "]";
 	}
 
 	/**
@@ -157,10 +156,10 @@ public class Face implements Comparable<Face> {
 	 * @return the double
 	 */
 	private double findHighestZ(){
-		double retour=this.sommets.get(0).getZ();
-		for(int i=1;i<this.getNbSommet();i++){
-			if(this.sommets.get(i).getZ()>retour){
-				retour=this.sommets.get(i).getZ();
+		double retour=this.vertices.get(0).getZ();
+		for(int i=1;i<this.getNbVertex();i++){
+			if(this.vertices.get(i).getZ()>retour){
+				retour=this.vertices.get(i).getZ();
 			}
 		}
 		return retour;
@@ -172,7 +171,7 @@ public class Face implements Comparable<Face> {
 	 * @return the heightest Z
 	 */
 	public double getHeightestZ(){
-		return this.HighestZ;
+		return this.highestZ;
 	}
 
 	

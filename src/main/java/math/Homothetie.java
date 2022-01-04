@@ -1,6 +1,6 @@
 package math;
 
-import graph.Matrice;
+import graph.Matrix;
 import rotation.Mouvement;
 
 
@@ -10,14 +10,14 @@ import rotation.Mouvement;
 public class Homothetie extends Mouvement {
 	
 	/** La matrice courante. */
-	private Matrice matriceCourante;
+	private Matrix matriceCourante;
 	
 	/**
 	 * Instantie une nouvelle homothetie.
 	 *
 	 * @param matrice la matrice
 	 */
-	public Homothetie(Matrice matrice) {
+	public Homothetie(Matrix matrice) {
 		super(matrice, null);
 	}
 
@@ -26,7 +26,7 @@ public class Homothetie extends Mouvement {
 	 *
 	 * @return la matrice courante
 	 */
-	public Matrice getMcourante() {
+	public Matrix getMcourante() {
 		return this.matriceCourante;
 	}
 
@@ -37,8 +37,8 @@ public class Homothetie extends Mouvement {
 	 * @return la matrice apres l'homothetie
 	 */
 	@Override
-	public Matrice mouvement(double sensibility) {
-		Matrice newMatrice = new Matrice(4, 4);
+	public Matrix mouvement(double sensibility) {
+		Matrix newMatrice = new Matrix(4, 4);
 		newMatrice.add( sensibility,0.0, 0.0, 0.0);
 		newMatrice.add( 0.0, sensibility, 0.0, 0.0);
 		newMatrice.add(0.0, 0.0, sensibility, 0.0);		

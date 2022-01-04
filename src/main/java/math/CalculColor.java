@@ -3,8 +3,8 @@ package math;
 import java.util.ArrayList;
 
 import graph.Face;
-import graph.Matrice;
-import graph.Sommet;
+import graph.Matrix;
+import graph.Vertex;
 import javafx.scene.paint.Color;
 
 /**
@@ -18,7 +18,7 @@ public class CalculColor {
 	Color couleur;
 	
 	/** Le vecteur lumiere. */
-	Matrice vecteurlumiere;
+	Matrix vecteurlumiere;
 	
 	/**
 	 * Constructeur de calculColor.
@@ -26,7 +26,7 @@ public class CalculColor {
 	 * @param positionlumiere position de la lumiere 
 	 * @param color la couleur
 	 */
-	public CalculColor(Matrice positionlumiere, Color color) {
+	public CalculColor(Matrix positionlumiere, Color color) {
 		ProduitScalaire produitScalaire = new ProduitScalaire(positionlumiere);
 		ProdVectoUni produitVectoUni =  new ProdVectoUni(produitScalaire);
 		this.vecteurlumiere = produitVectoUni.getNorme();
@@ -40,8 +40,8 @@ public class CalculColor {
 	 * @return la couleur en fonction de la lumiere
 	 */
 	public Color getColor(Face face) {
-		ArrayList<Sommet> listsommet = (ArrayList<Sommet>) face.getSommets();
-		if(face.getNbSommet()== 3) {
+		ArrayList<Vertex> listsommet = (ArrayList<Vertex>) face.getVertex();
+		if(face.getNbVertex()== 3) {
 			ProduitScalaire produitScalaire = new ProduitScalaire(listsommet.get(0), listsommet.get(1));
 			produitScalaire.prodScal(new ProduitScalaire(listsommet.get(0), listsommet.get(2)).getMatrice());
 			ProdVectoUni prodVectoUni = new ProdVectoUni(produitScalaire);

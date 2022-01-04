@@ -1,6 +1,6 @@
 package rotation;
 
-import graph.Matrice;
+import graph.Matrix;
 
 /**
  * La classe RotationUp.
@@ -15,7 +15,7 @@ public class RotationUp extends Mouvement {
 	 * @param matrice la matrice de base
 	 * @param mouvement le mouvement a apliquer
 	 */
-	public RotationUp(Matrice matrice, Mouvement mouvement) {
+	public RotationUp(Matrix matrice, Mouvement mouvement) {
 		super(matrice, mouvement);
 	}
 
@@ -26,9 +26,9 @@ public class RotationUp extends Mouvement {
 	 * @return la matrice apres rotation
 	 */
 	@Override
-	public Matrice mouvement(double sensibility) {
+	public Matrix mouvement(double sensibility) {
 		// a regarder
-		Matrice newMatrice = new Matrice(4, 4);
+		Matrix newMatrice = new Matrix(4, 4);
 		newMatrice.add(1.0, 0.0, 0.0, 0.0);
 	    newMatrice.add(0.0, Math.cos(sensibility),(-1.0)*Math.sin(sensibility), 0);
 		newMatrice.add(0.0, Math.sin(sensibility), Math.cos(sensibility), 0);

@@ -1,7 +1,6 @@
 
 package graph;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javafx.scene.paint.Color;
@@ -22,19 +21,19 @@ public class Graph extends Subject{
 	protected List<Face> faces;
 	
 	/** The matrice. */
-	protected Matrice matrice;
+	protected Matrix matrix;
 	
 	/** The matrice original. */
-	protected Matrice matriceOriginal;
+	protected Matrix originalMatrix;
 	
 	/** The sommets de faces. */
-	protected List<String> sommetsDeFaces;
+	protected List<String> listOfFaces;
 	
 	/** The color. */
 	protected Color color;
 	
 	/** The auteur. */
-	protected String auteur = "";
+	protected String author = "";
 	
 	/**
 	 * Instantiates a new graph.
@@ -42,27 +41,31 @@ public class Graph extends Subject{
 	 * @param nbFace the nb face
 	 * @param faces the faces
 	 * @param matrice the matrice
-	 * @param sommetDeFaces the sommet de faces
-	 * @param auteur the auteur
+	 * @param listOfFaces the sommet de faces
+	 * @param author the auteur
 	 */
-	public Graph(int nbFace, List<Face> faces, Matrice matrice, List<String> sommetDeFaces, String auteur) {
-		this.matriceOriginal = matrice;
-		this.matrice = matrice;
+	public Graph(int nbFace, List<Face> faces, Matrix matrice, List<String> listOfFaces, String author) {
+		this.originalMatrix = matrice;
+		this.matrix = matrice;
 		this.nbFaces = nbFace;
 		this.faces = faces;
-		this.sommetsDeFaces = sommetDeFaces;
-		this.auteur = auteur;
+		this.listOfFaces = listOfFaces;
+		this.author = author;
 		this.color = this.faces.get(0).getColor();
 	}
 	
 	/**
 	 * Gets the face.
 	 *
-	 * @param i the i
+	 * @param index the i
 	 * @return the face
 	 */
-	public Face getFace(int i) {
-		return this.faces.get(i);
+	public Face getFace(int index) {
+		return this.faces.get(index);
+	}
+	
+	public void setFaceColor(int index, Color color) {
+		getFace(index).setColor(color);
 	}
 	
 	/**
@@ -70,11 +73,11 @@ public class Graph extends Subject{
 	 *
 	 * @return the auteur
 	 */
-	public String getAuteur() {
-		if(auteur.equals("")) {
+	public String getAuthor() {
+		if(author.equals("")) {
 			return "anonymous";
 		}else {
-			return this.auteur;			
+			return this.author;			
 		}
 	}
 	
@@ -83,17 +86,17 @@ public class Graph extends Subject{
 	 *
 	 * @return the nb sommet
 	 */
-	public int getNbSommet() {
-		return this.faces.get(0).getNbSommet();
+	public int getNbVertex() {
+		return this.faces.get(0).getNbVertex();
 	}
 	
 	/**
 	 * Adds the face.
 	 *
-	 * @param f the f
+	 * @param face the f
 	 */
-	public void addFace(Face f) {
-		this.faces.add(f);
+	public void addFace(Face face) {
+		this.faces.add(face);
 	}
 
 	/**
@@ -133,8 +136,8 @@ public class Graph extends Subject{
 	 *
 	 * @return the matrice
 	 */
-	public Matrice getMatrice() {
-		return this.matrice;
+	public Matrix getMatrix() {
+		return this.matrix;
 	}
 	
 	/**
@@ -142,51 +145,51 @@ public class Graph extends Subject{
 	 *
 	 * @return the matrice original
 	 */
-	public Matrice getMatriceOriginal() {
-		return this.matriceOriginal;
+	public Matrix getOriginalMatrix() {
+		return this.originalMatrix;
 	}
 	
 	/**
 	 * Gets the face X.
 	 *
-	 * @param i the i
-	 * @param j the j
+	 * @param column the i
+	 * @param line the j
 	 * @return the face X
 	 */
-	public double getFaceX(int i , int j) {
-		return this.faces.get(i).getSommets().get(j).getX();
+	public double getFaceX(int column , int line) {
+		return this.faces.get(column).getVertex().get(line).getX();
 	}
 	
 	/**
 	 * Gets the face Y.
 	 *
-	 * @param i the i
-	 * @param j the j
+	 * @param column the i
+	 * @param line the j
 	 * @return the face Y
 	 */
-	public double getFaceY(int i , int j) {
-		return this.faces.get(i).getSommets().get(j).getY();
+	public double getFaceY(int column , int line) {
+		return this.faces.get(column).getVertex().get(line).getY();
 	}
 	
 	/**
 	 * Gets the face Z.
 	 *
-	 * @param i the i
-	 * @param j the j
+	 * @param column the i
+	 * @param line the j
 	 * @return the face Z
 	 */
-	public double getFaceZ(int i , int j) {
-		return this.faces.get(i).getSommets().get(j).getZ();
+	public double getFaceZ(int column , int line) {
+		return this.faces.get(column).getVertex().get(line).getZ();
 	}
 	
 	/**
 	 * Gets the sommets de faces.
 	 *
-	 * @param i the i
+	 * @param index the index
 	 * @return the sommets de faces
 	 */
-	public String getSommetsDeFaces(int i) {
-		return sommetsDeFaces.get(i);
+	public String getListOfFaces(int index) {
+		return listOfFaces.get(index);
 	}
 	
 	/**
@@ -194,8 +197,8 @@ public class Graph extends Subject{
 	 *
 	 * @return the sommets de faces
 	 */
-	public List<String> getSommetsDeFaces() {
-		return sommetsDeFaces;
+	public List<String> getListOfFaces() {
+		return listOfFaces;
 	}
 	
 

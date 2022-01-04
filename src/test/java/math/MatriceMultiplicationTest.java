@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import graph.Matrice;
+import graph.Matrix;
 import rotation.Mouvement;
 import rotation.RotationUp;
 
@@ -18,9 +18,9 @@ class MatriceMultiplicationTest {
 	 */
 	@Test
 	void simpletest() {
-		Matrice matrice1 = new Matrice(4,4);
-		Matrice matrice2 = new Matrice(4,4);
-		Matrice res = new Matrice(4,4);
+		Matrix matrice1 = new Matrix(4,4);
+		Matrix matrice2 = new Matrix(4,4);
+		Matrix res = new Matrix(4,4);
 		
 		matrice1.add(1.0, 1.0, 1.0, 1.0);
 		matrice1.add(2.0, 2.0, 2.0, 2.0);
@@ -38,7 +38,7 @@ class MatriceMultiplicationTest {
 		res.add(4.0, 8.0, 8.0, 4.0);
 		
 		Mouvement rotation1 = new RotationUp(matrice1 , null);
-		Matrice sol = rotation1.multipliMatrice(matrice2);
+		Matrix sol = rotation1.multipliMatrice(matrice2);
 		assertEquals(sol.toString() , res.toString());	
 	}
 	
@@ -47,9 +47,9 @@ class MatriceMultiplicationTest {
 	 */
 	@Test
 	void diffTailleTest() {
-		Matrice matrice1 = new Matrice(6,4);
-		Matrice matrice2 = new Matrice(4,4);
-		Matrice res = new Matrice(6,4);
+		Matrix matrice1 = new Matrix(6,4);
+		Matrix matrice2 = new Matrix(4,4);
+		Matrix res = new Matrix(6,4);
 		
 		matrice1.add(1.0, 1.0, 1.0, 1.0);
 		matrice1.add(2.0, 2.0, 2.0, 2.0);
@@ -71,7 +71,7 @@ class MatriceMultiplicationTest {
 		res.add(6.0, 12.0, 12.0, 6.0);
 		
 		Mouvement rotation1 = new RotationUp(matrice1, null);
-		Matrice sol = rotation1.multipliMatrice(matrice2);
+		Matrix sol = rotation1.multipliMatrice(matrice2);
 		
 		assertEquals(sol.toString() , res.toString());	
 	}
@@ -81,9 +81,9 @@ class MatriceMultiplicationTest {
 	 */
 	@Test
 	void complexetest() {
-		Matrice matrice1 = new Matrice(7,4);
-		Matrice matrice2 = new Matrice(4,4);
-		Matrice res = new Matrice(7,4);
+		Matrix matrice1 = new Matrix(7,4);
+		Matrix matrice2 = new Matrix(4,4);
+		Matrix res = new Matrix(7,4);
 		
 		matrice1.add(12.0, 1.0, 20.0, 1.0);
 		matrice1.add(3.0, 6.0, 12.0, 1.0);
@@ -107,7 +107,7 @@ class MatriceMultiplicationTest {
 		res.add(2.0, 4.5, 10.5, 1.0);
 		
 		Mouvement rotation1 = new RotationUp(matrice1, null);
-		Matrice sol = rotation1.multipliMatrice(matrice2);
+		Matrix sol = rotation1.multipliMatrice(matrice2);
 		assertEquals(sol.toString() , res.toString());	
 	}
 	
@@ -116,9 +116,9 @@ class MatriceMultiplicationTest {
 	 */
 	@Test
 	void twoMulitplytest() {
-		Matrice matrice1 = new Matrice(4,4);
-		Matrice matrice2 = new Matrice(4,4);
-		Matrice res = new Matrice(4,4);
+		Matrix matrice1 = new Matrix(4,4);
+		Matrix matrice2 = new Matrix(4,4);
+		Matrix res = new Matrix(4,4);
 		
 		matrice1.add(1.0, 1.0, 1.0, 1.0);
 		matrice1.add(2.0, 2.0, 2.0, 2.0);
@@ -136,11 +136,11 @@ class MatriceMultiplicationTest {
 		res.add(4.0, 8.0, 8.0, 4.0);
 		
 		Mouvement rotation1 = new RotationUp(matrice1 , null);
-		Matrice sol = rotation1.multipliMatrice(matrice2);
+		Matrix sol = rotation1.multipliMatrice(matrice2);
 		assertEquals(sol.toString() , res.toString());	
 		
-		Matrice res2 = new Matrice(4,4);
-		Matrice matrice3 = new Matrice(4,4);
+		Matrix res2 = new Matrix(4,4);
+		Matrix matrice3 = new Matrix(4,4);
 		
 		matrice3.add(1.0, 0.0, 0.0, 1.0);
 		matrice3.add(0.0, 1.0, 1.0, 0.0);

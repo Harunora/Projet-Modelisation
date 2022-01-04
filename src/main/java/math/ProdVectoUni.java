@@ -1,6 +1,6 @@
 package math;
 
-import graph.Matrice;
+import graph.Matrix;
 
 /**
  * La classe produit vectoriel unitaire.
@@ -16,7 +16,7 @@ public class ProdVectoUni {
 	protected double norme;
 	
 	/** La matrice. */
-	protected Matrice matrice; 
+	protected Matrix matrice; 
 	
 	/** La coordonee X. */
 	private double coordX;
@@ -38,7 +38,7 @@ public class ProdVectoUni {
 		coordY = produitScalaire.getMatrice().getY(0);
 		coordZ = produitScalaire.getMatrice().getZ(0);
 		norme = Math.sqrt(coordX*coordX + coordY*coordY +coordZ*coordZ);
-		matrice = new Matrice(1,1);
+		matrice = new Matrix(1,1);
 		matrice.add(coordX/norme, coordY/norme, coordZ/norme, 1);
 	}
 	
@@ -47,7 +47,7 @@ public class ProdVectoUni {
 	 *
 	 * @return la matrice du produit vectoriel unitaire
 	 */
-	public Matrice getNorme() {
+	public Matrix getNorme() {
 		return matrice;
 	}
 	

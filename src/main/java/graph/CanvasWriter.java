@@ -141,10 +141,10 @@ public class CanvasWriter implements Observer{
 		Collections.sort(model.getFaces());
 		System.out.println("oui");
 		for(int i=0;i<model.getNbFaces();i++) {
-			double[] i1=new double[this.model.getFace(i).nbSommet];
-			double[] i2=new double[this.model.getFace(i).nbSommet];
-			double[] i3=new double[this.model.getFace(i).nbSommet];
-			for(int j=0;j<this.model.getFace(i).nbSommet;j++) {
+			double[] i1=new double[this.model.getFace(i).nbvertices];
+			double[] i2=new double[this.model.getFace(i).nbvertices];
+			double[] i3=new double[this.model.getFace(i).nbvertices];
+			for(int j=0;j<this.model.getFace(i).nbvertices;j++) {
 				i1[j]=this.model.getFaceX(i, j)*homothesie+height;
 				i2[j]=this.model.getFaceY(i, j)*homothesie+width;
 				i3[j]=this.model.getFaceZ(i, j)*homothesie+width;

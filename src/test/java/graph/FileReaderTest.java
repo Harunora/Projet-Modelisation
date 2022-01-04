@@ -44,41 +44,41 @@ class FileReaderTest {
 	 */
 	Graph implementation() {
 		List<Face> f = new ArrayList<Face>();
-		Matrice matrice;
-		Sommet s0 = new Sommet(0,0,0);
-		Sommet s1 = new Sommet(0,0,1);
-		Sommet s2 = new Sommet(0,1,1);
-		Sommet s3 = new Sommet(0,1,0);
-		Sommet s4 = new Sommet(1,0,0);
-		Sommet s5 = new Sommet(1,0,1);
-		Sommet s6 = new Sommet(1,1,1);
-		Sommet s7 = new Sommet(1,1,0);
-		List<Sommet> listSommet1 = new ArrayList<Sommet>();
+		Matrix matrice;
+		Vertex s0 = new Vertex(0,0,0);
+		Vertex s1 = new Vertex(0,0,1);
+		Vertex s2 = new Vertex(0,1,1);
+		Vertex s3 = new Vertex(0,1,0);
+		Vertex s4 = new Vertex(1,0,0);
+		Vertex s5 = new Vertex(1,0,1);
+		Vertex s6 = new Vertex(1,1,1);
+		Vertex s7 = new Vertex(1,1,0);
+		List<Vertex> listSommet1 = new ArrayList<Vertex>();
 		listSommet1.add(s0);
 		listSommet1.add(s1);
 		listSommet1.add(s2);
 		listSommet1.add(s3);
-		List<Sommet> listSommet2 = new ArrayList<Sommet>();
+		List<Vertex> listSommet2 = new ArrayList<Vertex>();
 		listSommet2.add(s7);
 		listSommet2.add(s6);
 		listSommet2.add(s5);
 		listSommet2.add(s4);
-		List<Sommet> listSommet3 = new ArrayList<Sommet>();
+		List<Vertex> listSommet3 = new ArrayList<Vertex>();
 		listSommet3.add(s0);
 		listSommet3.add(s4);
 		listSommet3.add(s5);
 		listSommet3.add(s1);
-		List<Sommet> listSommet4 = new ArrayList<Sommet>();
+		List<Vertex> listSommet4 = new ArrayList<Vertex>();
 		listSommet4.add(s1);
 		listSommet4.add(s5);
 		listSommet4.add(s6);
 		listSommet4.add(s2);
-		List<Sommet> listSommet5 = new ArrayList<Sommet>();
+		List<Vertex> listSommet5 = new ArrayList<Vertex>();
 		listSommet5.add(s2);
 		listSommet5.add(s6);
 		listSommet5.add(s7);
 		listSommet5.add(s3);
-		List<Sommet> listSommet6 = new ArrayList<Sommet>();
+		List<Vertex> listSommet6 = new ArrayList<Vertex>();
 		listSommet6.add(s3);
 		listSommet6.add(s7);
 		listSommet6.add(s4);
@@ -89,7 +89,7 @@ class FileReaderTest {
 		f.add(new Face(4,listSommet4, null));
 		f.add(new Face(4,listSommet5, null));
 		f.add(new Face(4,listSommet6, null));
-		matrice = new Matrice(7, 6);
+		matrice = new Matrix(7, 6);
 		return new Graph(6,f, matrice, null, "");
 	}
 	
@@ -106,7 +106,7 @@ class FileReaderTest {
 	 */
 	@Test
 	void testNbSommets() {
-		assertEquals(attendu.getFaces().get(0).getNbSommet(), obtenu.getFaces().get(0).getNbSommet());
+		assertEquals(attendu.getFaces().get(0).getNbVertex(), obtenu.getFaces().get(0).getNbVertex());
 	}
 	
 	/**
@@ -130,7 +130,7 @@ class FileReaderTest {
 	 */
 	@Test
 	void testSommet1() {
-		assertEquals(attendu.getFaces().get(1).getSommets().toString(), obtenu.getFaces().get(1).getSommets().toString());
+		assertEquals(attendu.getFaces().get(1).getVertex().toString(), obtenu.getFaces().get(1).getVertex().toString());
 	}
 	
 	/**
@@ -138,7 +138,7 @@ class FileReaderTest {
 	 */
 	@Test
 	void testSommet2() {
-		assertEquals(attendu.getFaces().get(3).getSommets().toString(), obtenu.getFaces().get(3).getSommets().toString());
+		assertEquals(attendu.getFaces().get(3).getVertex().toString(), obtenu.getFaces().get(3).getVertex().toString());
 	}
 	
 	/**
@@ -163,7 +163,7 @@ class FileReaderTest {
 	 */
 	@Test
 	void testNbSommetsFileReader() {
-		assertEquals(3, obtenu2.getNbSommet());
+		assertEquals(3, obtenu2.getNbVertex());
 	}
 	
 	
