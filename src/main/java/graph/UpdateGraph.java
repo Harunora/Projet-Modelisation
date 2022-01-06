@@ -59,7 +59,7 @@ public class UpdateGraph extends Graph{
 		this.faces=this.original.faces;
 		this.matrix=this.original.matrix;
 		this.listOfFaces=this.original.listOfFaces;
-		matrix = matrix;
+		this.matrix = matrix;
 		faces.clear();
 		sommets.clear();
 		for(int i = 0; i<matrix.getLength(); i++) {

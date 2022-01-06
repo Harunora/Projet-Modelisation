@@ -50,78 +50,78 @@ import rotation.RotationUp;
  * The Class MainControler.
  */
 public class MainControler implements Initializable {
-    
-    /** The edit auteur button. */
-    @FXML
-    Button buttonLoadFolder, btreebase ,buttonLightZDown,buttonLightZUp,buttonLightUp,buttonLightDown,buttonLightRight,buttonLightLeft,buttonHelp, buttonRotateUp, buttonRotateRight, buttonRotateLeft, buttonRotateDown, buttonRotateAroundRight, buttonRotateAroundLeft, buttonTranslateUp, buttonTranslateRight, buttonTranslateLeft, buttonTranslateDown, buttonReloadCanvas, buttonHomothetieDown, buttonHomothetieUp, buttonModelData, Fview, Aview ,Sview, editCommentaireButton, editAuteurButton;
-    
-    /** The tree view. */
-    @FXML
-    TreeView<String> treeView;
-    
-    /** The background color. */
-    @FXML
-    ColorPicker areteColorPicker,pointColor, faceColor, backgroundColor;
-    
-    /** The canvas down. */
-    @FXML
-    Canvas canvas, canvasTop, canvasDown;
-    
-    /** The print line. */
-    @FXML
-    CheckBox checkOmbre,printPoint,printColor,printLine;
-    
-    /** The hcontainer canvas. */
-    @FXML
-    HBox hcontainerCanvas;
-    
-    /** The scene. */
-    protected Scene scene;
-   
-    /** The current file. */
-    public File currentFile = new File("exemples/cube.ply");
-    public File defaultFile = new File("exemples/apple.ply");
 
-    
-    /** The explorer file. */
-    private ExplorerFile explorerFile = new ExplorerFile();
-    
-    /** The file reader. */
-    private FileReader fileReader=new FileReader();
-    
-    /** The stage. */
-    public Stage stage = new Stage();
-    
-    /** The graphe. */
-    private UpdateGraph graphe = fileReader.read(currentFile);
-    
-    /** The canvas writer down. */
-    private CanvasWriter canvasWriterMain, canvasWriterTop, canvasWriterDown;
-    
-    /** The rotation. */
-    private Mouvement rotation;
-    
-    /** The translation. */
-    private Translation translation;
-    
-    /** The homothetie. */
-    private Homothetie homothetie;
+	/** The edit auteur button. */
+	@FXML
+	Button buttonLoadFolder, btreebase ,buttonLightZDown,buttonLightZUp,buttonLightUp,buttonLightDown,buttonLightRight,buttonLightLeft,buttonHelp, buttonRotateUp, buttonRotateRight, buttonRotateLeft, buttonRotateDown, buttonRotateAroundRight, buttonRotateAroundLeft, buttonTranslateUp, buttonTranslateRight, buttonTranslateLeft, buttonTranslateDown, buttonReloadCanvas, buttonHomothetieDown, buttonHomothetieUp, buttonModelData, Fview, Aview ,Sview, editCommentaireButton, editAuteurButton;
 
-    
-    /**
-     * Initialize.
-     *
-     * @param location the location
-     * @param resources the resources
-     */
-    @SuppressWarnings("incomplete-switch")
+	/** The tree view. */
+	@FXML
+	TreeView<String> treeView;
+
+	/** The background color. */
+	@FXML
+	ColorPicker areteColorPicker,pointColor, faceColor, backgroundColor;
+
+	/** The canvas down. */
+	@FXML
+	Canvas canvas, canvasTop, canvasDown;
+
+	/** The print line. */
+	@FXML
+	CheckBox checkOmbre,printPoint,printColor,printLine;
+
+	/** The hcontainer canvas. */
+	@FXML
+	HBox hcontainerCanvas;
+
+	/** The scene. */
+	protected Scene scene;
+
+	/** The current file. */
+	public File currentFile = new File("exemples/cube.ply");
+	public File defaultFile = new File("exemples/apple.ply");
+
+
+	/** The explorer file. */
+	private ExplorerFile explorerFile = new ExplorerFile();
+
+	/** The file reader. */
+	private FileReader fileReader=new FileReader();
+
+	/** The stage. */
+	public Stage stage = new Stage();
+
+	/** The graphe. */
+	private UpdateGraph graphe = fileReader.read(currentFile);
+
+	/** The canvas writer down. */
+	private CanvasWriter canvasWriterMain, canvasWriterTop, canvasWriterDown;
+
+	/** The rotation. */
+	private Mouvement rotation;
+
+	/** The translation. */
+	private Translation translation;
+
+	/** The homothetie. */
+	private Homothetie homothetie;
+
+
+	/**
+	 * Initialize.
+	 *
+	 * @param location the location
+	 * @param resources the resources
+	 */
+	@SuppressWarnings("incomplete-switch")
 	@Override
-    public void initialize(URL location, ResourceBundle resources) {
-        explorerFile = new ExplorerFile();
-    	stage.setResizable(true);
-    	Scene scene = Main.getScene();
-    	
-        buttonLoadFolder.setOnAction(new EventHandler<ActionEvent>() {
+	public void initialize(URL location, ResourceBundle resources) {
+		explorerFile = new ExplorerFile();
+		stage.setResizable(true);
+		Scene scene = Main.getScene();
+
+		buttonLoadFolder.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent e) {
 				DirectoryChooser dc = new DirectoryChooser();
@@ -141,36 +141,46 @@ public class MainControler implements Initializable {
 						e1.printStackTrace();
 					}
 				}
-				
+
 			}
-			
+
 		});
-        btreebase.setOnAction(new EventHandler<ActionEvent>() {
+		btreebase.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent e) {
 				String pwd = System.getProperty("user.dir");
 				System.out.println(pwd+"/exemples");
 				File directory = new File(pwd+"/exemples");
-					try {
-						treeView.setRoot(explorerFile.getNodesForDirectory(directory));
-						updateFile();
-					} catch (IOException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
-				
+				try {
+					treeView.setRoot(explorerFile.getNodesForDirectory(directory));
+					updateFile();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+
 			}
 
-			
-    	});
-        
+
+		});
+
 		fileReader=new FileReader();
-		graphe = fileReader.read(currentFile);			
+		graphe = fileReader.read(currentFile);
+		UpdateGraph grapheTmp = graphe; 
+
+		Matrix m = new RotationUp(graphe.getMatrix(),null).mouvement(Math.PI);
+		graphe.update(m);
+		UpdateGraph grapheTop = graphe;
+		graphe = grapheTmp;
+		canvasWriterTop= new CanvasWriter(canvasTop,grapheTop);
+		m = new RotationLeft(graphe.getMatrix(),null).mouvement(Math.PI);
+		graphe.update(m);
+		UpdateGraph grapheSide = graphe;
+		graphe = grapheTmp;
+		canvasWriterDown= new CanvasWriter(canvasDown,grapheSide);
 		canvasWriterMain= new CanvasWriter(canvas,graphe);
-		canvasWriterTop= new CanvasWriter(canvasTop,graphe);
-		canvasWriterDown= new CanvasWriter(canvasDown,graphe);
-        
-        buttonHelp.addEventHandler(MouseEvent.MOUSE_CLICKED, e->{
+
+		buttonHelp.addEventHandler(MouseEvent.MOUSE_CLICKED, e->{
 
 
 			Label secondLabel = new Label("===========================================================================\n"
@@ -200,110 +210,110 @@ public class MainControler implements Initializable {
 			newWindow.show();
 
 		});
-        
-        editAuteurButton.addEventHandler(MouseEvent.MOUSE_CLICKED, e->{
-        	if(currentFile != null && currentFile.isFile()) {
-        		UpdateFile updateFile = new UpdateFile(currentFile,fileReader.getAuthorLine(),fileReader.getCommentLine());
-        		TextArea textField = new TextArea();
-        		Button validButton = new Button();
-        		validButton.setText("Confirmer");
-        		textField.setPrefSize(100.0,40.0);
-        		textField.setMinSize(Region.USE_PREF_SIZE, Region.USE_PREF_SIZE);
-        		validButton.setPrefSize(100.0, 40.0);
-        		validButton.setMinSize(Region.USE_PREF_SIZE, Region.USE_PREF_SIZE);
-        		StackPane secondaryLayout = new StackPane();
-        		HBox hbox = new HBox();
-        		hbox.getChildren().add(textField);
-        		hbox.getChildren().add(validButton);
-        		secondaryLayout.getChildren().add(hbox);
-        		/*
+
+		editAuteurButton.addEventHandler(MouseEvent.MOUSE_CLICKED, e->{
+			if(currentFile != null && currentFile.isFile()) {
+				UpdateFile updateFile = new UpdateFile(currentFile,fileReader.getAuthorLine(),fileReader.getCommentLine());
+				TextArea textField = new TextArea();
+				Button validButton = new Button();
+				validButton.setText("Confirmer");
+				textField.setPrefSize(100.0,40.0);
+				textField.setMinSize(Region.USE_PREF_SIZE, Region.USE_PREF_SIZE);
+				validButton.setPrefSize(100.0, 40.0);
+				validButton.setMinSize(Region.USE_PREF_SIZE, Region.USE_PREF_SIZE);
+				StackPane secondaryLayout = new StackPane();
+				HBox hbox = new HBox();
+				hbox.getChildren().add(textField);
+				hbox.getChildren().add(validButton);
+				secondaryLayout.getChildren().add(hbox);
+				/*
         		secondaryLayout.getChildren().add(textField);
         		secondaryLayout.getChildren().add(validButton);
-*/
-        		Scene secondScene = new Scene(secondaryLayout, 250,80);
+				 */
+				Scene secondScene = new Scene(secondaryLayout, 250,80);
 
-        		// New window (Stage)
-        		Stage newWindow = new Stage();
-        		newWindow.setTitle("Info Auteur");
-        		newWindow.setScene(secondScene);
+				// New window (Stage)
+				Stage newWindow = new Stage();
+				newWindow.setTitle("Info Auteur");
+				newWindow.setScene(secondScene);
 
-        		// Specifies the modality for new window.
-        		newWindow.initModality(Modality.WINDOW_MODAL);
+				// Specifies the modality for new window.
+				newWindow.initModality(Modality.WINDOW_MODAL);
 
-        		newWindow.show();
-        		
-        		validButton.addEventHandler(MouseEvent.MOUSE_CLICKED, i->{
-        			updateFile.remplaceAuteur(fileReader.getAuthorLine(), textField.getText());
-        			newWindow.close();
-        		});
-        		
-        	}
-        });
-        
-        editCommentaireButton.addEventHandler(MouseEvent.MOUSE_CLICKED, e->{
-        	if(currentFile != null && currentFile.isFile()) {
-        		UpdateFile updateFile = new UpdateFile(currentFile,fileReader.getAuthorLine(),fileReader.getCommentLine());
-        		TextArea textField = new TextArea();
-        		Button validButton = new Button();
-        		StackPane secondaryLayout = new StackPane();
-        		validButton.setText("Confirmer");
-        		textField.setPrefSize(100.0,40.0);
-        		textField.setMinSize(Region.USE_PREF_SIZE, Region.USE_PREF_SIZE);
-        		validButton.setPrefSize(100.0, 40.0);
-        		validButton.setMinSize(Region.USE_PREF_SIZE, Region.USE_PREF_SIZE);
-        		secondaryLayout.getChildren().add(textField);
-        		secondaryLayout.getChildren().add(validButton);
+				newWindow.show();
 
-        		Scene secondScene = new Scene(secondaryLayout, 250, 80);
+				validButton.addEventHandler(MouseEvent.MOUSE_CLICKED, i->{
+					updateFile.remplaceAuteur(fileReader.getAuthorLine(), textField.getText());
+					newWindow.close();
+				});
 
-        		// New window (Stage)
-        		Stage newWindow = new Stage();
-        		newWindow.setTitle("Editer Commentaire");
-        		newWindow.setScene(secondScene);
+			}
+		});
 
-        		// Specifies the modality for new window.
-        		newWindow.initModality(Modality.WINDOW_MODAL);
+		editCommentaireButton.addEventHandler(MouseEvent.MOUSE_CLICKED, e->{
+			if(currentFile != null && currentFile.isFile()) {
+				UpdateFile updateFile = new UpdateFile(currentFile,fileReader.getAuthorLine(),fileReader.getCommentLine());
+				TextArea textField = new TextArea();
+				Button validButton = new Button();
+				StackPane secondaryLayout = new StackPane();
+				validButton.setText("Confirmer");
+				textField.setPrefSize(100.0,40.0);
+				textField.setMinSize(Region.USE_PREF_SIZE, Region.USE_PREF_SIZE);
+				validButton.setPrefSize(100.0, 40.0);
+				validButton.setMinSize(Region.USE_PREF_SIZE, Region.USE_PREF_SIZE);
+				secondaryLayout.getChildren().add(textField);
+				secondaryLayout.getChildren().add(validButton);
 
-        		newWindow.show();
-        		
-        		validButton.addEventHandler(MouseEvent.MOUSE_CLICKED, i->{
-        			updateFile.remplaceCommentaire(fileReader.getCommentLine(), textField.getText());
-        			newWindow.close();
-        		});
-        		
-        	}
-        });
-		
-        
-        buttonModelData.addEventHandler(MouseEvent.MOUSE_CLICKED, e->{
+				Scene secondScene = new Scene(secondaryLayout, 250, 80);
 
-        	if(currentFile != null && currentFile.isFile()) {
-        		Label secondLabel = new Label("===========================================================================\n"
-        				+ "Nom du fichier : "+ currentFile.getName() +"\n\n"
-        				+ "Auteur : "+ graphe.getAuthor() + "a la ligne " + fileReader.getAuthorLine() +"\n\n"
-        				+ "Nombre de Faces : "+ graphe.getNbFaces()+"\n\n"
+				// New window (Stage)
+				Stage newWindow = new Stage();
+				newWindow.setTitle("Editer Commentaire");
+				newWindow.setScene(secondScene);
+
+				// Specifies the modality for new window.
+				newWindow.initModality(Modality.WINDOW_MODAL);
+
+				newWindow.show();
+
+				validButton.addEventHandler(MouseEvent.MOUSE_CLICKED, i->{
+					updateFile.remplaceCommentaire(fileReader.getCommentLine(), textField.getText());
+					newWindow.close();
+				});
+
+			}
+		});
+
+
+		buttonModelData.addEventHandler(MouseEvent.MOUSE_CLICKED, e->{
+
+			if(currentFile != null && currentFile.isFile()) {
+				Label secondLabel = new Label("===========================================================================\n"
+						+ "Nom du fichier : "+ currentFile.getName() +"\n\n"
+						+ "Auteur : "+ graphe.getAuthor() + "a la ligne " + fileReader.getAuthorLine() +"\n\n"
+						+ "Nombre de Faces : "+ graphe.getNbFaces()+"\n\n"
 						+ "Nombre de Sommet par faces : "+ graphe.getNbVertex() +"\n\n"
 						+ "Autre commentaire : "+ fileReader.getComment()+ "a la ligne " + fileReader.getCommentLine()+"\n\n"
 						+ "\n\n\n"
 						+ "");
 
-        		StackPane secondaryLayout = new StackPane();
-        		secondaryLayout.getChildren().add(secondLabel);
+				StackPane secondaryLayout = new StackPane();
+				secondaryLayout.getChildren().add(secondLabel);
 
-        		Scene secondScene = new Scene(secondaryLayout, 1000, 400);
+				Scene secondScene = new Scene(secondaryLayout, 1000, 400);
 
-        		// New window (Stage)
-        		Stage newWindow = new Stage();
-        		newWindow.setTitle("Info Fichier");
-        		newWindow.setScene(secondScene);
+				// New window (Stage)
+				Stage newWindow = new Stage();
+				newWindow.setTitle("Info Fichier");
+				newWindow.setScene(secondScene);
 
-        		// Specifies the modality for new window.
-        		newWindow.initModality(Modality.WINDOW_MODAL);
+				// Specifies the modality for new window.
+				newWindow.initModality(Modality.WINDOW_MODAL);
 
-        		newWindow.show();
-        	}
+				newWindow.show();
+			}
 		});
-		
+
 		buttonRotateRight.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
 				if(currentFile != null && currentFile.isFile()) {
@@ -322,11 +332,11 @@ public class MainControler implements Initializable {
 			public void handle(ActionEvent e) {
 				if(currentFile != null && currentFile.isFile()) {
 					rotationAroundLeft();
-					
+
 				}
 			}
 		});
-		
+
 		buttonRotateAroundLeft.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
 				if(currentFile != null && currentFile.isFile()) {
@@ -348,30 +358,30 @@ public class MainControler implements Initializable {
 				}
 			}
 		});
-		
+
 		buttonHomothetieUp.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent e) {
 				if(canvasWriterMain.homothesie<0) {
 					homothetieAction(5);
 				}
-				
+
 			}
 		});
-		
+
 		buttonHomothetieDown.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent e) {
 				if(canvasWriterMain.homothesie<-21) {
 					homothetieAction(-5);
-					}
+				}
 				else {
 					System.out.println("stop");
 				}
 			}
-			
+
 		});
-		
+
 		buttonTranslateRight.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
 				if(currentFile != null && currentFile.isFile()) {
@@ -386,7 +396,7 @@ public class MainControler implements Initializable {
 				}
 			}
 		});
-		
+
 		buttonTranslateUp.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
 				if(currentFile != null && currentFile.isFile()) {
@@ -394,7 +404,7 @@ public class MainControler implements Initializable {
 				}	
 			}
 		});
-		
+
 		buttonTranslateDown.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
 				if(currentFile != null && currentFile.isFile()) {
@@ -402,15 +412,15 @@ public class MainControler implements Initializable {
 				}
 			}
 		});
-        
-        buttonReloadCanvas.setOnAction(new EventHandler<ActionEvent>() {
+
+		buttonReloadCanvas.setOnAction(new EventHandler<ActionEvent>() {
 			@Override	
 			public void handle(ActionEvent e) {
 				updateFile();
 			}
 		});   
-        
-        printLine.setOnAction(new EventHandler<ActionEvent>() {
+
+		printLine.setOnAction(new EventHandler<ActionEvent>() {
 			@Override	
 			public void handle(ActionEvent e) {
 				canvasWriterMain.printLine(printLine.isSelected());
@@ -421,8 +431,8 @@ public class MainControler implements Initializable {
 				canvasWriterDown.update(graphe);
 			}
 		});   
-        
-        printColor.setOnAction(new EventHandler<ActionEvent>() {
+
+		printColor.setOnAction(new EventHandler<ActionEvent>() {
 			@Override	
 			public void handle(ActionEvent e) {
 				canvasWriterMain.printColor(printColor.isSelected());
@@ -433,8 +443,8 @@ public class MainControler implements Initializable {
 				canvasWriterDown.update(graphe);
 			}
 		});
-        
-        printPoint.setOnAction(new EventHandler<ActionEvent>() {
+
+		printPoint.setOnAction(new EventHandler<ActionEvent>() {
 			@Override	
 			public void handle(ActionEvent e) {
 				canvasWriterMain.printPoint(printPoint.isSelected());
@@ -445,15 +455,15 @@ public class MainControler implements Initializable {
 				canvasWriterDown.update(graphe);
 			}
 		});
-        
-        faceColor.setOnAction(new EventHandler<ActionEvent>() {
+
+		faceColor.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent e) {
 				graphe.setColor(faceColor.getValue());
 			}
 		});
-        
-        pointColor.setOnAction(new EventHandler<ActionEvent>() {
+
+		pointColor.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent e) {
 				canvasWriterMain.setPointColor(pointColor.getValue());
@@ -461,8 +471,8 @@ public class MainControler implements Initializable {
 				canvasWriterDown.setPointColor(pointColor.getValue());
 			}
 		});
-        
-        backgroundColor.setOnAction(new EventHandler<ActionEvent>() {
+
+		backgroundColor.setOnAction(new EventHandler<ActionEvent>() {
 			@Override	
 			public void handle(ActionEvent e) {
 				canvasWriterMain.setBackgroundColor(backgroundColor.getValue());
@@ -470,8 +480,8 @@ public class MainControler implements Initializable {
 				canvasWriterDown.setBackgroundColor(backgroundColor.getValue());
 			}
 		});
-        
-        areteColorPicker.setOnAction(new EventHandler<ActionEvent>() {
+
+		areteColorPicker.setOnAction(new EventHandler<ActionEvent>() {
 			@Override	
 			public void handle(ActionEvent e) {
 				canvasWriterMain.setLineColor(areteColorPicker.getValue());
@@ -479,70 +489,70 @@ public class MainControler implements Initializable {
 				canvasWriterDown.setLineColor(areteColorPicker.getValue());
 			}
 		});
-        
-        checkOmbre.setOnAction(new EventHandler<ActionEvent>() {
+
+		checkOmbre.setOnAction(new EventHandler<ActionEvent>() {
 			@Override	
 			public void handle(ActionEvent e) {
 				graphe.ombrage(checkOmbre.isSelected());
 			}
 		});
-        
-        buttonLightUp.setOnAction(new EventHandler<ActionEvent>() {
+
+		buttonLightUp.setOnAction(new EventHandler<ActionEvent>() {
 			@Override	
 			public void handle(ActionEvent e) {
 				graphe.modifierLumiere(0, 1, 0);
 			}
 		}); 
-        
-        buttonLightDown.setOnAction(new EventHandler<ActionEvent>() {
+
+		buttonLightDown.setOnAction(new EventHandler<ActionEvent>() {
 			@Override	
 			public void handle(ActionEvent e) {
 				graphe.modifierLumiere(0, -1, 0);
 			}
 		});  
-        
-        buttonLightRight.setOnAction(new EventHandler<ActionEvent>() {
+
+		buttonLightRight.setOnAction(new EventHandler<ActionEvent>() {
 			@Override	
 			public void handle(ActionEvent e) {
 				graphe.modifierLumiere(-1, 0, 0);
 			}
 		});  
-        
-        buttonLightLeft.setOnAction(new EventHandler<ActionEvent>() {
+
+		buttonLightLeft.setOnAction(new EventHandler<ActionEvent>() {
 			@Override	
 			public void handle(ActionEvent e) {
 				graphe.modifierLumiere(1, 0, 0);
 			}
 		});  
-        
-        buttonLightZUp.setOnAction(new EventHandler<ActionEvent>() {
+
+		buttonLightZUp.setOnAction(new EventHandler<ActionEvent>() {
 			@Override	
 			public void handle(ActionEvent e) {
 				graphe.modifierLumiere(0, 0, 1);
 			}
 		}); 
-        
-        buttonLightZDown.setOnAction(new EventHandler<ActionEvent>() {
+
+		buttonLightZDown.setOnAction(new EventHandler<ActionEvent>() {
 			@Override	
 			public void handle(ActionEvent e) {
 				graphe.modifierLumiere(0, 0, -1);
 			}
 		});}
-        
-       
-    
-    /**
-     * Sets the scene.
-     *
-     * @param s the new scene
-     */
-    @SuppressWarnings("incomplete-switch")
+
+
+
+	/**
+	 * Sets the scene.
+	 *
+	 * @param s the new scene
+	 */
+	@SuppressWarnings("incomplete-switch")
 	public void setScene (Scene s) {
-    	s.setOnKeyPressed(e->{
+		s.setOnKeyPressed(e->{
 			switch(e.getCode()){
 			case D:
 				rotateRight();
-			break;
+				break;
 			case Q:
 				rotationLeft();
 				break;
@@ -566,7 +576,7 @@ public class MainControler implements Initializable {
 					homothetieAction(1.2);
 				}
 				break;
-				
+
 			case N:
 				if(canvasWriterMain.homothesie<-21) {
 					homothetieAction(0.8);
@@ -587,14 +597,14 @@ public class MainControler implements Initializable {
 			case W:
 				graphe = fileReader.read(currentFile);
 				graphe.attach(canvasWriterMain);
-				graphe.attach(canvasWriterTop);
-				graphe.attach(canvasWriterDown);
+				//graphe.attach(canvasWriterTop);
+				//graphe.attach(canvasWriterDown);
 				graphe.update(graphe.getOriginalMatrix());
 				break;
 			}			
 		});
-    	
-    }
+
+	}
 
 	/**
 	 * Rotate right.
@@ -622,7 +632,7 @@ public class MainControler implements Initializable {
 		rotation.mouvement(Math.PI/100);
 		graphe.update(rotation.getMcourante());
 	}
-	
+
 	/**
 	 * Rotation up.
 	 */
@@ -631,7 +641,7 @@ public class MainControler implements Initializable {
 		rotation.mouvement(Math.PI/100);	
 		graphe.update(rotation.getMcourante());
 	}
-	
+
 	/**
 	 * Rotation around left.
 	 */
@@ -640,7 +650,7 @@ public class MainControler implements Initializable {
 		rotation.mouvement(Math.PI/100);
 		graphe.update(rotation.getMcourante());
 	}
-	
+
 	/**
 	 * Rotation around right.
 	 */
@@ -660,12 +670,12 @@ public class MainControler implements Initializable {
 	private void translateAction(double x, double y, double z) {
 		translation = new Translation(graphe.getMatrix());
 		System.out.println("avant : " + graphe.getMatrix().getX(0));
-		translation.translate(new Matrix(1, 1 , x , y, z ,1.0));
+		translation.translate(new Matrix(1, x , y, z ,1.0));
 		graphe.update(translation.getMcourante());
 		System.out.println("apres : " + graphe.getMatrix().getX(0));
 
 	}
-	
+
 	/**
 	 * Homothetie action.
 	 *
@@ -676,11 +686,11 @@ public class MainControler implements Initializable {
 		homothetie.mouvement(k);
 		graphe.update(homothetie.getMcourante());
 	}
-    
-    /**
-     * Update file.
-     */
-    private void updateFile() {
+
+	/**
+	 * Update file.
+	 */
+	private void updateFile() {
 		canvasWriterMain.clear(javafx.scene.paint.Color.WHITE);
 		canvasWriterTop.clear(javafx.scene.paint.Color.WHITE);
 		canvasWriterDown.clear(javafx.scene.paint.Color.WHITE);
@@ -688,12 +698,23 @@ public class MainControler implements Initializable {
 		currentFile=explorerFile.getFile(treeView);
 		if(currentFile != null && currentFile.isFile()) {
 			graphe = fileReader.read(currentFile);		
+			
+			UpdateGraph grapheTmp = graphe; 
+
+			Matrix m = new RotationUp(graphe.getMatrix(),null).mouvement(Math.PI);
+			graphe.update(m);
+			UpdateGraph grapheTop = graphe;
+			graphe = grapheTmp;
+			canvasWriterTop= new CanvasWriter(canvasTop,grapheTop);
+			m = new RotationLeft(graphe.getMatrix(),null).mouvement(Math.PI);
+			graphe.update(m);
+			UpdateGraph grapheSide = graphe;
+			graphe = grapheTmp;
+			canvasWriterDown= new CanvasWriter(canvasDown,grapheSide);
 			canvasWriterMain.update(graphe);
-			canvasWriterTop.update(graphe);
-			canvasWriterDown.update(graphe);
 			graphe.attach(canvasWriterMain);
 		}
 	}
-    
+
 
 }
