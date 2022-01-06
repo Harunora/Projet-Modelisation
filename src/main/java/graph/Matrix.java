@@ -2,34 +2,36 @@ package graph;
 
 
 /**
- * The Class Matrice.
+ * The Class Matrix.
+ * 
+ * @author matheo
  */
 public class Matrix {
 	
-	/** The idx. */
+	/** The idx in the matrix. */
 	private int idx = 0;
 	
-	/** The taille. */
+	/** The length of the matrix. */
 	private int length;
 	
-	/** The x. */
+	/** The xCoordinate. */
 	private double[] xCoordinate ;
 	
-	/** The y. */
+	/** The yCoordinate. */
 	private double[] yCoordinate ;
 	
-	/** The z. */
+	/** The zCoordinate. */
 	private double[] zCoordinate ;
 	
-	/** The v. */
+	/** The vector. */
 	private double[] vector;
 
 
 	/**
-	 * Instantiates a new matrice.
+	 * Instantiates a new matrix.
 	 *
-	 * @param nbVertex the nb sommets
-	 * @param nbFaces the nb faces
+	 * @param nbVertex the amount of vertex
+	 * @param nbFaces the amount of faces
 	 */
 	public Matrix(int nbVertex, int nbFaces) {
 		this.length = nbVertex;
@@ -40,14 +42,13 @@ public class Matrix {
 	}
 	
 	/**
-	 * Instantiates a new matrice.
+	 * Instantiates a new matrix.
 	 *
-	 * @param nbVertex the nb sommets
-	 * @param nbFaces the nb faces
-	 * @param xCoordinate the x
-	 * @param yCoordinate the y
-	 * @param zCoordinate the z
-	 * @param vector the v
+	 * @param nbVertex the amount of vertices
+	 * @param xCoordinate the xCoordinate 
+	 * @param yCoordinate the yCoordinate
+	 * @param zCoordinate the zCoordinate
+	 * @param vector the vector 
 	 */
 	public Matrix(int nbVertex, double xCoordinate, double yCoordinate, double zCoordinate, double vector) {
 		this.length = nbVertex;
@@ -63,11 +64,11 @@ public class Matrix {
 	}
 	
 	/**
-	 * Adds the.
+	 * Adds the a new point to the matrix.
 	 *
-	 * @param xCordinate the x
-	 * @param yCordinate the y
-	 * @param zCordinate the z
+	 * @param xCordinate the xCoordinate
+	 * @param yCordinate the yCoordinate
+	 * @param zCordinate the zCoordinate
 	 * @param vector the v
 	 */
 	public void add(double xCoordinate, double yCoordinate, double zCoordinate, double vector) {
@@ -79,7 +80,7 @@ public class Matrix {
 	}
 	
 	/**
-	 * Update.
+	 * Update the matrix
 	 */
 	public void update() {
 		for(int i = 0; i<length; i++) {
@@ -90,82 +91,82 @@ public class Matrix {
 	}
 	
 	/**
-	 * Adds the.
+	 * Adds the a vertex
 	 *
-	 * @param sommet the f
+	 * @param vertex the vertex
 	 */
-	public void add(Vertex sommet) {
-		this.add(sommet.getX(),sommet.getY(),sommet.getZ(), 1);
+	public void add(Vertex vertex) {
+		this.add(vertex.getX(),vertex.getY(),vertex.getZ(), 1);
 	}
 	
 	/**
-	 * Gets the x.
+	 * Gets the xCoordinate.
 	 *
-	 * @param idplace the idplace
+	 * @param index the idplace
 	 * @return the x
 	 */
-	public double getX(int idplace) {
-		return xCoordinate[idplace];
+	public double getX(int index) {
+		return xCoordinate[index];
 	}
 	
 	/**
-	 * Gets the y.
+	 * Gets the yCoordinate.
 	 *
-	 * @param idplace the idplace
+	 * @param index the idplace
 	 * @return the y
 	 */
-	public double getY(int idplace) {
-		return yCoordinate[idplace];
+	public double getY(int index) {
+		return yCoordinate[index];
 	}
 	
 	/**
-	 * Gets the z.
+	 * Gets the zCoordinate.
 	 *
-	 * @param idplace the idplace
+	 * @param index the index
 	 * @return the z
 	 */
-	public double getZ(int idplace) {
-		return zCoordinate[idplace];
+	public double getZ(int index) {
+		return zCoordinate[index];
 	}
 	
 	/**
-	 * Gets the v.
+	 * Gets the vector.
 	 *
-	 * @param idplace the idplace
-	 * @return the v
+	 * @param idplace the index
+	 * @return the vector
 	 */
 	public double getV(int idplace) {
 		return vector[idplace];
 	}
 	
 	/**
-	 * Modifie X.
+	 * update the x coordinate .
 	 *
-	 * @param idplace the idplace
-	 * @param addX the add X
+	 * @param index the index
+	 * @param addX the new X coordinate
 	 */
-	public void modifieX(int idplace,double addX) {
-		this.xCoordinate[idplace]+=addX;
+	public void changeXCoordinate(int index,double addX) {
+		this.xCoordinate[index]+=addX;
 	}
 	
 	/**
 	 * Modifie Y.
 	 *
-	 * @param idplace the idplace
+	 * @param index the idplace
 	 * @param addY the add Y
 	 */
-	public void modifieY(int idplace,double addY) {
-		this.yCoordinate[idplace]+=addY;
+	public void changeYCoordinate(int index,double addY) {
+		this.yCoordinate[index]+=addY;
 	}
 	
 	/**
 	 * Modifie Z.
 	 *
-	 * @param idplace the idplace
+	 * @param index the idplace
 	 * @param addZ the add Z
 	 */
-	public void modifieZ(int idplace,double addZ) {
-		this.zCoordinate[idplace]+=addZ;
+	public void changeZCoordinate(int index,double addZ) {
+		this.zCoordinate[index]+=addZ;
 	}
 	
 	/**
@@ -182,11 +183,11 @@ public class Matrix {
 	}
 	
 	/**
-	 * Gets the taille.
+	 * Gets the length.
 	 *
-	 * @return the taille
+	 * @return the length
 	 */
-	public int getTaille() {
+	public int getLength() {
 		return length;
 	}
 

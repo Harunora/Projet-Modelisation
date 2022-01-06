@@ -7,32 +7,32 @@ import javafx.scene.paint.Color;
 
 /**
  * The Class Face.
+ * @author matheo
  */
 public class Face implements Comparable<Face> {
 	
-	/** The color. */
+	/** The color of the face */
 	protected javafx.scene.paint.Color color;
 	
-	/** The nb sommet. */
+	/** amount of vertice of the face. */
 	protected int nbvertices;
 	
-	/** The sommets. */
+	/** the list of all the vertices */
 	protected List<Vertex> vertices;
 	
-	/** The Highest Z. */
+	/** The Highest Z Coordinate. */
 	protected double highestZ;
 	
 	/**
 	 * Instantiates a new face.
 	 *
-	 * @param n the n
-	 * @param vertices the sommets
-	 * @param color the color
+	 * @param number the amount of vertices
+	 * @param vertices the list of all vertices
+	 * @param color the color of the face
 	 */
-	//Une face est une list de plusieurs Sommets
-	public Face(int index, List<Vertex> vertices, javafx.scene.paint.Color color) {
+	public Face(int number, List<Vertex> vertices, javafx.scene.paint.Color color) {
 		this.color = color;
-		nbvertices = index;
+		nbvertices = number;
 		this.vertices = vertices;	
 		this.highestZ=findHighestZ();	
 		
@@ -41,26 +41,26 @@ public class Face implements Comparable<Face> {
 	/**
 	 * Instantiates a new face.
 	 *
-	 * @param n the n
-	 * @param c the c
+	 * @param number the amount of vertices
+	 * @param color the color of the face
 	 */
-	public Face(int index, Color color) {
-		this(index,new ArrayList<Vertex>(), color);
+	public Face(int number, Color color) {
+		this(number,new ArrayList<Vertex>(), color);
 	}
 	
 	/**
 	 * Instantiates a new face.
 	 *
-	 * @param n the n
+	 * @param number the amount of vertices
 	 */
-	public Face(int index ) {
-		this(index, null);
+	public Face(int number ) {
+		this(number, null);
 	}
 	
 	
 
 	/**
-	 * Sets the color.
+	 * Sets the color of the face
 	 *
 	 * @param color2 the new color
 	 */
@@ -69,34 +69,34 @@ public class Face implements Comparable<Face> {
 	}
 	
 	/**
-	 * Adds the sommet.
+	 * Adds the vertex.
 	 *
-	 * @param sommet the sommet
+	 * @param veretx the new vertex to add
 	 */
-	public void addVertex(Vertex sommet) {
-		this.vertices.add(sommet);
+	public void addVertex(Vertex vertex) {
+		this.vertices.add(vertex);
 	}
 
 	/**
-	 * Gets the nb sommet.
+	 * Gets the amount of vertices.
 	 *
-	 * @return the nb sommet
+	 * @return the amount of vertices 
 	 */
 	public int getNbVertex() {
 		return nbvertices;
 	}
 
 	/**
-	 * Gets the sommets.
+	 * Gets the list of all vertices.
 	 *
-	 * @return the sommets
+	 * @return all the vertice in an ArrayList
 	 */
 	public List<Vertex> getVertex() {
 		return vertices;
 	}
 	
 	/**
-	 * Gets the color.
+	 * Gets the color of the face.
 	 *
 	 * @return the color
 	 */
@@ -107,34 +107,34 @@ public class Face implements Comparable<Face> {
 	/**
 	 * Gets the color red.
 	 *
-	 * @return the color
+	 * @return the red value of the color 
 	 */
 	public double getRed() {
 		return this.color.getRed();
 	}
 	
 	/**
-	 * Gets the color red.
+	 * Gets the color green.
 	 *
-	 * @return the color
+	 * @return the green value of the color
 	 */
 	public double getGreen() {
 		return this.color.getGreen();
 	}
 	
 	/**
-	 * Gets the color red.
+	 * Gets the color blue.
 	 *
-	 * @return the color
+	 * @return the blue value of the color
 	 */
 	public double getBlue() {
 		return this.color.getBlue();
 	}
 	
 	/**
-	 * Checks for color.
+	 * Checks if the face has a color.
 	 *
-	 * @return true, if successful
+	 * @return true, if the face is colored
 	 */
 	public boolean hasColor() {
 		return this.color == null;
@@ -143,32 +143,32 @@ public class Face implements Comparable<Face> {
 	/**
 	 * To string.
 	 *
-	 * @return the string
+	 * @return the string of the color , the amount of vertices and the list of vertices
 	 */
 	@Override
 	public String toString() {
-		return "Face [color=" + color + ", nbSommet=" + nbvertices + ", sommets=" + vertices.toString()+ "]";
+		return "Face [color=" + color + ", nbVertices=" + nbvertices + ", ListOfVertices =" + vertices.toString()+ "]";
 	}
 
 	/**
-	 * Find highest Z.
+	 * Find the highest Z Coordinate.
 	 *
-	 * @return the double
+	 * @return the Highest Z Coordinate in double
 	 */
 	private double findHighestZ(){
-		double retour=this.vertices.get(0).getZ();
+		double result=this.vertices.get(0).getZ();
 		for(int i=1;i<this.getNbVertex();i++){
-			if(this.vertices.get(i).getZ()>retour){
-				retour=this.vertices.get(i).getZ();
+			if(this.vertices.get(i).getZ()>result){
+				result=this.vertices.get(i).getZ();
 			}
 		}
-		return retour;
+		return result;
 	}
 
 	/**
-	 * Gets the heightest Z.
+	 * Gets the heightest Z Coordinate.
 	 *
-	 * @return the heightest Z
+	 * @return the heightest Z Coordinate
 	 */
 	public double getHeightestZ(){
 		return this.highestZ;

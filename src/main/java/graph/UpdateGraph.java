@@ -62,7 +62,7 @@ public class UpdateGraph extends Graph{
 		matrix = matrix;
 		faces.clear();
 		sommets.clear();
-		for(int i = 0; i<matrix.getTaille(); i++) {
+		for(int i = 0; i<matrix.getLength(); i++) {
 			sommets.add(new Vertex(matrix.getX(i),matrix.getY(i),matrix.getZ(i)));
 		}
 		readFace();	
@@ -165,9 +165,9 @@ public class UpdateGraph extends Graph{
 	 * @param zCoordinate the z
 	 */
 	public void modifierLumiere(int xCoordinate,int yCoordinate,int zCoordinate) {
-		lumiere.modifieX(0, xCoordinate);
-		lumiere.modifieY(0, yCoordinate);
-		lumiere.modifieZ(0, zCoordinate);
+		lumiere.changeXCoordinate(0, xCoordinate);
+		lumiere.changeYCoordinate(0, yCoordinate);
+		lumiere.changeZCoordinate(0, zCoordinate);
 		calculColor = new CalculColor(lumiere,this.color);
 		update(matrix);
 	}

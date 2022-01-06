@@ -11,51 +11,52 @@ import java.util.StringTokenizer;
 import javafx.scene.paint.Color;
 
 /**
- * The Class FileReader.
+ * The Class FileReader, read a file .ply and create a Graph with all data of it.
+ * @author matheo
  */
 public class FileReader {
 
-	/** The commentaire. */
+	/** the line that is read , the name of the author of the ply, the comment of the author. */
 	private String actualString = "",author="",comment="";
 
-	/** The ligne com. */
+	/** The line where the author is writen , the line where the comment is writen */
 	private int authorLine = 0,commentLine = 0;
 
-	/** The nb sommets. */
-	private int nbFaces = 0,nbVertex = 0;
+	/** The amount of faces, the amount of vertices. */
+	private int nbFaces = 0,nbVertices = 0;
 
-	/** The sommets. */
+	/** The list of all vertices. */
 	private List<Vertex> vertices = new ArrayList<Vertex>();
 
-	/** The faces. */
+	/** The list of all faces. */
 	private List<Face>faces = new ArrayList<Face>();
 
-	/** The sommets de faces. */
+	/** The list (in String) of all the faces */
 	private List<String> listOfFaces = new ArrayList<String>();
 
-	/** The matrice. */
+	/** The matrix. */
 	protected Matrix matrix;
 
 
 
 
 	/**
-	 * Read.
+	 * Read the file (it's the main function).
 	 *
-	 * @param fileTest the file test
-	 * @return the update graph
+	 * @param fileRead the file that is read
+	 * @return the UpdateGraph made with all the data of the file
 	 */
-	public UpdateGraph read(File fileTest) {
+	public UpdateGraph read(File fileRead) {
 		try {
-			FileInputStream file = new FileInputStream(fileTest);
+			FileInputStream file = new FileInputStream(fileRead);
 			Scanner scanner = new Scanner(file);
-			int ligne = 1;
+			int line = 1;
 			while(scanner.hasNextLine())
 			{
 				actualString = actualNext(scanner);
-				startFile(scanner,  ligne);
-				matrix = new Matrix(nbVertex, nbFaces);
-				readVertex(nbVertex, vertices, scanner);
+				startFile(scanner,  line);
+				matrix = new Matrix(nbVertices, nbFaces);
+				readVertex(nbVertices, vertices, scanner);
 				readFace(nbFaces, vertices, faces, listOfFaces, scanner);
 			}
 			scanner.close();
@@ -67,26 +68,26 @@ public class FileReader {
 
 
 	/**
-	 * Start file.
+	 * read the header of the file and get all data (author, comments, amount of vertices and faces) 
 	 *
-	 * @param scanner the scanner
-	 * @param ligne the ligne
+	 * @param scanner for read the file, 
+	 * @param line the current line
 	 */
-	private void startFile(Scanner scanner, int ligne) {
+	private void startFile(Scanner scanner, int line) {
 		boolean achieved = false;
 		while(!achieved) {
-			ligne++;
+			line++;
 			actualString = actualNext(scanner);
 			if(actualString.equals("end_header"+"\n")) {achieved = true;}		
-			if(actualString.equals("\n")) {ligne--;}
-			if(actualString.startsWith("element vertex")) {nbVertex = Integer.parseInt(actualString.substring(15,actualString.length()-1)); }
+			if(actualString.equals("\n")) {line--;}
+			if(actualString.startsWith("element vertex")) {nbVertices = Integer.parseInt(actualString.substring(15,actualString.length()-1)); }
 			if(actualString.startsWith("comment")) {
 				if(actualString.startsWith("comment made by")) {
 					author = actualString.substring(15);
-					authorLine = ligne;
+					authorLine = line;
 				}else {
 					comment += actualString.substring(7) + "\n";
-					commentLine = ligne;
+					commentLine = line;
 				}	
 			}
 			if(actualString.startsWith("element face")) {nbFaces = Integer.parseInt(actualString.substring(13,actualString.length()-1));}
@@ -94,10 +95,10 @@ public class FileReader {
 	}
 
 	/**
-	 * Actual next.
+	 * Go to the next line
 	 *
 	 * @param scanner the scanner
-	 * @return the string
+	 * @return the next line
 	 */
 	private String actualNext(Scanner scanner) {
 		actualString=scanner.nextLine()+"\n";
@@ -105,15 +106,15 @@ public class FileReader {
 	}
 
 	/**
-	 * Read face.
+	 * Read a face and add it to the list
 	 *
-	 * @param nbFaces the nb faces
-	 * @param sommets the sommets
-	 * @param faces the faces
-	 * @param stringFace the string face
+	 * @param nbFaces the amount of faces
+	 * @param listVertex the list of vertices
+	 * @param faces list of faces
+	 * @param stringFace the list of faces (String)
 	 * @param scanner the scanner
 	 */
-	private void readFace(int nbFaces, List<Vertex> sommets, List<Face> faces,List<String> stringFace, Scanner scanner) {
+	private void readFace(int nbFaces, List<Vertex> listVertex, List<Face> faces,List<String> stringFace, Scanner scanner) {
 		for(int i = 0; i<nbFaces; i++) {
 			actualString = actualNext(scanner);
 			if(actualString.equals("\n")) {
@@ -121,47 +122,46 @@ public class FileReader {
 			}
 			else {
 				stringFace.add(actualString);
-				List<Vertex> listSommetTmp = new ArrayList<Vertex>();
-				List<Integer> listIdxSommet = new ArrayList<Integer>();
+				List<Vertex> listVertexTmp = new ArrayList<Vertex>();				
+				List<Integer> listIdxVertex = new ArrayList<Integer>();
 				StringTokenizer lineToken = new StringTokenizer(actualString);
 				int number = Integer.parseInt(lineToken.nextToken());
 				for(int j = 0; j<number; j++ ) {
-					listIdxSommet.add(Integer.parseInt(lineToken.nextToken()));
+					listIdxVertex.add(Integer.parseInt(lineToken.nextToken()));
 				}
 				for(int j = 0; j< number; j++) {
-					listSommetTmp.add(sommets.get(listIdxSommet.get(j)));
+					listVertexTmp.add(listVertex.get(listIdxVertex.get(j)));
 				}
-				faceAdd(faces, listSommetTmp, number);
+				faceAdd(faces, listVertexTmp, number);
 
 			}
 		}
 	}
 
 	/**
-	 * Face add.
+	 * Add a new face to the list
 	 *
-	 * @param faces the faces
-	 * @param listSommetTmp the list sommet tmp
-	 * @param lineToken the line token
-	 * @param number the nb
+	 * @param faces the current list of faces
+	 * @param listVertexTmp the temporary list of Vertex
+	 * @param number the amount of vertices in the face
 	 */
-	private void faceAdd(List<Face> faces, List<Vertex> listSommetTmp, int number) {
+	private void faceAdd(List<Face> faces, List<Vertex> listVertexTmp, int number) {
 
-		Face faceTmp = new Face(number,listSommetTmp, Color.WHITE);			
+		Face faceTmp = new Face(number,listVertexTmp, Color.WHITE);			
 		faces.add(faceTmp);
 
 	}
 
 
 	/**
-	 * Read sommet.
+	 * Read the Vertex and get all the date 
 	 *
-	 * @param nbVertex the nb sommets
-	 * @param vertices the sommets
+	 * @param nbVertices the amount of vertices
+	 * @param vertices the list of vertices
 	 * @param scanner the scanner
 	 */
-	private void readVertex(int nbVertex, List<Vertex> vertices, Scanner scanner) {
-		for(int i = 0; i<nbVertex; i++) {
+	private void readVertex(int nbVertices, List<Vertex> vertices, Scanner scanner) {
+		for(int i = 0; i<nbVertices; i++) {
 			Vertex tmp;
 			actualString = actualNext(scanner);
 			if(actualString.equals("\n")) {
@@ -177,10 +177,10 @@ public class FileReader {
 	}
 
 	/**
-	 * Adds the xyz.
+	 * return a double[] with the xCoordinate , yCoordinate, zCoordinates on the split String
 	 *
-	 * @param split the s 1
-	 * @return the double[]
+	 * @param split the String where the coordinate are
+	 * @return the double[] with the coordinates
 	 */
 	private double[] addXyz(String[] split) {
 		return new double[] {Double.parseDouble(split[0]),Double.parseDouble(split[1]),Double.parseDouble(split[2])};
@@ -188,9 +188,9 @@ public class FileReader {
 
 
 	/**
-	 * Gets the auteur.
+	 * Gets the author.
 	 *
-	 * @return the auteur
+	 * @return the author
 	 */
 	public String getAuthor() {
 		return author;
@@ -198,9 +198,9 @@ public class FileReader {
 
 
 	/**
-	 * Gets the commentaire.
+	 * Gets the comment.
 	 *
-	 * @return the commentaire
+	 * @return the comment
 	 */
 	public String getComment() {
 		return comment;
@@ -208,9 +208,9 @@ public class FileReader {
 
 
 	/**
-	 * Gets the ligne auteur.
+	 * Gets the line where the author is written.
 	 *
-	 * @return the ligne auteur
+	 * @return the line of the author
 	 */
 	public int getAuthorLine() {
 		return authorLine;
@@ -218,9 +218,9 @@ public class FileReader {
 
 
 	/**
-	 * Gets the ligne com.
+	 * Gets the line where there is comment
 	 *
-	 * @return the ligne com
+	 * @return the line of the comment
 	 */
 	public int getCommentLine() {
 		return commentLine;

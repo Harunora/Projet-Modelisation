@@ -41,14 +41,14 @@ public abstract class Mouvement {
 	 * @return la matrice multipliee
 	 */
 	public  Matrix multipliMatrice(Matrix mconverter) {
-		Matrix mConverted = new Matrix(mcourante.getTaille(), mcourante.getTaille());
+		Matrix mConverted = new Matrix(mcourante.getLength(), mcourante.getLength());
 		double coordX = 0.0;
 		double coordY = 0.0;
 		double coordZ = 0.0;
 		double coordV = 0.0;
-		for(int i = 0 ; i < mcourante.getTaille();i++ ) {
+		for(int i = 0 ; i < mcourante.getLength();i++ ) {
 			//jusqu'a 4 prend tout les x tout les y tout les z et tout les v 
-			for(int j = 0; j < mconverter.getTaille(); j++) {
+			for(int j = 0; j < mconverter.getLength(); j++) {
 				switch(j) {
 					case 0:
 						coordX += mconverter.getX(j) * mcourante.getX(i);

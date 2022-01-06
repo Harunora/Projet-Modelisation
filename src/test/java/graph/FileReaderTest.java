@@ -23,19 +23,19 @@ class FileReaderTest {
 	File file2 = new File(myPath+"apple.ply");
 	
 	/** The r. */
-	FileReader r = new FileReader();
+	FileReader fileReader = new FileReader();
 	
 	/** The r 2. */
-	FileReader r2 = new FileReader();
+	FileReader fileReader2 = new FileReader();
 	
 	/** The attendu. */
 	Graph attendu = implementation();
 	
 	/** The obtenu. */
-	Graph obtenu = r.read(file);
+	Graph obtenu = fileReader.read(file);
 	
 	/** The obtenu 2. */
-	Graph obtenu2 = r2.read(file2);
+	Graph obtenu2 = fileReader2.read(file2);
 	
 	/**
 	 * Implementation.
@@ -45,44 +45,44 @@ class FileReaderTest {
 	Graph implementation() {
 		List<Face> f = new ArrayList<Face>();
 		Matrix matrice;
-		Vertex s0 = new Vertex(0,0,0);
-		Vertex s1 = new Vertex(0,0,1);
-		Vertex s2 = new Vertex(0,1,1);
-		Vertex s3 = new Vertex(0,1,0);
-		Vertex s4 = new Vertex(1,0,0);
-		Vertex s5 = new Vertex(1,0,1);
-		Vertex s6 = new Vertex(1,1,1);
-		Vertex s7 = new Vertex(1,1,0);
+		Vertex vertex0 = new Vertex(0,0,0);
+		Vertex vertex1 = new Vertex(0,0,1);
+		Vertex vertex2 = new Vertex(0,1,1);
+		Vertex vertex3 = new Vertex(0,1,0);
+		Vertex vertex4 = new Vertex(1,0,0);
+		Vertex vertex5 = new Vertex(1,0,1);
+		Vertex vertex6 = new Vertex(1,1,1);
+		Vertex vertex7 = new Vertex(1,1,0);
 		List<Vertex> listSommet1 = new ArrayList<Vertex>();
-		listSommet1.add(s0);
-		listSommet1.add(s1);
-		listSommet1.add(s2);
-		listSommet1.add(s3);
+		listSommet1.add(vertex0);
+		listSommet1.add(vertex1);
+		listSommet1.add(vertex2);
+		listSommet1.add(vertex3);
 		List<Vertex> listSommet2 = new ArrayList<Vertex>();
-		listSommet2.add(s7);
-		listSommet2.add(s6);
-		listSommet2.add(s5);
-		listSommet2.add(s4);
+		listSommet2.add(vertex7);
+		listSommet2.add(vertex6);
+		listSommet2.add(vertex5);
+		listSommet2.add(vertex4);
 		List<Vertex> listSommet3 = new ArrayList<Vertex>();
-		listSommet3.add(s0);
-		listSommet3.add(s4);
-		listSommet3.add(s5);
-		listSommet3.add(s1);
+		listSommet3.add(vertex0);
+		listSommet3.add(vertex4);
+		listSommet3.add(vertex5);
+		listSommet3.add(vertex1);
 		List<Vertex> listSommet4 = new ArrayList<Vertex>();
-		listSommet4.add(s1);
-		listSommet4.add(s5);
-		listSommet4.add(s6);
-		listSommet4.add(s2);
+		listSommet4.add(vertex1);
+		listSommet4.add(vertex5);
+		listSommet4.add(vertex6);
+		listSommet4.add(vertex2);
 		List<Vertex> listSommet5 = new ArrayList<Vertex>();
-		listSommet5.add(s2);
-		listSommet5.add(s6);
-		listSommet5.add(s7);
-		listSommet5.add(s3);
+		listSommet5.add(vertex2);
+		listSommet5.add(vertex6);
+		listSommet5.add(vertex7);
+		listSommet5.add(vertex3);
 		List<Vertex> listSommet6 = new ArrayList<Vertex>();
-		listSommet6.add(s3);
-		listSommet6.add(s7);
-		listSommet6.add(s4);
-		listSommet6.add(s0);
+		listSommet6.add(vertex3);
+		listSommet6.add(vertex7);
+		listSommet6.add(vertex4);
+		listSommet6.add(vertex0);
 		f.add(new Face(4,listSommet1, null));
 		f.add(new Face(4,listSommet2, null));
 		f.add(new Face(4,listSommet3, null));

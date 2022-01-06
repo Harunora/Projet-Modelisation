@@ -41,7 +41,7 @@ public class ProduitScalaire {
 	 */
 	public boolean verifProd(Matrix matrice) {
 		
-		return this.matrice.getTaille() == matrice.getTaille();
+		return this.matrice.getLength() == matrice.getLength();
 	}
 	
 	/**

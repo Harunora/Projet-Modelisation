@@ -40,8 +40,8 @@ public class Translation {
 	 * @return la matrice apres la translation
 	 */
 	public  Matrix addToMatrice(double coordx, double coordy , double coordz) {
-		Matrix matriceConverted = new Matrix(matriceCourante.getTaille(),matriceCourante.getTaille());
-		for(int i = 0 ; i < matriceCourante.getTaille(); i++) {
+		Matrix matriceConverted = new Matrix(matriceCourante.getLength(),matriceCourante.getLength());
+		for(int i = 0 ; i < matriceCourante.getLength(); i++) {
 			matricecoordX =  matriceCourante.getX(i) + coordx;
 			matricecoordY =  matriceCourante.getY(i) + coordy;
 			matricecoordZ =  matriceCourante.getZ(i) + coordz;

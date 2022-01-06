@@ -8,45 +8,43 @@ import mvc.Subject;
 
 /**
  * The Class Graph.
+ * @author matheo
  */
 public class Graph extends Subject{
 	
-	/** The nb faces. */
+	/** The amount of faces. */
 	protected int nbFaces;
-	
-	/**
-	 * other graph for the views 
-	 */	
-	/** The faces. */
+
+	/** The list of faces */
 	protected List<Face> faces;
 	
-	/** The matrice. */
+	/** The matrix */
 	protected Matrix matrix;
 	
-	/** The matrice original. */
+	/** The Original matrix for the reset. */
 	protected Matrix originalMatrix;
 	
-	/** The sommets de faces. */
+	/** The ListOfFaces (String). */
 	protected List<String> listOfFaces;
 	
-	/** The color. */
+	/** The color of the model. */
 	protected Color color;
 	
-	/** The auteur. */
+	/** The author. */
 	protected String author = "";
 	
 	/**
 	 * Instantiates a new graph.
 	 *
-	 * @param nbFace the nb face
-	 * @param faces the faces
-	 * @param matrice the matrice
-	 * @param listOfFaces the sommet de faces
-	 * @param author the auteur
+	 * @param nbFace the amount of faces
+	 * @param faces the list of face
+	 * @param matrix 
+	 * @param listOfFaces the list of faces (String)
+	 * @param author the author
 	 */
-	public Graph(int nbFace, List<Face> faces, Matrix matrice, List<String> listOfFaces, String author) {
-		this.originalMatrix = matrice;
-		this.matrix = matrice;
+	public Graph(int nbFace, List<Face> faces, Matrix matrix, List<String> listOfFaces, String author) {
+		this.originalMatrix = matrix;
+		this.matrix = matrix;
 		this.nbFaces = nbFace;
 		this.faces = faces;
 		this.listOfFaces = listOfFaces;
@@ -69,9 +67,9 @@ public class Graph extends Subject{
 	}
 	
 	/**
-	 * Gets the auteur.
+	 * Gets the author.
 	 *
-	 * @return the auteur
+	 * @return the author
 	 */
 	public String getAuthor() {
 		if(author.equals("")) {
@@ -82,27 +80,27 @@ public class Graph extends Subject{
 	}
 	
 	/**
-	 * Gets the nb sommet.
+	 * Gets the amount of vertices.
 	 *
-	 * @return the nb sommet
+	 * @return the amount of vertices
 	 */
 	public int getNbVertex() {
 		return this.faces.get(0).getNbVertex();
 	}
 	
 	/**
-	 * Adds the face.
+	 * Adds a face.
 	 *
-	 * @param face the f
+	 * @param face a face
 	 */
 	public void addFace(Face face) {
 		this.faces.add(face);
 	}
 
 	/**
-	 * Gets the nb faces.
+	 * Gets the amount faces.
 	 *
-	 * @return the nb faces
+	 * @return the amount faces
 	 */
 	public int getNbFaces() {
 		return nbFaces;
@@ -123,7 +121,7 @@ public class Graph extends Subject{
 	 * @return the string
 	 */
 	public String toString() {
-		String res =  "Face [nbSommet=" + this.nbFaces + ", sommets= ";
+		String res =  "Face [nbVertices=" + this.nbFaces + ", Vertices= ";
 		for (int i = 0; i<this.nbFaces-1; i++) {
 			res+= this.faces.get(i)+" , ";
 		}
@@ -132,28 +130,28 @@ public class Graph extends Subject{
 	}
 	
 	/**
-	 * Gets the matrice.
+	 * Gets the matrix.
 	 *
-	 * @return the matrice
+	 * @return the matrix
 	 */
 	public Matrix getMatrix() {
 		return this.matrix;
 	}
 	
 	/**
-	 * Gets the matrice original.
+	 * Gets the original matrix.
 	 *
-	 * @return the matrice original
+	 * @return the original matrix
 	 */
 	public Matrix getOriginalMatrix() {
 		return this.originalMatrix;
 	}
 	
 	/**
-	 * Gets the face X.
+	 * Gets the face XCoordinate.
 	 *
-	 * @param column the i
-	 * @param line the j
+	 * @param column the column 
+	 * @param line the line
 	 * @return the face X
 	 */
 	public double getFaceX(int column , int line) {
@@ -161,10 +159,10 @@ public class Graph extends Subject{
 	}
 	
 	/**
-	 * Gets the face Y.
+	 * Gets the face YCoordinate.
 	 *
-	 * @param column the i
-	 * @param line the j
+	 * @param column the column
+	 * @param line the line
 	 * @return the face Y
 	 */
 	public double getFaceY(int column , int line) {
@@ -172,10 +170,10 @@ public class Graph extends Subject{
 	}
 	
 	/**
-	 * Gets the face Z.
+	 * Gets the face ZCoordinate.
 	 *
-	 * @param column the i
-	 * @param line the j
+	 * @param column the column
+	 * @param line the line
 	 * @return the face Z
 	 */
 	public double getFaceZ(int column , int line) {
@@ -183,19 +181,19 @@ public class Graph extends Subject{
 	}
 	
 	/**
-	 * Gets the sommets de faces.
+	 * Gets a face from the list of faces (string).
 	 *
 	 * @param index the index
-	 * @return the sommets de faces
+	 * @return a face from the list of faces
 	 */
 	public String getListOfFaces(int index) {
 		return listOfFaces.get(index);
 	}
 	
 	/**
-	 * Gets the sommets de faces.
+	 * Gets the list of faces (String).
 	 *
-	 * @return the sommets de faces
+	 * @return the list of faces
 	 */
 	public List<String> getListOfFaces() {
 		return listOfFaces;
