@@ -60,11 +60,11 @@ Nous n'avons pas encore trouvé comment afficher uniquement le nom du fichier
 
 
 - [X] Affichage faces seulement / segments seulement
-- [X] Affichage avancé de la bibliothèque de modèles
+- [/] Affichage avancé de la bibliothèque de modèles
 - [X] Recherche dans la bibliothèque de modèles
-- [ ] Éditer les informations sur un modèle (auteur, comment etc...)
+- [X] Éditer les informations sur un modèle (auteur, comment etc...)
 - [ ] Modèle centré
-- [ ] Éclairage
+- [X] Éclairage
 - [ ] Lissage
 - [ ] Ombre portée
 - [ ] Vue en tranches
@@ -74,12 +74,12 @@ Nous n'avons pas encore trouvé comment afficher uniquement le nom du fichier
 
 ## Autres exigences
 
-- [ ] Tests unitaires
-- [ ] Diagramme de classes UML
-- [ ] Javadoc
-- [ ] Captures d'écran
-- [ ] Vidéo de présentation
-- [ ] Respect du format de rendu
+- [/] Tests unitaires
+- [X] Diagramme de classes UML
+- [X] Javadoc
+- [X] Captures d'écran
+- [X] Vidéo de présentation
+- [/] Respect du format de rendu
 
 ## Distribution du travail (qui a fait quoi)
 
@@ -87,13 +87,23 @@ Nous n'avons pas encore trouvé comment afficher uniquement le nom du fichier
 - [X] Affichage face seulement / segments seulement 
  
 ###M
-- [ ] Reorganisation du MainController 
+- [X] Reorganisation du MainController 
+- [X] Editions des infos de modeles
+- [X] Refonte de l'homethetie et des translations
+- [X] Correction de bugs (lecture de fichier, rotations, 
 
 ###J
 - [X] Affichage avancé de la bibliothèque de modèle 
-- [ ] Éclairage
+- [X] Éclairage
+
+###Ensemble
+-[X] MVC
+-[X] Couleurs 
 
 ## Difficultés rencontrées
+
+Notre modele n'était pas mvc après le livrable 1 et nous avons eu des difficultées à le faire
+Les trois vues ne fonctionnent pas (nous avons décidés de retourné à des vues fixes)
 
 
 
