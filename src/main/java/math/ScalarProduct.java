@@ -8,79 +8,79 @@ import graph.Vertex;
  * 
  * @author Julien Lalloyer
  */
-public class ProduitScalaire {	
+public class ScalarProduct {	
 	
-	/** La matrice. */
-	protected Matrix matrice;
+	/** the matrix */
+	protected Matrix matrix;
 	
 	/**
-	 * Instantie un nouveau produit scalaire.
+	 * create the scalar product with the current matrix
 	 *
-	 * @param matrice la matrice
+	 * @param matrix the matrix
 	 */
-	public ProduitScalaire(Matrix matrice) {
-		this.matrice = matrice;
+	public ScalarProduct(Matrix matrix) {
+		this.matrix = matrix;
 	}
 	
 	/**
-	 * Instantie un nouveau produit scalaire.
+	 * create the scalar product with a new matrix
 	 *
-	 * @param sommet1 le premier sommet qui permetra a faire une matrice
-	 * @param sommet2 le second sommet qui permetra a faire une matrice
+	 * @param vertex1 the first vertex to make the matrix
+	 * @param vertex2 the second vertex to make the matrix
 	 */
-	public ProduitScalaire(Vertex sommet1, Vertex sommet2) {
-		matrice = new Matrix(1,1);
-		matrice.add(sommet2.getX() - sommet1.getX(), sommet2.getY() - sommet1.getY(), sommet2.getZ() - sommet1.getZ(), 1);
+	public ScalarProduct(Vertex vertex1, Vertex vertex2) {
+		matrix = new Matrix(1,1);
+		matrix.add(vertex2.getX() - vertex1.getX(), vertex2.getY() - vertex1.getY(), vertex2.getZ() - vertex1.getZ(), 1);
 	}
 	
 	/**
-	 * Verifie la possibilité de faire un produit matricielle.
+	 * Look if we can make a scalar product in the matrix
 	 *
-	 * @param matrice la matrice
-	 * @return true, si c'est possible
+	 * @param matrix the current matrix
+	 * @return true if we can make a scalar product
 	 */
-	public boolean verifProd(Matrix matrice) {
+	public boolean verifProd(Matrix matrix) {
 		
-		return this.matrice.getLength() == matrice.getLength();
+		return this.matrix.getLength() == matrix.getLength();
 	}
 	
 	/**
-	 * Produit scalaire.
+	 * make the scalar product in the current matrix
 	 *
-	 * @param matrice la matrice
+	 * @param matrix the current matrix
 	 */
-	public void prodScal(Matrix matrice) {
+	public void prodScal(Matrix matrix) {
 		Matrix res;
-		if(verifProd(matrice)){
-			res = calcScal(matrice);
+		if(verifProd(matrix)){
+			res = calcScal(matrix);
 		}else {
 			res = new Matrix(1,1);
 		}
-		this.matrice  = res;
+		this.matrix  = res;
 	}
 	
 	/**
-	 * Calcule scalaire.
+	 * Do the scalar calculation
 	 *
-	 * @param matrice la matrice utilisee pour le produit 
-	 * @return le produit scalaire des deux matrices
+	 * @param matrix the current matrix used in the calculation 
+	 * @return the scalar product of the two matrix
 	 */
-	public Matrix calcScal(Matrix matrice) {
+	public Matrix calcScal(Matrix matrix) {
 		Matrix res = new Matrix(1,1);
-		double coordX = this.matrice.getY(0) * matrice.getZ(0) - this.matrice.getZ(0) * matrice.getY(0);
-		double coordY = this.matrice.getZ(0) * matrice.getX(0) - this.matrice.getX(0) * matrice.getZ(0);
-		double coordZ = this.matrice.getX(0) * matrice.getY(0) - this.matrice.getY(0) * matrice.getX(0);
+		double coordX = this.matrix.getY(0) * matrix.getZ(0) - this.matrix.getZ(0) * matrix.getY(0);
+		double coordY = this.matrix.getZ(0) * matrix.getX(0) - this.matrix.getX(0) * matrix.getZ(0);
+		double coordZ = this.matrix.getX(0) * matrix.getY(0) - this.matrix.getY(0) * matrix.getX(0);
 		res.add(coordX, coordY, coordZ, 1);
 		return res;
 	}
 
 	/**
-	 * Prendre la matrice de l'homothetie.
+	 * return the martix
 	 *
-	 * @return la matrice
+	 * @return the matrix
 	 */
 	public Matrix getMatrice() {
 		// TODO Auto-generated method stub
-		return matrice;
+		return matrix;
 	}
 }

@@ -25,7 +25,7 @@
                      <children>
                         <Button fx:id="buttonLoadFolder" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="40.0" prefWidth="128.0" text="Charger un dossier" AnchorPane.bottomAnchor="760.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="0.0" />
                         <TreeView fx:id="treeView" layoutY="54.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="459.0" prefWidth="121.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0" />
-                        <Button fx:id="btreebase" layoutX="63.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="45.0" text="Base" AnchorPane.bottomAnchor="760.0" AnchorPane.leftAnchor="128.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <Button fx:id="bTreeBase" layoutX="63.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="45.0" text="Base" AnchorPane.bottomAnchor="760.0" AnchorPane.leftAnchor="128.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                      </children>
                   </AnchorPane>
                 <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="900.0">
@@ -121,9 +121,9 @@
                                        <children>
                                           <ToolBar layoutX="1.0" layoutY="3.0" prefHeight="40.0" prefWidth="374.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                             <items>
-                                              <Button fx:id="Fview" mnemonicParsing="false" text="Vue initial" />
-                                                <Button fx:id="Aview" mnemonicParsing="false" text="Vue en Tranche" />
-                                                <Button fx:id="Sview" mnemonicParsing="false" text="Lissage du modèle" />
+                                              <Button fx:id="frontView" mnemonicParsing="false" text="Vue initial" />
+                                                <Button fx:id="aView" mnemonicParsing="false" text="Vue en Tranche" />
+                                                <Button fx:id="sideView" mnemonicParsing="false" text="Lissage du modèle" />
                                             </items>
                                           </ToolBar>
                                        </children>

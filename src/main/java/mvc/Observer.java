@@ -8,15 +8,15 @@ public interface Observer {
 	/**
 	 * Update.
 	 *
-	 * @param subj le sujet
+	 * @param subj the subject
 	 */
 	public void update(Subject subj);
 	
 	/**
 	 * Update.
 	 *
-	 * @param subj le sujet
-	 * @param data les donnees
+	 * @param subj the subject
+	 * @param data the data
 	 */
 	public void update(Subject subj, Object data);
 

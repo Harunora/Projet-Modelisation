@@ -3,39 +3,38 @@ package rotation;
 import graph.Matrix;
 
 /**
- * La classe RotationRight.
+ * the class RotationRight.
  * 
  * @author Julien Lalloyer
  */
 public class RotationRight extends Mouvement{
 
 	/**
-	 * Instantie une nouvelle rotation a droite.
+	 * create a new rotation (right)
 	 *
-	 * @param matrice la matrice de base
-	 * @param mouvement le mouvement a apliquer
+	 * @param matrix the current matrix
+	 * @param mouvement the mouvement to applied
 	 */
-	public RotationRight(Matrix matrice, Mouvement mouvement) {
-		super(matrice, mouvement);
+	public RotationRight(Matrix matrix, Mouvement mouvement) {
+		super(matrix, mouvement);
 	}
 
 	/**
-	 * Rotation par la droite.
+	 * Do the rotation
 	 *
-	 * @param sensibility la sensibilitee
-	 * @return la matrice apres rotation
+	 * @param sensibility the sensibility of the rotation
+	 * @return the matrix after the rotation
 	 */
 	@Override
 	public Matrix mouvement(double sensibility) {
-		// a regarder
-		Matrix newMatrice = new Matrix(4, 4);
-		newMatrice.add(Math.cos(sensibility), 0.0, Math.sin(sensibility), 0.0);
-		newMatrice.add(0.0, 1.0, 0.0, 0.0);
-		newMatrice.add((-1.0) *Math.sin(sensibility), 0.0, Math.cos(sensibility), 0.0);
-		newMatrice.add(0.0, 0.0, 0.0, 1.0);
-		this.mcourante = multipliMatrice(newMatrice);
+		Matrix newMatrix = new Matrix(4, 4);
+		newMatrix.add(Math.cos(sensibility), 0.0, Math.sin(sensibility), 0.0);
+		newMatrix.add(0.0, 1.0, 0.0, 0.0);
+		newMatrix.add((-1.0) *Math.sin(sensibility), 0.0, Math.cos(sensibility), 0.0);
+		newMatrix.add(0.0, 0.0, 0.0, 1.0);
+		this.currentMatrix = multipliMatrix(newMatrix);
 
-		return mcourante;
+		return currentMatrix;
 	}
 	
 

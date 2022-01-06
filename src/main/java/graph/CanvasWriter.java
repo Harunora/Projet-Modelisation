@@ -1,9 +1,7 @@
 package graph;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 import javafx.scene.paint.*;
 import javafx.scene.paint.Color;
@@ -15,6 +13,8 @@ import javafx.scene.canvas.GraphicsContext;
 
 /**
  * The Class CanvasWriter.
+ * 
+ * @author christopher
  */
 public class CanvasWriter implements Observer{
 
@@ -28,93 +28,61 @@ public class CanvasWriter implements Observer{
 	public GraphicsContext graphicContext;
 	
 	/** The point color. */
-	protected Color pointColor;
+	protected Color pointColor, backgroundColor, lineColor;
 	
-	/** The background color. */
-	protected Color backgroundColor;
-	
-	/** The line color. */
-	protected Color lineColor;
-	
-	/** The x. */
-	protected List<double[]> x;
-	
-	/** The y. */
-	protected List<double[]> y;
-	
-	/** The z. */
-	protected List<double[]> z;
+	/** all the list of coordinates. */
+	protected List<double[]> xCoordinate, yCoordinate,zCoordinate;
 	
 	/** The color. */
 	protected List<Color> color;
 	
-	/** The height. */
-	protected double height;
-	
-	/** The width. */
-	protected double width;
+	/** The height and the width */
+	protected double height, width;
 	
 	/** The line print. */
-	private boolean linePrint = true;
-	
-	/** The color print. */
-	private boolean colorPrint = true;
-	
-	/** The point print. */
-	private boolean pointPrint = true;
-	
-	/** The homothesie. */
-	public int homothesie=-100;
+	private boolean linePrint = true, colorPrint = true, pointPrint = true;
 
 	/**
 	 * Instantiates a new canvas writer.
 	 *
-	 * @param c the c
-	 * @param lf the lf
+	 * @param canvas the c
+	 * @param graph the lf
 	 */
-	public CanvasWriter(Canvas c, Graph lf) {
-		x=new ArrayList<double[]>();
-		y=new ArrayList<double[]>();
-		z=new ArrayList<double[]>();
+	public CanvasWriter(Canvas canvas, Graph graph) {
+		xCoordinate=new ArrayList<double[]>();
+		yCoordinate=new ArrayList<double[]>();
+		zCoordinate=new ArrayList<double[]>();
 		color=new ArrayList<Color>();
 		backgroundColor = Color.GRAY;
 		lineColor= Color.BLACK;
 		pointColor=Color.BLACK;
-		canvas=c;
-		graphicContext=c.getGraphicsContext2D();
-		width=c.getWidth()/2;
-		height=c.getHeight()/2;
-		model=lf;
+		this.canvas=canvas;
+		graphicContext=canvas.getGraphicsContext2D();
+		width=canvas.getWidth()/2;
+		height=canvas.getHeight()/2;
+		model=graph;
 		this.update(model);
 	}
-
-	/*
-	public void changeHomothesie(int i) {
-		homothesie=i;
-		useGraph();
-
-	}
-	*/
 
 	/**
 	 * Write on canvas.
 	 */
 	public void writeOnCanvas() {
 		clear(backgroundColor);
-		for(int i=0;i<this.x.size();i++){
+		for(int i=0;i<this.xCoordinate.size();i++){
 			if(pointPrint) {
 				graphicContext.setStroke(pointColor);
-				for(int j=0;j<this.x.get(i).length;j++) {
-					graphicContext.strokeOval(this.x.get(i)[j]-1,this.y.get(i)[j]-1,2, 2);
+				for(int j=0;j<this.xCoordinate.get(i).length;j++) {
+					graphicContext.strokeOval(this.xCoordinate.get(i)[j]-1,this.yCoordinate.get(i)[j]-1,2, 2);
 				}
 			}
 			if(colorPrint) {
 				graphicContext.setFill(this.color.get(i));
-				graphicContext.fillPolygon(this.x.get(i),this.y.get(i), this.y.get(i).length);
+				graphicContext.fillPolygon(this.xCoordinate.get(i),this.yCoordinate.get(i), this.yCoordinate.get(i).length);
 			}
 			if(linePrint) {
 				graphicContext.setStroke(lineColor);
-				graphicContext.strokePolygon(this.x.get(i),this.y.get(i), this.y.get(i).length);
+				graphicContext.strokePolygon(this.xCoordinate.get(i),this.yCoordinate.get(i), this.yCoordinate.get(i).length);
 			}
 		}
 	}
@@ -122,10 +90,10 @@ public class CanvasWriter implements Observer{
 	/**
 	 * Clear.
 	 *
-	 * @param c the c
+	 * @param color the new color
 	 */
-	public void clear(Paint c) {
-		graphicContext.setFill(c);
+	public void clear(Paint color) {
+		graphicContext.setFill(color);
 		graphicContext.fillRect(0, 0, canvas.getWidth(), canvas.getHeight());
 
 	}
@@ -134,26 +102,26 @@ public class CanvasWriter implements Observer{
 	 * Use graph.
 	 */
 	public void useGraph() {
-		this.x.clear();
-		this.y.clear();
-		this.z.clear();
+		double[] xFace, yFace, zFace;
+		this.xCoordinate.clear();
+		this.yCoordinate.clear();
+		this.zCoordinate.clear();
 		this.color.clear();
 		Collections.sort(model.getFaces());
-		System.out.println("oui");
-		for(int i=0;i<model.getNbFaces();i++) {
-			double[] i1=new double[this.model.getFace(i).nbvertices];
-			double[] i2=new double[this.model.getFace(i).nbvertices];
-			double[] i3=new double[this.model.getFace(i).nbvertices];
-			for(int j=0;j<this.model.getFace(i).nbvertices;j++) {
-				i1[j]=this.model.getFaceX(i, j)*homothesie+height;
-				i2[j]=this.model.getFaceY(i, j)*homothesie+width;
-				i3[j]=this.model.getFaceZ(i, j)*homothesie+width;
+		for(int index=0;index<model.getNbFaces();index++) {
+			xFace=new double[this.model.getFace(index).nbvertices];
+			yFace=new double[this.model.getFace(index).nbvertices];
+		    zFace=new double[this.model.getFace(index).nbvertices];
+			for(int j=0;j<this.model.getFace(index).nbvertices;j++) {
+				xFace[j]=this.model.getFaceX(index, j)*100+height;
+				yFace[j]=this.model.getFaceY(index, j)*100+width;
+				zFace[j]=this.model.getFaceZ(index, j)*100+width;
 			}
-			this.x.add(i1);
-			this.y.add(i2);
-			this.z.add(i3);
-			Color tmp=this.model.getFace(i).getColor();
-			this.color.add(tmp);
+			this.xCoordinate.add(xFace);
+			this.yCoordinate.add(yFace);
+			this.zCoordinate.add(zFace);
+			Color colorTmp=this.model.getFace(index).getColor();
+			this.color.add(colorTmp);
 		}
 		writeOnCanvas();
 	}

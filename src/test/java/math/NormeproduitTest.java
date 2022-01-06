@@ -20,8 +20,8 @@ class NormeproduitTest {
 		Vertex sommetA = new Vertex(1, 2, 3);
 		Vertex sommetB = new Vertex(2,3,3);
 		Vertex sommetC = new Vertex(2,2,5);
-		ProduitScalaire produitScal1 = new ProduitScalaire(sommetA ,sommetB);
-		ProduitScalaire produitScal2 = new ProduitScalaire(sommetA , sommetC);
+		ScalarProduct produitScal1 = new ScalarProduct(sommetA ,sommetB);
+		ScalarProduct produitScal2 = new ScalarProduct(sommetA , sommetC);
 		produitScal1.prodScal(produitScal2.getMatrice());
 		ProdVectoUni produitVectoUni = new ProdVectoUni(produitScal1);
 		Matrix res1 = new Matrix(1,1);
@@ -36,7 +36,7 @@ class NormeproduitTest {
 	void testNormeComplexe() {
 		Matrix matrice = new Matrix(1,1);
 		matrice.add(1.0,1.0,1.0,1.0);
-		ProduitScalaire prodScal = new ProduitScalaire(matrice);
+		ScalarProduct prodScal = new ScalarProduct(matrice);
 		ProdVectoUni prodVetoUni = new ProdVectoUni(prodScal);
 		Matrix res2 = new Matrix(1,1);
 		res2.add(1.0/Math.sqrt(3.0), 1.0/Math.sqrt(3.0), 1.0/Math.sqrt(3.0), 1);

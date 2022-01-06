@@ -9,99 +9,98 @@ import graph.Matrix;
  */
 public abstract class Mouvement {
 	
-	/** La matrice courante. */
-	protected Matrix mcourante;
+	/** the currentMatrix. */
+	protected Matrix currentMatrix;
 	
-	/** Le mouvement appliquer de base. */
+	/** the mouvement */
 	protected Mouvement movement;
 	
 	/**
-	 * Instantie une nouvelle rotation.
+	 * create a new mouvement
 	 *
-	 * @param matrice la matrice de base
-	 * @param mouvement le mouvement appliquer de base 
+	 * @param matrix the current matrix
+	 * @param mouvement the mouvement that will be applied 
 	 */
-	public Mouvement(Matrix matrice, Mouvement mouvement) {
-		mcourante = matrice;
+	public Mouvement(Matrix matrix, Mouvement mouvement) {
+		currentMatrix = matrix;
 		this.movement = mouvement;
 	}
 	
 	/**
-	 * Permet le mouvement.
+	 * Do the mouvement
 	 *
-	 * @param sensibility la sensibilite de ce mouvement
-	 * @return the matrice
+	 * @param sensibility the sensibility of the mouvement
+	 * @return the matrix after the mouvement
 	 */
 	public abstract Matrix mouvement(double sensibility);
 	
 	/**
-	 * Produit matricielle.
+	 * Matrix Product
 	 *
-	 * @param mconverter la matrice de convertion (avec laquelle on multiplie celle de base)
-	 * @return la matrice multipliee
+	 * @param matrixConvertor that we use to multiply the current one
+	 * @return the new matrix
 	 */
-	public  Matrix multipliMatrice(Matrix mconverter) {
-		Matrix mConverted = new Matrix(mcourante.getLength(), mcourante.getLength());
+	public  Matrix multipliMatrix(Matrix matrixConvertor) {
+		Matrix convertMatrix = new Matrix(currentMatrix.getLength(), currentMatrix.getLength());
 		double coordX = 0.0;
 		double coordY = 0.0;
 		double coordZ = 0.0;
 		double coordV = 0.0;
-		for(int i = 0 ; i < mcourante.getLength();i++ ) {
-			//jusqu'a 4 prend tout les x tout les y tout les z et tout les v 
-			for(int j = 0; j < mconverter.getLength(); j++) {
+		for(int i = 0 ; i < currentMatrix.getLength();i++ ) {
+			for(int j = 0; j < matrixConvertor.getLength(); j++) {
 				switch(j) {
 					case 0:
-						coordX += mconverter.getX(j) * mcourante.getX(i);
-						coordY += mconverter.getY(j) * mcourante.getX(i);
-						coordZ += mconverter.getZ(j) * mcourante.getX(i);
-						coordV += mconverter.getV(j) * mcourante.getX(i);
+						coordX += matrixConvertor.getX(j) * currentMatrix.getX(i);
+						coordY += matrixConvertor.getY(j) * currentMatrix.getX(i);
+						coordZ += matrixConvertor.getZ(j) * currentMatrix.getX(i);
+						coordV += matrixConvertor.getV(j) * currentMatrix.getX(i);
 						break;
 					case 1:
-						coordX += mconverter.getX(j) * mcourante.getY(i);
-						coordY += mconverter.getY(j) * mcourante.getY(i);
-						coordZ += mconverter.getZ(j) * mcourante.getY(i);
-						coordV += mconverter.getV(j) * mcourante.getY(i);
+						coordX += matrixConvertor.getX(j) * currentMatrix.getY(i);
+						coordY += matrixConvertor.getY(j) * currentMatrix.getY(i);
+						coordZ += matrixConvertor.getZ(j) * currentMatrix.getY(i);
+						coordV += matrixConvertor.getV(j) * currentMatrix.getY(i);
 						break;
 					case 2:
-						coordX += mconverter.getX(j) * mcourante.getZ(i);
-						coordY += mconverter.getY(j) * mcourante.getZ(i);
-						coordZ += mconverter.getZ(j) * mcourante.getZ(i);
-						coordV += mconverter.getV(j) * mcourante.getZ(i);
+						coordX += matrixConvertor.getX(j) * currentMatrix.getZ(i);
+						coordY += matrixConvertor.getY(j) * currentMatrix.getZ(i);
+						coordZ += matrixConvertor.getZ(j) * currentMatrix.getZ(i);
+						coordV += matrixConvertor.getV(j) * currentMatrix.getZ(i);
 						break;
 					case 3:
-						coordX += mconverter.getX(j) * mcourante.getV(i);
-						coordY += mconverter.getY(j) * mcourante.getV(i);
-						coordZ += mconverter.getZ(j) * mcourante.getV(i);
-						coordV += mconverter.getV(j) * mcourante.getV(i);
+						coordX += matrixConvertor.getX(j) * currentMatrix.getV(i);
+						coordY += matrixConvertor.getY(j) * currentMatrix.getV(i);
+						coordZ += matrixConvertor.getZ(j) * currentMatrix.getV(i);
+						coordV += matrixConvertor.getV(j) * currentMatrix.getV(i);
 						break;
 				}
 			}
-			mConverted.add(coordX, coordY, coordZ, coordV);
+			convertMatrix.add(coordX, coordY, coordZ, coordV);
 			coordX = 0.0;
 			coordY = 0.0;
 			coordZ = 0.0;
 			coordV = 0.0;
 		}
-		this.mcourante = mConverted;
-		return mConverted;
+		this.currentMatrix = convertMatrix;
+		return convertMatrix;
 	}
 
 	/**
-	 * Prend la matrice courante.
+	 * Take the current matrix
 	 *
-	 * @return la matrice courante
+	 * @return the current matrix
 	 */
-	public Matrix getMcourante() {
-		return mcourante;
+	public Matrix getCurrentMatrix() {
+		return currentMatrix;
 	}
 
 	/**
-	 * Sets the mcourante.
+	 * Sets a new current matrix
 	 *
-	 * @param mcourante the new mcourante
+	 * @param matrix the new current matrix
 	 */
-	public void setMcourante(Matrix mcourante) {
-		this.mcourante = mcourante;
+	public void setNewMatrix(Matrix matrix) {
+		this.currentMatrix = matrix;
 	}
 	
 	

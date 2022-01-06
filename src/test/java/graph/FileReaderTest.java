@@ -43,7 +43,7 @@ class FileReaderTest {
 	 * @return the graph
 	 */
 	Graph implementation() {
-		List<Face> f = new ArrayList<Face>();
+		List<Face> face = new ArrayList<Face>();
 		Matrix matrice;
 		Vertex vertex0 = new Vertex(0,0,0);
 		Vertex vertex1 = new Vertex(0,0,1);
@@ -83,14 +83,14 @@ class FileReaderTest {
 		listSommet6.add(vertex7);
 		listSommet6.add(vertex4);
 		listSommet6.add(vertex0);
-		f.add(new Face(4,listSommet1, null));
-		f.add(new Face(4,listSommet2, null));
-		f.add(new Face(4,listSommet3, null));
-		f.add(new Face(4,listSommet4, null));
-		f.add(new Face(4,listSommet5, null));
-		f.add(new Face(4,listSommet6, null));
+		face.add(new Face(4,listSommet1, null));
+		face.add(new Face(4,listSommet2, null));
+		face.add(new Face(4,listSommet3, null));
+		face.add(new Face(4,listSommet4, null));
+		face.add(new Face(4,listSommet5, null));
+		face.add(new Face(4,listSommet6, null));
 		matrice = new Matrix(7, 6);
-		return new Graph(6,f, matrice, null, "");
+		return new Graph(6,face, matrice, null, "");
 	}
 	
 	/**
@@ -140,36 +140,22 @@ class FileReaderTest {
 	void testSommet2() {
 		assertEquals(attendu.getFaces().get(3).getVertex().toString(), obtenu.getFaces().get(3).getVertex().toString());
 	}
-	
-	/**
-	 * Test graph.
-	 */
+
 	@Test
 	void testGraph() {
 		assertEquals(attendu.toString(), obtenu.toString());
 	}
-	
-	/**
-	 * Test nb faces EF.
-	 */
+
 	@Test
 	void testNbFacesEF() {
 		assertEquals(1704, obtenu2.getNbFaces());
 		
 	}
-	
-	/**
-	 * Test nb sommets file reader.
-	 */
 	@Test
 	void testNbSommetsFileReader() {
 		assertEquals(3, obtenu2.getNbVertex());
 	}
-	
-	
-	/**
-	 * Test size sommets.
-	 */
+
 	@Test
 	void testSizeSommets() {
 		assertEquals(6, obtenu.getFaces().size());

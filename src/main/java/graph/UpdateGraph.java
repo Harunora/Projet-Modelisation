@@ -10,50 +10,49 @@ import math.CalculColor;
 
 /**
  * The Class UpdateGraph.
+ * 
+ * @author matheo
  */
 public class UpdateGraph extends Graph{
 
 
-	/** The sommets. */
-	private List<Vertex> sommets = new ArrayList<Vertex>();
+	/** The list of vertices */
+	private List<Vertex> vertices = new ArrayList<Vertex>();
 	
-	/** The has set color. */
-	private boolean hasSetColor;
+	/** the number of vertices and all the vertices coordinate */
+	private int numberOfVertices,vertexA,vertexB,vertexC,vertexD;
 	
-	/** The d. */
-	private int number,vertexA,vertexB,vertexC,vertexD;
-	
-	/** The lumiere. */
-	Matrix lumiere = new Matrix(1,1,1,1,1);
+	/** The light . */
+	Matrix light = new Matrix(1,1,1,1,1);
 	
 	/** The calcul color. */
-	private CalculColor calculColor = new CalculColor(lumiere,this.color);
+	private CalculColor calculColor = new CalculColor(light,this.color);
 	
-	/** The original. */
+	/** The orignal graph  */
 	private Graph original;
 	
-	/** The calcule lumiere. */
-	protected boolean calculeLumiere = true;
+	/** if the light is calculed. */
+	protected boolean lightCalcul = true;
 
 	
 	/**
 	 * Instantiates a new update graph.
 	 *
-	 * @param nbFace the nb face
-	 * @param faces the faces
-	 * @param matrice the matrice
-	 * @param sommetDeFaces the sommet de faces
-	 * @param auteur the auteur
+	 * @param nbFaces the amount of faces
+	 * @param faces the list of faces
+	 * @param matrix the matrix
+	 * @param listOfFaces the list of faces (String)
+	 * @param author the author
 	 */
-	public UpdateGraph(int nbFace, List<Face> faces, Matrix matrice, List<String> sommetDeFaces, String auteur) {
-		super(nbFace, faces, matrice, sommetDeFaces, auteur);
-		this.original=new Graph(nbFace, faces, matrice, sommetDeFaces, auteur);
+	public UpdateGraph(int nbFaces, List<Face> faces, Matrix matrix, List<String> listOfFaces, String author) {
+		super(nbFaces, faces, matrix, listOfFaces, author);
+		this.original=new Graph(nbFaces, faces, matrix, listOfFaces, author);
 	}
 	
 	/**
-	 * Update.
+	 * Update the graph with a new matrix
 	 *
-	 * @param matrix the ma
+	 * @param matrix the new matrix
 	 */
 	public void update(Matrix matrix) {
 		this.faces=this.original.faces;
@@ -61,9 +60,9 @@ public class UpdateGraph extends Graph{
 		this.listOfFaces=this.original.listOfFaces;
 		this.matrix = matrix;
 		faces.clear();
-		sommets.clear();
+		vertices.clear();
 		for(int i = 0; i<matrix.getLength(); i++) {
-			sommets.add(new Vertex(matrix.getX(i),matrix.getY(i),matrix.getZ(i)));
+			vertices.add(new Vertex(matrix.getX(i),matrix.getY(i),matrix.getZ(i)));
 		}
 		readFace();	
 		notifyObserver();
@@ -75,7 +74,6 @@ public class UpdateGraph extends Graph{
 	 * @param color the new color
 	 */
 	public void setColor(javafx.scene.paint.Color color) {
-		hasSetColor = true;
 		this.color = color;
 		for(int index = 0; index< this.nbFaces; index++) {
 			setFaceColor(index, color);
@@ -86,89 +84,72 @@ public class UpdateGraph extends Graph{
 	 * Read face.
 	 */
 	private void readFace() {
-		for(int i = 0; i<nbFaces; i++) {
-			readNbFace(i);
+		for(int index = 0; index<nbFaces; index++) {
+			readNbFace(index);
 		}
 	}
 
 	/**
-	 * Read nb face.
+	 * Read the amount of faces
 	 *
-	 * @param index the i
+	 * @param index the index in the list of Faces (String)
 	 */
 	private void readNbFace(int index) {
 		StringTokenizer lineToken = new StringTokenizer(listOfFaces.get(index));
-		number = Integer.parseInt(lineToken.nextToken());
+		numberOfVertices = Integer.parseInt(lineToken.nextToken());
 		vertexA = Integer.parseInt(lineToken.nextToken());
 		vertexB = Integer.parseInt(lineToken.nextToken());
 		vertexC = Integer.parseInt(lineToken.nextToken());
-		if(number==4) {
+		if(numberOfVertices==4) {
 			vertexD = Integer.parseInt(lineToken.nextToken());			
 		}
-		List<Vertex> tmp = new ArrayList<Vertex>();
-		addListSommet(tmp);
-		Face faceTmp = new Face(number, tmp, color);
+		List<Vertex> verticesListTmp = new ArrayList<Vertex>();
+		addListVertex(verticesListTmp);
+		Face faceTmp = new Face(numberOfVertices, verticesListTmp, color);
 		Color colorTmp = color;
-		if(calculeLumiere){
+		if(lightCalcul){
 			colorTmp=calculColor.getColor(faceTmp);
 		}
-		faceTmp = new Face(number, tmp, colorTmp);
-		//System.out.println("couleur ombre " + colorTmp);
-		//System.out.println("couleur globale : " + color);
+		faceTmp = new Face(numberOfVertices, verticesListTmp, colorTmp);
 		faces.add(faceTmp);
-
 	}
-	/*
-
-    public UpdateGraph getVueDessus() {
-        Matrice rotationTop = new RotationUp(this.getMatrice(), null).rotate(Math.PI/2.0);
-        UpdateGraph tmp = this.update(rotationTop);
-        return retour;
-    }
-	
-	public UpdateGraph getVueCote() {
-        Matrice rotationSide = new RotationLeft(this.getMatrice(), null).rotate(Math.PI/2.0);
-        UpdateGraph retour= new UpdateGraph(nb, faces, rotationSide, sommetsDeFaces, auteur);
-        return retour;
-    }
-    */
 	
 	/**
 	 * Ombrage.
 	 *
 	 * @param value the value
 	 */
-	public void ombrage(boolean value) {
-		this.calculeLumiere=value;
+	public void umbrage(boolean value) {
+		this.lightCalcul=value;
 		update(matrix);
 	}
 
 	/**
-	 * Adds the list sommet.
+	 * Adds the list vertex.
 	 *
-	 * @param tmp the tmp
+	 * @param tmp the temporal list of Vertex
 	 */
-	private void addListSommet(List<Vertex> tmp) {
-		tmp.add(sommets.get(vertexA));
-		tmp.add(sommets.get(vertexB));
-		tmp.add(sommets.get(vertexC));
-		if(number == 4) {
-			tmp.add(sommets.get(vertexD));			
+	private void addListVertex(List<Vertex> tmp) {
+		tmp.add(vertices.get(vertexA));
+		tmp.add(vertices.get(vertexB));
+		tmp.add(vertices.get(vertexC));
+		if(numberOfVertices == 4) {
+			tmp.add(vertices.get(vertexD));			
 		}
 	}
 	
 	/**
-	 * Modifier lumiere.
+	 * update the light.
 	 *
 	 * @param xCoordinate the x
 	 * @param yCoordinate the y
 	 * @param zCoordinate the z
 	 */
-	public void modifierLumiere(int xCoordinate,int yCoordinate,int zCoordinate) {
-		lumiere.changeXCoordinate(0, xCoordinate);
-		lumiere.changeYCoordinate(0, yCoordinate);
-		lumiere.changeZCoordinate(0, zCoordinate);
-		calculColor = new CalculColor(lumiere,this.color);
+	public void updateLight(int xCoordinate,int yCoordinate,int zCoordinate) {
+		light.changeXCoordinate(0, xCoordinate);
+		light.changeYCoordinate(0, yCoordinate);
+		light.changeZCoordinate(0, zCoordinate);
+		calculColor = new CalculColor(light,this.color);
 		update(matrix);
 	}
 }

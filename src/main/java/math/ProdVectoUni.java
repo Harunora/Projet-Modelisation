@@ -10,7 +10,7 @@ import graph.Matrix;
 public class ProdVectoUni {
 	
 	/** Le produit scalaire. */
-	protected ProduitScalaire produitScalaire;
+	protected ScalarProduct produitScalaire;
 	
 	/** La racine du produit scalaire. */
 	protected double norme;
@@ -32,7 +32,7 @@ public class ProdVectoUni {
 	 *
 	 * @param produitScal le produit scalaire de la matrice de base
 	 */
-	public ProdVectoUni(ProduitScalaire produitScal){
+	public ProdVectoUni(ScalarProduct produitScal){
 		produitScalaire = produitScal;		
 		coordX = produitScalaire.getMatrice().getX(0);
 		coordY = produitScalaire.getMatrice().getY(0);

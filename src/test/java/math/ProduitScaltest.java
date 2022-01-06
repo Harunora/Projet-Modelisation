@@ -21,8 +21,8 @@ class ProduitScaltest {
 		matrice1.add(1,1,0,1);
 		Matrix matrice2 = new Matrix(1,1);
 		matrice2.add(1,0,2,1);
-		ProduitScalaire prodScal1 = new ProduitScalaire(matrice1);
-		ProduitScalaire prodScal2 = new ProduitScalaire(matrice2);
+		ScalarProduct prodScal1 = new ScalarProduct(matrice1);
+		ScalarProduct prodScal2 = new ScalarProduct(matrice2);
 		prodScal1.prodScal(prodScal2.getMatrice());
 		Matrix res3 = new Matrix(1,1);
 		res3.add(2, -2, -1, 1);
@@ -37,8 +37,8 @@ class ProduitScaltest {
 		Vertex sommetA = new Vertex(1, 2, 3);
 		Vertex sommetB = new Vertex(2,3,3);
 		Vertex sommetC = new Vertex(2,2,5);
-		ProduitScalaire prodScal1 = new ProduitScalaire(sommetA ,sommetB);
-		ProduitScalaire prodScal2 = new ProduitScalaire(sommetA , sommetC);
+		ScalarProduct prodScal1 = new ScalarProduct(sommetA ,sommetB);
+		ScalarProduct prodScal2 = new ScalarProduct(sommetA , sommetC);
 		Matrix res1 = new Matrix(1,1) ;
 		res1.add(1, 1, 0, 1);
 		assertEquals(res1.toString() , prodScal1.getMatrice().toString());

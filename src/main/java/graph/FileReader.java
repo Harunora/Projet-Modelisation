@@ -115,6 +115,7 @@ public class FileReader {
 	 * @param scanner the scanner
 	 */
 	private void readFace(int nbFaces, List<Vertex> listVertex, List<Face> faces,List<String> stringFace, Scanner scanner) {
+		StringTokenizer lineToken;
 		for(int i = 0; i<nbFaces; i++) {
 			actualString = actualNext(scanner);
 			if(actualString.equals("\n")) {
@@ -124,7 +125,7 @@ public class FileReader {
 				stringFace.add(actualString);
 				List<Vertex> listVertexTmp = new ArrayList<Vertex>();				
 				List<Integer> listIdxVertex = new ArrayList<Integer>();
-				StringTokenizer lineToken = new StringTokenizer(actualString);
+				lineToken = new StringTokenizer(actualString);
 				int number = Integer.parseInt(lineToken.nextToken());
 				for(int j = 0; j<number; j++ ) {
 					listIdxVertex.add(Integer.parseInt(lineToken.nextToken()));
@@ -161,8 +162,8 @@ public class FileReader {
 	 * @param scanner the scanner
 	 */
 	private void readVertex(int nbVertices, List<Vertex> vertices, Scanner scanner) {
+		Vertex tmp;
 		for(int i = 0; i<nbVertices; i++) {
-			Vertex tmp;
 			actualString = actualNext(scanner);
 			if(actualString.equals("\n")) {
 				i--;

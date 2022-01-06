@@ -3,40 +3,38 @@ package rotation;
 import graph.Matrix;
 
 /**
- * La classe RotationAroundLeft.
+ * the class RotationAroundLeft.
  * 
  * @author Julien Lalloyer
  */
 public class RotationAroundLeft extends Mouvement {
 	
 	/**
-	 * Instantie une nouvelle rotation dans le sens anti-horraire.
+	 * create a new rotation (AroundLeft).
 	 *
-	 * @param matrice la matrice de base
-	 * @param mouvement le mouvement a apliquer
+	 * @param matrix the current matrix
+	 * @param mouvement the mouvement to applied
 	 */
-	public RotationAroundLeft(Matrix matrice, Mouvement mouvement) {
-		super(matrice, mouvement);
-		// TODO Auto-generated constructor stub
+	public RotationAroundLeft(Matrix matrix, Mouvement mouvement) {
+		super(matrix, mouvement);
 	}
 
 	/**
-	 * Rotation dans le sens anti-horraire.
+	 * Do the rotation.
 	 *
-	 * @param sensibility la sensibilitee
-	 * @return la matrice apres rotation
+	 * @param sensibility the sensibility of the rotation
+	 * @return the matrix after the rotation
 	 */
 	@Override
 	public Matrix mouvement(double sensibility) {
-		// bon
-		Matrix newMatrice = new Matrix(4, 4);
-		newMatrice.add( Math.cos(sensibility),Math.sin(sensibility), 0.0, 0.0);
-		newMatrice.add( (-1.0)*Math.sin(sensibility), Math.cos(sensibility), 0.0, 0.0);
-		newMatrice.add(0.0, 0.0, 1.0, 0.0);		
-		newMatrice.add(0.0, 0.0, 0.0, 1.0);
-		this.mcourante = multipliMatrice(newMatrice);
+		Matrix newMatrix = new Matrix(4, 4);
+		newMatrix.add( Math.cos(sensibility),Math.sin(sensibility), 0.0, 0.0);
+		newMatrix.add( (-1.0)*Math.sin(sensibility), Math.cos(sensibility), 0.0, 0.0);
+		newMatrix.add(0.0, 0.0, 1.0, 0.0);		
+		newMatrix.add(0.0, 0.0, 0.0, 1.0);
+		this.currentMatrix = multipliMatrix(newMatrix);
 
-		return mcourante;
+		return currentMatrix;
 
 	}
 }

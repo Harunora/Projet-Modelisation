@@ -3,62 +3,56 @@ package math;
 import graph.Matrix;
 
 /**
- * La classe Translation.
+ * Translation.
  * 
- * @author Julien Lalloyer
+ * @author matheo, julien
  */
 public class Translation {
 	
-	/** La matrice courante. */
-	protected Matrix matriceCourante;
+	/** the current matrix */
+	protected Matrix currentMatrix;
 	
-	/** La coordonee X de la matrice. */
-	private double matricecoordX ;
-	
-	/** La coordonee Z de la matrice. */
-	private double matricecoordZ; 
-	
-	/**  La coordonee Y de la matrice. */
-	private double matricecoordY ;
+	/**all the coordinates*/
+	private double xCoordinate, zCoordinate, yCoordinate ;
 	
 	/**
-	 * Instantie une nouvelle translation.
+	 * create a new translation
 	 *
-	 * @param matrice la matrice
+	 * @param matrix the matrix
 	 */
-	public Translation(Matrix matrice) {
-		matriceCourante = matrice;
+	public Translation(Matrix matrix) {
+		currentMatrix = matrix;
 	}
 	
 	
 	/**
-	 * Ajoute x y et z a la matrice courante.
+	 * add the coordinate to the matrix
 	 *
-	 * @param coord_x le x qu'on ajoute a la matrice. 
-	 * @param coord_y le y qu'on ajoute a la matrice.
-	 * @param coord_z le z qu'on ajoute a la matrice.
-	 * @return la matrice apres la translation
+	 * @param coord_x the x that we add in the matrix 
+	 * @param coord_y the y that we add in the matrix
+	 * @param coord_z the z that we add in the matrix
+	 * @return the matrix after the translation
 	 */
 	public  Matrix addToMatrice(double coordx, double coordy , double coordz) {
-		Matrix matriceConverted = new Matrix(matriceCourante.getLength(),matriceCourante.getLength());
-		for(int i = 0 ; i < matriceCourante.getLength(); i++) {
-			matricecoordX =  matriceCourante.getX(i) + coordx;
-			matricecoordY =  matriceCourante.getY(i) + coordy;
-			matricecoordZ =  matriceCourante.getZ(i) + coordz;
-			matriceConverted .add(matricecoordX, matricecoordY, matricecoordZ, matriceCourante.getV(i));
-			matricecoordX = 0.0;
-			matricecoordY = 0.0;
-			matricecoordZ = 0.0;
+		Matrix matriceConverted = new Matrix(currentMatrix.getLength(),currentMatrix.getLength());
+		for(int i = 0 ; i < currentMatrix.getLength(); i++) {
+			xCoordinate =  currentMatrix.getX(i) + coordx;
+			yCoordinate =  currentMatrix.getY(i) + coordy;
+			zCoordinate =  currentMatrix.getZ(i) + coordz;
+			matriceConverted .add(xCoordinate, yCoordinate, zCoordinate, currentMatrix.getV(i));
+			xCoordinate = 0.0;
+			yCoordinate = 0.0;
+			zCoordinate = 0.0;
 		}
-		matriceCourante = matriceConverted;
-		return matriceCourante;
+		currentMatrix = matriceConverted;
+		return currentMatrix;
 	}
 	
 	/**
-	 * Effectue la translation.
+	 * Do the translation
 	 *
-	 * @param matrice la matrice
-	 * @return la matrice translaté
+	 * @param matrix the current matrix
+	 * @return the matrix after the translation
 	 */
 	public Matrix translate(Matrix matrice) {
 		this.addToMatrice(matrice.getX(0), matrice.getY(0),matrice.getZ(0));
@@ -67,11 +61,11 @@ public class Translation {
 	}
 
 	/**
-	 * Prendre la matrice courante.
+	 * take the current matrix
 	 *
-	 * @return la matrice courante
+	 * @return the current matrix
 	 */
 	public Matrix getMcourante() {
-		return this.matriceCourante;
+		return this.currentMatrix;
 	}
 }

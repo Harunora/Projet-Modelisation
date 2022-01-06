@@ -8,7 +8,6 @@ import file.ExplorerFile;
 import file.UpdateFile;
 import graph.CanvasWriter;
 import graph.FileReader;
-import graph.Graph;
 import graph.Matrix;
 import graph.UpdateGraph;
 import javafx.event.ActionEvent;
@@ -23,11 +22,8 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToolBar;
 import javafx.scene.control.TreeView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Background;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.StackPane;
@@ -35,9 +31,8 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import math.Homothetie;
+import math.Homothety;
 import math.Translation;
-import mvc.Observer;
 import rotation.Mouvement;
 import rotation.RotationAroundLeft;
 import rotation.RotationAroundRight;
@@ -48,12 +43,14 @@ import rotation.RotationUp;
 
 /**
  * The Class MainControler.
+ * 
+ * @author Matheo, Christopher, Julien
  */
 public class MainControler implements Initializable {
 
 	/** The edit auteur button. */
 	@FXML
-	Button buttonLoadFolder, btreebase ,buttonLightZDown,buttonLightZUp,buttonLightUp,buttonLightDown,buttonLightRight,buttonLightLeft,buttonHelp, buttonRotateUp, buttonRotateRight, buttonRotateLeft, buttonRotateDown, buttonRotateAroundRight, buttonRotateAroundLeft, buttonTranslateUp, buttonTranslateRight, buttonTranslateLeft, buttonTranslateDown, buttonReloadCanvas, buttonHomothetieDown, buttonHomothetieUp, buttonModelData, Fview, Aview ,Sview, editCommentaireButton, editAuteurButton;
+	Button buttonLoadFolder, bTreeBase ,buttonLightZDown,buttonLightZUp,buttonLightUp,buttonLightDown,buttonLightRight,buttonLightLeft,buttonHelp, buttonRotateUp, buttonRotateRight, buttonRotateLeft, buttonRotateDown, buttonRotateAroundRight, buttonRotateAroundLeft, buttonTranslateUp, buttonTranslateRight, buttonTranslateLeft, buttonTranslateDown, buttonReloadCanvas, buttonHomothetieDown, buttonHomothetieUp, buttonModelData, frontView, aView ,sideView, editCommentaireButton, editAuteurButton;
 
 	/** The tree view. */
 	@FXML
@@ -105,7 +102,7 @@ public class MainControler implements Initializable {
 	private Translation translation;
 
 	/** The homothetie. */
-	private Homothetie homothetie;
+	private Homothety homothetie;
 
 
 	/**
@@ -123,10 +120,10 @@ public class MainControler implements Initializable {
 
 		buttonLoadFolder.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
-			public void handle(ActionEvent e) {
-				DirectoryChooser dc = new DirectoryChooser();
-				dc.setInitialDirectory(new File(System.getProperty("user.home")));
-				File choice = dc.showDialog(stage);
+			public void handle(ActionEvent event) {
+				DirectoryChooser directory = new DirectoryChooser();
+				directory.setInitialDirectory(new File(System.getProperty("user.home")));
+				File choice = directory.showDialog(stage);
 				if (choice == null || !choice.isDirectory()) {
 					Alert alert = new Alert(AlertType.ERROR);
 					alert.setHeaderText("Could not open directory");
@@ -136,20 +133,19 @@ public class MainControler implements Initializable {
 					try {
 						treeView.setRoot(explorerFile.getNodesForDirectory(choice));
 						updateFile();
-					} catch (IOException e1) {
+					} catch (IOException exception) {
 						// TODO Auto-generated catch block
-						e1.printStackTrace();
+						exception.printStackTrace();
 					}
 				}
 
 			}
 
 		});
-		btreebase.setOnAction(new EventHandler<ActionEvent>() {
+		bTreeBase.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
-			public void handle(ActionEvent e) {
+			public void handle(ActionEvent event) {
 				String pwd = System.getProperty("user.dir");
-				System.out.println(pwd+"/exemples");
 				File directory = new File(pwd+"/exemples");
 				try {
 					treeView.setRoot(explorerFile.getNodesForDirectory(directory));
@@ -168,13 +164,13 @@ public class MainControler implements Initializable {
 		graphe = fileReader.read(currentFile);
 		UpdateGraph grapheTmp = graphe; 
 
-		Matrix m = new RotationUp(graphe.getMatrix(),null).mouvement(Math.PI);
-		graphe.update(m);
+		Matrix matrix = new RotationUp(graphe.getMatrix(),null).mouvement(Math.PI);
+		graphe.update(matrix);
 		UpdateGraph grapheTop = graphe;
 		graphe = grapheTmp;
 		canvasWriterTop= new CanvasWriter(canvasTop,grapheTop);
-		m = new RotationLeft(graphe.getMatrix(),null).mouvement(Math.PI);
-		graphe.update(m);
+		matrix = new RotationLeft(graphe.getMatrix(),null).mouvement(Math.PI);
+		graphe.update(matrix);
 		UpdateGraph grapheSide = graphe;
 		graphe = grapheTmp;
 		canvasWriterDown= new CanvasWriter(canvasDown,grapheSide);
@@ -191,8 +187,7 @@ public class MainControler implements Initializable {
 					+ "             a(droite par rapport au plan 2D), e(gauche par rapport au plan 2D)\n\n"
 					+ "La translation s'effectue aussi avec les touches t(haut) f(dgauche) g(bas) h(droite)\n"
 					+ "\n"
-					+ "Pour agrandir ou reduire le model b(agrandir) et n(reduire) "
-					+ "");
+					+ "Pour agrandir ou reduire le model b(agrandir) et n(reduire) ");
 
 			StackPane secondaryLayout = new StackPane();
 			secondaryLayout.getChildren().add(secondLabel);
@@ -255,14 +250,16 @@ public class MainControler implements Initializable {
 				UpdateFile updateFile = new UpdateFile(currentFile,fileReader.getAuthorLine(),fileReader.getCommentLine());
 				TextArea textField = new TextArea();
 				Button validButton = new Button();
-				StackPane secondaryLayout = new StackPane();
 				validButton.setText("Confirmer");
 				textField.setPrefSize(100.0,40.0);
 				textField.setMinSize(Region.USE_PREF_SIZE, Region.USE_PREF_SIZE);
 				validButton.setPrefSize(100.0, 40.0);
 				validButton.setMinSize(Region.USE_PREF_SIZE, Region.USE_PREF_SIZE);
-				secondaryLayout.getChildren().add(textField);
-				secondaryLayout.getChildren().add(validButton);
+				StackPane secondaryLayout = new StackPane();
+				HBox hbox = new HBox();
+				hbox.getChildren().add(textField);
+				hbox.getChildren().add(validButton);
+				secondaryLayout.getChildren().add(hbox);
 
 				Scene secondScene = new Scene(secondaryLayout, 250, 80);
 
@@ -294,8 +291,7 @@ public class MainControler implements Initializable {
 						+ "Nombre de Faces : "+ graphe.getNbFaces()+"\n\n"
 						+ "Nombre de Sommet par faces : "+ graphe.getNbVertex() +"\n\n"
 						+ "Autre commentaire : "+ fileReader.getComment()+ "a la ligne " + fileReader.getCommentLine()+"\n\n"
-						+ "\n\n\n"
-						+ "");
+						+ "\n\n\n");
 
 				StackPane secondaryLayout = new StackPane();
 				secondaryLayout.getChildren().add(secondLabel);
@@ -315,21 +311,24 @@ public class MainControler implements Initializable {
 		});
 
 		buttonRotateRight.setOnAction(new EventHandler<ActionEvent>() {
-			public void handle(ActionEvent e) {
+			@Override
+			public void handle(ActionEvent event) {
 				if(currentFile != null && currentFile.isFile()) {
 					rotateRight();
 				}
 			}
 		});
 		buttonRotateLeft.setOnAction(new EventHandler<ActionEvent>() {
-			public void handle(ActionEvent e) {
+			@Override
+			public void handle(ActionEvent event) {
 				if(currentFile != null && currentFile.isFile()) {
 					rotationLeft();
 				}
 			}
 		});
 		buttonRotateAroundRight.setOnAction(new EventHandler<ActionEvent>() {
-			public void handle(ActionEvent e) {
+			@Override
+			public void handle(ActionEvent event) {
 				if(currentFile != null && currentFile.isFile()) {
 					rotationAroundLeft();
 
@@ -338,21 +337,24 @@ public class MainControler implements Initializable {
 		});
 
 		buttonRotateAroundLeft.setOnAction(new EventHandler<ActionEvent>() {
-			public void handle(ActionEvent e) {
+			@Override
+			public void handle(ActionEvent event) {
 				if(currentFile != null && currentFile.isFile()) {
 					rotationAroundLeft();
 				}
 			}
 		});
 		buttonRotateUp.setOnAction(new EventHandler<ActionEvent>() {
-			public void handle(ActionEvent e) {
+			@Override
+			public void handle(ActionEvent event) {
 				if(currentFile != null && currentFile.isFile()) {
 					rotationUp();
 				}
 			}
 		});
 		buttonRotateDown.setOnAction(new EventHandler<ActionEvent>() {
-			public void handle(ActionEvent e) {
+			@Override
+			public void handle(ActionEvent event) {
 				if(currentFile != null && currentFile.isFile()) {
 					rotationDown(); 
 				}
@@ -361,36 +363,30 @@ public class MainControler implements Initializable {
 
 		buttonHomothetieUp.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
-			public void handle(ActionEvent e) {
-				if(canvasWriterMain.homothesie<0) {
-					homothetieAction(5);
-				}
-
+			public void handle(ActionEvent event) {
+				homothetieAction(5);
 			}
 		});
 
 		buttonHomothetieDown.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
-			public void handle(ActionEvent e) {
-				if(canvasWriterMain.homothesie<-21) {
-					homothetieAction(-5);
-				}
-				else {
-					System.out.println("stop");
-				}
+			public void handle(ActionEvent envent) {
+				homothetieAction(-5);
 			}
 
 		});
 
 		buttonTranslateRight.setOnAction(new EventHandler<ActionEvent>() {
-			public void handle(ActionEvent e) {
+			@Override
+			public void handle(ActionEvent event) {
 				if(currentFile != null && currentFile.isFile()) {
 					translateAction(-0.5,0.0,0.0);
 				}	
 			}
 		});
 		buttonTranslateLeft.setOnAction(new EventHandler<ActionEvent>() {
-			public void handle(ActionEvent e) {
+			@Override
+			public void handle(ActionEvent event) {
 				if(currentFile != null && currentFile.isFile()) {
 					translateAction(0.5,0.0,0.0);
 				}
@@ -398,7 +394,8 @@ public class MainControler implements Initializable {
 		});
 
 		buttonTranslateUp.setOnAction(new EventHandler<ActionEvent>() {
-			public void handle(ActionEvent e) {
+			@Override
+			public void handle(ActionEvent event) {
 				if(currentFile != null && currentFile.isFile()) {
 					translateAction(0.0,0.5,0.0);
 				}	
@@ -406,7 +403,8 @@ public class MainControler implements Initializable {
 		});
 
 		buttonTranslateDown.setOnAction(new EventHandler<ActionEvent>() {
-			public void handle(ActionEvent e) {
+			@Override
+			public void handle(ActionEvent event) {
 				if(currentFile != null && currentFile.isFile()) {
 					translateAction(0.0,-0.5,0.0);
 				}
@@ -415,14 +413,14 @@ public class MainControler implements Initializable {
 
 		buttonReloadCanvas.setOnAction(new EventHandler<ActionEvent>() {
 			@Override	
-			public void handle(ActionEvent e) {
+			public void handle(ActionEvent event) {
 				updateFile();
 			}
 		});   
 
 		printLine.setOnAction(new EventHandler<ActionEvent>() {
 			@Override	
-			public void handle(ActionEvent e) {
+			public void handle(ActionEvent event) {
 				canvasWriterMain.printLine(printLine.isSelected());
 				canvasWriterMain.update(graphe);
 				canvasWriterTop.printLine(printLine.isSelected());
@@ -434,7 +432,7 @@ public class MainControler implements Initializable {
 
 		printColor.setOnAction(new EventHandler<ActionEvent>() {
 			@Override	
-			public void handle(ActionEvent e) {
+			public void handle(ActionEvent event) {
 				canvasWriterMain.printColor(printColor.isSelected());
 				canvasWriterMain.update(graphe);
 				canvasWriterTop.printColor(printColor.isSelected());
@@ -446,7 +444,7 @@ public class MainControler implements Initializable {
 
 		printPoint.setOnAction(new EventHandler<ActionEvent>() {
 			@Override	
-			public void handle(ActionEvent e) {
+			public void handle(ActionEvent event) {
 				canvasWriterMain.printPoint(printPoint.isSelected());
 				canvasWriterMain.update(graphe);
 				canvasWriterTop.printPoint(printPoint.isSelected());
@@ -458,14 +456,14 @@ public class MainControler implements Initializable {
 
 		faceColor.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
-			public void handle(ActionEvent e) {
+			public void handle(ActionEvent event) {
 				graphe.setColor(faceColor.getValue());
 			}
 		});
 
 		pointColor.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
-			public void handle(ActionEvent e) {
+			public void handle(ActionEvent event) {
 				canvasWriterMain.setPointColor(pointColor.getValue());
 				canvasWriterTop.setPointColor(pointColor.getValue());
 				canvasWriterDown.setPointColor(pointColor.getValue());
@@ -474,7 +472,7 @@ public class MainControler implements Initializable {
 
 		backgroundColor.setOnAction(new EventHandler<ActionEvent>() {
 			@Override	
-			public void handle(ActionEvent e) {
+			public void handle(ActionEvent event) {
 				canvasWriterMain.setBackgroundColor(backgroundColor.getValue());
 				canvasWriterTop.setBackgroundColor(backgroundColor.getValue());
 				canvasWriterDown.setBackgroundColor(backgroundColor.getValue());
@@ -483,7 +481,7 @@ public class MainControler implements Initializable {
 
 		areteColorPicker.setOnAction(new EventHandler<ActionEvent>() {
 			@Override	
-			public void handle(ActionEvent e) {
+			public void handle(ActionEvent event) {
 				canvasWriterMain.setLineColor(areteColorPicker.getValue());
 				canvasWriterTop.setLineColor(areteColorPicker.getValue());
 				canvasWriterDown.setLineColor(areteColorPicker.getValue());
@@ -492,50 +490,50 @@ public class MainControler implements Initializable {
 
 		checkOmbre.setOnAction(new EventHandler<ActionEvent>() {
 			@Override	
-			public void handle(ActionEvent e) {
-				graphe.ombrage(checkOmbre.isSelected());
+			public void handle(ActionEvent event) {
+				graphe.umbrage(checkOmbre.isSelected());
 			}
 		});
 
 		buttonLightUp.setOnAction(new EventHandler<ActionEvent>() {
 			@Override	
-			public void handle(ActionEvent e) {
-				graphe.modifierLumiere(0, 1, 0);
+			public void handle(ActionEvent event) {
+				graphe.updateLight(0, 1, 0);
 			}
 		}); 
 
 		buttonLightDown.setOnAction(new EventHandler<ActionEvent>() {
 			@Override	
-			public void handle(ActionEvent e) {
-				graphe.modifierLumiere(0, -1, 0);
+			public void handle(ActionEvent event) {
+				graphe.updateLight(0, -1, 0);
 			}
 		});  
 
 		buttonLightRight.setOnAction(new EventHandler<ActionEvent>() {
 			@Override	
-			public void handle(ActionEvent e) {
-				graphe.modifierLumiere(-1, 0, 0);
+			public void handle(ActionEvent event) {
+				graphe.updateLight(-1, 0, 0);
 			}
 		});  
 
 		buttonLightLeft.setOnAction(new EventHandler<ActionEvent>() {
 			@Override	
-			public void handle(ActionEvent e) {
-				graphe.modifierLumiere(1, 0, 0);
+			public void handle(ActionEvent event) {
+				graphe.updateLight(1, 0, 0);
 			}
 		});  
 
 		buttonLightZUp.setOnAction(new EventHandler<ActionEvent>() {
 			@Override	
-			public void handle(ActionEvent e) {
-				graphe.modifierLumiere(0, 0, 1);
+			public void handle(ActionEvent event) {
+				graphe.updateLight(0, 0, 1);
 			}
 		}); 
 
 		buttonLightZDown.setOnAction(new EventHandler<ActionEvent>() {
 			@Override	
-			public void handle(ActionEvent e) {
-				graphe.modifierLumiere(0, 0, -1);
+			public void handle(ActionEvent event) {
+				graphe.updateLight(0, 0, -1);
 			}
 		});}
 
@@ -544,11 +542,11 @@ public class MainControler implements Initializable {
 	/**
 	 * Sets the scene.
 	 *
-	 * @param s the new scene
+	 * @param scene the new scene
 	 */
 	@SuppressWarnings("incomplete-switch")
-	public void setScene (Scene s) {
-		s.setOnKeyPressed(e->{
+	public void setScene (Scene scene) {
+		scene.setOnKeyPressed(e->{
 			switch(e.getCode()){
 			case D:
 				rotateRight();
@@ -572,15 +570,12 @@ public class MainControler implements Initializable {
 				updateFile();
 				break;
 			case B:
-				if(canvasWriterMain.homothesie<0) {
-					homothetieAction(1.2);
-				}
+				homothetieAction(1.2);
 				break;
 
 			case N:
-				if(canvasWriterMain.homothesie<-21) {
-					homothetieAction(0.8);
-				}
+				homothetieAction(0.8);
+
 				break;
 			case T:
 				translateAction(0.0,0.5,0.0);
@@ -612,7 +607,7 @@ public class MainControler implements Initializable {
 	private void rotateRight() {
 		rotation = new RotationRight(graphe.getMatrix(),null); 
 		rotation.mouvement(Math.PI/100);
-		graphe.update(rotation.getMcourante());
+		graphe.update(rotation.getCurrentMatrix());
 	}
 
 	/**
@@ -621,7 +616,7 @@ public class MainControler implements Initializable {
 	private void rotationLeft() {
 		rotation = new RotationLeft(graphe.getMatrix(),null); 
 		rotation.mouvement(Math.PI/100);
-		graphe.update(rotation.getMcourante());
+		graphe.update(rotation.getCurrentMatrix());
 	}
 
 	/**
@@ -630,7 +625,7 @@ public class MainControler implements Initializable {
 	private void rotationDown() {
 		rotation = new RotationDown(graphe.getMatrix(),null); 
 		rotation.mouvement(Math.PI/100);
-		graphe.update(rotation.getMcourante());
+		graphe.update(rotation.getCurrentMatrix());
 	}
 
 	/**
@@ -639,7 +634,7 @@ public class MainControler implements Initializable {
 	private void rotationUp() {
 		rotation = new RotationUp(graphe.getMatrix(),null); 
 		rotation.mouvement(Math.PI/100);	
-		graphe.update(rotation.getMcourante());
+		graphe.update(rotation.getCurrentMatrix());
 	}
 
 	/**
@@ -647,8 +642,8 @@ public class MainControler implements Initializable {
 	 */
 	private void rotationAroundLeft() {
 		rotation = new RotationAroundLeft(graphe.getMatrix(),null); 
-		rotation.mouvement(Math.PI/100);
-		graphe.update(rotation.getMcourante());
+		rotation.mouvement(Math.PI/-100);
+		graphe.update(rotation.getCurrentMatrix());
 	}
 
 	/**
@@ -657,34 +652,32 @@ public class MainControler implements Initializable {
 	private void rotationAroundRight() {
 		rotation = new RotationAroundRight(graphe.getMatrix(),null); 
 		rotation.mouvement(Math.PI/100);		
-		graphe.update(rotation.getMcourante());
+		graphe.update(rotation.getCurrentMatrix());
 	}
 
 	/**
 	 * Translate action.
 	 *
-	 * @param x the x
-	 * @param y the y
-	 * @param z the z
+	 * @param xCoordinate the x
+	 * @param yCoordinate the y
+	 * @param zCoordinate the z
 	 */
-	private void translateAction(double x, double y, double z) {
+	private void translateAction(double xCoordinate, double yCoordinate, double zCoordinate) {
 		translation = new Translation(graphe.getMatrix());
-		System.out.println("avant : " + graphe.getMatrix().getX(0));
-		translation.translate(new Matrix(1, x , y, z ,1.0));
+		translation.translate(new Matrix(1, xCoordinate , yCoordinate, zCoordinate ,1.0));
 		graphe.update(translation.getMcourante());
-		System.out.println("apres : " + graphe.getMatrix().getX(0));
 
 	}
 
 	/**
 	 * Homothetie action.
 	 *
-	 * @param k the k
+	 * @param coef the k
 	 */
-	private void homothetieAction(double k) {
-		homothetie = new Homothetie(graphe.getMatrix());
-		homothetie.mouvement(k);
-		graphe.update(homothetie.getMcourante());
+	private void homothetieAction(double coef) {
+		homothetie = new Homothety(graphe.getMatrix());
+		homothetie.mouvement(coef);
+		graphe.update(homothetie.getCurrentMatrix());
 	}
 
 	/**
@@ -698,16 +691,16 @@ public class MainControler implements Initializable {
 		currentFile=explorerFile.getFile(treeView);
 		if(currentFile != null && currentFile.isFile()) {
 			graphe = fileReader.read(currentFile);		
-			
+
 			UpdateGraph grapheTmp = graphe; 
 
-			Matrix m = new RotationUp(graphe.getMatrix(),null).mouvement(Math.PI);
-			graphe.update(m);
+			Matrix matrix = new RotationUp(graphe.getMatrix(),null).mouvement(Math.PI);
+			graphe.update(matrix);
 			UpdateGraph grapheTop = graphe;
 			graphe = grapheTmp;
 			canvasWriterTop= new CanvasWriter(canvasTop,grapheTop);
-			m = new RotationLeft(graphe.getMatrix(),null).mouvement(Math.PI);
-			graphe.update(m);
+			matrix = new RotationLeft(graphe.getMatrix(),null).mouvement(Math.PI);
+			graphe.update(matrix);
 			UpdateGraph grapheSide = graphe;
 			graphe = grapheTmp;
 			canvasWriterDown= new CanvasWriter(canvasDown,grapheSide);

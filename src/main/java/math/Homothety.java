@@ -5,36 +5,38 @@ import rotation.Mouvement;
 
 
 /**
- * La classe Homothetie derivee de Mouvement.
+ * the classe Homothety for zoom the model
+ * 
+ * @author matheo
  */
-public class Homothetie extends Mouvement {
+public class Homothety extends Mouvement {
 	
-	/** La matrice courante. */
-	private Matrix matriceCourante;
+	/** the current matrix */
+	private Matrix currentMatrix;
 	
 	/**
-	 * Instantie une nouvelle homothetie.
+	 * create the homothety with the current matrix
 	 *
-	 * @param matrice la matrice
+	 * @param matrix the current matrix
 	 */
-	public Homothetie(Matrix matrice) {
-		super(matrice, null);
+	public Homothety(Matrix matrix) {
+		super(matrix, null);
 	}
 
 	/**
-	 * Prendre la matrice courante.
+	 * return the current matrix.
 	 *
-	 * @return la matrice courante
+	 * @return the current matrix
 	 */
-	public Matrix getMcourante() {
-		return this.matriceCourante;
+	public Matrix getCurrentMatrix() {
+		return this.currentMatrix;
 	}
 
 	/**
 	 * Mouvement.
 	 *
-	 * @param sensibility la sensibilitee
-	 * @return la matrice apres l'homothetie
+	 * @param sensibility the sensibility of the zoom
+	 * @return the currentMatrix after the zoom
 	 */
 	@Override
 	public Matrix mouvement(double sensibility) {
@@ -43,8 +45,8 @@ public class Homothetie extends Mouvement {
 		newMatrice.add( 0.0, sensibility, 0.0, 0.0);
 		newMatrice.add(0.0, 0.0, sensibility, 0.0);		
 		newMatrice.add(0.0, 0.0, 0.0, 1.0);
-		this.matriceCourante = multipliMatrice(newMatrice);
+		this.currentMatrix = multipliMatrix(newMatrice);
 
-		return matriceCourante;
+		return currentMatrix;
 	}
 }

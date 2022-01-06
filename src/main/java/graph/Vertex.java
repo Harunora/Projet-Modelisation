@@ -2,20 +2,21 @@ package graph;
 
 /**
  * The Class Sommet.
+ * 
+ * @author matheo
  */
 public class Vertex {
 	
-	/** The z. */
+	/** all the coordinate of the vertex */
 	private double xCoordinate,yCoordinate,zCoordinate;
 	
 	/**
-	 * Instantiates a new sommet.
+	 * Instantiates a new vertex.
 	 *
 	 * @param xCoordinate the x
 	 * @param yCoordinate the y
 	 * @param zCoordinate the z
 	 */
-	//Un Sommet est un points avec 3 coordonnée x, y et z 
 	public Vertex(double xCoordinate, double yCoordinate, double zCoordinate) {
 		this.xCoordinate = xCoordinate;
 		this.yCoordinate = yCoordinate;
@@ -23,9 +24,9 @@ public class Vertex {
 	}
 	
 	/**
-	 * Instantiates a new sommet.
+	 * Instantiates a new vertex.
 	 *
-	 * @param tabXyz the tab xyz
+	 * @param tabXyz the tab of all the coordinates
 	 */
 	public Vertex(double[] tabXyz) {
 		xCoordinate = tabXyz[0];
