@@ -83,13 +83,13 @@ Nous n'avons pas encore trouvé comment afficher uniquement le nom du fichier
 
 ## Distribution du travail (qui a fait quoi)
 
-###C
+### C
 - [X] Affichage face seulement / segments seulement / Point seulement
 - [X] Affichage des points
 - [X] Choix des couleurs
 - [X] Vidéo de présentation
 
-###M
+### M
 - [X] Reorganisation du MainController
 - [X] Editions des infos de modeles
 - [X] Refonte de l'homethetie et des translations
@@ -98,7 +98,7 @@ Nous n'avons pas encore trouvé comment afficher uniquement le nom du fichier
 - [X] Diagramme de classes UML
 - [X] Erreur PMD
 
-###J
+### J
 - [X] Travail sur la vue en tranche non fini par manque de temps
 - [X] Affichage avancé de la bibliothèque de modèle
 - [X] Éclairage
