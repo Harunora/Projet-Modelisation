@@ -112,7 +112,9 @@ Nous n'avons pas encore trouvé comment afficher uniquement le nom du fichier
 ## Difficultés rencontrées
 
 Notre modele n'était pas mvc après le livrable 1 et nous avons eu des difficultées à le faire
+
 Les trois vues ne fonctionnent pas (nous avons décidés de retourné à des vues fixes)
+
 Vue en tranche non fini
 
 
