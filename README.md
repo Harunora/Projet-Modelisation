@@ -36,7 +36,7 @@
 
 ### M
 
-- [X] Structure de Graph (Sommets et faces) avec leurs tests 
+- [X] Structure de Graph (Sommets et faces) avec leurs tests
 - [X] UpdateGraph (qui permet de mettre à jour le graph par rapport à la matrice)
 - [X] Lecteur de Fichier .ply
 - [X] Matrice
@@ -44,15 +44,15 @@
 - [X] Information du fichier (auteur, NbFace, Commentaires)
 
 ### C
- 
-- [X] Création du jar exécutable 
+
+- [X] Création du jar exécutable
 - [X] Dessiner sur le Canvas
 - [X] Homotétie
 
 ## Difficultés rencontrées
 Problème de classNotFoundException avant le rendu
-Le tri n'est pas assez obtimisé 
-Nous n'avons pas encore trouvé comment afficher uniquement le nom du fichier 
+Le tri n'est pas assez obtimisé
+Nous n'avons pas encore trouvé comment afficher uniquement le nom du fichier
 
 # Livrable 2
 
@@ -60,7 +60,7 @@ Nous n'avons pas encore trouvé comment afficher uniquement le nom du fichier
 
 
 - [X] Affichage faces seulement / segments seulement
-- [/] Affichage avancé de la bibliothèque de modèles
+- [X] Affichage avancé de la bibliothèque de modèles
 - [X] Recherche dans la bibliothèque de modèles
 - [X] Éditer les informations sur un modèle (auteur, comment etc...)
 - [ ] Modèle centré
@@ -70,16 +70,16 @@ Nous n'avons pas encore trouvé comment afficher uniquement le nom du fichier
 - [ ] Vue en tranches
 - [ ] Controleur horloge
 - [ ] Autres, préciser :
-- [X] On peut choisir nos propres couleurs 
+- [X] On peut choisir nos propres couleurs
 
 ## Autres exigences
 
-- [/] Tests unitaires
+- [X] Tests unitaires
 - [X] Diagramme de classes UML
 - [X] Javadoc
 - [X] Captures d'écran
 - [X] Vidéo de présentation
-- [/] Respect du format de rendu
+- [X] Respect du format de rendu
 
 ## Distribution du travail (qui a fait quoi)
 
@@ -88,30 +88,32 @@ Nous n'avons pas encore trouvé comment afficher uniquement le nom du fichier
 - [X] Affichage des points
 - [X] Choix des couleurs
 - [X] Vidéo de présentation
- 
+
 ###M
-- [X] Reorganisation du MainController 
+- [X] Reorganisation du MainController
 - [X] Editions des infos de modeles
 - [X] Refonte de l'homethetie et des translations
-- [X] Correction de bugs (lecture de fichier, rotations, 
+- [X] Correction de bugs (lecture de fichier, rotations,
 - [X] Javadoc
 - [X] Diagramme de classes UML
 - [X] Erreur PMD
 
 ###J
-- [X] Affichage avancé de la bibliothèque de modèle 
+- [X] Travail sur la vue en tranche non fini par manque de temps
+- [X] Affichage avancé de la bibliothèque de modèle
 - [X] Éclairage
 - [X] Javadoc
 - [X] Erreur PMD
 
 ###Ensemble
 -[X] MVC
--[X] Couleurs 
+-[X] Couleurs
 
 ## Difficultés rencontrées
 
 Notre modele n'était pas mvc après le livrable 1 et nous avons eu des difficultées à le faire
 Les trois vues ne fonctionnent pas (nous avons décidés de retourné à des vues fixes)
+Vue en tranche non fini
 
 
 
