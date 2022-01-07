@@ -106,10 +106,8 @@ Nous n'avons pas encore trouvé comment afficher uniquement le nom du fichier
 - [X] Erreur PMD
 
 ###Ensemble
-
--[X] MVC
-
--[X] Couleurs
+- [X] MVC
+- [X] Couleurs
 
 ## Difficultés rencontrées
 
