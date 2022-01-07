@@ -1,5 +1,7 @@
 ply
 format ascii 1.0
+comment made by krir
+comment test
 element vertex 468
 property float32 x
 property float32 y

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="graph.FileReaderTest" time="0.356" tests="10" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="graph.FileReaderTest" time="0.25" tests="10" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="15"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="FR"/>
     <property name="sun.boot.library.path" value="C:\Users\mathe\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_15.0.2.v20210201-0955\jre\bin"/>
-    <property name="sun.java.command" value="C:\Users\mathe\AppData\Local\Temp\surefire2828364735735603582\surefirebooter856848221245122131.jar C:\Users\mathe\AppData\Local\Temp\surefire2828364735735603582 2022-01-07T19-13-33_092-jvmRun1 surefire4287309392809043445tmp surefire_015962628529464981534tmp"/>
+    <property name="sun.java.command" value="C:\Users\mathe\AppData\Local\Temp\surefire16928914154319413524\surefirebooter2747257029183444612.jar C:\Users\mathe\AppData\Local\Temp\surefire16928914154319413524 2022-01-07T19-24-48_031-jvmRun1 surefire11230937264144258242tmp surefire_017316652572967441145tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\mathe\git\projetmodeh4\target\test-classes;C:\Users\mathe\git\projetmodeh4\target\classes;C:\Users\mathe\.m2\repository\org\openjfx\javafx-controls\11\javafx-controls-11.jar;C:\Users\mathe\.m2\repository\org\openjfx\javafx-controls\11\javafx-controls-11-win.jar;C:\Users\mathe\.m2\repository\org\openjfx\javafx-graphics\11\javafx-graphics-11.jar;C:\Users\mathe\.m2\repository\org\openjfx\javafx-graphics\11\javafx-graphics-11-win.jar;C:\Users\mathe\.m2\repository\org\openjfx\javafx-base\11\javafx-base-11.jar;C:\Users\mathe\.m2\repository\org\openjfx\javafx-base\11\javafx-base-11-win.jar;C:\Users\mathe\.m2\repository\org\openjfx\javafx-fxml\11\javafx-fxml-11.jar;C:\Users\mathe\.m2\repository\org\openjfx\javafx-fxml\11\javafx-fxml-11-win.jar;C:\Users\mathe\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.6.2\junit-jupiter-engine-5.6.2.jar;C:\Users\mathe\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\mathe\.m2\repository\org\junit\platform\junit-platform-engine\1.6.2\junit-platform-engine-1.6.2.jar;C:\Users\mathe\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\mathe\.m2\repository\org\junit\platform\junit-platform-commons\1.6.2\junit-platform-commons-1.6.2.jar;C:\Users\mathe\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.6.2\junit-jupiter-api-5.6.2.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\mathe\AppData\Local\Temp\surefire2828364735735603582\surefirebooter856848221245122131.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\mathe\AppData\Local\Temp\surefire16928914154319413524\surefirebooter2747257029183444612.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="15.0.2+7-27"/>
@@ -55,14 +55,14 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="59.0"/>
   </properties>
-  <testcase name="testNbSommets" classname="graph.FileReaderTest" time="0.032"/>
-  <testcase name="testFace1" classname="graph.FileReaderTest" time="0.01"/>
+  <testcase name="testNbSommets" classname="graph.FileReaderTest" time="0.021"/>
+  <testcase name="testFace1" classname="graph.FileReaderTest" time="0.008"/>
   <testcase name="testFace2" classname="graph.FileReaderTest" time="0.002"/>
-  <testcase name="testGraph" classname="graph.FileReaderTest" time="0.011"/>
+  <testcase name="testGraph" classname="graph.FileReaderTest" time="0.005"/>
   <testcase name="testNbFacesEF" classname="graph.FileReaderTest" time="0.001"/>
   <testcase name="testNbSommetsFileReader" classname="graph.FileReaderTest" time="0.001"/>
   <testcase name="testNbFaces" classname="graph.FileReaderTest" time="0"/>
-  <testcase name="testSommet1" classname="graph.FileReaderTest" time="0.001"/>
+  <testcase name="testSommet1" classname="graph.FileReaderTest" time="0.002"/>
   <testcase name="testSommet2" classname="graph.FileReaderTest" time="0.001"/>
-  <testcase name="testSizeSommets" classname="graph.FileReaderTest" time="0.002"/>
+  <testcase name="testSizeSommets" classname="graph.FileReaderTest" time="0.001"/>
 </testsuite>
