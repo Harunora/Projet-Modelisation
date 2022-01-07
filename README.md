@@ -117,5 +117,19 @@ Les trois vues ne fonctionnent pas (nous avons décidés de retourné à des vue
 
 Vue en tranche non fini
 
+### Aide à l'utilisation
+
+Appuiyer sur la touche P pour lancer en cas de bug
+Si le modele ne s'affiche pas correctement allez dans source folder -> git -> exemples puis selectionnez le model a afficher
+
+Le bouton reinitialiser (ou w) remet le modele a�son etat de base
+
+La rotation s'effectue aussi avec les touches z(haut), q(gauche), s(bas), d(droite),
+a(droite par rapport au plan 2D), e(gauche par rapport au plan 2D)
+
+La translation s'effectue aussi avec les touches t(haut) f(dgauche) g(bas) h(droite)
+
+Pour agrandir ou reduire le model b(agrandir) et n(reduire)
+
 
 
