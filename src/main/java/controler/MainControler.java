@@ -314,7 +314,7 @@ public class MainControler implements Initializable {
 			@Override
 			public void handle(ActionEvent event) {
 				if(currentFile != null && currentFile.isFile()) {
-					rotateRight();
+					rotationRight();
 				}
 			}
 		});
@@ -380,7 +380,7 @@ public class MainControler implements Initializable {
 			@Override
 			public void handle(ActionEvent event) {
 				if(currentFile != null && currentFile.isFile()) {
-					translateAction(-0.5,0.0,0.0);
+					translateAction(0.5,0.0,0.0);
 				}	
 			}
 		});
@@ -388,7 +388,7 @@ public class MainControler implements Initializable {
 			@Override
 			public void handle(ActionEvent event) {
 				if(currentFile != null && currentFile.isFile()) {
-					translateAction(0.5,0.0,0.0);
+					translateAction(-0.5,0.0,0.0);
 				}
 			}
 		});
@@ -396,8 +396,8 @@ public class MainControler implements Initializable {
 		buttonTranslateUp.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				if(currentFile != null && currentFile.isFile()) {
-					translateAction(0.0,0.5,0.0);
+				if(currentFile != null && currentFile.isFile()) {	
+					translateAction(0.0,-0.5,0.0);
 				}	
 			}
 		});
@@ -406,7 +406,7 @@ public class MainControler implements Initializable {
 			@Override
 			public void handle(ActionEvent event) {
 				if(currentFile != null && currentFile.isFile()) {
-					translateAction(0.0,-0.5,0.0);
+					translateAction(0.0,0.5,0.0);
 				}
 			}
 		});
@@ -498,28 +498,28 @@ public class MainControler implements Initializable {
 		buttonLightUp.setOnAction(new EventHandler<ActionEvent>() {
 			@Override	
 			public void handle(ActionEvent event) {
-				graphe.updateLight(0, 1, 0);
+				graphe.updateLight(0, -1, 0);
 			}
 		}); 
 
 		buttonLightDown.setOnAction(new EventHandler<ActionEvent>() {
 			@Override	
 			public void handle(ActionEvent event) {
-				graphe.updateLight(0, -1, 0);
+				graphe.updateLight(0, 1, 0);
 			}
 		});  
 
 		buttonLightRight.setOnAction(new EventHandler<ActionEvent>() {
 			@Override	
 			public void handle(ActionEvent event) {
-				graphe.updateLight(-1, 0, 0);
+				graphe.updateLight(1, 0, 0);
 			}
 		});  
 
 		buttonLightLeft.setOnAction(new EventHandler<ActionEvent>() {
 			@Override	
 			public void handle(ActionEvent event) {
-				graphe.updateLight(1, 0, 0);
+				graphe.updateLight(-1, 0, 0);
 			}
 		});  
 
@@ -549,7 +549,7 @@ public class MainControler implements Initializable {
 		scene.setOnKeyPressed(e->{
 			switch(e.getCode()){
 			case D:
-				rotateRight();
+				rotationRight();
 				break;
 			case Q:
 				rotationLeft();
@@ -572,22 +572,20 @@ public class MainControler implements Initializable {
 			case B:
 				homothetieAction(1.2);
 				break;
-
 			case N:
 				homothetieAction(0.8);
-
 				break;
 			case T:
-				translateAction(0.0,0.5,0.0);
-				break;
-			case F:
-				translateAction(0.5,0.0,0.0);
-				break;
-			case G:
 				translateAction(0.0,-0.5,0.0);
 				break;
-			case H:
+			case F:
 				translateAction(-0.5,0.0,0.0);
+				break;
+			case G:
+				translateAction(0.0,0.5,0.0);
+				break;
+			case H:
+				translateAction(0.5,0.0,0.0);
 				break;
 			case W:
 				graphe = fileReader.read(currentFile);
@@ -604,7 +602,7 @@ public class MainControler implements Initializable {
 	/**
 	 * Rotate right.
 	 */
-	private void rotateRight() {
+	private void rotationLeft() {
 		rotation = new RotationRight(graphe.getMatrix(),null); 
 		rotation.mouvement(Math.PI/100);
 		graphe.update(rotation.getCurrentMatrix());
@@ -613,7 +611,7 @@ public class MainControler implements Initializable {
 	/**
 	 * Rotation left.
 	 */
-	private void rotationLeft() {
+	private void rotationRight() {
 		rotation = new RotationLeft(graphe.getMatrix(),null); 
 		rotation.mouvement(Math.PI/100);
 		graphe.update(rotation.getCurrentMatrix());
@@ -622,7 +620,7 @@ public class MainControler implements Initializable {
 	/**
 	 * Rotation down.
 	 */
-	private void rotationDown() {
+	private void rotationUp() {
 		rotation = new RotationDown(graphe.getMatrix(),null); 
 		rotation.mouvement(Math.PI/100);
 		graphe.update(rotation.getCurrentMatrix());
@@ -631,7 +629,7 @@ public class MainControler implements Initializable {
 	/**
 	 * Rotation up.
 	 */
-	private void rotationUp() {
+	private void rotationDown() {
 		rotation = new RotationUp(graphe.getMatrix(),null); 
 		rotation.mouvement(Math.PI/100);	
 		graphe.update(rotation.getCurrentMatrix());
