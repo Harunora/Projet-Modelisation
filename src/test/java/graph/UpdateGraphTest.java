@@ -8,6 +8,8 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
+import javafx.scene.paint.Color;
+
 /**
  * The Class UpdateGraphTest.
  */
@@ -68,12 +70,12 @@ class UpdateGraphTest {
 		listSommet6.add(s7);
 		listSommet6.add(s4);
 		listSommet6.add(s0);
-		f.add(new Face(4,listSommet1, null));
-		f.add(new Face(4,listSommet2, null));
-		f.add(new Face(4,listSommet3, null));
-		f.add(new Face(4,listSommet4, null));
-		f.add(new Face(4,listSommet5, null));
-		f.add(new Face(4,listSommet6, null));
+		f.add(new Face(4,listSommet1, Color.WHITE));
+		f.add(new Face(4,listSommet2, Color.WHITE));
+		f.add(new Face(4,listSommet3, Color.WHITE));
+		f.add(new Face(4,listSommet4, Color.WHITE));
+		f.add(new Face(4,listSommet5, Color.WHITE));
+		f.add(new Face(4,listSommet6, Color.WHITE));
 		matrice = new Matrix(7, 6);
 		List<String> string = new ArrayList<String>();
 		string.add("4 0 1 2 3\n");

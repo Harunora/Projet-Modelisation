@@ -8,6 +8,8 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
+import javafx.scene.paint.Color;
+
 /**
  * The Class FileReaderTest.
  */
@@ -83,12 +85,12 @@ class FileReaderTest {
 		listSommet6.add(vertex7);
 		listSommet6.add(vertex4);
 		listSommet6.add(vertex0);
-		face.add(new Face(4,listSommet1, null));
-		face.add(new Face(4,listSommet2, null));
-		face.add(new Face(4,listSommet3, null));
-		face.add(new Face(4,listSommet4, null));
-		face.add(new Face(4,listSommet5, null));
-		face.add(new Face(4,listSommet6, null));
+		face.add(new Face(4,listSommet1, Color.WHITE));
+		face.add(new Face(4,listSommet2, Color.WHITE));
+		face.add(new Face(4,listSommet3, Color.WHITE));
+		face.add(new Face(4,listSommet4, Color.WHITE));
+		face.add(new Face(4,listSommet5, Color.WHITE));
+		face.add(new Face(4,listSommet6, Color.WHITE));
 		matrice = new Matrix(7, 6);
 		return new Graph(6,face, matrice, null, "");
 	}
