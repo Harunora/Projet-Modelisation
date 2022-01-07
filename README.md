@@ -1,7 +1,7 @@
-=======
-# Julien Lalloyer (J)
-# Matheo Sinquin (M)
-# Christopher Pottier (C)
+# Participant
+Julien Lalloyer (J)
+Matheo Sinquin (M)
+Christopher Pottier (C)
 
 # Livrable 1
 
