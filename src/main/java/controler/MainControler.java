@@ -330,7 +330,7 @@ public class MainControler implements Initializable {
 			@Override
 			public void handle(ActionEvent event) {
 				if(currentFile != null && currentFile.isFile()) {
-					rotationAroundLeft();
+					rotationAroundRight();
 
 				}
 			}
@@ -364,14 +364,14 @@ public class MainControler implements Initializable {
 		buttonHomothetieUp.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				homothetieAction(5);
+				homothetieAction(1.2);
 			}
 		});
 
 		buttonHomothetieDown.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent envent) {
-				homothetieAction(-5);
+				homothetieAction(0.8);
 			}
 
 		});
@@ -636,22 +636,22 @@ public class MainControler implements Initializable {
 	}
 
 	/**
-	 * Rotation around left.
-	 */
-	private void rotationAroundLeft() {
-		rotation = new RotationAroundLeft(graphe.getMatrix(),null); 
-		rotation.mouvement(Math.PI/-100);
-		graphe.update(rotation.getCurrentMatrix());
-	}
+     * Rotation around left.
+     */
+    private void rotationAroundLeft() {
+        rotation = new RotationAroundLeft(graphe.getMatrix(),null); 
+        rotation.mouvement(Math.PI/-100);
+        graphe.update(rotation.getCurrentMatrix());
+    }
 
-	/**
-	 * Rotation around right.
-	 */
-	private void rotationAroundRight() {
-		rotation = new RotationAroundRight(graphe.getMatrix(),null); 
-		rotation.mouvement(Math.PI/100);		
-		graphe.update(rotation.getCurrentMatrix());
-	}
+    /**
+     * Rotation around right.
+     */
+    private void rotationAroundRight() {
+        rotation = new RotationAroundRight(graphe.getMatrix(),null); 
+        rotation.mouvement(Math.PI/-100);        
+        graphe.update(rotation.getCurrentMatrix());
+    }
 
 	/**
 	 * Translate action.

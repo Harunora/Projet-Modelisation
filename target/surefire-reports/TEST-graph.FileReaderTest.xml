@@ -1,69 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="graph.FileReaderTest" time="0.13" tests="10" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="graph.FileReaderTest" time="0.356" tests="10" errors="0" skipped="0" failures="0">
   <properties>
-    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
-    <property name="java.specification.version" value="11"/>
-    <property name="sun.cpu.isalist" value=""/>
-    <property name="sun.jnu.encoding" value="UTF-8"/>
-    <property name="java.class.path" value="/home/infoetu/julien.lalloyer.etu/git/projetmodeh4/target/test-classes:/home/infoetu/julien.lalloyer.etu/git/projetmodeh4/target/classes:/tmp/maven/repository/julien.lalloyer.etu/org/openjfx/javafx-controls/11/javafx-controls-11.jar:/tmp/maven/repository/julien.lalloyer.etu/org/openjfx/javafx-controls/11/javafx-controls-11-linux.jar:/tmp/maven/repository/julien.lalloyer.etu/org/openjfx/javafx-graphics/11/javafx-graphics-11.jar:/tmp/maven/repository/julien.lalloyer.etu/org/openjfx/javafx-graphics/11/javafx-graphics-11-linux.jar:/tmp/maven/repository/julien.lalloyer.etu/org/openjfx/javafx-base/11/javafx-base-11.jar:/tmp/maven/repository/julien.lalloyer.etu/org/openjfx/javafx-base/11/javafx-base-11-linux.jar:/tmp/maven/repository/julien.lalloyer.etu/org/openjfx/javafx-fxml/11/javafx-fxml-11.jar:/tmp/maven/repository/julien.lalloyer.etu/org/openjfx/javafx-fxml/11/javafx-fxml-11-linux.jar:/tmp/maven/repository/julien.lalloyer.etu/org/junit/jupiter/junit-jupiter-engine/5.6.2/junit-jupiter-engine-5.6.2.jar:/tmp/maven/repository/julien.lalloyer.etu/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/tmp/maven/repository/julien.lalloyer.etu/org/junit/platform/junit-platform-engine/1.6.2/junit-platform-engine-1.6.2.jar:/tmp/maven/repository/julien.lalloyer.etu/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/tmp/maven/repository/julien.lalloyer.etu/org/junit/platform/junit-platform-commons/1.6.2/junit-platform-commons-1.6.2.jar:/tmp/maven/repository/julien.lalloyer.etu/org/junit/jupiter/junit-jupiter-api/5.6.2/junit-jupiter-api-5.6.2.jar:"/>
-    <property name="java.vm.vendor" value="Debian"/>
+    <property name="java.specification.version" value="15"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\Users\mathe\git\projetmodeh4\target\test-classes;C:\Users\mathe\git\projetmodeh4\target\classes;C:\Users\mathe\.m2\repository\org\openjfx\javafx-controls\11\javafx-controls-11.jar;C:\Users\mathe\.m2\repository\org\openjfx\javafx-controls\11\javafx-controls-11-win.jar;C:\Users\mathe\.m2\repository\org\openjfx\javafx-graphics\11\javafx-graphics-11.jar;C:\Users\mathe\.m2\repository\org\openjfx\javafx-graphics\11\javafx-graphics-11-win.jar;C:\Users\mathe\.m2\repository\org\openjfx\javafx-base\11\javafx-base-11.jar;C:\Users\mathe\.m2\repository\org\openjfx\javafx-base\11\javafx-base-11-win.jar;C:\Users\mathe\.m2\repository\org\openjfx\javafx-fxml\11\javafx-fxml-11.jar;C:\Users\mathe\.m2\repository\org\openjfx\javafx-fxml\11\javafx-fxml-11-win.jar;C:\Users\mathe\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.6.2\junit-jupiter-engine-5.6.2.jar;C:\Users\mathe\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\mathe\.m2\repository\org\junit\platform\junit-platform-engine\1.6.2\junit-platform-engine-1.6.2.jar;C:\Users\mathe\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\mathe\.m2\repository\org\junit\platform\junit-platform-commons\1.6.2\junit-platform-commons-1.6.2.jar;C:\Users\mathe\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.6.2\junit-jupiter-api-5.6.2.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="java.vendor.url" value="https://tracker.debian.org/openjdk-11"/>
-    <property name="user.timezone" value=""/>
-    <property name="java.vm.specification.version" value="11"/>
-    <property name="os.name" value="Linux"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="Europe/Paris"/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="java.vm.specification.version" value="15"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="FR"/>
-    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-11-openjdk-amd64/lib"/>
-    <property name="sun.java.command" value="/home/infoetu/julien.lalloyer.etu/git/projetmodeh4/target/surefire/surefirebooter15326732062858875800.jar /home/infoetu/julien.lalloyer.etu/git/projetmodeh4/target/surefire 2022-01-07T15-53-30_418-jvmRun1 surefire16167761863749877645tmp surefire_016599598584563064100tmp"/>
+    <property name="sun.boot.library.path" value="C:\Users\mathe\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_15.0.2.v20210201-0955\jre\bin"/>
+    <property name="sun.java.command" value="C:\Users\mathe\AppData\Local\Temp\surefire2828364735735603582\surefirebooter856848221245122131.jar C:\Users\mathe\AppData\Local\Temp\surefire2828364735735603582 2022-01-07T19-13-33_092-jvmRun1 surefire4287309392809043445tmp surefire_015962628529464981534tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="/home/infoetu/julien.lalloyer.etu/git/projetmodeh4/target/test-classes:/home/infoetu/julien.lalloyer.etu/git/projetmodeh4/target/classes:/tmp/maven/repository/julien.lalloyer.etu/org/openjfx/javafx-controls/11/javafx-controls-11.jar:/tmp/maven/repository/julien.lalloyer.etu/org/openjfx/javafx-controls/11/javafx-controls-11-linux.jar:/tmp/maven/repository/julien.lalloyer.etu/org/openjfx/javafx-graphics/11/javafx-graphics-11.jar:/tmp/maven/repository/julien.lalloyer.etu/org/openjfx/javafx-graphics/11/javafx-graphics-11-linux.jar:/tmp/maven/repository/julien.lalloyer.etu/org/openjfx/javafx-base/11/javafx-base-11.jar:/tmp/maven/repository/julien.lalloyer.etu/org/openjfx/javafx-base/11/javafx-base-11-linux.jar:/tmp/maven/repository/julien.lalloyer.etu/org/openjfx/javafx-fxml/11/javafx-fxml-11.jar:/tmp/maven/repository/julien.lalloyer.etu/org/openjfx/javafx-fxml/11/javafx-fxml-11-linux.jar:/tmp/maven/repository/julien.lalloyer.etu/org/junit/jupiter/junit-jupiter-engine/5.6.2/junit-jupiter-engine-5.6.2.jar:/tmp/maven/repository/julien.lalloyer.etu/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/tmp/maven/repository/julien.lalloyer.etu/org/junit/platform/junit-platform-engine/1.6.2/junit-platform-engine-1.6.2.jar:/tmp/maven/repository/julien.lalloyer.etu/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/tmp/maven/repository/julien.lalloyer.etu/org/junit/platform/junit-platform-commons/1.6.2/junit-platform-commons-1.6.2.jar:/tmp/maven/repository/julien.lalloyer.etu/org/junit/jupiter/junit-jupiter-api/5.6.2/junit-jupiter-api-5.6.2.jar:"/>
+    <property name="surefire.test.class.path" value="C:\Users\mathe\git\projetmodeh4\target\test-classes;C:\Users\mathe\git\projetmodeh4\target\classes;C:\Users\mathe\.m2\repository\org\openjfx\javafx-controls\11\javafx-controls-11.jar;C:\Users\mathe\.m2\repository\org\openjfx\javafx-controls\11\javafx-controls-11-win.jar;C:\Users\mathe\.m2\repository\org\openjfx\javafx-graphics\11\javafx-graphics-11.jar;C:\Users\mathe\.m2\repository\org\openjfx\javafx-graphics\11\javafx-graphics-11-win.jar;C:\Users\mathe\.m2\repository\org\openjfx\javafx-base\11\javafx-base-11.jar;C:\Users\mathe\.m2\repository\org\openjfx\javafx-base\11\javafx-base-11-win.jar;C:\Users\mathe\.m2\repository\org\openjfx\javafx-fxml\11\javafx-fxml-11.jar;C:\Users\mathe\.m2\repository\org\openjfx\javafx-fxml\11\javafx-fxml-11-win.jar;C:\Users\mathe\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.6.2\junit-jupiter-engine-5.6.2.jar;C:\Users\mathe\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\mathe\.m2\repository\org\junit\platform\junit-platform-engine\1.6.2\junit-platform-engine-1.6.2.jar;C:\Users\mathe\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\mathe\.m2\repository\org\junit\platform\junit-platform-commons\1.6.2\junit-platform-commons-1.6.2.jar;C:\Users\mathe\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.6.2\junit-jupiter-api-5.6.2.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
-    <property name="user.home" value="/home/infoetu/julien.lalloyer.etu"/>
+    <property name="user.home" value="C:\Users\mathe"/>
     <property name="user.language" value="fr"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
-    <property name="java.version.date" value="2021-10-19"/>
-    <property name="java.home" value="/usr/lib/jvm/java-11-openjdk-amd64"/>
-    <property name="file.separator" value="/"/>
-    <property name="basedir" value="/home/infoetu/julien.lalloyer.etu/git/projetmodeh4"/>
-    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="java.version.date" value="2021-01-19"/>
+    <property name="java.home" value="C:\Users\mathe\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_15.0.2.v20210201-0955\jre"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\mathe\git\projetmodeh4"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
     <property name="line.separator" value="&#10;"/>
-    <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
-    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="/home/infoetu/julien.lalloyer.etu/git/projetmodeh4/target/surefire/surefirebooter15326732062858875800.jar"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\mathe\AppData\Local\Temp\surefire2828364735735603582\surefirebooter856848221245122131.jar"/>
+    <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="java.runtime.version" value="11.0.13+8-post-Debian-1deb10u1"/>
-    <property name="user.name" value="julien.lalloyer.etu"/>
-    <property name="path.separator" value=":"/>
-    <property name="os.version" value="5.9.0-0.bpo.5-amd64"/>
+    <property name="java.runtime.version" value="15.0.2+7-27"/>
+    <property name="user.name" value="mathe"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
-    <property name="file.encoding" value="UTF-8"/>
+    <property name="file.encoding" value="Cp1252"/>
     <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
-    <property name="localRepository" value="/tmp/maven/repository/julien.lalloyer.etu"/>
-    <property name="java.vendor.url.bug" value="https://bugs.debian.org/openjdk-11"/>
-    <property name="java.io.tmpdir" value="/tmp"/>
-    <property name="java.version" value="11.0.13"/>
-    <property name="user.dir" value="/home/infoetu/julien.lalloyer.etu/git/projetmodeh4"/>
+    <property name="localRepository" value="C:\Users\mathe\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\mathe\AppData\Local\Temp\"/>
+    <property name="java.version" value="15.0.2"/>
+    <property name="user.dir" value="C:\Users\mathe\git\projetmodeh4"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
-    <property name="sun.os.patch.level" value="unknown"/>
-    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
-    <property name="java.vm.info" value="mixed mode, sharing"/>
-    <property name="java.vendor" value="Debian"/>
-    <property name="java.vm.version" value="11.0.13+8-post-Debian-1deb10u1"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.library.path" value="C:\Users\mathe\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_15.0.2.v20210201-0955\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Users/mathe/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_15.0.2.v20210201-0955/jre/bin/server;C:/Users/mathe/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_15.0.2.v20210201-0955/jre/bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;D:\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\Program Files\Git\cmd;C:\Program Files\dotnet\;C:\Users\mathe\AppData\Local\Microsoft\WindowsApps;;C:\Users\mathe\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\mathe\Desktop;;."/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="15.0.2+7-27"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
-    <property name="java.class.version" value="55.0"/>
+    <property name="java.class.version" value="59.0"/>
   </properties>
-  <testcase name="testNbSommets" classname="graph.FileReaderTest" time="0"/>
-  <testcase name="testFace1" classname="graph.FileReaderTest" time="0.001"/>
-  <testcase name="testFace2" classname="graph.FileReaderTest" time="0.001"/>
-  <testcase name="testGraph" classname="graph.FileReaderTest" time="0.001"/>
+  <testcase name="testNbSommets" classname="graph.FileReaderTest" time="0.032"/>
+  <testcase name="testFace1" classname="graph.FileReaderTest" time="0.01"/>
+  <testcase name="testFace2" classname="graph.FileReaderTest" time="0.002"/>
+  <testcase name="testGraph" classname="graph.FileReaderTest" time="0.011"/>
   <testcase name="testNbFacesEF" classname="graph.FileReaderTest" time="0.001"/>
-  <testcase name="testNbSommetsFileReader" classname="graph.FileReaderTest" time="0"/>
+  <testcase name="testNbSommetsFileReader" classname="graph.FileReaderTest" time="0.001"/>
   <testcase name="testNbFaces" classname="graph.FileReaderTest" time="0"/>
   <testcase name="testSommet1" classname="graph.FileReaderTest" time="0.001"/>
-  <testcase name="testSommet2" classname="graph.FileReaderTest" time="0"/>
-  <testcase name="testSizeSommets" classname="graph.FileReaderTest" time="0"/>
+  <testcase name="testSommet2" classname="graph.FileReaderTest" time="0.001"/>
+  <testcase name="testSizeSommets" classname="graph.FileReaderTest" time="0.002"/>
 </testsuite>
