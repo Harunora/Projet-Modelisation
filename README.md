@@ -117,7 +117,7 @@ Les trois vues ne fonctionnent pas (nous avons décidés de retourné à des vue
 
 Vue en tranche non fini
 
-### Aide à l'utilisation
+## Aide à l'utilisation
 
 Appuiyer sur la touche P pour lancer en cas de bug
 Si le modele ne s'affiche pas correctement allez dans source folder -> git -> exemples puis selectionnez le model a afficher
