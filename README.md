@@ -1,7 +1,7 @@
 # Participant
-Julien Lalloyer (J)
-Matheo Sinquin (M)
-Christopher Pottier (C)
+Julien Lalloyer
+Matheo Sinquin
+Christopher Pottier
 
 # Livrable 1
 
@@ -26,7 +26,7 @@ Christopher Pottier (C)
 
 ## Distribution du travail (qui a fait quoi)
 
-### J
+### Julien Lalloyer
 
 - [X] FXML
 - [X] File Explorer
@@ -34,7 +34,7 @@ Christopher Pottier (C)
 - [X] Tests pour la classe de calcul mathématique de multiplication de matrice
 - [X] On visualise simultanément trois vues du modèle (de face, de haut, de côté)
 
-### M
+### Matheo Sinquin
 
 - [X] Structure de Graph (Sommets et faces) avec leurs tests
 - [X] UpdateGraph (qui permet de mettre à jour le graph par rapport à la matrice)
@@ -43,7 +43,7 @@ Christopher Pottier (C)
 - [X] Translation (gauche, droite, haut, bas)
 - [X] Information du fichier (auteur, NbFace, Commentaires)
 
-### C
+### Christopher Pottier
 
 - [X] Création du jar exécutable
 - [X] Dessiner sur le Canvas
@@ -83,13 +83,13 @@ Nous n'avons pas encore trouvé comment afficher uniquement le nom du fichier
 
 ## Distribution du travail (qui a fait quoi)
 
-### C
+### Christopher Pottier
 - [X] Affichage face seulement / segments seulement / Point seulement
 - [X] Affichage des points
 - [X] Choix des couleurs
 - [X] Vidéo de présentation
 
-### M
+### Matheo Sinquin
 - [X] Reorganisation du MainController
 - [X] Editions des infos de modeles
 - [X] Refonte de l'homethetie et des translations
@@ -98,14 +98,14 @@ Nous n'avons pas encore trouvé comment afficher uniquement le nom du fichier
 - [X] Diagramme de classes UML
 - [X] Erreur PMD
 
-### J
+### Julien Lalloyer
 - [X] Travail sur la vue en tranche non fini par manque de temps
 - [X] Affichage avancé de la bibliothèque de modèle
 - [X] Éclairage
 - [X] Javadoc
 - [X] Erreur PMD
 
-###Ensemble
+### Ensemble
 - [X] MVC
 - [X] Couleurs
 
