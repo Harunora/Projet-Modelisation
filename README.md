@@ -84,17 +84,25 @@ Nous n'avons pas encore trouvé comment afficher uniquement le nom du fichier
 ## Distribution du travail (qui a fait quoi)
 
 ###C
-- [X] Affichage face seulement / segments seulement 
+- [X] Affichage face seulement / segments seulement / Point seulement
+- [X] Affichage des points
+- [X] Choix des couleurs
+- [X] Vidéo de présentation
  
 ###M
 - [X] Reorganisation du MainController 
 - [X] Editions des infos de modeles
 - [X] Refonte de l'homethetie et des translations
 - [X] Correction de bugs (lecture de fichier, rotations, 
+- [X] Javadoc
+- [X] Diagramme de classes UML
+- [X] Erreur PMD
 
 ###J
 - [X] Affichage avancé de la bibliothèque de modèle 
 - [X] Éclairage
+- [X] Javadoc
+- [X] Erreur PMD
 
 ###Ensemble
 -[X] MVC
