@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+
+<ruleset name="Custom Rules"
+    xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 https://pmd.sourceforge.io/ruleset_2_0_0.xsd">
+
+    <description>
+        Ensembles des règle du projet de modélisation 
+    </description>
+
+
+
+<rule ref="category/java/documentation.xml/CommentRequired" />
+<rule ref="category/java/bestpractices.xml/UnusedImports" />
+<rule ref="category/java/codestyle.xml/ShortVariable" />
+<rule ref="category/java/design.xml/LawOfDemeter" />
+<rule ref="category/java/bestpractices.xml/SystemPrintln" />
+<rule ref="category/java/design.xml/ExcessiveClassLength">
+    <properties>
+        <property name="minimum" value="200.0" />
+    </properties>
+</rule>
+<rule ref="category/java/design.xml/AvoidDeeplyNestedIfStmts">
+    <properties>
+        <property name="problemDepth" value="3" />
+    </properties>
+</rule>
+
+<rule ref="category/java/bestpractices.xml/UnusedAssignment" />
+<rule ref="category/java/bestpractices.xml/UnusedFormalParameter">
+    <properties>
+        <property name="checkAll" value="false" />
+    </properties>
+</rule>
+<rule ref="category/java/performance.xml/AvoidInstantiatingObjectsInLoops" /> 
+<rule ref="category/java/performance.xml/AddEmptyString" />
+<rule ref="category/java/codestyle.xml/FieldNamingConventions" />
+<rule ref="category/java/codestyle.xml/LongVariable">
+    <properties>
+        <property name="minimum" value="17" />
+    </properties>
+</rule>
+<rule ref="category/java/codestyle.xml/MethodNamingConventions" />
+<rule ref="category/java/design.xml/ExcessiveMethodLength">
+    <properties>
+        <property name="minimum" value="30.0" />
+    </properties>
+</rule>
+<rule ref="category/java/design.xml/GodClass" />
+<rule ref="category/java/performance.xml/AvoidFileStream" />
+<rule ref="category/java/design.xml/TooManyFields">
+    <properties>
+        <property name="maxfields" value="10" />
+    </properties>
+</rule>
+<rule ref="category/java/codestyle.xml/UseDiamondOperator" />
+<rule ref="category/java/bestpractices.xml/JUnitTestsShouldIncludeAssert" />
+
+
+
+
+</ruleset>
+

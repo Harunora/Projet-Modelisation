@@ -8,23 +8,11 @@ package graph;
  */
 public class Matrix {
 	
-	/** The idx in the matrix. */
-	private int idx = 0;
 	
-	/** The length of the matrix. */
-	private int length;
+	private int idx = 0, length;
 	
-	/** The xCoordinate. */
-	private double[] xCoordinate ;
 	
-	/** The yCoordinate. */
-	private double[] yCoordinate ;
-	
-	/** The zCoordinate. */
-	private double[] zCoordinate ;
-	
-	/** The vector. */
-	private double[] vector;
+	private double[] xCoordinate , yCoordinate , zCoordinate , vector;
 
 
 	/**
@@ -78,23 +66,7 @@ public class Matrix {
 		this.vector[idx] = vector;
 		idx ++;
 	}
-	
-	/**
-	 * Update the matrix
-	 */
-	public void update() {
-		for(int i = 0; i<length; i++) {
-			xCoordinate[i] = xCoordinate[i]*zCoordinate[i];
-			yCoordinate[i] = yCoordinate[i]*zCoordinate[i];
-		    zCoordinate[i] = zCoordinate[i]*zCoordinate[i];
-		}
-	}
-	
-	/**
-	 * Adds the a vertex
-	 *
-	 * @param vertex the vertex
-	 */
+
 	public void add(Vertex vertex) {
 		this.add(vertex.getX(),vertex.getY(),vertex.getZ(), 1);
 	}
